@@ -8,28 +8,37 @@
 
 
 ## 3. 기본 형태
+~~~
 protocol 프로토콜이름 {  
     프로토콜 정의  
 }  
+~~~
 
 클래스에서만 채택가능  
+~~~
 protocol 프로토콜이름: class {  
     프로토콜 정의  
 }  
+~~~
 
 클래스에서 부모클래스, 프로토콜 채택을 모두 표시할 경우, 부모클래스, 프로토콜 순으로 작성  
+~~~
 class SomeClass: SuperClass, SomeProtocol {  
     클래스 정의   
 }  
+~~~
 
 프로토콜에서의 프로퍼티는 항상 var로 선언하며, 이름, 타입, gettable여부, settable여부를 명시함  
+~~~
 protocol Student {  
     var height: Double { get set }  
     var name: String { get }  
     static var schoolNumber: Int { get set }  
 }  
+~~~
 
 그리고 프로토콜의 프로퍼티는 저장프로퍼티, 연산프로퍼티 다 사용해서 구현할 수 있다.  
+~~~
 class Aiden: Student {  
     var roundingHeight: Double = 0.0  
     var height: Double {  
@@ -50,6 +59,6 @@ print(aiden.height, aiden.name, Aiden.schoolNumber)
 aiden.height = 183.0
 print(aiden.height, aiden.name, Aiden.schoolNumber)
 // 183.0 Aiden 20112330
-
+~~~
 
 미완성..!  

@@ -1,20 +1,23 @@
 ## 1. 이런 식으로 선언
+~~~
 protocol AAADelegate: class {  
     func touchButton()  
     func dragUp()  
 }  
-
+~~~
 
 ## 2. 이후 원하는 클래스의 구현부에 델리게이트 객체를 넣어줌
+~~~
 class AAA: UIView {  
     weak var delegate: AAADelegate?  
     var button: UIButton?  
     ~~  
 }  
-
+~~~
 
 ## 3. 그리고 특정 행동시 델리게이트의 함수를 실행하게 함
 ( 이 부분이 나중에 복잡해질 듯..? )  
+~~~
 class AAA: UIView {  
     weak var delegate: AAADelegate?  
     var button: UIButton?  
@@ -25,6 +28,7 @@ class AAA: UIView {
     }  
     ~~  
 }  
+~~~
 
 ## 4. 이후 원래 VC에서 TableView나 CollectionView로 쓰던거처럼 aaa.delegate = self하고 함수 구현부 만들면됨!
 
