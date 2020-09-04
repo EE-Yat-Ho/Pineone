@@ -80,9 +80,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C340812F2501C5C80087D799 /* 20200904ProtocolTest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = 20200904ProtocolTest;
+			sourceTree = "<group>";
+		};
 		C3A255072500704A009F10DE = {
 			isa = PBXGroup;
 			children = (
+				C340812F2501C5C80087D799 /* 20200904ProtocolTest */,
 				C3A2554625007552009F10DE /* 20200903MessageBoxDelegate */,
 				C3A255122500704A009F10DE /* PracticeProject */,
 				C3A2552C2500704D009F10DE /* PracticeProjectTests */,
