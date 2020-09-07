@@ -20,11 +20,14 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func AnchorButtonClick(_ sender: Any) {
-        let questionTabBarController = QuestionTabBarController()
+        let questionTabBarController = QuestionTabBarController_Anchor()
         self.navigationController?.pushViewController(questionTabBarController, animated: true)
-        
     }
     
+    @IBAction func AutoResizingMaskButtonClick(_ sender: Any) {
+        let questionTabBarController = QuestionTabBarController_AutoResizingMask()
+        self.navigationController?.pushViewController(questionTabBarController, animated: true)
+    }
 
 }
 

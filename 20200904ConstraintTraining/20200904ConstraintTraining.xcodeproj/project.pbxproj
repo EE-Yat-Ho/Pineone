@@ -18,8 +18,10 @@
 		2A30C2542501FAE000BEAC9E /* MultipleChoiceQuestionViewController_StoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C2532501FAE000BEAC9E /* MultipleChoiceQuestionViewController_StoryBoard.swift */; };
 		2A30C25625021B4F00BEAC9E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C25525021B4F00BEAC9E /* CollectionViewCell.swift */; };
 		2A30C2582502201400BEAC9E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C2572502201400BEAC9E /* TableViewCell.swift */; };
-		2A30C25B25022A3800BEAC9E /* QuestionTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C25A25022A3800BEAC9E /* QuestionTabBarController.swift */; };
-		2A30C25D25022ED200BEAC9E /* MultipleChoiceQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C25C25022ED200BEAC9E /* MultipleChoiceQuestionViewController.swift */; };
+		2A30C25B25022A3800BEAC9E /* QuestionTabBarController_Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C25A25022A3800BEAC9E /* QuestionTabBarController_Anchor.swift */; };
+		2A30C25D25022ED200BEAC9E /* MultipleChoiceQuestionViewController_Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C25C25022ED200BEAC9E /* MultipleChoiceQuestionViewController_Anchor.swift */; };
+		2A9403AC25061D0300D539FC /* QuestionTabBarController_AutoResizingMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9403AB25061D0300D539FC /* QuestionTabBarController_AutoResizingMask.swift */; };
+		2A9403AE25061D5900D539FC /* MultipleChoiceQuestionViewController_AutoResizingMaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9403AD25061D5900D539FC /* MultipleChoiceQuestionViewController_AutoResizingMaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +38,10 @@
 		2A30C2532501FAE000BEAC9E /* MultipleChoiceQuestionViewController_StoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuestionViewController_StoryBoard.swift; sourceTree = "<group>"; };
 		2A30C25525021B4F00BEAC9E /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		2A30C2572502201400BEAC9E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		2A30C25A25022A3800BEAC9E /* QuestionTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTabBarController.swift; sourceTree = "<group>"; };
-		2A30C25C25022ED200BEAC9E /* MultipleChoiceQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuestionViewController.swift; sourceTree = "<group>"; };
+		2A30C25A25022A3800BEAC9E /* QuestionTabBarController_Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTabBarController_Anchor.swift; sourceTree = "<group>"; };
+		2A30C25C25022ED200BEAC9E /* MultipleChoiceQuestionViewController_Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuestionViewController_Anchor.swift; sourceTree = "<group>"; };
+		2A9403AB25061D0300D539FC /* QuestionTabBarController_AutoResizingMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTabBarController_AutoResizingMask.swift; sourceTree = "<group>"; };
+		2A9403AD25061D5900D539FC /* MultipleChoiceQuestionViewController_AutoResizingMaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuestionViewController_AutoResizingMaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +83,12 @@
 				2A30C23F2501F35400BEAC9E /* Main.storyboard */,
 				2A30C23D2501F35400BEAC9E /* MainViewController.swift */,
 				2A30C2522501FA9000BEAC9E /* 1_StoryBoard */,
-				2A30C2592502286D00BEAC9E /* 2_Anchor */,
+				2A9403AF250629F200D539FC /* 2_NSLayoutConstraint */,
+				2A9403B025062A1100D539FC /* 3_VisualFormatLanguege */,
+				2A9403B125062A2E00D539FC /* 4_NSLayout+VisualFormat */,
+				2A9403AA25061C9000D539FC /* 5_AutoResizingMask */,
+				2A30C2592502286D00BEAC9E /* 6_Anchor */,
+				2A9403B225062A6200D539FC /* 7_intrinsicContentSize */,
 				2A30C2372501F35400BEAC9E /* Products */,
 			);
 			path = 20200904ConstraintTraining;
@@ -88,21 +97,58 @@
 		2A30C2522501FA9000BEAC9E /* 1_StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
-				2A30C2532501FAE000BEAC9E /* MultipleChoiceQuestionViewController_StoryBoard.swift */,
 				2A30C2502501F7A500BEAC9E /* QuestionTabBarController_StoryBoard.swift */,
+				2A30C2532501FAE000BEAC9E /* MultipleChoiceQuestionViewController_StoryBoard.swift */,
 				2A30C25525021B4F00BEAC9E /* CollectionViewCell.swift */,
 				2A30C2572502201400BEAC9E /* TableViewCell.swift */,
 			);
 			path = 1_StoryBoard;
 			sourceTree = "<group>";
 		};
-		2A30C2592502286D00BEAC9E /* 2_Anchor */ = {
+		2A30C2592502286D00BEAC9E /* 6_Anchor */ = {
 			isa = PBXGroup;
 			children = (
-				2A30C25A25022A3800BEAC9E /* QuestionTabBarController.swift */,
-				2A30C25C25022ED200BEAC9E /* MultipleChoiceQuestionViewController.swift */,
+				2A30C25A25022A3800BEAC9E /* QuestionTabBarController_Anchor.swift */,
+				2A30C25C25022ED200BEAC9E /* MultipleChoiceQuestionViewController_Anchor.swift */,
 			);
-			path = 2_Anchor;
+			path = 6_Anchor;
+			sourceTree = "<group>";
+		};
+		2A9403AA25061C9000D539FC /* 5_AutoResizingMask */ = {
+			isa = PBXGroup;
+			children = (
+				2A9403AB25061D0300D539FC /* QuestionTabBarController_AutoResizingMask.swift */,
+				2A9403AD25061D5900D539FC /* MultipleChoiceQuestionViewController_AutoResizingMaskViewController.swift */,
+			);
+			path = 5_AutoResizingMask;
+			sourceTree = "<group>";
+		};
+		2A9403AF250629F200D539FC /* 2_NSLayoutConstraint */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = 2_NSLayoutConstraint;
+			sourceTree = "<group>";
+		};
+		2A9403B025062A1100D539FC /* 3_VisualFormatLanguege */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = 3_VisualFormatLanguege;
+			sourceTree = "<group>";
+		};
+		2A9403B125062A2E00D539FC /* 4_NSLayout+VisualFormat */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "4_NSLayout+VisualFormat";
+			sourceTree = "<group>";
+		};
+		2A9403B225062A6200D539FC /* 7_intrinsicContentSize */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = 7_intrinsicContentSize;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,16 +222,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A9403AE25061D5900D539FC /* MultipleChoiceQuestionViewController_AutoResizingMaskViewController.swift in Sources */,
 				2A30C23E2501F35400BEAC9E /* MainViewController.swift in Sources */,
-				2A30C25D25022ED200BEAC9E /* MultipleChoiceQuestionViewController.swift in Sources */,
+				2A30C25D25022ED200BEAC9E /* MultipleChoiceQuestionViewController_Anchor.swift in Sources */,
 				2A30C2582502201400BEAC9E /* TableViewCell.swift in Sources */,
 				2A30C23A2501F35400BEAC9E /* AppDelegate.swift in Sources */,
 				2A30C2542501FAE000BEAC9E /* MultipleChoiceQuestionViewController_StoryBoard.swift in Sources */,
 				2A30C25625021B4F00BEAC9E /* CollectionViewCell.swift in Sources */,
-				2A30C25B25022A3800BEAC9E /* QuestionTabBarController.swift in Sources */,
+				2A30C25B25022A3800BEAC9E /* QuestionTabBarController_Anchor.swift in Sources */,
 				2A30C2442501F35400BEAC9E /* _0200904ConstraintTraining.xcdatamodeld in Sources */,
 				2A30C23C2501F35400BEAC9E /* SceneDelegate.swift in Sources */,
 				2A30C2512501F7A500BEAC9E /* QuestionTabBarController_StoryBoard.swift in Sources */,
+				2A9403AC25061D0300D539FC /* QuestionTabBarController_AutoResizingMask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

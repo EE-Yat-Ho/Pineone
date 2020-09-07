@@ -63,9 +63,8 @@ extension MultipleChoiceQuestionViewController_StoryBoard: UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
-        cell.ImageView.image = UIImage(systemName: "1.circle")
+        //cell.ImageView.image = UIImage(systemName: "1.circle")
         return cell
-        //return collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
     }
 }
 

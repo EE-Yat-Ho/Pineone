@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuestionTabBarController: UITabBarController, UITabBarControllerDelegate{
+class QuestionTabBarController_Anchor: UITabBarController, UITabBarControllerDelegate{
     var NVC_height: CGFloat?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class QuestionTabBarController: UITabBarController, UITabBarControllerDelegate{
         UITabBarItem.appearance().titlePositionAdjustment.vertical = 9 - NVC_height! / 2
         
         // 객관식 만들기 화면 설정
-        let item1 = MultipleChoiceQuestionViewController()
+        let item1 = MultipleChoiceQuestionViewController_Anchor()
         item1.tabBarItem.title = "객관식 만들기"
         
         
