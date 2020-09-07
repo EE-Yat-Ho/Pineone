@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "MultipleChoiceQuestionViewController.collectionView(_:cellForItemAt:):MultipleChoiceQuestionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.ImageView">
+            </PersistentString>
+            <PersistentString
+               value = "cell.ImageView.image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "QuestionTabBarController.viewDidLoad():QuestionTabBarController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController?.navigationBar.frame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
