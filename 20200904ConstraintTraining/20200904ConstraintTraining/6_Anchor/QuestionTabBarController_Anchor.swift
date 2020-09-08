@@ -9,6 +9,7 @@
 import UIKit
 
 class QuestionTabBarController_Anchor: UITabBarController, UITabBarControllerDelegate{
+    var VCNumber: Int?
     var NVC_height: CGFloat?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,23 @@ class QuestionTabBarController_Anchor: UITabBarController, UITabBarControllerDel
         UITabBarItem.appearance().titlePositionAdjustment.vertical = 9 - NVC_height! / 2
         
         // 객관식 만들기 화면 설정
-        let item1 = MultipleChoiceQuestionViewController_Anchor()
+        var item1 = UIViewController()
+        switch VCNumber {
+        case 2 :
+            item1 = MultipleChoiceQuestionViewController_Anchor()
+        case 3 :
+            item1 = MultipleChoiceQuestionViewController_Anchor()
+        case 4 :
+            item1 = MultipleChoiceQuestionViewController_Anchor()
+        case 5 :
+            item1 = MultipleChoiceQuestionViewController_AutoResizingMask()
+        case 6 :
+            item1 = MultipleChoiceQuestionViewController_Anchor()
+        case 7 :
+            item1 = MultipleChoiceQuestionViewController_Anchor()
+        default:
+            print("VCNumber Error!")
+        }
         item1.tabBarItem.title = "객관식 만들기"
         
         

@@ -8,7 +8,9 @@
 
 import UIKit
 
-class MultipleChoiceQuestionViewController_AutoResizingMask: UIViewController {
+
+
+class MultipleChoiceQuestionViewController_VisualFormat: UIViewController {
     var inSelfViewViews: [UIView] = []
     var inScrollViewViews: [UIView] = []
     var inSubViewViews: [UIView] = []
@@ -105,10 +107,6 @@ class MultipleChoiceQuestionViewController_AutoResizingMask: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
         makeViewArrays() // 어디에 들어가느냐에 따라나눈 뷰 배열 만들기
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
         setLayout()
     }
     
@@ -175,86 +173,45 @@ class MultipleChoiceQuestionViewController_AutoResizingMask: UIViewController {
     }
     
     func addConstraintUseAnchor(){
-        scrollView.translatesAutoresizingMaskIntoConstraints = true
-        scrollView.frame = self.view.safeAreaLayoutGuide.layoutFrame
-        scrollView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin , .flexibleTopMargin, .flexibleBottomMargin, .flexibleWidth, .flexibleHeight]
+        var constraints:[NSLayoutConstraint] = []
+        let views = ["cameraButton1": cameraButton1, "questionTextView": questionTextView, "questionCollectionView":questionCollectionView, "plusButton": plusButton, "tableView": tableView, "cameraButton2":cameraButton2, "explanationTextView":explanationTextView, "explanationCollectionView":explanationCollectionView]
+
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|[scrollView]|", options: [], metrics: nil, views: ["scrollView": scrollView]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|[scrollView]|", options: [], metrics: nil, views: ["scrollView": scrollView]))
         
-        subView.translatesAutoresizingMaskIntoConstraints = true
-        subView.frame = CGRect(x: scrollView.contentLayoutGuide.layoutFrame.minX, y: scrollView.contentLayoutGuide.layoutFrame.minY, width: scrollView.frameLayoutGuide.layoutFrame.width, height: scrollView.contentLayoutGuide.layoutFrame.height)
-        subView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin , .flexibleTopMargin, .flexibleBottomMargin, .flexibleWidth, .flexibleHeight]
-        //subView.leftAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leftAnchor).isActive = true
-        //subView.rightAnchor.constraint(equalTo: scrollView.contentLayoutGuide.rightAnchor).isActive = true
-        //subView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor).isActive = true
-        //subView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor).isActive = true
-        //subView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor).isActive = true
+        let windowWidth = UIApplication.shared.windows.first?.frame.width ?? 0
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|[subView]|", options: [], metrics: nil, views: ["subView": subView]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|[subView]|", options: [], metrics: nil, views: ["subView": subView]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:[subView(\(windowWidth))]", options: [], metrics: nil, views: ["subView": subView]))
         
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-55-[questionLabel(20)]", options: [], metrics: nil, views: ["questionLabel": questionLabel]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[questionCollectionView]-10-[answerLabel(20)]", options: [], metrics: nil, views: ["questionCollectionView":questionCollectionView, "answerLabel": answerLabel]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[tableView]-10-[explanationLabel(20)]", options: [], metrics: nil, views: ["tableView":tableView, "explanationLabel": explanationLabel]))
         
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-30-[questionLabel]", options: [], metrics: nil, views: ["questionLabel": questionLabel]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-30-[answerLabel]", options: [], metrics: nil, views: ["answerLabel": answerLabel]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-30-[explanationLabel]", options: [], metrics: nil, views: ["explanationLabel": explanationLabel]))
         
-//        questionLabel.translatesAutoresizingMaskIntoConstraints = true
-//        questionLabel.frame = CGRect(x: subView.frame.minX + 30, y: subView.frame.minY + 55, width: questionLabel.frame.width, height: 20)
-//        questionLabel.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin , .flexibleTopMargin, .flexibleBottomMargin, .flexibleWidth, .flexibleHeight]
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:[cameraButton1(30)]-30-|", options: [], metrics: nil, views: ["cameraButton1": cameraButton1]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:[plusButton(30)]-30-|", options: [], metrics: nil, views: ["plusButton": plusButton]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:[cameraButton2(30)]-30-|", options: [], metrics: nil, views: ["cameraButton2": cameraButton2]))
         
-        questionLabel.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 30).isActive = true
-        questionLabel.topAnchor.constraint(equalTo: subView.topAnchor, constant: 55).isActive = true
-        questionLabel.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[questionTextView]-10-|", options: [], metrics: nil, views: ["questionTextView": questionTextView]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[questionCollectionView]-10-|", options: [], metrics: nil, views: ["questionCollectionView": questionCollectionView]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[tableView]-10-|", options: [], metrics: nil, views: ["tableView": tableView]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[explanationTextView]-10-|", options: [], metrics: nil, views: ["explanationTextView": explanationTextView]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[explanationCollectionView]-10-|", options: [], metrics: nil, views: ["explanationCollectionView": explanationCollectionView]))
         
-        cameraButton1.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -30).isActive = true
-        cameraButton1.topAnchor.constraint(equalTo: subView.topAnchor, constant: 50).isActive = true
-        cameraButton1.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
-        cameraButton1.widthAnchor.constraint(equalToConstant: 30.0).isActive = true
+        constraints.append(contentsOf:NSLayoutConstraint.constraints(withVisualFormat: "V:|-50-[cameraButton1(30)]-5-[questionTextView(130)]-5-[questionCollectionView(110)]-5-[plusButton(30)]-5-[tableView(217.5)]-5-[cameraButton2(30)]-5-[explanationTextView(130)]-5-[explanationCollectionView(110)]-100-|", options: [], metrics: nil, views: views))
         
-        questionTextView.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 10).isActive = true
-        questionTextView.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -10).isActive = true
-        questionTextView.topAnchor.constraint(equalTo: cameraButton1.bottomAnchor, constant: 5).isActive = true
-        questionTextView.heightAnchor.constraint(equalToConstant: 130).isActive = true
+        constraints.append(contentsOf:NSLayoutConstraint.constraints(withVisualFormat: "V:[completeButton(60)]-40-|", options: [], metrics: nil, views: ["completeButton": completeButton]))
+        constraints.append(contentsOf:NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[completeButton]-10-|", options: [], metrics: nil, views: ["completeButton": completeButton]))
         
-        questionCollectionView.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 10).isActive = true
-        questionCollectionView.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -10).isActive = true
-        questionCollectionView.topAnchor.constraint(equalTo: questionTextView.bottomAnchor, constant: 5).isActive = true
-        questionCollectionView.heightAnchor.constraint(equalToConstant: 110).isActive = true
-        
-        answerLabel.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 30).isActive = true
-        answerLabel.topAnchor.constraint(equalTo: questionCollectionView.bottomAnchor, constant: 10).isActive = true
-        answerLabel.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
-        
-        plusButton.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -30).isActive = true
-        plusButton.topAnchor.constraint(equalTo: questionCollectionView.bottomAnchor, constant: 5).isActive = true
-        plusButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        plusButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        
-        tableView.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 10).isActive = true
-        tableView.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -10).isActive = true
-        tableView.topAnchor.constraint(equalTo: plusButton.bottomAnchor, constant: 5).isActive = true
-        tableView.heightAnchor.constraint(equalToConstant: 217.5).isActive = true
-        
-        explanationLabel.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 30).isActive = true
-        explanationLabel.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 10).isActive = true
-        explanationLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        
-        cameraButton2.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -30).isActive = true
-        cameraButton2.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 5).isActive = true
-        cameraButton2.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        cameraButton2.widthAnchor.constraint(equalToConstant: 30).isActive = true
-    
-        explanationTextView.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 10).isActive = true
-        explanationTextView.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -10).isActive = true
-        explanationTextView.topAnchor.constraint(equalTo: cameraButton2.bottomAnchor, constant: 5).isActive = true
-        explanationTextView.heightAnchor.constraint(equalToConstant: 130).isActive = true
-        
-        explanationCollectionView.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 10).isActive = true
-        explanationCollectionView.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -10).isActive = true
-        explanationCollectionView.topAnchor.constraint(equalTo: explanationTextView.bottomAnchor, constant: 5).isActive = true
-        explanationCollectionView.bottomAnchor.constraint(equalTo: subView.bottomAnchor, constant: -100).isActive = true
-        explanationCollectionView.heightAnchor.constraint(equalToConstant: 110).isActive = true
-        
-        completeButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10).isActive = true
-        completeButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -10).isActive = true
-        completeButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -40).isActive = true
-        completeButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        NSLayoutConstraint.activate(constraints)
     }
 }
 
-extension MultipleChoiceQuestionViewController_AutoResizingMask: UICollectionViewDelegate, UICollectionViewDataSource {
+extension MultipleChoiceQuestionViewController_VisualFormat: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
@@ -286,7 +243,7 @@ extension MultipleChoiceQuestionViewController_AutoResizingMask: UICollectionVie
     
 }
 
-extension MultipleChoiceQuestionViewController_AutoResizingMask: UITableViewDelegate, UITableViewDataSource {
+extension MultipleChoiceQuestionViewController_VisualFormat: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }

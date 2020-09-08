@@ -21,5 +21,28 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "MultipleChoiceQuestionViewController_AutoResizingMask.addConstraintUseAnchor():MultipleChoiceQuestionViewController_AutoResizingMaskViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "scrollView.frameLayoutGuide.layoutFrame">
+            </PersistentString>
+            <PersistentString
+               value = "self.view.safeAreaInsets">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.contentLayoutGuide.layoutFrame">
+            </PersistentString>
+            <PersistentString
+               value = "self.view.safeAreaInsets.top">
+            </PersistentString>
+            <PersistentString
+               value = "self.view.safeAreaLayoutGuide.layoutFrame">
+            </PersistentString>
+            <PersistentString
+               value = "subView.frame ">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

@@ -173,13 +173,13 @@ class MultipleChoiceQuestionViewController_Anchor: UIViewController {
     }
     
     func addConstraintUseAnchor(){
-        scrollView.leftAnchor.constraint(equalTo: super.view.safeAreaLayoutGuide.leftAnchor).isActive = true
-        scrollView.rightAnchor.constraint(equalTo: super.view.safeAreaLayoutGuide.rightAnchor).isActive = true
-        scrollView.topAnchor.constraint(equalTo: super.view.safeAreaLayoutGuide.topAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: super.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        scrollView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor).isActive = true
+        scrollView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
-        subView.leftAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leftAnchor).isActive = true
-        subView.rightAnchor.constraint(equalTo: scrollView.contentLayoutGuide.rightAnchor).isActive = true
+        //subView.leftAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leftAnchor).isActive = true
+        //subView.rightAnchor.constraint(equalTo: scrollView.contentLayoutGuide.rightAnchor).isActive = true
         subView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor).isActive = true
         subView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor).isActive = true
         subView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor).isActive = true
@@ -190,8 +190,8 @@ class MultipleChoiceQuestionViewController_Anchor: UIViewController {
         
         cameraButton1.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -30).isActive = true
         cameraButton1.topAnchor.constraint(equalTo: subView.topAnchor, constant: 50).isActive = true
-        cameraButton1.widthAnchor.constraint(equalToConstant: 30.0).isActive = true
         cameraButton1.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
+        cameraButton1.widthAnchor.constraint(equalToConstant: 30.0).isActive = true
         
         questionTextView.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 10).isActive = true
         questionTextView.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -10).isActive = true
@@ -222,7 +222,7 @@ class MultipleChoiceQuestionViewController_Anchor: UIViewController {
         explanationLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         cameraButton2.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -30).isActive = true
-        cameraButton2.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 10).isActive = true
+        cameraButton2.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 5).isActive = true
         cameraButton2.heightAnchor.constraint(equalToConstant: 30).isActive = true
         cameraButton2.widthAnchor.constraint(equalToConstant: 30).isActive = true
     
@@ -234,12 +234,12 @@ class MultipleChoiceQuestionViewController_Anchor: UIViewController {
         explanationCollectionView.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 10).isActive = true
         explanationCollectionView.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -10).isActive = true
         explanationCollectionView.topAnchor.constraint(equalTo: explanationTextView.bottomAnchor, constant: 5).isActive = true
-        explanationCollectionView.heightAnchor.constraint(equalToConstant: 110).isActive = true
         explanationCollectionView.bottomAnchor.constraint(equalTo: subView.bottomAnchor, constant: -100).isActive = true
+        explanationCollectionView.heightAnchor.constraint(equalToConstant: 110).isActive = true
         
         completeButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10).isActive = true
         completeButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -10).isActive = true
-        completeButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20).isActive = true
+        completeButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -40).isActive = true
         completeButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
 }

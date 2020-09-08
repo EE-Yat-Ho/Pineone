@@ -15,19 +15,35 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func StoryBoardButtonClick(_ sender: Any) {
-        let questionTabBarController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "QuestionTabBarController_StoryBoard") as! QuestionTabBarController_StoryBoard
+        let questionTabBarController = UIStoryboard.init(name: "Storyboard", bundle: nil).instantiateViewController(withIdentifier: "QuestionTabBarController_StoryBoard") as! QuestionTabBarController_StoryBoard
         self.navigationController?.pushViewController(questionTabBarController, animated: true)
     }
-    
-    @IBAction func AnchorButtonClick(_ sender: Any) {
-        let questionTabBarController = QuestionTabBarController_Anchor()
+    @IBAction func NSLayoutButtonClick(_ sender: Any) {
+        let questionTabBarController = QuestionTabBarController()
+        questionTabBarController.VCNumber = 2
         self.navigationController?.pushViewController(questionTabBarController, animated: true)
     }
-    
+    @IBAction func VisualFormatButtonClick(_ sender: Any) {
+        let questionTabBarController = QuestionTabBarController()
+        questionTabBarController.VCNumber = 3
+        self.navigationController?.pushViewController(questionTabBarController, animated: true)
+    }
+    @IBAction func NSLayoutVisualFormatButtonClick(_ sender: Any) {
+        let questionTabBarController = QuestionTabBarController()
+        questionTabBarController.VCNumber = 4
+        self.navigationController?.pushViewController(questionTabBarController, animated: true)
+    }
     @IBAction func AutoResizingMaskButtonClick(_ sender: Any) {
-        let questionTabBarController = QuestionTabBarController_AutoResizingMask()
+       let questionTabBarController = QuestionTabBarController()
+       questionTabBarController.VCNumber = 5
+       self.navigationController?.pushViewController(questionTabBarController, animated: true)
+    }
+    @IBAction func AnchorButtonClick(_ sender: Any) {
+        let questionTabBarController = QuestionTabBarController()
+        questionTabBarController.VCNumber = 6
         self.navigationController?.pushViewController(questionTabBarController, animated: true)
     }
-
+    @IBAction func intrinsicButtonClick(_ sender: Any) {
+    }
 }
 
