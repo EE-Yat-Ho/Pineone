@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuestionTabBarController: UITabBarController, UITabBarControllerDelegate{
+class QuestionTabBarController: UITabBarController, UITabBarControllerDelegate {
     var VCNumber: Int?
     var NVC_height: CGFloat?
     override func viewDidLoad() {
@@ -19,12 +19,15 @@ class QuestionTabBarController: UITabBarController, UITabBarControllerDelegate{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // 탭바 컨트롤러 전체에 대한 설정. 원래 뷰 디드로드에서 했었는데 안되네 호오..
         NVC_height = (self.navigationController?.navigationBar.frame.size.height)!
         let fontAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18.0)]
         UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
-        UITabBarItem.appearance().titlePositionAdjustment.vertical = 9 - NVC_height! / 2
         
+        if UIDevice.current.orientation.isLandscape == false { // 여기서 한거만 먹히네..흠..
+            UITabBarItem.appearance().titlePositionAdjustment.vertical = (18 - NVC_height!) / 2
+        } else {
+            UITabBarItem.appearance().titlePositionAdjustment.vertical = 0
+        }
         // 객관식 만들기 화면 설정
         var item1 = UIViewController()
         switch VCNumber {
@@ -35,10 +38,8 @@ class QuestionTabBarController: UITabBarController, UITabBarControllerDelegate{
         case 4 :
             item1 = MultipleChoiceQuestionViewController_NSLayout_VisualFormat()
         case 5 :
-            item1 = MultipleChoiceQuestionViewController_AutoResizingMask()
-        case 6 :
             item1 = MultipleChoiceQuestionViewController_Anchor()
-        case 7 :
+        case 6 :
             item1 = MultipleChoiceQuestionViewController_Anchor()
         default:
             print("VCNumber Error!")
@@ -48,6 +49,7 @@ class QuestionTabBarController: UITabBarController, UITabBarControllerDelegate{
         
         // 주관식 만들기 화면 설정
         let item2 = UIViewController()
+        item2.view.backgroundColor = UIColor.white
         item2.tabBarItem.title = "주관식 만들기"
         
         let controllers = [item1, item2]
@@ -55,8 +57,15 @@ class QuestionTabBarController: UITabBarController, UITabBarControllerDelegate{
     }
     
     override func viewDidLayoutSubviews() {
-        // 탭바 상단에 위치
-        tabBar.frame = CGRect(x: 0, y: NVC_height! * 2, width: tabBar.frame.size.width, height: NVC_height!)
+
+        if UIDevice.current.orientation.isLandscape == false {
+            self.tabBar.frame = CGRect(x: 0, y: self.NVC_height! * 2, width: self.tabBar.frame.size.width, height: self.NVC_height!)
+            UITabBarItem.appearance().titlePositionAdjustment.vertical = (18 - self.NVC_height!) / 2
+        } else {
+            self.tabBar.frame = CGRect(x: 0, y: self.NVC_height!, width: self.tabBar.frame.size.width, height: self.NVC_height!)
+            UITabBarItem.appearance().titlePositionAdjustment.vertical = 0
+        }
+   
         super.viewDidLayoutSubviews()
     }
 }

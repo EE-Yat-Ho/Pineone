@@ -1,0 +1,364 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A9403CC2508BEE200D539FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9403CB2508BEE200D539FC /* AppDelegate.swift */; };
+		2A9403CE2508BEE200D539FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9403CD2508BEE200D539FC /* SceneDelegate.swift */; };
+		2A9403D02508BEE200D539FC /* old1_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9403CF2508BEE200D539FC /* old1_ViewController.swift */; };
+		2A9403D32508BEE200D539FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A9403D12508BEE200D539FC /* Main.storyboard */; };
+		2A9403D62508BEE200D539FC /* PlayGround.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A9403D42508BEE200D539FC /* PlayGround.xcdatamodeld */; };
+		2A9403D82508BEE400D539FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A9403D72508BEE400D539FC /* Assets.xcassets */; };
+		2A9403DB2508BEE400D539FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A9403D92508BEE400D539FC /* LaunchScreen.storyboard */; };
+		2A9403E32508D40000D539FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9403E22508D40000D539FC /* ViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2A9403C82508BEE200D539FC /* PlayGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A9403CB2508BEE200D539FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2A9403CD2508BEE200D539FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2A9403CF2508BEE200D539FC /* old1_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = old1_ViewController.swift; sourceTree = "<group>"; };
+		2A9403D22508BEE200D539FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2A9403D52508BEE200D539FC /* PlayGround.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlayGround.xcdatamodel; sourceTree = "<group>"; };
+		2A9403D72508BEE400D539FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A9403DA2508BEE400D539FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2A9403DC2508BEE400D539FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A9403E22508D40000D539FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A9403C52508BEE200D539FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A9403BF2508BEE200D539FC = {
+			isa = PBXGroup;
+			children = (
+				2A9403CA2508BEE200D539FC /* PlayGround */,
+				2A9403C92508BEE200D539FC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A9403C92508BEE200D539FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A9403C82508BEE200D539FC /* PlayGround.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A9403CA2508BEE200D539FC /* PlayGround */ = {
+			isa = PBXGroup;
+			children = (
+				2A9403CB2508BEE200D539FC /* AppDelegate.swift */,
+				2A9403CD2508BEE200D539FC /* SceneDelegate.swift */,
+				2A9403CF2508BEE200D539FC /* old1_ViewController.swift */,
+				2A9403D12508BEE200D539FC /* Main.storyboard */,
+				2A9403D72508BEE400D539FC /* Assets.xcassets */,
+				2A9403D92508BEE400D539FC /* LaunchScreen.storyboard */,
+				2A9403DC2508BEE400D539FC /* Info.plist */,
+				2A9403D42508BEE200D539FC /* PlayGround.xcdatamodeld */,
+				2A9403E22508D40000D539FC /* ViewController.swift */,
+			);
+			path = PlayGround;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A9403C72508BEE200D539FC /* PlayGround */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A9403DF2508BEE400D539FC /* Build configuration list for PBXNativeTarget "PlayGround" */;
+			buildPhases = (
+				2A9403C42508BEE200D539FC /* Sources */,
+				2A9403C52508BEE200D539FC /* Frameworks */,
+				2A9403C62508BEE200D539FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlayGround;
+			productName = PlayGround;
+			productReference = 2A9403C82508BEE200D539FC /* PlayGround.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A9403C02508BEE200D539FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Park young ho";
+				TargetAttributes = {
+					2A9403C72508BEE200D539FC = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = 2A9403C32508BEE200D539FC /* Build configuration list for PBXProject "PlayGround" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2A9403BF2508BEE200D539FC;
+			productRefGroup = 2A9403C92508BEE200D539FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A9403C72508BEE200D539FC /* PlayGround */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A9403C62508BEE200D539FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A9403DB2508BEE400D539FC /* LaunchScreen.storyboard in Resources */,
+				2A9403D82508BEE400D539FC /* Assets.xcassets in Resources */,
+				2A9403D32508BEE200D539FC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A9403C42508BEE200D539FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A9403E32508D40000D539FC /* ViewController.swift in Sources */,
+				2A9403D62508BEE200D539FC /* PlayGround.xcdatamodeld in Sources */,
+				2A9403D02508BEE200D539FC /* old1_ViewController.swift in Sources */,
+				2A9403CC2508BEE200D539FC /* AppDelegate.swift in Sources */,
+				2A9403CE2508BEE200D539FC /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2A9403D12508BEE200D539FC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A9403D22508BEE200D539FC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2A9403D92508BEE400D539FC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A9403DA2508BEE400D539FC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2A9403DD2508BEE400D539FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2A9403DE2508BEE400D539FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2A9403E02508BEE400D539FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KXKQCH6X89;
+				INFOPLIST_FILE = PlayGround/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Young-ho-park.PlayGround";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2A9403E12508BEE400D539FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KXKQCH6X89;
+				INFOPLIST_FILE = PlayGround/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Young-ho-park.PlayGround";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A9403C32508BEE200D539FC /* Build configuration list for PBXProject "PlayGround" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A9403DD2508BEE400D539FC /* Debug */,
+				2A9403DE2508BEE400D539FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A9403DF2508BEE400D539FC /* Build configuration list for PBXNativeTarget "PlayGround" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A9403E02508BEE400D539FC /* Debug */,
+				2A9403E12508BEE400D539FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2A9403D42508BEE200D539FC /* PlayGround.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2A9403D52508BEE200D539FC /* PlayGround.xcdatamodel */,
+			);
+			currentVersion = 2A9403D52508BEE200D539FC /* PlayGround.xcdatamodel */;
+			path = PlayGround.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2A9403C02508BEE200D539FC /* Project object */;
+}

@@ -11,7 +11,6 @@
         <!--주관식 만들기-->
         <scene sceneID="XQU-37-TOV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0ao-kT-nIi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="ert-m7-PzB" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wTq-QI-N6U">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -21,13 +20,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="주관식 만들기" id="iec-kC-Hhv"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ao-kT-nIi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1235" y="-269"/>
+            <point key="canvasLocation" x="1234.7826086956522" y="-269.19642857142856"/>
         </scene>
         <!--객관식 만들기-->
         <scene sceneID="iZb-zY-891">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ohn-rV-5A7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="h9o-Ih-7Ru" customClass="MultipleChoiceQuestionViewController_StoryBoard" customModule="_0200904ConstraintTraining" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sac-aT-dfg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -73,7 +72,7 @@
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="6gy-I6-Q4v" customClass="CollectionViewCell" customModule="_0200904ConstraintTraining" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JGM-4h-KiW">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                             <autoresizingMask key="autoresizingMask"/>
@@ -81,7 +80,7 @@
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="paperplane" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lfu-ol-prN">
                                                                     <rect key="frame" x="5" y="5" width="100" height="100"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </imageView>
                                                             </subviews>
@@ -262,7 +261,6 @@
                                             <constraint firstItem="pCZ-ti-tfY" firstAttribute="leading" secondItem="9SX-AE-PCs" secondAttribute="leading" constant="20" symbolic="YES" id="K16-e7-IXk"/>
                                             <constraint firstItem="fsX-bN-7hX" firstAttribute="leading" secondItem="9SX-AE-PCs" secondAttribute="leading" constant="10" id="MOU-0f-pM2"/>
                                             <constraint firstAttribute="trailing" secondItem="PeD-WN-T0t" secondAttribute="trailing" constant="10" id="NRf-pK-8ou"/>
-                                            <constraint firstItem="Kl5-Og-qum" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="spl-jV-uNn" secondAttribute="trailing" constant="8" symbolic="YES" id="Pio-P6-bFF"/>
                                             <constraint firstItem="fsX-bN-7hX" firstAttribute="top" secondItem="Pb3-NX-cde" secondAttribute="bottom" constant="5" id="VyW-vJ-bXn"/>
                                             <constraint firstItem="PeD-WN-T0t" firstAttribute="top" secondItem="RjI-zA-F7j" secondAttribute="bottom" constant="5" id="ctP-up-LnJ"/>
                                             <constraint firstItem="EWx-Z4-O9q" firstAttribute="leading" secondItem="9SX-AE-PCs" secondAttribute="leading" constant="30" id="e7o-bV-dqz"/>
@@ -274,7 +272,6 @@
                                             <constraint firstItem="Pb3-NX-cde" firstAttribute="leading" secondItem="9SX-AE-PCs" secondAttribute="leading" constant="10" id="qSe-GI-QhT"/>
                                             <constraint firstItem="RjI-zA-F7j" firstAttribute="leading" secondItem="9SX-AE-PCs" secondAttribute="leading" constant="10" id="qcs-mP-WuK"/>
                                             <constraint firstItem="bcE-yL-uCr" firstAttribute="top" secondItem="eyz-5x-ke3" secondAttribute="bottom" constant="10" id="r8F-ys-Max"/>
-                                            <constraint firstItem="77d-5D-fLi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pCZ-ti-tfY" secondAttribute="trailing" constant="8" symbolic="YES" id="td9-MW-xPj"/>
                                             <constraint firstItem="eyz-5x-ke3" firstAttribute="leading" secondItem="9SX-AE-PCs" secondAttribute="leading" constant="10" id="wKK-R7-INa"/>
                                             <constraint firstAttribute="trailing" secondItem="RjI-zA-F7j" secondAttribute="trailing" constant="10" id="y8i-ec-kC5"/>
                                             <constraint firstItem="pCZ-ti-tfY" firstAttribute="top" secondItem="fsX-bN-7hX" secondAttribute="bottom" constant="15" id="yir-tD-kr9"/>
@@ -325,13 +322,13 @@
                         <outlet property="QuestionTextView" destination="Pb3-NX-cde" id="jT2-EV-3yg"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ohn-rV-5A7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1236" y="-927"/>
         </scene>
         <!--Question Tab Bar Controller Story Board-->
         <scene sceneID="1MX-7K-ewF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vby-6E-nWV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController storyboardIdentifier="QuestionTabBarController_StoryBoard" id="47m-yk-66N" customClass="QuestionTabBarController_StoryBoard" customModule="_0200904ConstraintTraining" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iP7-WI-YZo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -343,6 +340,7 @@
                         <segue destination="ert-m7-PzB" kind="relationship" relationship="viewControllers" id="Meb-Wk-3pp"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vby-6E-nWV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="322" y="-750"/>
         </scene>

@@ -7,32 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "95AADEC4-23D0-4B70-8CEE-B4B1EE43B406"
+            uuid = "B7F61AD2-5FDD-4643-9A4F-3AE45CF1C8C3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "20200904ConstraintTraining/5_AutoResizingMask/MultipleChoiceQuestionViewController_AutoResizingMaskViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "addConstraintUseAnchor()"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "viewDidLayoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "892CF658-5BF6-4FC9-8A4E-C76511036DDA"
+            uuid = "54DF166F-DAD8-4097-B9E7-E8871F7CB3C5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "20200904ConstraintTraining/5_AutoResizingMask/MultipleChoiceQuestionViewController_AutoResizingMaskViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
-            landmarkName = "addConstraintUseAnchor()"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -33,14 +33,9 @@ class MainViewController: UIViewController {
         questionTabBarController.VCNumber = 4
         self.navigationController?.pushViewController(questionTabBarController, animated: true)
     }
-    @IBAction func AutoResizingMaskButtonClick(_ sender: Any) {
-       let questionTabBarController = QuestionTabBarController()
-       questionTabBarController.VCNumber = 5
-       self.navigationController?.pushViewController(questionTabBarController, animated: true)
-    }
     @IBAction func AnchorButtonClick(_ sender: Any) {
         let questionTabBarController = QuestionTabBarController()
-        questionTabBarController.VCNumber = 6
+        questionTabBarController.VCNumber = 5
         self.navigationController?.pushViewController(questionTabBarController, animated: true)
     }
     @IBAction func intrinsicButtonClick(_ sender: Any) {

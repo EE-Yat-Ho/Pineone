@@ -146,8 +146,8 @@ class MultipleChoiceQuestionViewController_VisualFormat: UIViewController {
         setBorder(instans: explanationCollectionView, color: nil)
         setBorder(instans: completeButton, color: UIColor.systemBlue)
         
-        // Anchor기반 제약사항 추가 쭉
-        addConstraintUseAnchor()
+        // 제약사항 추가 쭉
+        addConstraint()
     }
     
     func addSubViews(parentsView: UIView, childViews: [UIView]){
@@ -172,7 +172,7 @@ class MultipleChoiceQuestionViewController_VisualFormat: UIViewController {
         instans.layer.cornerRadius = 5.0
     }
     
-    func addConstraintUseAnchor(){
+    func addConstraint(){
         var constraints:[NSLayoutConstraint] = []
         let views = ["cameraButton1": cameraButton1, "questionTextView": questionTextView, "questionCollectionView":questionCollectionView, "plusButton": plusButton, "tableView": tableView, "cameraButton2":cameraButton2, "explanationTextView":explanationTextView, "explanationCollectionView":explanationCollectionView]
 

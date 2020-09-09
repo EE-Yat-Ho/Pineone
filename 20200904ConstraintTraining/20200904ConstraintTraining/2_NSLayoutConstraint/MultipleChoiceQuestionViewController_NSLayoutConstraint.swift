@@ -146,8 +146,8 @@ class MultipleChoiceQuestionViewController_NSLayoutConstraint: UIViewController 
         setBorder(instans: explanationCollectionView, color: nil)
         setBorder(instans: completeButton, color: UIColor.systemBlue)
         
-        // Anchor기반 제약사항 추가 쭉
-        addConstraintUseAnchor()
+        // 제약사항 추가 쭉
+        addConstraint()
     }
     
     func addSubViews(parentsView: UIView, childViews: [UIView]){
@@ -172,8 +172,7 @@ class MultipleChoiceQuestionViewController_NSLayoutConstraint: UIViewController 
         instans.layer.cornerRadius = 5.0
     }
     
-    func addConstraintUseAnchor(){
-        
+    func addConstraint(){
         NSLayoutConstraint(item: scrollView, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: self.view.safeAreaLayoutGuide, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 0).isActive = true
         NSLayoutConstraint(item: scrollView, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal,
@@ -209,10 +208,6 @@ class MultipleChoiceQuestionViewController_NSLayoutConstraint: UIViewController 
                            toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 30).isActive = true
         NSLayoutConstraint(item: cameraButton1, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 30).isActive = true
-//        cameraButton1.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -30).isActive = true
-//        cameraButton1.topAnchor.constraint(equalTo: subView.topAnchor, constant: 50).isActive = true
-//        cameraButton1.widthAnchor.constraint(equalToConstant: 30.0).isActive = true
-//        cameraButton1.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
         
         NSLayoutConstraint(item: questionTextView, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: subView, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 10).isActive = true
@@ -222,10 +217,6 @@ class MultipleChoiceQuestionViewController_NSLayoutConstraint: UIViewController 
                            toItem: cameraButton1, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 5).isActive = true
         NSLayoutConstraint(item: questionTextView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 130).isActive = true
-//        questionTextView.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 10).isActive = true
-//        questionTextView.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -10).isActive = true
-//        questionTextView.topAnchor.constraint(equalTo: cameraButton1.bottomAnchor, constant: 5).isActive = true
-//        questionTextView.heightAnchor.constraint(equalToConstant: 130).isActive = true
         
         NSLayoutConstraint(item: questionCollectionView, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: subView, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 10).isActive = true
@@ -235,10 +226,6 @@ class MultipleChoiceQuestionViewController_NSLayoutConstraint: UIViewController 
                            toItem: questionTextView, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 5).isActive = true
         NSLayoutConstraint(item: questionCollectionView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 110).isActive = true
-//        questionCollectionView.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 10).isActive = true
-//        questionCollectionView.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -10).isActive = true
-//        questionCollectionView.topAnchor.constraint(equalTo: questionTextView.bottomAnchor, constant: 5).isActive = true
-//        questionCollectionView.heightAnchor.constraint(equalToConstant: 110).isActive = true
         
         NSLayoutConstraint(item: answerLabel, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: subView, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 30).isActive = true
@@ -246,9 +233,6 @@ class MultipleChoiceQuestionViewController_NSLayoutConstraint: UIViewController 
                            toItem: questionCollectionView, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 10).isActive = true
         NSLayoutConstraint(item: answerLabel, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 20).isActive = true
-//        answerLabel.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 30).isActive = true
-//        answerLabel.topAnchor.constraint(equalTo: questionCollectionView.bottomAnchor, constant: 10).isActive = true
-//        answerLabel.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
         
         NSLayoutConstraint(item: plusButton, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: subView, attribute: NSLayoutConstraint.Attribute.trailing, multiplier: 1, constant: -30).isActive = true
@@ -258,10 +242,6 @@ class MultipleChoiceQuestionViewController_NSLayoutConstraint: UIViewController 
                            toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 30).isActive = true
         NSLayoutConstraint(item: plusButton, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 30).isActive = true
-//        plusButton.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -30).isActive = true
-//        plusButton.topAnchor.constraint(equalTo: questionCollectionView.bottomAnchor, constant: 5).isActive = true
-//        plusButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
-//        plusButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
         
         NSLayoutConstraint(item: tableView, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: subView, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 10).isActive = true
@@ -271,10 +251,6 @@ class MultipleChoiceQuestionViewController_NSLayoutConstraint: UIViewController 
                            toItem: plusButton, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 5).isActive = true
         NSLayoutConstraint(item: tableView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 217.5).isActive = true
-//        tableView.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 10).isActive = true
-//        tableView.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -10).isActive = true
-//        tableView.topAnchor.constraint(equalTo: plusButton.bottomAnchor, constant: 5).isActive = true
-//        tableView.heightAnchor.constraint(equalToConstant: 217.5).isActive = true
         
         NSLayoutConstraint(item: explanationLabel, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: subView, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 30).isActive = true
@@ -282,9 +258,6 @@ class MultipleChoiceQuestionViewController_NSLayoutConstraint: UIViewController 
                            toItem: tableView, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 10).isActive = true
         NSLayoutConstraint(item: explanationLabel, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 20).isActive = true
-//        explanationLabel.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 30).isActive = true
-//        explanationLabel.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 10).isActive = true
-//        explanationLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         NSLayoutConstraint(item: cameraButton2, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: subView, attribute: NSLayoutConstraint.Attribute.trailing, multiplier: 1, constant: -30).isActive = true
@@ -294,10 +267,6 @@ class MultipleChoiceQuestionViewController_NSLayoutConstraint: UIViewController 
                            toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 30).isActive = true
         NSLayoutConstraint(item: cameraButton2, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 30).isActive = true
-//        cameraButton2.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -30).isActive = true
-//        cameraButton2.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 5).isActive = true
-//        cameraButton2.heightAnchor.constraint(equalToConstant: 30).isActive = true
-//        cameraButton2.widthAnchor.constraint(equalToConstant: 30).isActive = true
     
         NSLayoutConstraint(item: explanationTextView, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: subView, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 10).isActive = true
@@ -307,10 +276,6 @@ class MultipleChoiceQuestionViewController_NSLayoutConstraint: UIViewController 
                            toItem: cameraButton2, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 5).isActive = true
         NSLayoutConstraint(item: explanationTextView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 130).isActive = true
-//        explanationTextView.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 10).isActive = true
-//        explanationTextView.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -10).isActive = true
-//        explanationTextView.topAnchor.constraint(equalTo: cameraButton2.bottomAnchor, constant: 5).isActive = true
-//        explanationTextView.heightAnchor.constraint(equalToConstant: 130).isActive = true
         
         NSLayoutConstraint(item: explanationCollectionView, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: subView, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 10).isActive = true
@@ -322,11 +287,6 @@ class MultipleChoiceQuestionViewController_NSLayoutConstraint: UIViewController 
                            toItem: subView, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: -100).isActive = true
         NSLayoutConstraint(item: explanationCollectionView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute , multiplier: 1, constant: 110).isActive = true
-//        explanationCollectionView.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 10).isActive = true
-//        explanationCollectionView.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -10).isActive = true
-//        explanationCollectionView.topAnchor.constraint(equalTo: explanationTextView.bottomAnchor, constant: 5).isActive = true
-//        explanationCollectionView.heightAnchor.constraint(equalToConstant: 110).isActive = true
-//        explanationCollectionView.bottomAnchor.constraint(equalTo: subView.bottomAnchor, constant: -100).isActive = true
         
         NSLayoutConstraint(item: completeButton, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: self.view, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 10).isActive = true
@@ -336,10 +296,6 @@ class MultipleChoiceQuestionViewController_NSLayoutConstraint: UIViewController 
                            toItem: self.view, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: -40).isActive = true
         NSLayoutConstraint(item: completeButton, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal,
                            toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 60).isActive = true
-//        completeButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10).isActive = true
-//        completeButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -10).isActive = true
-//        completeButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20).isActive = true
-//        completeButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
 }
 
