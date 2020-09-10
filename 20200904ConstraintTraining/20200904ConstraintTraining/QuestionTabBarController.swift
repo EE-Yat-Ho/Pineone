@@ -22,7 +22,6 @@ class QuestionTabBarController: UITabBarController, UITabBarControllerDelegate {
         NVC_height = (self.navigationController?.navigationBar.frame.size.height)!
         let fontAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18.0)]
         UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
-        
         if UIDevice.current.orientation.isLandscape == false { // 여기서 한거만 먹히네..흠..
             UITabBarItem.appearance().titlePositionAdjustment.vertical = (18 - NVC_height!) / 2
         } else {
@@ -38,8 +37,6 @@ class QuestionTabBarController: UITabBarController, UITabBarControllerDelegate {
         case 4 :
             item1 = MultipleChoiceQuestionViewController_NSLayout_VisualFormat()
         case 5 :
-            item1 = MultipleChoiceQuestionViewController_Anchor()
-        case 6 :
             item1 = MultipleChoiceQuestionViewController_Anchor()
         default:
             print("VCNumber Error!")

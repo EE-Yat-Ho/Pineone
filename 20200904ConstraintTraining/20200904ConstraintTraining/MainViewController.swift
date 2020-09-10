@@ -38,7 +38,5 @@ class MainViewController: UIViewController {
         questionTabBarController.VCNumber = 5
         self.navigationController?.pushViewController(questionTabBarController, animated: true)
     }
-    @IBAction func intrinsicButtonClick(_ sender: Any) {
-    }
 }
 

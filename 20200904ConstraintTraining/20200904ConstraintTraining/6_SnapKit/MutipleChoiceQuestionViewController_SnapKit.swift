@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class MultipleChoiceQuestionViewController_Anchor: UIViewController {
+class MultipleChoiceQuestionViewController_SnapKit: UIViewController {
     var inSelfViewViews: [UIView] = []
     var inScrollViewViews: [UIView] = []
     var inSubViewViews: [UIView] = []
@@ -242,7 +242,7 @@ class MultipleChoiceQuestionViewController_Anchor: UIViewController {
     }
 }
 
-extension MultipleChoiceQuestionViewController_Anchor: UICollectionViewDelegate, UICollectionViewDataSource {
+extension MultipleChoiceQuestionViewController_SnapKit: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
@@ -274,7 +274,7 @@ extension MultipleChoiceQuestionViewController_Anchor: UICollectionViewDelegate,
     
 }
 
-extension MultipleChoiceQuestionViewController_Anchor: UITableViewDelegate, UITableViewDataSource {
+extension MultipleChoiceQuestionViewController_SnapKit: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }

@@ -19,11 +19,23 @@ class QuestionTabBarController_StoryBoard: UITabBarController {
         super.viewDidLoad()
         let fontAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18.0)]
         UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
-        UITabBarItem.appearance().titlePositionAdjustment.vertical = 9 - NVC_height! / 2
+        if UIDevice.current.orientation.isLandscape == false { // 여기서 한거만 먹히네..흠..
+            UITabBarItem.appearance().titlePositionAdjustment.vertical = (18 - NVC_height!) / 2
+        } else {
+            UITabBarItem.appearance().titlePositionAdjustment.vertical = 0
+        }
     }
+
     override func viewDidLayoutSubviews() {
-        // 탭바 상단에 위치
-        tabBar.frame = CGRect(x: 0, y: NVC_height! * 2, width: tabBar.frame.size.width, height: NVC_height!)
-        super.viewDidLayoutSubviews()
-    }
+
+         if UIDevice.current.orientation.isLandscape == false {
+             self.tabBar.frame = CGRect(x: 0, y: self.NVC_height! * 2, width: self.tabBar.frame.size.width, height: self.NVC_height!)
+             UITabBarItem.appearance().titlePositionAdjustment.vertical = (18 - self.NVC_height!) / 2
+         } else {
+             self.tabBar.frame = CGRect(x: 0, y: self.NVC_height!, width: self.tabBar.frame.size.width, height: self.NVC_height!)
+             UITabBarItem.appearance().titlePositionAdjustment.vertical = 0
+         }
+    
+         super.viewDidLayoutSubviews()
+     }
 }

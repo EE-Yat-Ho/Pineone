@@ -14,11 +14,13 @@ class ViewController: UIViewController {
         parentsView.backgroundColor = UIColor.green
         return parentsView
     }()
-//    let childView: UIView = {
-//        let childView = UIView()
-//        childView.backgroundColor = UIColor.red
-//        return childView
-//    }()
+let childView: UIView = {
+    let childView = UIView()
+    childView.backgroundColor = UIColor.red
+    childView.frame = CGRect(x: 50, y: 50, width: 50, height: 50)
+    childView.autoresizingMask = UIView.AutoresizingMask(rawValue: 63)
+    return childView
+}()
 //    var parentsViewHeightConstraint: NSLayoutConstraint?
 //    var parentsViewWidthConstraint: NSLayoutConstraint?
 //
@@ -53,11 +55,11 @@ class ViewController: UIViewController {
         
         //childView.translatesAutoresizingMaskIntoConstraints = false
         
-        someView.translatesAutoresizingMaskIntoConstraints = false
-        someView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
-        someView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
-        someView.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
-        someView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+someView.translatesAutoresizingMaskIntoConstraints = false
+someView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
+someView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
+someView.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
+someView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         
         
 //        parentsViewSizeUpButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true

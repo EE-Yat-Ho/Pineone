@@ -24,6 +24,7 @@
 		2A9403BA250726EE00D539FC /* MutipleChoiceQuestionViewController_VisualFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9403B9250726EE00D539FC /* MutipleChoiceQuestionViewController_VisualFormat.swift */; };
 		2A9403BC2507641000D539FC /* MultipleChoiceQuestionViewController_NSLayout_VisualFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9403BB2507641000D539FC /* MultipleChoiceQuestionViewController_NSLayout_VisualFormat.swift */; };
 		2A9403BE2507665800D539FC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A9403BD2507665800D539FC /* Storyboard.storyboard */; };
+		2ABC8F84250A23ED008B39C2 /* MutipleChoiceQuestionViewController_SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABC8F83250A23ED008B39C2 /* MutipleChoiceQuestionViewController_SnapKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		2A9403B9250726EE00D539FC /* MutipleChoiceQuestionViewController_VisualFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutipleChoiceQuestionViewController_VisualFormat.swift; sourceTree = "<group>"; };
 		2A9403BB2507641000D539FC /* MultipleChoiceQuestionViewController_NSLayout_VisualFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuestionViewController_NSLayout_VisualFormat.swift; sourceTree = "<group>"; };
 		2A9403BD2507665800D539FC /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		2ABC8F83250A23ED008B39C2 /* MutipleChoiceQuestionViewController_SnapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutipleChoiceQuestionViewController_SnapKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +94,7 @@
 				2A9403B025062A1100D539FC /* 3_VisualFormatLanguege */,
 				2A9403B125062A2E00D539FC /* 4_NSLayout+VisualFormat */,
 				2A30C2592502286D00BEAC9E /* 5_Anchor */,
-				2A9403B225062A6200D539FC /* 6_intrinsicContentSize */,
+				2A9403B225062A6200D539FC /* 6_SnapKit */,
 				2A30C2372501F35400BEAC9E /* Products */,
 			);
 			path = 20200904ConstraintTraining;
@@ -142,11 +144,12 @@
 			path = "4_NSLayout+VisualFormat";
 			sourceTree = "<group>";
 		};
-		2A9403B225062A6200D539FC /* 6_intrinsicContentSize */ = {
+		2A9403B225062A6200D539FC /* 6_SnapKit */ = {
 			isa = PBXGroup;
 			children = (
+				2ABC8F83250A23ED008B39C2 /* MutipleChoiceQuestionViewController_SnapKit.swift */,
 			);
-			path = 6_intrinsicContentSize;
+			path = 6_SnapKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +235,7 @@
 				2A30C25625021B4F00BEAC9E /* CollectionViewCell.swift in Sources */,
 				2A30C2442501F35400BEAC9E /* _0200904ConstraintTraining.xcdatamodeld in Sources */,
 				2A30C23C2501F35400BEAC9E /* SceneDelegate.swift in Sources */,
+				2ABC8F84250A23ED008B39C2 /* MutipleChoiceQuestionViewController_SnapKit.swift in Sources */,
 				2A9403B6250707EE00D539FC /* QuestionTabBarController.swift in Sources */,
 				2A30C2512501F7A500BEAC9E /* QuestionTabBarController_StoryBoard.swift in Sources */,
 			);

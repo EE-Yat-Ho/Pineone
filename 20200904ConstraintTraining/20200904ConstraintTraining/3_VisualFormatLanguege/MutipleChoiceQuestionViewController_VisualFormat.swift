@@ -202,7 +202,14 @@ class MultipleChoiceQuestionViewController_VisualFormat: UIViewController {
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[explanationTextView]-10-|", options: [], metrics: nil, views: ["explanationTextView": explanationTextView]))
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[explanationCollectionView]-10-|", options: [], metrics: nil, views: ["explanationCollectionView": explanationCollectionView]))
         
-        constraints.append(contentsOf:NSLayoutConstraint.constraints(withVisualFormat: "V:|-50-[cameraButton1(30)]-5-[questionTextView(130)]-5-[questionCollectionView(110)]-5-[plusButton(30)]-5-[tableView(217.5)]-5-[cameraButton2(30)]-5-[explanationTextView(130)]-5-[explanationCollectionView(110)]-100-|", options: [], metrics: nil, views: views))
+        constraints.append(
+            contentsOf:NSLayoutConstraint.constraints(
+                withVisualFormat:"V:|-50-[cameraButton1(30)]-5-[questionTextView(130)]-5-[questionCollectionView(110)]-5-[plusButton(30)]-5-[tableView(217.5)]-5-[cameraButton2(30)]-5-[explanationTextView(130)]-5-[explanationCollectionView(110)]-100-|",
+                options: [],
+                metrics: nil,
+                views: views
+            )
+        )
         
         constraints.append(contentsOf:NSLayoutConstraint.constraints(withVisualFormat: "V:[completeButton(60)]-40-|", options: [], metrics: nil, views: ["completeButton": completeButton]))
         constraints.append(contentsOf:NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[completeButton]-10-|", options: [], metrics: nil, views: ["completeButton": completeButton]))

@@ -215,9 +215,15 @@ class MultipleChoiceQuestionViewController_NSLayout_VisualFormat: UIViewControll
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[explanationCollectionView]-10-|", options: [], metrics: nil, views: ["explanationCollectionView": explanationCollectionView]))
         
         constraints.append(contentsOf:NSLayoutConstraint.constraints(withVisualFormat: "V:|-50-[cameraButton1(30)]-5-[questionTextView(130)]-5-[questionCollectionView(110)]-5-[plusButton(30)]-5-[tableView(217.5)]-5-[cameraButton2(30)]-5-[explanationTextView(130)]-5-[explanationCollectionView(110)]-100-|", options: [], metrics: nil, views: views))
-        
-        constraints.append(contentsOf:NSLayoutConstraint.constraints(withVisualFormat: "V:[completeButton(60)]-40-|", options: [], metrics: nil, views: ["completeButton": completeButton]))
-        constraints.append(contentsOf:NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[completeButton]-10-|", options: [], metrics: nil, views: ["completeButton": completeButton]))
+
+        NSLayoutConstraint(item: completeButton, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal,
+                           toItem: self.view.safeAreaLayoutGuide, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 10).isActive = true
+        NSLayoutConstraint(item: completeButton, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal,
+                           toItem: self.view.safeAreaLayoutGuide, attribute: NSLayoutConstraint.Attribute.trailing, multiplier: 1, constant: -10).isActive = true
+        NSLayoutConstraint(item: completeButton, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal,
+                           toItem: self.view.safeAreaLayoutGuide, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: completeButton, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal,
+                           toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 60).isActive = true
         
         NSLayoutConstraint.activate(constraints)
     }

@@ -97,19 +97,6 @@
                                     <action selector="AnchorButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5eF-jE-56b"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYp-LK-C6w">
-                                <rect key="frame" x="30" y="418" width="354" height="30"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="F3I-qv-Sw7"/>
-                                </constraints>
-                                <state key="normal" title="intrinsic">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="intrinsicButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dEI-ZO-Qzz"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -122,15 +109,12 @@
                             <constraint firstItem="Jfh-L5-2Ba" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="bP0-I3-i9u"/>
                             <constraint firstItem="ePB-Vt-XpW" firstAttribute="top" secondItem="Jfh-L5-2Ba" secondAttribute="bottom" constant="30" id="ceq-2N-UZD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ePB-Vt-XpW" secondAttribute="trailing" constant="30" id="d2O-uc-7ir"/>
-                            <constraint firstItem="UYp-LK-C6w" firstAttribute="top" secondItem="rmp-ht-9XK" secondAttribute="bottom" constant="30" id="d8K-u6-oI0"/>
                             <constraint firstItem="jVN-H5-I3r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="d8h-vd-gLd"/>
                             <constraint firstItem="rmp-ht-9XK" firstAttribute="top" secondItem="jVN-H5-I3r" secondAttribute="bottom" constant="30" id="fo3-UJ-yoj"/>
                             <constraint firstItem="ePB-Vt-XpW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="k5q-cd-0Gq"/>
-                            <constraint firstItem="UYp-LK-C6w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="qsM-or-76g"/>
                             <constraint firstItem="jVN-H5-I3r" firstAttribute="top" secondItem="ePB-Vt-XpW" secondAttribute="bottom" constant="30" id="u8P-Wn-xiY"/>
                             <constraint firstItem="w1h-CN-C0Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="vS9-yt-y4f"/>
                             <constraint firstItem="Jfh-L5-2Ba" firstAttribute="top" secondItem="w1h-CN-C0Z" secondAttribute="bottom" constant="30" id="wn8-sd-UC0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UYp-LK-C6w" secondAttribute="trailing" constant="30" id="ztW-Q8-3s1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
