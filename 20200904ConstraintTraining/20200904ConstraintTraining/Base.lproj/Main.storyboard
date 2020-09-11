@@ -97,6 +97,19 @@
                                     <action selector="AnchorButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5eF-jE-56b"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHh-7a-FAu">
+                                <rect key="frame" x="30" y="418" width="354" height="30"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Rtv-Xt-uTW"/>
+                                </constraints>
+                                <state key="normal" title="SnapKit">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="SnapKitButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yIG-BL-agx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -104,6 +117,7 @@
                             <constraint firstItem="w1h-CN-C0Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="4ad-pA-RUS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rmp-ht-9XK" secondAttribute="trailing" constant="30" id="KhA-K9-c04"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jVN-H5-I3r" secondAttribute="trailing" constant="30" id="MNB-vO-Pgr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IHh-7a-FAu" secondAttribute="trailing" constant="30" id="Ral-1R-ldr"/>
                             <constraint firstItem="rmp-ht-9XK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="ZR4-AR-Qna"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w1h-CN-C0Z" secondAttribute="trailing" constant="30" id="a9E-5i-qTj"/>
                             <constraint firstItem="Jfh-L5-2Ba" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="bP0-I3-i9u"/>
@@ -111,10 +125,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ePB-Vt-XpW" secondAttribute="trailing" constant="30" id="d2O-uc-7ir"/>
                             <constraint firstItem="jVN-H5-I3r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="d8h-vd-gLd"/>
                             <constraint firstItem="rmp-ht-9XK" firstAttribute="top" secondItem="jVN-H5-I3r" secondAttribute="bottom" constant="30" id="fo3-UJ-yoj"/>
+                            <constraint firstItem="IHh-7a-FAu" firstAttribute="top" secondItem="rmp-ht-9XK" secondAttribute="bottom" constant="30" id="h9G-jt-MEA"/>
                             <constraint firstItem="ePB-Vt-XpW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="k5q-cd-0Gq"/>
                             <constraint firstItem="jVN-H5-I3r" firstAttribute="top" secondItem="ePB-Vt-XpW" secondAttribute="bottom" constant="30" id="u8P-Wn-xiY"/>
                             <constraint firstItem="w1h-CN-C0Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="vS9-yt-y4f"/>
                             <constraint firstItem="Jfh-L5-2Ba" firstAttribute="top" secondItem="w1h-CN-C0Z" secondAttribute="bottom" constant="30" id="wn8-sd-UC0"/>
+                            <constraint firstItem="IHh-7a-FAu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="zDb-mC-zD9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

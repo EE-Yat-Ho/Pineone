@@ -19,14 +19,10 @@ class QuestionTabBarController: UITabBarController, UITabBarControllerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NVC_height = (self.navigationController?.navigationBar.frame.size.height)!
+        NVC_height = 50
         let fontAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18.0)]
         UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
-        if UIDevice.current.orientation.isLandscape == false { // 여기서 한거만 먹히네..흠..
-            UITabBarItem.appearance().titlePositionAdjustment.vertical = (18 - NVC_height!) / 2
-        } else {
-            UITabBarItem.appearance().titlePositionAdjustment.vertical = 0
-        }
+        UITabBarItem.appearance().titlePositionAdjustment.vertical = -8.5
         // 객관식 만들기 화면 설정
         var item1 = UIViewController()
         switch VCNumber {
@@ -38,11 +34,12 @@ class QuestionTabBarController: UITabBarController, UITabBarControllerDelegate {
             item1 = MultipleChoiceQuestionViewController_NSLayout_VisualFormat()
         case 5 :
             item1 = MultipleChoiceQuestionViewController_Anchor()
+        case 6 :
+            item1 = MultipleChoiceQuestionViewController_SnapKit()
         default:
             print("VCNumber Error!")
         }
         item1.tabBarItem.title = "객관식 만들기"
-        
         
         // 주관식 만들기 화면 설정
         let item2 = UIViewController()
@@ -54,15 +51,11 @@ class QuestionTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     override func viewDidLayoutSubviews() {
-
         if UIDevice.current.orientation.isLandscape == false {
-            self.tabBar.frame = CGRect(x: 0, y: self.NVC_height! * 2, width: self.tabBar.frame.size.width, height: self.NVC_height!)
-            UITabBarItem.appearance().titlePositionAdjustment.vertical = (18 - self.NVC_height!) / 2
+            self.tabBar.frame = CGRect(x: 0, y: self.view.safeAreaInsets.top - 15, width: self.tabBar.frame.size.width, height: self.NVC_height!)
         } else {
-            self.tabBar.frame = CGRect(x: 0, y: self.NVC_height!, width: self.tabBar.frame.size.width, height: self.NVC_height!)
-            UITabBarItem.appearance().titlePositionAdjustment.vertical = 0
+            self.tabBar.frame = CGRect(x: 0, y: self.view.safeAreaInsets.top, width: self.tabBar.frame.size.width, height: self.NVC_height!)
         }
-   
         super.viewDidLayoutSubviews()
     }
 }

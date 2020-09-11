@@ -105,6 +105,7 @@ class MultipleChoiceQuestionViewController_NSLayoutConstraint: UIViewController 
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.rowHeight = 43.5
         
         makeViewArrays() // 어디에 들어가느냐에 따라나눈 뷰 배열 만들기
         setLayout()

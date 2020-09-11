@@ -105,6 +105,7 @@ class MultipleChoiceQuestionViewController_VisualFormat: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.rowHeight = 43.5
         
         makeViewArrays() // 어디에 들어가느냐에 따라나눈 뷰 배열 만들기
         setLayout()
@@ -176,36 +177,35 @@ class MultipleChoiceQuestionViewController_VisualFormat: UIViewController {
         var constraints:[NSLayoutConstraint] = []
         let views = ["cameraButton1": cameraButton1, "questionTextView": questionTextView, "questionCollectionView":questionCollectionView, "plusButton": plusButton, "tableView": tableView, "cameraButton2":cameraButton2, "explanationTextView":explanationTextView, "explanationCollectionView":explanationCollectionView]
 
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|[scrollView]|", options: [], metrics: nil, views: ["scrollView": scrollView]))
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|[scrollView]|", options: [], metrics: nil, views: ["scrollView": scrollView]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|[scrollView]|", metrics: nil, views: ["scrollView": scrollView]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|[scrollView]|", metrics: nil, views: ["scrollView": scrollView]))
         
         let windowWidth = UIApplication.shared.windows.first?.frame.width ?? 0
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|[subView]|", options: [], metrics: nil, views: ["subView": subView]))
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|[subView]|", options: [], metrics: nil, views: ["subView": subView]))
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:[subView(\(windowWidth))]", options: [], metrics: nil, views: ["subView": subView]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|[subView]|", metrics: nil, views: ["subView": subView]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:[subView(\(windowWidth))]", metrics: nil, views: ["subView": subView]))
         
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-55-[questionLabel(20)]", options: [], metrics: nil, views: ["questionLabel": questionLabel]))
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[questionCollectionView]-10-[answerLabel(20)]", options: [], metrics: nil, views: ["questionCollectionView":questionCollectionView, "answerLabel": answerLabel]))
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[tableView]-10-[explanationLabel(20)]", options: [], metrics: nil, views: ["tableView":tableView, "explanationLabel": explanationLabel]))
         
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-30-[questionLabel]", options: [], metrics: nil, views: ["questionLabel": questionLabel]))
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-30-[answerLabel]", options: [], metrics: nil, views: ["answerLabel": answerLabel]))
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-30-[explanationLabel]", options: [], metrics: nil, views: ["explanationLabel": explanationLabel]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-55-[questionLabel(20)]", metrics: nil, views: ["questionLabel": questionLabel]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[questionCollectionView]-10-[answerLabel(20)]", metrics: nil, views: ["questionCollectionView":questionCollectionView, "answerLabel": answerLabel]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[tableView]-10-[explanationLabel(20)]", metrics: nil, views: ["tableView":tableView, "explanationLabel": explanationLabel]))
         
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:[cameraButton1(30)]-30-|", options: [], metrics: nil, views: ["cameraButton1": cameraButton1]))
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:[plusButton(30)]-30-|", options: [], metrics: nil, views: ["plusButton": plusButton]))
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:[cameraButton2(30)]-30-|", options: [], metrics: nil, views: ["cameraButton2": cameraButton2]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-30-[questionLabel]", metrics: nil, views: ["questionLabel": questionLabel]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-30-[answerLabel]", metrics: nil, views: ["answerLabel": answerLabel]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-30-[explanationLabel]", metrics: nil, views: ["explanationLabel": explanationLabel]))
         
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[questionTextView]-10-|", options: [], metrics: nil, views: ["questionTextView": questionTextView]))
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[questionCollectionView]-10-|", options: [], metrics: nil, views: ["questionCollectionView": questionCollectionView]))
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[tableView]-10-|", options: [], metrics: nil, views: ["tableView": tableView]))
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[explanationTextView]-10-|", options: [], metrics: nil, views: ["explanationTextView": explanationTextView]))
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[explanationCollectionView]-10-|", options: [], metrics: nil, views: ["explanationCollectionView": explanationCollectionView]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:[cameraButton1(30)]-30-|", metrics: nil, views: ["cameraButton1": cameraButton1]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:[plusButton(30)]-30-|", metrics: nil, views: ["plusButton": plusButton]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:[cameraButton2(30)]-30-|", metrics: nil, views: ["cameraButton2": cameraButton2]))
+        
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[questionTextView]-10-|", metrics: nil, views: ["questionTextView": questionTextView]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[questionCollectionView]-10-|", metrics: nil, views: ["questionCollectionView": questionCollectionView]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[tableView]-10-|", metrics: nil, views: ["tableView": tableView]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[explanationTextView]-10-|", metrics: nil, views: ["explanationTextView": explanationTextView]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[explanationCollectionView]-10-|", metrics: nil, views: ["explanationCollectionView": explanationCollectionView]))
         
         constraints.append(
             contentsOf:NSLayoutConstraint.constraints(
                 withVisualFormat:"V:|-50-[cameraButton1(30)]-5-[questionTextView(130)]-5-[questionCollectionView(110)]-5-[plusButton(30)]-5-[tableView(217.5)]-5-[cameraButton2(30)]-5-[explanationTextView(130)]-5-[explanationCollectionView(110)]-100-|",
-                options: [],
                 metrics: nil,
                 views: views
             )

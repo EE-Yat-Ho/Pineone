@@ -38,5 +38,10 @@ class MainViewController: UIViewController {
         questionTabBarController.VCNumber = 5
         self.navigationController?.pushViewController(questionTabBarController, animated: true)
     }
+    @IBAction func SnapKitButtonClick(_ sender: Any) {
+       let questionTabBarController = QuestionTabBarController()
+        questionTabBarController.VCNumber = 6
+        self.navigationController?.pushViewController(questionTabBarController, animated: true)
+    }
 }
 

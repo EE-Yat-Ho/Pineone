@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-
+import SnapKit
 
 class MultipleChoiceQuestionViewController_SnapKit: UIViewController {
     var inSelfViewViews: [UIView] = []
@@ -105,6 +104,7 @@ class MultipleChoiceQuestionViewController_SnapKit: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.rowHeight = 43.5
         
         makeViewArrays() // 어디에 들어가느냐에 따라나눈 뷰 배열 만들기
         setLayout()
@@ -136,7 +136,7 @@ class MultipleChoiceQuestionViewController_SnapKit: UIViewController {
         addSubViews(parentsView: subView, childViews: inSubViewViews)
         
         // 모든 뷰 오토 리사이징 끄기
-        autoResizingFalse(views: inSelfViewViews + inScrollViewViews + inSubViewViews)
+        //autoResizingFalse(views: inSelfViewViews + inScrollViewViews + inSubViewViews)
         
         // 특정 뷰 테두리 그리기
         setBorder(instans: questionTextView, color: nil)
@@ -156,11 +156,11 @@ class MultipleChoiceQuestionViewController_SnapKit: UIViewController {
         }
     }
     
-    func autoResizingFalse(views: [UIView]){
-        for someView in views {
-            someView.translatesAutoresizingMaskIntoConstraints = false
-        }
-    }
+//    func autoResizingFalse(views: [UIView]){
+//        for someView in views {
+//            someView.translatesAutoresizingMaskIntoConstraints = false
+//        }
+//    }
     
     func setBorder(instans: AnyObject, color: UIColor?){
         if color == nil {
@@ -173,72 +173,80 @@ class MultipleChoiceQuestionViewController_SnapKit: UIViewController {
     }
     
     func addConstraint(){
-        scrollView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor).isActive = true
-        scrollView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor).isActive = true
-        scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        scrollView.snp.makeConstraints{ $0.edges.equalTo(self.view.safeAreaLayoutGuide) }
         
-        subView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor).isActive = true
-        subView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor).isActive = true
-        subView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor).isActive = true
+        subView.snp.makeConstraints{
+            $0.edges.equalTo(scrollView.contentLayoutGuide)
+            $0.width.equalTo(scrollView.frameLayoutGuide.snp.width) }
         
         questionLabel.leadingAnchor.constraint(equalTo: subView.leadingAnchor, constant: 30).isActive = true
         questionLabel.topAnchor.constraint(equalTo: subView.topAnchor, constant: 55).isActive = true
         questionLabel.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
         
-        cameraButton1.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -30).isActive = true
-        cameraButton1.topAnchor.constraint(equalTo: subView.topAnchor, constant: 50).isActive = true
-        cameraButton1.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
-        cameraButton1.widthAnchor.constraint(equalToConstant: 30.0).isActive = true
+        questionLabel.snp.makeConstraints{
+            $0.leading.equalTo(subView.snp.leading).offset(30)
+            $0.top.equalTo(subView.snp.top).offset(55)
+            $0.height.equalTo(20) }
         
-        questionTextView.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 10).isActive = true
-        questionTextView.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -10).isActive = true
-        questionTextView.topAnchor.constraint(equalTo: cameraButton1.bottomAnchor, constant: 5).isActive = true
-        questionTextView.heightAnchor.constraint(equalToConstant: 130).isActive = true
+        cameraButton1.snp.makeConstraints{
+            $0.trailing.equalTo(subView.snp.trailing).offset(-30)
+            $0.top.equalTo(subView.snp.top).offset(50)
+            $0.height.equalTo(30)
+            $0.width.equalTo(30)
+        }
         
-        questionCollectionView.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 10).isActive = true
-        questionCollectionView.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -10).isActive = true
-        questionCollectionView.topAnchor.constraint(equalTo: questionTextView.bottomAnchor, constant: 5).isActive = true
-        questionCollectionView.heightAnchor.constraint(equalToConstant: 110).isActive = true
+        questionTextView.snp.makeConstraints{
+            $0.leading.trailing.equalToSuperview().inset(10)
+            $0.top.equalTo(cameraButton1.snp.bottom).offset(5)
+            $0.height.equalTo(130) }
         
-        answerLabel.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 30).isActive = true
-        answerLabel.topAnchor.constraint(equalTo: questionCollectionView.bottomAnchor, constant: 10).isActive = true
-        answerLabel.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
+        questionCollectionView.snp.makeConstraints{
+            $0.leading.trailing.equalToSuperview().inset(10)
+            $0.top.equalTo(questionTextView.snp.bottom).offset(5)
+            $0.height.equalTo(110) }
         
-        plusButton.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -30).isActive = true
-        plusButton.topAnchor.constraint(equalTo: questionCollectionView.bottomAnchor, constant: 5).isActive = true
-        plusButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        plusButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        answerLabel.snp.makeConstraints{
+            $0.leading.equalTo(subView.snp.leading).offset(30)
+            $0.top.equalTo(questionCollectionView.snp.bottom).offset(10)
+            $0.height.equalTo(20) }
         
-        tableView.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 10).isActive = true
-        tableView.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -10).isActive = true
-        tableView.topAnchor.constraint(equalTo: plusButton.bottomAnchor, constant: 5).isActive = true
-        tableView.heightAnchor.constraint(equalToConstant: 217.5).isActive = true
+        plusButton.snp.makeConstraints{
+            $0.trailing.equalTo(subView.snp.trailing).offset(-30)
+            $0.top.equalTo(questionCollectionView.snp.bottom).offset(5)
+            $0.height.equalTo(30)
+            $0.width.equalTo(30) }
         
-        explanationLabel.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 30).isActive = true
-        explanationLabel.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 10).isActive = true
-        explanationLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        tableView.snp.makeConstraints{
+            $0.leading.trailing.equalToSuperview().inset(10)
+            $0.top.equalTo(plusButton.snp.bottom).offset(5)
+            $0.height.equalTo(217.5) }
         
-        cameraButton2.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -30).isActive = true
-        cameraButton2.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 5).isActive = true
-        cameraButton2.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        cameraButton2.widthAnchor.constraint(equalToConstant: 30).isActive = true
-    
-        explanationTextView.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 10).isActive = true
-        explanationTextView.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -10).isActive = true
-        explanationTextView.topAnchor.constraint(equalTo: cameraButton2.bottomAnchor, constant: 5).isActive = true
-        explanationTextView.heightAnchor.constraint(equalToConstant: 130).isActive = true
+        explanationLabel.snp.makeConstraints{
+            $0.leading.equalTo(subView.snp.leading).offset(30)
+            $0.top.equalTo(tableView.snp.bottom).offset(10)
+            $0.height.equalTo(20) }
         
-        explanationCollectionView.leftAnchor.constraint(equalTo: subView.leftAnchor, constant: 10).isActive = true
-        explanationCollectionView.rightAnchor.constraint(equalTo: subView.rightAnchor, constant: -10).isActive = true
-        explanationCollectionView.topAnchor.constraint(equalTo: explanationTextView.bottomAnchor, constant: 5).isActive = true
-        explanationCollectionView.bottomAnchor.constraint(equalTo: subView.bottomAnchor, constant: -100).isActive = true
-        explanationCollectionView.heightAnchor.constraint(equalToConstant: 110).isActive = true
+        cameraButton2.snp.makeConstraints{
+            $0.trailing.equalTo(subView.snp.trailing).offset(-30)
+            $0.top.equalTo(tableView.snp.bottom).offset(5)
+            $0.height.equalTo(30)
+            $0.width.equalTo(30) }
         
-        completeButton.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 10).isActive = true
-        completeButton.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -10).isActive = true
-        completeButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
-        completeButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        explanationTextView.snp.makeConstraints{
+            $0.leading.trailing.equalToSuperview().inset(10)
+            $0.top.equalTo(cameraButton2.snp.bottom).offset(5)
+            $0.height.equalTo(130) }
+        
+        explanationCollectionView.snp.makeConstraints{
+            $0.leading.trailing.equalToSuperview().inset(10)
+            $0.top.equalTo(explanationTextView.snp.bottom).offset(5)
+            $0.bottom.equalTo(subView.snp.bottom).offset(-100)
+            $0.height.equalTo(110) }
+        
+        completeButton.snp.makeConstraints{
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(10)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(0)
+            $0.height.equalTo(60) }
     }
 }
 
