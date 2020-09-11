@@ -21,5 +21,73 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+<<<<<<< HEAD
+=======
+      <ContextState
+         contextName = "MultipleChoiceQuestionViewController_AutoResizingMask.addConstraintUseAnchor():MultipleChoiceQuestionViewController_AutoResizingMaskViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "scrollView.frameLayoutGuide.layoutFrame">
+            </PersistentString>
+            <PersistentString
+               value = "self.view.safeAreaInsets">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.contentLayoutGuide.layoutFrame">
+            </PersistentString>
+            <PersistentString
+               value = "self.view.safeAreaInsets.top">
+            </PersistentString>
+            <PersistentString
+               value = "self.view.safeAreaLayoutGuide.layoutFrame">
+            </PersistentString>
+            <PersistentString
+               value = "subView.frame ">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "QuestionTabBarController.viewWillAppear(_:):QuestionTabBarController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIDevice.current.orientation.isLandscape">
+            </PersistentString>
+            <PersistentString
+               value = "UITabBarItem.appearance().titlePositionAdjustment.vertical">
+            </PersistentString>
+            <PersistentString
+               value = "NVC_height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "QuestionTabBarController.viewDidAppear(_:):QuestionTabBarController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(self.navigationController?.navigationBar.frame.maxY)!">
+            </PersistentString>
+            <PersistentString
+               value = "NVCtabBar_maxY">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "QuestionTabBarController.viewDidLayoutSubviews():QuestionTabBarController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIDevice.current.orientation.isLandscape">
+            </PersistentString>
+            <PersistentString
+               value = "UITabBarItem.appearance().titlePositionAdjustment.vertical">
+            </PersistentString>
+            <PersistentString
+               value = "(self.navigationController?.navigationBar.frame.size.height)!">
+            </PersistentString>
+            <PersistentString
+               value = "NVC_height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+>>>>>>> project
    </ContextStates>
 </VariablesViewState>
