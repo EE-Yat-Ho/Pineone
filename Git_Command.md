@@ -99,3 +99,8 @@ A브랜치를 현재 Checkout된 브랜치에 Merge하며,
 Merge된 결과를 Checkout한 상태가 된다.
 project브랜치를 master에 병합하려면 master브랜치를 checkout하고,
 git merge project하고, 푸시하면 된다
+
+git 특정 파일만 merge하기
+master로 checkout 한 뒤,  
+git checkout -p project Diary 하면 다이어리만 머지할 수 있음  
+이후 커밋 푸쉬까지 해줘야함  
