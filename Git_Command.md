@@ -99,3 +99,6 @@ A브랜치를 현재 Checkout된 브랜치에 Merge하며,
 Merge된 결과를 Checkout한 상태가 된다.
 project브랜치를 master에 병합하려면 master브랜치를 checkout하고,
 git merge project하고, 푸시하면 된다
+
+deleted 파일 add하기
+git add -u

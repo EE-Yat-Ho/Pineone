@@ -1,6 +1,0 @@
-framework module Pods_20200904ConstraintTraining {
-  umbrella header "Pods-20200904ConstraintTraining-umbrella.h"
-
-  export *
-  module * { export * }
-}
