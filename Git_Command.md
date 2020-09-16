@@ -104,3 +104,6 @@ git 특정 파일만 merge하기
 master로 checkout 한 뒤,  
 git checkout -p project Diary 하면 다이어리만 머지할 수 있음  
 이후 커밋 푸쉬까지 해줘야함  
+
+deleted 파일도 add하기
+git add -u
