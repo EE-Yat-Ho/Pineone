@@ -21,8 +21,6 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
-<<<<<<< HEAD
-=======
       <ContextState
          contextName = "MultipleChoiceQuestionViewController_AutoResizingMask.addConstraintUseAnchor():MultipleChoiceQuestionViewController_AutoResizingMaskViewController.swift">
          <PersistentStrings>
@@ -88,6 +86,5 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
->>>>>>> project
    </ContextStates>
 </VariablesViewState>
