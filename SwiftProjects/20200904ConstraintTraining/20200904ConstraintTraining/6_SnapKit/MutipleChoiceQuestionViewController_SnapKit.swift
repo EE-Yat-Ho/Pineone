@@ -75,15 +75,21 @@ class MultipleChoiceQuestionViewController_SnapKit: UIViewController {
         questionCollectionView.backgroundColor = UIColor.white
         return questionCollectionView
     }()
-    let explanationCollectionView: UICollectionView = {
-        let explanationCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: UICollectionViewLayout())
-        let explanationCollectionViewFlowLayout = UICollectionViewFlowLayout()
-        explanationCollectionViewFlowLayout.itemSize = CGSize(width: 110, height: 110)
-        explanationCollectionViewFlowLayout.minimumLineSpacing = 0
-        explanationCollectionView.collectionViewLayout = explanationCollectionViewFlowLayout
+    lazy var explanationCollectionView: UICollectionView = {
+        let explanationCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: customCollectionLayout())
+        
         explanationCollectionView.backgroundColor = UIColor.white
         return explanationCollectionView
     }()
+    
+    func customCollectionLayout() -> UICollectionViewLayout{
+        
+        let explanationCollectionViewFlowLayout = UICollectionViewFlowLayout()
+        explanationCollectionViewFlowLayout.itemSize = CGSize(width: 110, height: 110)
+        explanationCollectionViewFlowLayout.minimumLineSpacing = 0
+        
+        return explanationCollectionViewFlowLayout
+    }
     
     let tableView = UITableView()
     
@@ -91,6 +97,13 @@ class MultipleChoiceQuestionViewController_SnapKit: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         
+        configure() // delegate, dataSource, register
+        makeViewArrays() // 어디에 들어가느냐에 따라나눈 뷰 배열 만들기
+        setLayout() // ㅇㅇ
+        bindData() // RsSwift 부분
+    }
+    
+    func configure() {
         questionCollectionView.delegate = self
         questionCollectionView.dataSource = self
         questionCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
@@ -105,9 +118,14 @@ class MultipleChoiceQuestionViewController_SnapKit: UIViewController {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.rowHeight = 43.5
+    }
+    
+    func setupLayout() {
         
-        makeViewArrays() // 어디에 들어가느냐에 따라나눈 뷰 배열 만들기
-        setLayout()
+    }
+    
+    func bindData() {
+        
     }
     
     func makeViewArrays(){
@@ -131,9 +149,14 @@ class MultipleChoiceQuestionViewController_SnapKit: UIViewController {
     
     func setLayout(){
         // 모든 뷰 .addSubView 진행
-        addSubViews(parentsView: self.view, childViews: inSelfViewViews)
-        addSubViews(parentsView: scrollView, childViews: inScrollViewViews)
-        addSubViews(parentsView: subView, childViews: inSubViewViews)
+        self.view.addSubviews(inSelfViewViews)
+        scrollView.addSubviews(inScrollViewViews)
+        subView.addSubviews(inSubViewViews)
+//        addSubViews(parentsView: self.view, childViews: inSelfViewViews)
+//        addSubViews(parentsView: scrollView, childViews: inScrollViewViews)
+//        addSubViews(parentsView: subView, childViews: inSubViewViews)
+        
+        
         
         // 모든 뷰 오토 리사이징 끄기
         //autoResizingFalse(views: inSelfViewViews + inScrollViewViews + inSubViewViews)
@@ -352,4 +375,13 @@ extension MultipleChoiceQuestionViewController_SnapKit: UITableViewDelegate, UIT
         
         return cell
     }
+}
+
+
+extension UIView {
+    
+    func addSubviews(_ views: [UIView]) {
+        views.forEach { self.addSubview($0) }
+    }
+
 }

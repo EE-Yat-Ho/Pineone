@@ -3,10 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A0EBF3C251490E6002C9E01 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0EBF34251490E6002C9E01 /* ViewModel.swift */; };
+		2A0EBF3D251490E6002C9E01 /* ViewBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0EBF35251490E6002C9E01 /* ViewBased.swift */; };
+		2A0EBF3E251490E6002C9E01 /* UIKitPreView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0EBF36251490E6002C9E01 /* UIKitPreView+.swift */; };
+		2A0EBF3F251490E6002C9E01 /* FilterSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0EBF38251490E6002C9E01 /* FilterSliderViewController.swift */; };
+		2A0EBF40251490E6002C9E01 /* FilterSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0EBF39251490E6002C9E01 /* FilterSliderView.swift */; };
+		2A0EBF41251490E6002C9E01 /* FilterSliderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0EBF3A251490E6002C9E01 /* FilterSliderViewModel.swift */; };
+		2A0EBF42251490E6002C9E01 /* FilterSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0EBF3B251490E6002C9E01 /* FilterSlider.swift */; };
+		2A0EBF4B25149244002C9E01 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0EBF4A25149244002C9E01 /* ViewModelType.swift */; };
+		2A0EBF4E2514928E002C9E01 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0EBF4D2514928E002C9E01 /* Color+.swift */; };
+		2A0EBF51251492C7002C9E01 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0EBF50251492C7002C9E01 /* Log.swift */; };
 		2A30C23A2501F35400BEAC9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C2392501F35400BEAC9E /* AppDelegate.swift */; };
 		2A30C23C2501F35400BEAC9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C23B2501F35400BEAC9E /* SceneDelegate.swift */; };
 		2A30C23E2501F35400BEAC9E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C23D2501F35400BEAC9E /* MainViewController.swift */; };
@@ -25,10 +35,20 @@
 		2A9403BC2507641000D539FC /* MultipleChoiceQuestionViewController_NSLayout_VisualFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9403BB2507641000D539FC /* MultipleChoiceQuestionViewController_NSLayout_VisualFormat.swift */; };
 		2A9403BE2507665800D539FC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A9403BD2507665800D539FC /* Storyboard.storyboard */; };
 		2ABC8F84250A23ED008B39C2 /* MutipleChoiceQuestionViewController_SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABC8F83250A23ED008B39C2 /* MutipleChoiceQuestionViewController_SnapKit.swift */; };
-		BEE66A94CEBF0EEA141F86D5 /* Pods_20200904ConstraintTraining.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57193059FEE30DE6A322072A /* Pods_20200904ConstraintTraining.framework */; };
+		563FBE9C5D112805F6861D8F /* Pods_20200904ConstraintTraining.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6806C2BFE74618EACC09B285 /* Pods_20200904ConstraintTraining.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A0EBF34251490E6002C9E01 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		2A0EBF35251490E6002C9E01 /* ViewBased.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewBased.swift; sourceTree = "<group>"; };
+		2A0EBF36251490E6002C9E01 /* UIKitPreView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKitPreView+.swift"; sourceTree = "<group>"; };
+		2A0EBF38251490E6002C9E01 /* FilterSliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterSliderViewController.swift; sourceTree = "<group>"; };
+		2A0EBF39251490E6002C9E01 /* FilterSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterSliderView.swift; sourceTree = "<group>"; };
+		2A0EBF3A251490E6002C9E01 /* FilterSliderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterSliderViewModel.swift; sourceTree = "<group>"; };
+		2A0EBF3B251490E6002C9E01 /* FilterSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterSlider.swift; sourceTree = "<group>"; };
+		2A0EBF4A25149244002C9E01 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		2A0EBF4D2514928E002C9E01 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		2A0EBF50251492C7002C9E01 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		2A30C2362501F35400BEAC9E /* 20200904ConstraintTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 20200904ConstraintTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A30C2392501F35400BEAC9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A30C23B2501F35400BEAC9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,9 +69,9 @@
 		2A9403BB2507641000D539FC /* MultipleChoiceQuestionViewController_NSLayout_VisualFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuestionViewController_NSLayout_VisualFormat.swift; sourceTree = "<group>"; };
 		2A9403BD2507665800D539FC /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		2ABC8F83250A23ED008B39C2 /* MutipleChoiceQuestionViewController_SnapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutipleChoiceQuestionViewController_SnapKit.swift; sourceTree = "<group>"; };
-		38D6CBC0714DAF1B12288F3D /* Pods-20200904ConstraintTraining.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20200904ConstraintTraining.debug.xcconfig"; path = "Target Support Files/Pods-20200904ConstraintTraining/Pods-20200904ConstraintTraining.debug.xcconfig"; sourceTree = "<group>"; };
-		57193059FEE30DE6A322072A /* Pods_20200904ConstraintTraining.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_20200904ConstraintTraining.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE8E0F8F794539CF99F5A17E /* Pods-20200904ConstraintTraining.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20200904ConstraintTraining.release.xcconfig"; path = "Target Support Files/Pods-20200904ConstraintTraining/Pods-20200904ConstraintTraining.release.xcconfig"; sourceTree = "<group>"; };
+		6806C2BFE74618EACC09B285 /* Pods_20200904ConstraintTraining.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_20200904ConstraintTraining.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8692FF9603908454DA82AF04 /* Pods-20200904ConstraintTraining.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20200904ConstraintTraining.release.xcconfig"; path = "Target Support Files/Pods-20200904ConstraintTraining/Pods-20200904ConstraintTraining.release.xcconfig"; sourceTree = "<group>"; };
+		D596E7EA0012D6C6F074E5AF /* Pods-20200904ConstraintTraining.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20200904ConstraintTraining.debug.xcconfig"; path = "Target Support Files/Pods-20200904ConstraintTraining/Pods-20200904ConstraintTraining.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,19 +79,52 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEE66A94CEBF0EEA141F86D5 /* Pods_20200904ConstraintTraining.framework in Frameworks */,
+				563FBE9C5D112805F6861D8F /* Pods_20200904ConstraintTraining.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A0EBF32251490E6002C9E01 /* SnapKit_RxSwift_MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				2A0EBF33251490E6002C9E01 /* Extension */,
+				2A0EBF37251490E6002C9E01 /* Main */,
+			);
+			path = SnapKit_RxSwift_MVVM;
+			sourceTree = "<group>";
+		};
+		2A0EBF33251490E6002C9E01 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2A0EBF34251490E6002C9E01 /* ViewModel.swift */,
+				2A0EBF35251490E6002C9E01 /* ViewBased.swift */,
+				2A0EBF36251490E6002C9E01 /* UIKitPreView+.swift */,
+				2A0EBF4A25149244002C9E01 /* ViewModelType.swift */,
+				2A0EBF4D2514928E002C9E01 /* Color+.swift */,
+				2A0EBF50251492C7002C9E01 /* Log.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		2A0EBF37251490E6002C9E01 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2A0EBF38251490E6002C9E01 /* FilterSliderViewController.swift */,
+				2A0EBF39251490E6002C9E01 /* FilterSliderView.swift */,
+				2A0EBF3A251490E6002C9E01 /* FilterSliderViewModel.swift */,
+				2A0EBF3B251490E6002C9E01 /* FilterSlider.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		2A30C22D2501F35400BEAC9E = {
 			isa = PBXGroup;
 			children = (
 				2A30C2382501F35400BEAC9E /* 20200904ConstraintTraining */,
-				C3134B7AB89E39ECA06F61DB /* Pods */,
-				AEAB75B4A7E3CF985D29E4CB /* Frameworks */,
+				4AFFE95EABB98FBC90CE57F4 /* Pods */,
+				6A4A1ED7772AEB55F53C5EFD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +155,7 @@
 				2A9403B125062A2E00D539FC /* 4_NSLayout+VisualFormat */,
 				2A30C2592502286D00BEAC9E /* 5_Anchor */,
 				2A9403B225062A6200D539FC /* 6_SnapKit */,
+				2A0EBF32251490E6002C9E01 /* SnapKit_RxSwift_MVVM */,
 				2A30C2372501F35400BEAC9E /* Products */,
 			);
 			path = 20200904ConstraintTraining;
@@ -159,22 +213,21 @@
 			path = 6_SnapKit;
 			sourceTree = "<group>";
 		};
-		AEAB75B4A7E3CF985D29E4CB /* Frameworks */ = {
+		4AFFE95EABB98FBC90CE57F4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				57193059FEE30DE6A322072A /* Pods_20200904ConstraintTraining.framework */,
+				D596E7EA0012D6C6F074E5AF /* Pods-20200904ConstraintTraining.debug.xcconfig */,
+				8692FF9603908454DA82AF04 /* Pods-20200904ConstraintTraining.release.xcconfig */,
 			);
-			name = Frameworks;
+			path = Pods;
 			sourceTree = "<group>";
 		};
-		C3134B7AB89E39ECA06F61DB /* Pods */ = {
+		6A4A1ED7772AEB55F53C5EFD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				38D6CBC0714DAF1B12288F3D /* Pods-20200904ConstraintTraining.debug.xcconfig */,
-				CE8E0F8F794539CF99F5A17E /* Pods-20200904ConstraintTraining.release.xcconfig */,
+				6806C2BFE74618EACC09B285 /* Pods_20200904ConstraintTraining.framework */,
 			);
-			name = Pods;
-			path = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,19 +346,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A0EBF4B25149244002C9E01 /* ViewModelType.swift in Sources */,
 				2A30C23E2501F35400BEAC9E /* MainViewController.swift in Sources */,
 				2A30C25D25022ED200BEAC9E /* MultipleChoiceQuestionViewController_Anchor.swift in Sources */,
 				2A30C2582502201400BEAC9E /* TableViewCell.swift in Sources */,
 				2A30C23A2501F35400BEAC9E /* AppDelegate.swift in Sources */,
+				2A0EBF3D251490E6002C9E01 /* ViewBased.swift in Sources */,
 				2A9403B825070C8F00D539FC /* MultipleChoiceQuestionViewController_NSLayoutConstraint.swift in Sources */,
+				2A0EBF40251490E6002C9E01 /* FilterSliderView.swift in Sources */,
 				2A9403BC2507641000D539FC /* MultipleChoiceQuestionViewController_NSLayout_VisualFormat.swift in Sources */,
 				2A9403BA250726EE00D539FC /* MutipleChoiceQuestionViewController_VisualFormat.swift in Sources */,
 				2A30C2542501FAE000BEAC9E /* MultipleChoiceQuestionViewController_StoryBoard.swift in Sources */,
+				2A0EBF41251490E6002C9E01 /* FilterSliderViewModel.swift in Sources */,
 				2A30C25625021B4F00BEAC9E /* CollectionViewCell.swift in Sources */,
+				2A0EBF42251490E6002C9E01 /* FilterSlider.swift in Sources */,
+				2A0EBF51251492C7002C9E01 /* Log.swift in Sources */,
 				2A30C2442501F35400BEAC9E /* _0200904ConstraintTraining.xcdatamodeld in Sources */,
+				2A0EBF3C251490E6002C9E01 /* ViewModel.swift in Sources */,
+				2A0EBF3F251490E6002C9E01 /* FilterSliderViewController.swift in Sources */,
 				2A30C23C2501F35400BEAC9E /* SceneDelegate.swift in Sources */,
+				2A0EBF3E251490E6002C9E01 /* UIKitPreView+.swift in Sources */,
 				2ABC8F84250A23ED008B39C2 /* MutipleChoiceQuestionViewController_SnapKit.swift in Sources */,
 				2A9403B6250707EE00D539FC /* QuestionTabBarController.swift in Sources */,
+				2A0EBF4E2514928E002C9E01 /* Color+.swift in Sources */,
 				2A30C2512501F7A500BEAC9E /* QuestionTabBarController_StoryBoard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,7 +511,7 @@
 		};
 		2A30C24E2501F35900BEAC9E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38D6CBC0714DAF1B12288F3D /* Pods-20200904ConstraintTraining.debug.xcconfig */;
+			baseConfigurationReference = D596E7EA0012D6C6F074E5AF /* Pods-20200904ConstraintTraining.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -467,7 +530,7 @@
 		};
 		2A30C24F2501F35900BEAC9E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE8E0F8F794539CF99F5A17E /* Pods-20200904ConstraintTraining.release.xcconfig */;
+			baseConfigurationReference = 8692FF9603908454DA82AF04 /* Pods-20200904ConstraintTraining.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
