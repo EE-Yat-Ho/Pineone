@@ -9,7 +9,6 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -39,8 +38,13 @@ class MainViewController: UIViewController {
         self.navigationController?.pushViewController(questionTabBarController, animated: true)
     }
     @IBAction func SnapKitButtonClick(_ sender: Any) {
-       let questionTabBarController = QuestionTabBarController()
+        let questionTabBarController = QuestionTabBarController()
         questionTabBarController.VCNumber = 6
+        self.navigationController?.pushViewController(questionTabBarController, animated: true)
+    }
+    @IBAction func RxSwiftMVVMButtonClick(_ sender: Any) {
+        let questionTabBarController = QuestionTabBarController()
+        questionTabBarController.VCNumber = 7
         self.navigationController?.pushViewController(questionTabBarController, animated: true)
     }
 }
