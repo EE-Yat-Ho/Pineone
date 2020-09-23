@@ -8,8 +8,12 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 class TableCell: UITableViewCell {
+    var isBinded = false
+    var disposebag = DisposeBag()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -63,6 +67,10 @@ class TableCell: UITableViewCell {
             $0.centerY.equalToSuperview()
             $0.height.width.equalTo(20)
         }
+        print("init TableCell")
+    }
+    deinit {// ?? 왜안됨?
+        print("deinit TableCell")
     }
     
 }

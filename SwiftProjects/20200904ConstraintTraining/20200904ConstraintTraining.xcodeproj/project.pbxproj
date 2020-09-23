@@ -12,6 +12,13 @@
 		2A13367F2518810A0096F4E7 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A13367E2518810A0096F4E7 /* UIView+.swift */; };
 		2A1336852518990D0096F4E7 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1336842518990D0096F4E7 /* CollectionCell.swift */; };
 		2A1336882518A35E0096F4E7 /* MainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1336872518A35E0096F4E7 /* MainRepository.swift */; };
+		2A13368E251B3D570096F4E7 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A13368D251B3D570096F4E7 /* TableView.swift */; };
+		2A133693251B3DC90096F4E7 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A133692251B3DC90096F4E7 /* CollectionView.swift */; };
+		2A133697251B3E440096F4E7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A133696251B3E440096F4E7 /* ImagePicker.swift */; };
+		2A13369B251B4B7C0096F4E7 /* SubMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A13369A251B4B7C0096F4E7 /* SubMethods.swift */; };
+		2A13369E251B4C080096F4E7 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A13369D251B4C080096F4E7 /* Constraints.swift */; };
+		2A1336A2251B4C600096F4E7 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1336A1251B4C600096F4E7 /* TextField.swift */; };
+		2A1336A7251B64E60096F4E7 /* UIImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1336A6251B64E60096F4E7 /* UIImagePicker.swift */; };
 		2A30C23A2501F35400BEAC9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C2392501F35400BEAC9E /* AppDelegate.swift */; };
 		2A30C23C2501F35400BEAC9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C23B2501F35400BEAC9E /* SceneDelegate.swift */; };
 		2A30C23E2501F35400BEAC9E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C23D2501F35400BEAC9E /* MainViewController.swift */; };
@@ -39,6 +46,13 @@
 		2A13367E2518810A0096F4E7 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		2A1336842518990D0096F4E7 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		2A1336872518A35E0096F4E7 /* MainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepository.swift; sourceTree = "<group>"; };
+		2A13368D251B3D570096F4E7 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		2A133692251B3DC90096F4E7 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		2A133696251B3E440096F4E7 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		2A13369A251B4B7C0096F4E7 /* SubMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMethods.swift; sourceTree = "<group>"; };
+		2A13369D251B4C080096F4E7 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		2A1336A1251B4C600096F4E7 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		2A1336A6251B64E60096F4E7 /* UIImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePicker.swift; sourceTree = "<group>"; };
 		2A30C2362501F35400BEAC9E /* 20200904ConstraintTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 20200904ConstraintTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A30C2392501F35400BEAC9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A30C23B2501F35400BEAC9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +93,7 @@
 		2A0EBF32251490E6002C9E01 /* 7_RxSwift */ = {
 			isa = PBXGroup;
 			children = (
+				2A13368C251B3D300096F4E7 /* VC_Extention */,
 				2A133676251865930096F4E7 /* MultipleChoiceQuestionViewController_RxSwift.swift */,
 				2A13367B251880610096F4E7 /* TableCell.swift */,
 				2A1336842518990D0096F4E7 /* CollectionCell.swift */,
@@ -93,6 +108,20 @@
 				2A13367E2518810A0096F4E7 /* UIView+.swift */,
 			);
 			path = Extention;
+			sourceTree = "<group>";
+		};
+		2A13368C251B3D300096F4E7 /* VC_Extention */ = {
+			isa = PBXGroup;
+			children = (
+				2A13368D251B3D570096F4E7 /* TableView.swift */,
+				2A133692251B3DC90096F4E7 /* CollectionView.swift */,
+				2A133696251B3E440096F4E7 /* ImagePicker.swift */,
+				2A13369A251B4B7C0096F4E7 /* SubMethods.swift */,
+				2A13369D251B4C080096F4E7 /* Constraints.swift */,
+				2A1336A1251B4C600096F4E7 /* TextField.swift */,
+				2A1336A6251B64E60096F4E7 /* UIImagePicker.swift */,
+			);
+			path = VC_Extention;
 			sourceTree = "<group>";
 		};
 		2A30C22D2501F35400BEAC9E = {
@@ -325,20 +354,27 @@
 			files = (
 				2A30C23E2501F35400BEAC9E /* MainViewController.swift in Sources */,
 				2A13367C251880610096F4E7 /* TableCell.swift in Sources */,
+				2A13369E251B4C080096F4E7 /* Constraints.swift in Sources */,
 				2A30C25D25022ED200BEAC9E /* MultipleChoiceQuestionViewController_Anchor.swift in Sources */,
 				2A30C2582502201400BEAC9E /* TableViewCell.swift in Sources */,
+				2A1336A2251B4C600096F4E7 /* TextField.swift in Sources */,
 				2A30C23A2501F35400BEAC9E /* AppDelegate.swift in Sources */,
 				2A9403B825070C8F00D539FC /* MultipleChoiceQuestionViewController_NSLayoutConstraint.swift in Sources */,
+				2A1336A7251B64E60096F4E7 /* UIImagePicker.swift in Sources */,
+				2A13369B251B4B7C0096F4E7 /* SubMethods.swift in Sources */,
 				2A9403BC2507641000D539FC /* MultipleChoiceQuestionViewController_NSLayout_VisualFormat.swift in Sources */,
 				2A9403BA250726EE00D539FC /* MutipleChoiceQuestionViewController_VisualFormat.swift in Sources */,
 				2A133677251865930096F4E7 /* MultipleChoiceQuestionViewController_RxSwift.swift in Sources */,
 				2A30C2542501FAE000BEAC9E /* MultipleChoiceQuestionViewController_StoryBoard.swift in Sources */,
+				2A133697251B3E440096F4E7 /* ImagePicker.swift in Sources */,
+				2A13368E251B3D570096F4E7 /* TableView.swift in Sources */,
 				2A1336882518A35E0096F4E7 /* MainRepository.swift in Sources */,
 				2A30C25625021B4F00BEAC9E /* CollectionViewCell.swift in Sources */,
 				2A1336852518990D0096F4E7 /* CollectionCell.swift in Sources */,
 				2A30C2442501F35400BEAC9E /* _0200904ConstraintTraining.xcdatamodeld in Sources */,
 				2A30C23C2501F35400BEAC9E /* SceneDelegate.swift in Sources */,
 				2ABC8F84250A23ED008B39C2 /* MutipleChoiceQuestionViewController_SnapKit.swift in Sources */,
+				2A133693251B3DC90096F4E7 /* CollectionView.swift in Sources */,
 				2A13367F2518810A0096F4E7 /* UIView+.swift in Sources */,
 				2A9403B6250707EE00D539FC /* QuestionTabBarController.swift in Sources */,
 				2A30C2512501F7A500BEAC9E /* QuestionTabBarController_StoryBoard.swift in Sources */,

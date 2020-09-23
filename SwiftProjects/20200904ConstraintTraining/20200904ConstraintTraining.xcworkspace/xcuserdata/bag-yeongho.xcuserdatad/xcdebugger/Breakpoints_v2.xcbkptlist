@@ -3,4 +3,630 @@
    uuid = "77267168-F7A6-4248-AEB8-861EB3FAB754"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1B8D52ED-2C9A-4DEB-BA10-68392AE5C848"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/7_RxSwift/TableCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "deinit"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8C30CA4C-D305-432C-A9A2-1CBD9E8EBD69"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "bindButtons()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8C30CA4C-D305-432C-A9A2-1CBD9E8EBD69 - 6a35050d26f97848"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (()) -&gt; RxSwift.Observable&lt;Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;&gt; in _0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  uuid = "8C30CA4C-D305-432C-A9A2-1CBD9E8EBD69 - 549df85d8cf9a1b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIImagePickerController) -&gt; () in closure #3 (()) -&gt; RxSwift.Observable&lt;Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;&gt; in _0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "163"
+                  endingLineNumber = "163"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8B6D936-4F5E-45CF-86C9-DBBDBC5047A7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "bindButtons()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E8B6D936-4F5E-45CF-86C9-DBBDBC5047A7 - b411625fb39d62fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "1391">
+               </Location>
+               <Location
+                  uuid = "E8B6D936-4F5E-45CF-86C9-DBBDBC5047A7 - 6a35050d26f978ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (()) -&gt; RxSwift.Observable&lt;Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;&gt; in _0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DC5873AD-B222-4B9E-9B63-13CAAB32B987"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "bindButtons()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DC5873AD-B222-4B9E-9B63-13CAAB32B987 - 6a35050d26f979c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (()) -&gt; RxSwift.Observable&lt;Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;&gt; in _0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "166"
+                  endingLineNumber = "166"
+                  offsetFromSymbolStart = "258">
+               </Location>
+               <Location
+                  uuid = "DC5873AD-B222-4B9E-9B63-13CAAB32B987 - fc947bfab9d865ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIImagePickerController) -&gt; RxSwift.Observable&lt;Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;&gt; in closure #3 (()) -&gt; RxSwift.Observable&lt;Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;&gt; in _0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "166"
+                  endingLineNumber = "166"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC44057E-D029-4862-AA5F-2130CAC4DAAC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "bindButtons()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5B22094-632D-4A45-B78F-FA16D6D79DED"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "bindButtons()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B2AAA556-AB1D-4710-85A8-783339CFC11B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "bindButtons()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C0A17A0-A0AD-4E99-A36A-A2A77C15D474"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "bindButtons()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C836721A-8705-4C4F-BBDC-868840839AA9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "bindButtons()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B8BED60-8CD9-477B-A5E8-FAC97F4DEA90"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "bindButtons()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6B8BED60-8CD9-477B-A5E8-FAC97F4DEA90 - b411625fb39d63d3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "1962">
+               </Location>
+               <Location
+                  uuid = "6B8BED60-8CD9-477B-A5E8-FAC97F4DEA90 - 7cdc636069e64d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 (Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; () in _0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "169"
+                  endingLineNumber = "169"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B25CEB87-6AD3-4A7A-AE38-4E5D319003F4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "bindButtons()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B25CEB87-6AD3-4A7A-AE38-4E5D319003F4 - 7cdc636069e6432"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 (Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; () in _0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "B25CEB87-6AD3-4A7A-AE38-4E5D319003F4 - 1136ed67625aec74"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 (Swift.Error) -&gt; () in _0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
+                  offsetFromSymbolStart = "25">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F1CDFEE8-B3D8-4549-ADD9-3DA57DB662AB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "bindButtons()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7574E621-EC51-4B8B-97A1-021D99974686"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "bindButtons()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F3DF5A2A-5824-4D31-9813-30BCCF2C6C53"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "bindButtons()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F3DF5A2A-5824-4D31-9813-30BCCF2C6C53 - 1136ed67625aec0b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 (Swift.Error) -&gt; () in _0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "172"
+                  endingLineNumber = "172"
+                  offsetFromSymbolStart = "287">
+               </Location>
+               <Location
+                  uuid = "F3DF5A2A-5824-4D31-9813-30BCCF2C6C53 - a7a539395609def5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #6 () -&gt; () in _0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
+                  offsetFromSymbolStart = "8">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D54E0674-84AC-4AEA-BB21-CCC4E63D9CAA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "bindButtons()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5908C363-5CA1-43E0-B7B3-1A3ECC7018F8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "bindButtons()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5908C363-5CA1-43E0-B7B3-1A3ECC7018F8 - a7a539395609d116"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #6 () -&gt; () in _0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "139">
+               </Location>
+               <Location
+                  uuid = "5908C363-5CA1-43E0-B7B3-1A3ECC7018F8 - bb7a6764005d7b36"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #7 () -&gt; () in _0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "8">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "513CA589-FE39-46AC-AD17-4D6A279BA9BE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "bindButtons()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "513CA589-FE39-46AC-AD17-4D6A279BA9BE - b411625fb39d6ccb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
+                  offsetFromSymbolStart = "2259">
+               </Location>
+               <Location
+                  uuid = "513CA589-FE39-46AC-AD17-4D6A279BA9BE - bb7a6764005d7b51"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #7 () -&gt; () in _0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
+                  offsetFromSymbolStart = "139">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F53FD409-B941-45F1-8B6F-F1FDAA19A65F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "bindButtons()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F53FD409-B941-45F1-8B6F-F1FDAA19A65F - b411625fb39d6c09"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "2411">
+               </Location>
+               <Location
+                  uuid = "F53FD409-B941-45F1-8B6F-F1FDAA19A65F - 4e48aca33a928d90"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #8 () -&gt; () in _0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E483427-5D7D-4769-A935-BDEEB5B21B20"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "bindButtons()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6E483427-5D7D-4769-A935-BDEEB5B21B20 - b411625fb39d6c09"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "2411">
+               </Location>
+               <Location
+                  uuid = "6E483427-5D7D-4769-A935-BDEEB5B21B20 - 4e48aca33a928d90"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #8 () -&gt; () in _0200904ConstraintTraining.MultipleChoiceQuestionViewController_RxSwift.bindButtons() -&gt; ()"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/7_RxSwift/MultipleChoiceQuestionViewController_RxSwift.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
