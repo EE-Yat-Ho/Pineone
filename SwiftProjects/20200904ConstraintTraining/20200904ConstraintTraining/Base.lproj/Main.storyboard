@@ -118,7 +118,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="VXr-14-C5d"/>
                                 </constraints>
-                                <state key="normal" title="RxSwift,MVVM" image="circle">
+                                <state key="normal" title="RxSwift">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -160,7 +160,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="circle" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

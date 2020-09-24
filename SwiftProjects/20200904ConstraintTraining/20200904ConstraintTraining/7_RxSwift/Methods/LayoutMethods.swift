@@ -1,7 +1,26 @@
 
 import UIKit
 
-extension MultipleChoiceQuestionViewController_RxSwift { // 제약 설정부분
+extension MultipleChoiceQuestionViewController_RxSwift { // 자잘한 메소도들
+    func makeViewArrays(){
+        inSelfViewViews.append(scrollView)
+        inSelfViewViews.append(completeButton)
+        
+        inScrollViewViews.append(subView)
+        
+        inSubViewViews.append(questionLabel)
+        inSubViewViews.append(questionCameraButton)
+        inSubViewViews.append(questionTextView)
+        inSubViewViews.append(questionCollectionView)
+        inSubViewViews.append(answerLabel)
+        inSubViewViews.append(plusButton)
+        inSubViewViews.append(tableView)
+        inSubViewViews.append(explanationLabel)
+        inSubViewViews.append(explanationCameraButton)
+        inSubViewViews.append(explanationTextView)
+        inSubViewViews.append(explanationCollectionView)
+    }
+    
     func addConstraint(){
         scrollView.snp.makeConstraints{ $0.edges.equalTo(self.view.safeAreaLayoutGuide) }
         
@@ -18,7 +37,7 @@ extension MultipleChoiceQuestionViewController_RxSwift { // 제약 설정부분
             $0.top.equalTo(subView.snp.top).offset(55)
             $0.height.equalTo(20) }
         
-        cameraButton1.snp.makeConstraints{
+        questionCameraButton.snp.makeConstraints{
             $0.trailing.equalTo(subView.snp.trailing).offset(-30)
             $0.top.equalTo(subView.snp.top).offset(50)
             $0.height.equalTo(30)
@@ -27,7 +46,7 @@ extension MultipleChoiceQuestionViewController_RxSwift { // 제약 설정부분
         
         questionTextView.snp.makeConstraints{
             $0.leading.trailing.equalToSuperview().inset(10)
-            $0.top.equalTo(cameraButton1.snp.bottom).offset(5)
+            $0.top.equalTo(questionCameraButton.snp.bottom).offset(5)
             $0.height.equalTo(130) }
         
         questionCollectionView.snp.makeConstraints{
@@ -65,7 +84,7 @@ extension MultipleChoiceQuestionViewController_RxSwift { // 제약 설정부분
             $0.top.equalTo(tableView.snp.bottom).offset(10)
             $0.height.equalTo(20) }
         
-        cameraButton2.snp.makeConstraints{
+        explanationCameraButton.snp.makeConstraints{
             $0.trailing.equalTo(subView.snp.trailing).offset(-30)
             $0.top.equalTo(tableView.snp.bottom).offset(5)
             $0.height.equalTo(30)
@@ -73,7 +92,7 @@ extension MultipleChoiceQuestionViewController_RxSwift { // 제약 설정부분
         
         explanationTextView.snp.makeConstraints{
             $0.leading.trailing.equalToSuperview().inset(10)
-            $0.top.equalTo(cameraButton2.snp.bottom).offset(5)
+            $0.top.equalTo(explanationCameraButton.snp.bottom).offset(5)
             $0.height.equalTo(130) }
         
         explanationCollectionView.snp.makeConstraints{
