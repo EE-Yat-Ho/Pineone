@@ -9,11 +9,12 @@
 import UIKit
 
 class CollectionCell: UICollectionViewCell {
-    let imageView = UIImageView()
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    let imageView = UIImageView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.contentView.addSubview(imageView)

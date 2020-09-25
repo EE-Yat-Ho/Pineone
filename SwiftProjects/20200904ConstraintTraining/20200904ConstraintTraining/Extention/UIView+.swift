@@ -14,12 +14,14 @@ extension UIView {
         views.forEach { self.addSubview($0) }
     }
     
-    func setBorder(_ color: UIColor?){
-        if color == nil {
-            self.layer.borderColor = UIColor(displayP3Red: 204.0/255.0, green: 204.0/255.0, blue: 204.0/255.0, alpha: 1.0).cgColor
-        } else {
-            self.layer.borderColor = color?.cgColor
-        }
+    func setBorder() {
+        self.layer.borderColor = UIColor(displayP3Red: 204.0/255.0, green: 204.0/255.0, blue: 204.0/255.0, alpha: 1.0).cgColor
+        self.layer.borderWidth = 1.0
+        self.layer.cornerRadius = 5.0
+    }
+    
+    func setBorder(_ color: UIColor){
+        self.layer.borderColor = color.cgColor
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = 5.0
     }

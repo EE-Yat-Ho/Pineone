@@ -1,10 +1,3 @@
-//
-//  QuestionTabBarController.swift
-//  20200904ConstraintTraining
-//
-//  Created by 박영호 on 2020/09/04.
-//  Copyright © 2020 Park young ho. All rights reserved.
-//
 
 import UIKit
 
@@ -59,5 +52,8 @@ class QuestionTabBarController: UITabBarController, UITabBarControllerDelegate {
             self.tabBar.frame = CGRect(x: 0, y: self.view.safeAreaInsets.top, width: self.tabBar.frame.size.width, height: self.NVC_height!)
         }
         super.viewDidLayoutSubviews()
+    }
+    deinit {
+        print("deinit QuestionTabBar")
     }
 }

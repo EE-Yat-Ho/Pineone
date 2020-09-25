@@ -7,7 +7,7 @@ struct MainRepository {
     // for RxSwift Complete Button
     var question: String!
     var explanation: String!
-    var answerList = [String]()
+    var answerList = ["1", "2", "3"]//[String]()
     var questionImageList = [UIImage]()
     var explanationImageList = [UIImage]()
 }
