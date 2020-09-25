@@ -12,8 +12,11 @@ import Then
 import RxSwift
 import RxCocoa
 import NSObject_Rx
+import RxDataSources
 
 class MultipleChoiceQuestionViewController_RxSwift: UIViewController {
+    var disposeBag = DisposeBag()
+    
     var inSelfViewViews: [UIView] = []
     var inScrollViewViews: [UIView] = []
     var inSubViewViews: [UIView] = []
@@ -31,16 +34,16 @@ class MultipleChoiceQuestionViewController_RxSwift: UIViewController {
         $0.text = "풀이"
     }
     
-    let questionCameraButton = UIButton().then {
+    let questionCameraButton = CustomUIButton().then {
         $0.setImage(UIImage(systemName: "camera"), for: .normal)
     }
-    let explanationCameraButton = UIButton().then {
+    let explanationCameraButton = CustomUIButton().then {
         $0.setImage(UIImage(systemName: "camera"), for: .normal)
     }
-    let plusButton = UIButton().then {
+    let plusButton = CustomUIButton().then {
         $0.setImage(UIImage(systemName: "plus"), for: .normal)
     }
-    let completeButton = UIButton().then{
+    let completeButton = CustomUIButton().then{
         $0.setTitle("완료", for: .normal)
         $0.backgroundColor = UIColor.systemBlue
     }
@@ -96,8 +99,8 @@ class MultipleChoiceQuestionViewController_RxSwift: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         
-        setLayout() // 레이아웃
-        bindData() // RxSwift
+        //setLayout() // 레이아웃
+        //bindData() // RxSwift
     }
     
     func setLayout(){
@@ -133,9 +136,9 @@ class MultipleChoiceQuestionViewController_RxSwift: UIViewController {
     }
     
     
-    // 아뉘 왜안되누
     deinit{
         print("RxSwift deinit")
+        disposeBag = DisposeBag()
     }
 }
 

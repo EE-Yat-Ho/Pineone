@@ -29,7 +29,7 @@ class TableCell: UITableViewCell {
         $0.setBorder(UIColor.systemRed)
         $0.textColor = UIColor.systemRed
     }
-    let xButton = UIButton().then {
+    let xButton = CustomUIButton().then {
         $0.setImage(UIImage(systemName: "xmark"), for: .normal)
     }
     

@@ -8,11 +8,7 @@ extension MultipleChoiceQuestionViewController_RxSwift { // TableView
         reloadTableView()
     }
     func tapXButton(_ sender: UIButton) {
-        let cell = sender.superview?.superview as! TableCell
-        let indexPath = tableView.indexPath(for: cell)! as IndexPath
-        cell.disposebag = DisposeBag()
-        cell.isBinded = false
-        answerList.remove(at: indexPath.row)
+        answerList.remove(at: sender.tag)
         reloadTableView()
     }
     func tapQuestionCameraButton() {

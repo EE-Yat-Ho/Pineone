@@ -39,4 +39,5 @@ public final class BehaviorRelay<Element>: ObservableType {
     public func asObservable() -> Observable<Element> {
         return self._subject.asObservable()
     }
+    
 }

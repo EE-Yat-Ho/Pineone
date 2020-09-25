@@ -21,6 +21,7 @@
 		2A1336BA251C785C0096F4E7 /* TapMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1336B9251C785C0096F4E7 /* TapMethods.swift */; };
 		2A1336BE251C78DB0096F4E7 /* ReloadMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1336BD251C78DB0096F4E7 /* ReloadMethods.swift */; };
 		2A1336CE251C87980096F4E7 /* LayoutMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1336CD251C87980096F4E7 /* LayoutMethods.swift */; };
+		2A1336D7251D89560096F4E7 /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1336D6251D89560096F4E7 /* CustomUIButton.swift */; };
 		2A30C23A2501F35400BEAC9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C2392501F35400BEAC9E /* AppDelegate.swift */; };
 		2A30C23C2501F35400BEAC9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C23B2501F35400BEAC9E /* SceneDelegate.swift */; };
 		2A30C23E2501F35400BEAC9E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C23D2501F35400BEAC9E /* MainViewController.swift */; };
@@ -57,6 +58,7 @@
 		2A1336B9251C785C0096F4E7 /* TapMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapMethods.swift; sourceTree = "<group>"; };
 		2A1336BD251C78DB0096F4E7 /* ReloadMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadMethods.swift; sourceTree = "<group>"; };
 		2A1336CD251C87980096F4E7 /* LayoutMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutMethods.swift; sourceTree = "<group>"; };
+		2A1336D6251D89560096F4E7 /* CustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
 		2A30C2362501F35400BEAC9E /* 20200904ConstraintTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 20200904ConstraintTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A30C2392501F35400BEAC9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A30C23B2501F35400BEAC9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				2A1336B0251C671F0096F4E7 /* DelegateToRx */,
 				2A1336C7251C7A450096F4E7 /* Cells */,
 				2A1336C8251C7A550096F4E7 /* DataRepository */,
+				2A1336D6251D89560096F4E7 /* CustomUIButton.swift */,
 			);
 			path = 7_RxSwift;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				2A1336882518A35E0096F4E7 /* MainRepository.swift in Sources */,
 				2A30C25625021B4F00BEAC9E /* CollectionViewCell.swift in Sources */,
 				2A1336852518990D0096F4E7 /* CollectionCell.swift in Sources */,
+				2A1336D7251D89560096F4E7 /* CustomUIButton.swift in Sources */,
 				2A30C2442501F35400BEAC9E /* _0200904ConstraintTraining.xcdatamodeld in Sources */,
 				2A30C23C2501F35400BEAC9E /* SceneDelegate.swift in Sources */,
 				2ABC8F84250A23ED008B39C2 /* MutipleChoiceQuestionViewController_SnapKit.swift in Sources */,

@@ -53,4 +53,7 @@ class QuestionTabBarController: UITabBarController, UITabBarControllerDelegate {
         }
         super.viewDidLayoutSubviews()
     }
+    deinit {
+        print("deinit QuestionTabBar")
+    }
 }

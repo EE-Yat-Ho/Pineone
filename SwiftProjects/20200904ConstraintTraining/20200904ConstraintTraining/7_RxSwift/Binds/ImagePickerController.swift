@@ -6,7 +6,7 @@ import RxCocoa
 extension MultipleChoiceQuestionViewController_RxSwift { // ImagePicker 와 이게 되네 ㅆㅆㅆㅆㅅ
     func bindQuestionImagePickerController() {
         questionImagePicker.rx.didFinishPickingMediaWithInfo.asObservable()
-            .bind(onNext: { [weak self]
+            .subscribe(onNext: { [weak self] // 섭스크라이브 쓰라하심
                 info in
                 self?.dismiss(animated: true, completion: nil)
                 if let img = info[.originalImage] as? UIImage{
@@ -14,11 +14,11 @@ extension MultipleChoiceQuestionViewController_RxSwift { // ImagePicker 와 이�
                     self?.reloadQuestionCollectionView()
                 }
             })
-            .disposed(by: rx.disposeBag)
+            .disposed(by: disposeBag)
     }
     func bindExplanationImagePickerController() {
         explanationImagePicker.rx.didFinishPickingMediaWithInfo.asObservable()
-            .bind(onNext: { [weak self]
+            .subscribe(onNext: { [weak self]
                 info in
                 self?.dismiss(animated: true, completion: nil)
                 if let img = info[.originalImage] as? UIImage{
@@ -26,7 +26,7 @@ extension MultipleChoiceQuestionViewController_RxSwift { // ImagePicker 와 이�
                     self?.reloadExplanationCollectionView()
                 }
             })
-            .disposed(by: rx.disposeBag)
+            .disposed(by: disposeBag)
     }
 
 }

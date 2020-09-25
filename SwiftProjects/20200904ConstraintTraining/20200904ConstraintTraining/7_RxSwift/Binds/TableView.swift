@@ -6,15 +6,17 @@ extension MultipleChoiceQuestionViewController_RxSwift { // TableView
     // indexPath 쓰고싶으면 let indexPath = IndexPath(item: index, section: 0)하셈
     func bindTableView() {
         answerRelay.asObservable().bind(to: tableView.rx.items(cellIdentifier: "TableCell", cellType: TableCell.self)) { [weak self]
-            index, _, cell in
+            index, data, cell in
             cell.exampleNumber.image = UIImage(systemName: String(index + 1) + ".circle")
-            cell.answerTextField.text = self!.answerList[index]
+            cell.answerTextField.text = data//self!.answerList[index]
+            cell.xButton.tag = index
+            cell.answerTextField.tag = index
             // self 없이
             if cell.isBinded == false {
-                self!.bindXButton(cell: cell) // 버튼, TextField 동적 바인딩
-                self!.bindTextField(cell: cell)
+                self?.bindXButton(cell.xButton) // 버튼, TextField 동적 바인딩
+                self?.bindTextField(cell.answerTextField)
                 cell.isBinded = true
             }
-        }.disposed(by: rx.disposeBag)
+        }.disposed(by: disposeBag)
     }
 }
