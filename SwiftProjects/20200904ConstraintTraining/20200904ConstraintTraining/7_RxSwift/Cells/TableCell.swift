@@ -17,7 +17,7 @@ class TableCell: UITableViewCell {
     }
     
     var isBinded = false
-    var disposebag = DisposeBag()
+    var disposeBag = DisposeBag()
     var exampleNumber = UIImageView()
     let answerTextField = UITextField().then {
         $0.setBorder()
@@ -63,8 +63,9 @@ class TableCell: UITableViewCell {
         }
         print("init TableCell")
     }
-    deinit {// ?? 왜안됨?
+    deinit {
         print("deinit TableCell")
+        disposeBag = DisposeBag()
     }
     
 }

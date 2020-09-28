@@ -4,7 +4,8 @@ import UIKit
 extension MultipleChoiceQuestionViewController_RxSwift { // CollectionView
     // 역시 Foundation 소스가 훨씬 깔끔함 굳굳
     func bindQuestionCollectionView() {
-        questionImageRelay.asObservable().bind(to: questionCollectionView.rx.items(cellIdentifier: "CollectionCell", cellType: CollectionCell.self)) {
+        
+        questionImageRelay.bind(to: questionCollectionView.rx.items(cellIdentifier: "CollectionCell", cellType: CollectionCell.self)) {
             index, data, cell in
             cell.imageView.image = data//self!.questionImageList[index]
             
@@ -13,7 +14,7 @@ extension MultipleChoiceQuestionViewController_RxSwift { // CollectionView
     }
     
     func bindExplanationCollectionView() {
-        explanationImageRelay.asObservable().bind(to: explanationCollectionView.rx.items(cellIdentifier: "CollectionCell", cellType: CollectionCell.self)) {
+        explanationImageRelay.bind(to: explanationCollectionView.rx.items(cellIdentifier: "CollectionCell", cellType: CollectionCell.self)) {
             index, data, cell in
             cell.imageView.image = data//self!.explanationImageList[index]
             

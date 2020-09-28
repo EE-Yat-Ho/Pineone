@@ -46,6 +46,7 @@ class MainViewController: UIViewController {
         let questionTabBarController = QuestionTabBarController()
         questionTabBarController.VCNumber = 7
         self.navigationController?.pushViewController(questionTabBarController, animated: true)
+        //self.navigationController?.popViewController(animated: true)
     }
 }
 

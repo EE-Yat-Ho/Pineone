@@ -28,3 +28,7 @@ observable.subscribe(onNext: { (element) in
         print(element)
 })
 ~~~
+
+### 20200928
+Array, String 같이 IteratorProtocol 를 따르는 모든 오브젝트는 Observable로 바꿀 수 있음  
+다만 Observable은 비동기적이라는 것.

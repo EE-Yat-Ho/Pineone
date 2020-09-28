@@ -60,6 +60,7 @@ class CollectionMultiSelectionViewController: UIBaseViewController, ViewModelPro
     }
     
     func bindingViewModel() {
+        // 콜렉션 뷰에 사진 선택했을 때 하는거고..
         subView.collectionView.rx.itemSelected.asObservable().bind(to: self.selectedIndexPath).disposed(by: rx.disposeBag)
         
         let modelSelect = Observable.combineLatest(selectedIndexPath, subView.collectionView.rx.multiSelectionObserable.startWith(false)).filter{
