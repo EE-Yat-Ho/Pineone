@@ -99,8 +99,17 @@ class MultipleChoiceQuestionViewController_RxSwift: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         
-        //setLayout() // 레이아웃
-        //bindData() // RxSwift
+        setLayout() // 레이아웃
+        bindData() // RxSwift
+        
+//        var publishSubject = PublishSubject<String>()
+//        
+//        publishSubject.subscribe{(event) in
+//            print(event)
+//        }
+//        
+//        publishSubject.onNext("First value")
+//        publishSubject.onNext("Second value")
     }
     
     func setLayout(){

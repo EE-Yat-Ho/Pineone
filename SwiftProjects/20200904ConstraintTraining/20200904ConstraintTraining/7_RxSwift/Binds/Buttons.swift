@@ -1,20 +1,14 @@
 
 import UIKit
+import RxSwift
 
 extension MultipleChoiceQuestionViewController_RxSwift { // Buttons
+    
     func bindXButton(_ sender: UIButton) {
         // 다른 방법으로
         sender.rx.tap.bind { [weak self] in
             self?.tapXButton(sender)
-        }.disposed(by:disposeBag)
-    }
-    
-    func bindTextField(_ sender: UITextField){
-        sender.rx.text
-            .distinctUntilChanged()
-            .bind { [weak self] _ in // _ 여기에 newValue가 들어가네 호옹이
-                self?.textFieldDidChangeSelection(sender)
-        }.disposed(by:disposeBag)
+        }.disposed(by:(sender.superview?.superview as! TableCell).disposeBag)
     }
     
     func bindPlusButton() {
