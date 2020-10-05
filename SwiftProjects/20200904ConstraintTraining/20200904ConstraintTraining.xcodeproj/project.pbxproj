@@ -12,16 +12,9 @@
 		2A13367F2518810A0096F4E7 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A13367E2518810A0096F4E7 /* UIView+.swift */; };
 		2A1336852518990D0096F4E7 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1336842518990D0096F4E7 /* CollectionCell.swift */; };
 		2A1336882518A35E0096F4E7 /* MainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1336872518A35E0096F4E7 /* MainRepository.swift */; };
-		2A13368E251B3D570096F4E7 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A13368D251B3D570096F4E7 /* TableView.swift */; };
-		2A133693251B3DC90096F4E7 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A133692251B3DC90096F4E7 /* CollectionView.swift */; };
-		2A133697251B3E440096F4E7 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A133696251B3E440096F4E7 /* ImagePickerController.swift */; };
-		2A13369B251B4B7C0096F4E7 /* TextFieldMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A13369A251B4B7C0096F4E7 /* TextFieldMethods.swift */; };
+		2A13368E251B3D570096F4E7 /* Binds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A13368D251B3D570096F4E7 /* Binds.swift */; };
 		2A1336A7251B64E60096F4E7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1336A6251B64E60096F4E7 /* ImagePicker.swift */; };
-		2A1336B5251C756F0096F4E7 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1336B4251C756F0096F4E7 /* Buttons.swift */; };
-		2A1336BA251C785C0096F4E7 /* TapMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1336B9251C785C0096F4E7 /* TapMethods.swift */; };
-		2A1336BE251C78DB0096F4E7 /* ReloadMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1336BD251C78DB0096F4E7 /* ReloadMethods.swift */; };
-		2A1336CE251C87980096F4E7 /* LayoutMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1336CD251C87980096F4E7 /* LayoutMethods.swift */; };
-		2A1336D7251D89560096F4E7 /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1336D6251D89560096F4E7 /* CustomUIButton.swift */; };
+		2A1336BA251C785C0096F4E7 /* Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1336B9251C785C0096F4E7 /* Methods.swift */; };
 		2A30C23A2501F35400BEAC9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C2392501F35400BEAC9E /* AppDelegate.swift */; };
 		2A30C23C2501F35400BEAC9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C23B2501F35400BEAC9E /* SceneDelegate.swift */; };
 		2A30C23E2501F35400BEAC9E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C23D2501F35400BEAC9E /* MainViewController.swift */; };
@@ -34,7 +27,6 @@
 		2A30C25625021B4F00BEAC9E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C25525021B4F00BEAC9E /* CollectionViewCell.swift */; };
 		2A30C2582502201400BEAC9E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C2572502201400BEAC9E /* TableViewCell.swift */; };
 		2A30C25D25022ED200BEAC9E /* MultipleChoiceQuestionViewController_Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C25C25022ED200BEAC9E /* MultipleChoiceQuestionViewController_Anchor.swift */; };
-		2A6888C32521BDD200877772 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6888C22521BDD200877772 /* TextField.swift */; };
 		2A9403B6250707EE00D539FC /* QuestionTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9403B5250707EE00D539FC /* QuestionTabBarController.swift */; };
 		2A9403B825070C8F00D539FC /* MultipleChoiceQuestionViewController_NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9403B725070C8F00D539FC /* MultipleChoiceQuestionViewController_NSLayoutConstraint.swift */; };
 		2A9403BA250726EE00D539FC /* MutipleChoiceQuestionViewController_VisualFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9403B9250726EE00D539FC /* MutipleChoiceQuestionViewController_VisualFormat.swift */; };
@@ -50,16 +42,9 @@
 		2A13367E2518810A0096F4E7 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		2A1336842518990D0096F4E7 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		2A1336872518A35E0096F4E7 /* MainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepository.swift; sourceTree = "<group>"; };
-		2A13368D251B3D570096F4E7 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
-		2A133692251B3DC90096F4E7 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
-		2A133696251B3E440096F4E7 /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
-		2A13369A251B4B7C0096F4E7 /* TextFieldMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldMethods.swift; sourceTree = "<group>"; };
+		2A13368D251B3D570096F4E7 /* Binds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binds.swift; sourceTree = "<group>"; };
 		2A1336A6251B64E60096F4E7 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		2A1336B4251C756F0096F4E7 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
-		2A1336B9251C785C0096F4E7 /* TapMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapMethods.swift; sourceTree = "<group>"; };
-		2A1336BD251C78DB0096F4E7 /* ReloadMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadMethods.swift; sourceTree = "<group>"; };
-		2A1336CD251C87980096F4E7 /* LayoutMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutMethods.swift; sourceTree = "<group>"; };
-		2A1336D6251D89560096F4E7 /* CustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
+		2A1336B9251C785C0096F4E7 /* Methods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Methods.swift; sourceTree = "<group>"; };
 		2A30C2362501F35400BEAC9E /* 20200904ConstraintTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 20200904ConstraintTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A30C2392501F35400BEAC9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A30C23B2501F35400BEAC9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +59,6 @@
 		2A30C25525021B4F00BEAC9E /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		2A30C2572502201400BEAC9E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		2A30C25C25022ED200BEAC9E /* MultipleChoiceQuestionViewController_Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuestionViewController_Anchor.swift; sourceTree = "<group>"; };
-		2A6888C22521BDD200877772 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		2A9403B5250707EE00D539FC /* QuestionTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTabBarController.swift; sourceTree = "<group>"; };
 		2A9403B725070C8F00D539FC /* MultipleChoiceQuestionViewController_NSLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuestionViewController_NSLayoutConstraint.swift; sourceTree = "<group>"; };
 		2A9403B9250726EE00D539FC /* MutipleChoiceQuestionViewController_VisualFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutipleChoiceQuestionViewController_VisualFormat.swift; sourceTree = "<group>"; };
@@ -102,12 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				2A1336D2251C88240096F4E7 /* Main */,
-				2A1336B8251C78420096F4E7 /* Methods */,
-				2A1336B3251C73FC0096F4E7 /* Binds */,
 				2A1336B0251C671F0096F4E7 /* DelegateToRx */,
 				2A1336C7251C7A450096F4E7 /* Cells */,
 				2A1336C8251C7A550096F4E7 /* DataRepository */,
-				2A1336D6251D89560096F4E7 /* CustomUIButton.swift */,
 			);
 			path = 7_RxSwift;
 			sourceTree = "<group>";
@@ -126,29 +107,6 @@
 				2A1336A6251B64E60096F4E7 /* ImagePicker.swift */,
 			);
 			path = DelegateToRx;
-			sourceTree = "<group>";
-		};
-		2A1336B3251C73FC0096F4E7 /* Binds */ = {
-			isa = PBXGroup;
-			children = (
-				2A13368D251B3D570096F4E7 /* TableView.swift */,
-				2A133692251B3DC90096F4E7 /* CollectionView.swift */,
-				2A133696251B3E440096F4E7 /* ImagePickerController.swift */,
-				2A1336B4251C756F0096F4E7 /* Buttons.swift */,
-				2A6888C22521BDD200877772 /* TextField.swift */,
-			);
-			path = Binds;
-			sourceTree = "<group>";
-		};
-		2A1336B8251C78420096F4E7 /* Methods */ = {
-			isa = PBXGroup;
-			children = (
-				2A1336B9251C785C0096F4E7 /* TapMethods.swift */,
-				2A1336BD251C78DB0096F4E7 /* ReloadMethods.swift */,
-				2A1336CD251C87980096F4E7 /* LayoutMethods.swift */,
-				2A13369A251B4B7C0096F4E7 /* TextFieldMethods.swift */,
-			);
-			path = Methods;
 			sourceTree = "<group>";
 		};
 		2A1336C7251C7A450096F4E7 /* Cells */ = {
@@ -172,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				2A133676251865930096F4E7 /* MultipleChoiceQuestionViewController_RxSwift.swift */,
+				2A1336B9251C785C0096F4E7 /* Methods.swift */,
+				2A13368D251B3D570096F4E7 /* Binds.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -407,31 +367,23 @@
 				2A30C23E2501F35400BEAC9E /* MainViewController.swift in Sources */,
 				2A13367C251880610096F4E7 /* TableCell.swift in Sources */,
 				2A30C25D25022ED200BEAC9E /* MultipleChoiceQuestionViewController_Anchor.swift in Sources */,
-				2A1336B5251C756F0096F4E7 /* Buttons.swift in Sources */,
 				2A30C2582502201400BEAC9E /* TableViewCell.swift in Sources */,
 				2A30C23A2501F35400BEAC9E /* AppDelegate.swift in Sources */,
 				2A9403B825070C8F00D539FC /* MultipleChoiceQuestionViewController_NSLayoutConstraint.swift in Sources */,
 				2A1336A7251B64E60096F4E7 /* ImagePicker.swift in Sources */,
-				2A13369B251B4B7C0096F4E7 /* TextFieldMethods.swift in Sources */,
 				2A9403BC2507641000D539FC /* MultipleChoiceQuestionViewController_NSLayout_VisualFormat.swift in Sources */,
 				2A9403BA250726EE00D539FC /* MutipleChoiceQuestionViewController_VisualFormat.swift in Sources */,
 				2A133677251865930096F4E7 /* MultipleChoiceQuestionViewController_RxSwift.swift in Sources */,
-				2A1336CE251C87980096F4E7 /* LayoutMethods.swift in Sources */,
 				2A30C2542501FAE000BEAC9E /* MultipleChoiceQuestionViewController_StoryBoard.swift in Sources */,
-				2A133697251B3E440096F4E7 /* ImagePickerController.swift in Sources */,
-				2A13368E251B3D570096F4E7 /* TableView.swift in Sources */,
-				2A6888C32521BDD200877772 /* TextField.swift in Sources */,
-				2A1336BE251C78DB0096F4E7 /* ReloadMethods.swift in Sources */,
+				2A13368E251B3D570096F4E7 /* Binds.swift in Sources */,
 				2A1336882518A35E0096F4E7 /* MainRepository.swift in Sources */,
 				2A30C25625021B4F00BEAC9E /* CollectionViewCell.swift in Sources */,
 				2A1336852518990D0096F4E7 /* CollectionCell.swift in Sources */,
-				2A1336D7251D89560096F4E7 /* CustomUIButton.swift in Sources */,
 				2A30C2442501F35400BEAC9E /* _0200904ConstraintTraining.xcdatamodeld in Sources */,
 				2A30C23C2501F35400BEAC9E /* SceneDelegate.swift in Sources */,
 				2ABC8F84250A23ED008B39C2 /* MutipleChoiceQuestionViewController_SnapKit.swift in Sources */,
-				2A133693251B3DC90096F4E7 /* CollectionView.swift in Sources */,
 				2A13367F2518810A0096F4E7 /* UIView+.swift in Sources */,
-				2A1336BA251C785C0096F4E7 /* TapMethods.swift in Sources */,
+				2A1336BA251C785C0096F4E7 /* Methods.swift in Sources */,
 				2A9403B6250707EE00D539FC /* QuestionTabBarController.swift in Sources */,
 				2A30C2512501F7A500BEAC9E /* QuestionTabBarController_StoryBoard.swift in Sources */,
 			);

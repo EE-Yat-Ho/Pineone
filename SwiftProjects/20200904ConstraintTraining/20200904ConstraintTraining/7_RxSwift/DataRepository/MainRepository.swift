@@ -11,3 +11,8 @@ struct MainRepository {
     var questionImageList = [UIImage]()
     var explanationImageList = [UIImage]()
 }
+
+struct AssetType{
+    var text: String
+    var index: Int
+}

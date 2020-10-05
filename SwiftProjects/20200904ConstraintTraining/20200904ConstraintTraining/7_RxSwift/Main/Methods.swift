@@ -1,7 +1,44 @@
 
 import UIKit
+import RxSwift
 
-extension MultipleChoiceQuestionViewController_RxSwift { // 자잘한 메소도들
+extension MultipleChoiceQuestionViewController_RxSwift: vcDelegate {
+    func setLayout(){
+        makeViewArrays() // 어디에 들어가느냐에 따라나눈 뷰 배열 만들기
+        
+        // 모든 뷰 .addSubView 진행
+        self.view.addSubviews(inSelfViewViews)
+        scrollView.addSubviews(inScrollViewViews)
+        subView.addSubviews(inSubViewViews)
+
+        // 특정 뷰 테두리 그리기
+        questionTextView.setBorder()
+        questionCollectionView.setBorder()
+        tableView.setBorder()
+        explanationTextView.setBorder()
+        explanationCollectionView.setBorder()
+        completeButton.setBorder(UIColor.systemBlue)
+        // 제약사항 추가
+        addConstraint()
+    }
+    func bindData() {
+        bindQuestionCameraButton()
+        bindQuestionImagePickerController()
+        bindQuestionCollectionView()
+        bindPlusButton()
+        bindTableView()
+        bindExplanationCameraButton()
+        bindExplanationImagePickerController()
+        bindExplanationCollectionView()
+        bindCompleteButton()
+    }
+    func requestData() {
+        answerList = MainRepository.shared.answerList
+        answerRelay.accept(MainRepository.shared.answerList)
+        questionImageRelay.accept(MainRepository.shared.questionImageList)
+        explanationImageRelay.accept(MainRepository.shared.explanationImageList)
+    }
+    
     func makeViewArrays(){
         inSelfViewViews.append(scrollView)
         inSelfViewViews.append(completeButton)
@@ -52,11 +89,7 @@ extension MultipleChoiceQuestionViewController_RxSwift { // 자잘한 메소도�
         questionCollectionView.snp.makeConstraints{
             $0.leading.trailing.equalToSuperview().inset(10)
             $0.top.equalTo(questionTextView.snp.bottom).offset(5)
-            if questionImageList.count == 0 {
-                $0.height.equalTo(10)
-            } else {
-                $0.height.equalTo(CGFloat((questionImageList.count + 2) / 3) * collectionItemSize)
-            }
+            $0.height.equalTo(10)
         }
         
         answerLabel.snp.makeConstraints{
@@ -73,11 +106,7 @@ extension MultipleChoiceQuestionViewController_RxSwift { // 자잘한 메소도�
         tableView.snp.makeConstraints{
             $0.leading.trailing.equalToSuperview().inset(10)
             $0.top.equalTo(plusButton.snp.bottom).offset(5)
-            if answerList.count == 0 {
-                $0.height.equalTo(10)
-            } else {
-                $0.height.equalTo(43.5 * CGFloat(answerList.count))
-            }
+            $0.height.equalTo(10)
         }
         explanationLabel.snp.makeConstraints{
             $0.leading.equalTo(subView.snp.leading).offset(30)
@@ -99,15 +128,57 @@ extension MultipleChoiceQuestionViewController_RxSwift { // 자잘한 메소도�
             $0.leading.trailing.equalToSuperview().inset(10)
             $0.top.equalTo(explanationTextView.snp.bottom).offset(5)
             $0.bottom.equalTo(subView.snp.bottom).offset(-100)
-            if explanationImageList.count == 0 {
-                $0.height.equalTo(10)
-            } else {
-                $0.height.equalTo(CGFloat((explanationImageList.count + 2) / 3) * collectionItemSize)
-            }
+            $0.height.equalTo(10)
+
         }
         completeButton.snp.makeConstraints{
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(10)
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(0)
             $0.height.equalTo(60) }
     }
+    
+    
+    func tapPlusButton() { // 텍스트 필드 때문에 어쩔수없이 answerList 사용
+//        var list = answerRelay.value
+//        list.append("")
+        answerList.append("")
+        answerRelay.accept(answerList)
+    }
+    func tapXButton(_ cell: TableCell) {
+//        var list = answerRelay.value
+//        list.remove(at: button.tag)
+        answerList.remove(at: tableView.indexPath(for: cell)!.row)
+        answerRelay.accept(answerList)
+    }
+    
+    func tapQuestionCameraButton() {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            questionImagePicker.sourceType = .savedPhotosAlbum
+            questionImagePicker.allowsEditing = false
+            present(questionImagePicker, animated: true, completion: nil)
+        }
+    }
+    func tapExplanationCameraButton() {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            explanationImagePicker.sourceType = .savedPhotosAlbum
+            explanationImagePicker.allowsEditing = false
+            present(explanationImagePicker, animated: true, completion: nil)
+        }
+    }
+    func tapCompleteButton() {
+        MainRepository.shared.question = questionTextView.text
+        MainRepository.shared.explanation = explanationTextView.text
+        MainRepository.shared.answerList = answerRelay.value
+        MainRepository.shared.questionImageList = questionImageRelay.value
+        MainRepository.shared.explanationImageList = explanationImageRelay.value
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func textFieldDidChangeSelection(_ cell: TableCell) {
+        if tableView.indexPath(for: cell)!.row < answerList.count { // 삭제한 경우 뻑나서 추가
+            answerList[tableView.indexPath(for: cell)!.row] = cell.answerTextField.text!
+        }
+    }
+    
+    
 }

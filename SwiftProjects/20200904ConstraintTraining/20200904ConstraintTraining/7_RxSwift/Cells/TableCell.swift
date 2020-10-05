@@ -9,14 +9,20 @@
 import UIKit
 import SnapKit
 import RxSwift
+import RxCocoa
 import Then
+
+protocol vcDelegate {
+    func tapXButton(_ cell: TableCell)
+    func textFieldDidChangeSelection(_ cell: TableCell)
+}
 
 class TableCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    var isBinded = false
+    let assetRelay = PublishRelay<AssetType>()
+    var delegate: vcDelegate!
     var disposeBag = DisposeBag()
     var exampleNumber = UIImageView()
     let answerTextField = UITextField().then {
@@ -29,15 +35,25 @@ class TableCell: UITableViewCell {
         $0.setBorder(UIColor.systemRed)
         $0.textColor = UIColor.systemRed
     }
-    let xButton = CustomUIButton().then {
+    let xButton = UIButton().then {
         $0.setImage(UIImage(systemName: "xmark"), for: .normal)
     }
     
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-    
-        self.contentView.addSubviews([exampleNumber, answerTextField, incorrectOrCorrect, xButton])
+        print("init TableCell")
         
+        setupLayout()
+        bindData()
+    }
+    
+    deinit {
+        print("deinit TableCell")
+    }
+    
+    func setupLayout(){
+        self.contentView.addSubviews([exampleNumber, answerTextField, incorrectOrCorrect, xButton])
         exampleNumber.snp.makeConstraints{
             $0.height.width.equalTo(30)
             $0.leading.equalToSuperview().offset(10)
@@ -61,11 +77,26 @@ class TableCell: UITableViewCell {
             $0.centerY.equalToSuperview()
             $0.height.width.equalTo(20)
         }
-        print("init TableCell")
-    }
-    deinit {
-        print("deinit TableCell")
-        disposeBag = DisposeBag()
     }
     
+    func bindData(){
+        xButton.rx.tap.bind { [weak self] in
+            self?.delegate.tapXButton(self!)
+        }.disposed(by:disposeBag)
+        
+        answerTextField.rx.text
+            .distinctUntilChanged()
+            .bind { [weak self] _ in // _ 여기에 newValue가 들어가네 호옹이
+                self?.delegate?.textFieldDidChangeSelection(self!)
+        }.disposed(by:disposeBag)
+        
+        assetRelay.subscribe(onNext: { asset in
+            self.answerTextField.text = asset.text
+            self.exampleNumber.image = UIImage(systemName: String(asset.index + 1) + ".circle")
+        }).disposed(by: disposeBag)
+    }
+    
+    func setupDI(asset: AssetType){
+        self.assetRelay.accept(asset)
+    }
 }

@@ -34,16 +34,16 @@ class MultipleChoiceQuestionViewController_RxSwift: UIViewController {
         $0.text = "풀이"
     }
     
-    let questionCameraButton = CustomUIButton().then {
+    let questionCameraButton = UIButton().then {
         $0.setImage(UIImage(systemName: "camera"), for: .normal)
     }
-    let explanationCameraButton = CustomUIButton().then {
+    let explanationCameraButton = UIButton().then {
         $0.setImage(UIImage(systemName: "camera"), for: .normal)
     }
-    let plusButton = CustomUIButton().then {
+    let plusButton = UIButton().then {
         $0.setImage(UIImage(systemName: "plus"), for: .normal)
     }
-    let completeButton = CustomUIButton().then{
+    let completeButton = UIButton().then{
         $0.setTitle("완료", for: .normal)
         $0.backgroundColor = UIColor.systemBlue
     }
@@ -81,19 +81,15 @@ class MultipleChoiceQuestionViewController_RxSwift: UIViewController {
         $0.allowsSelection = false
         $0.register(TableCell.self, forCellReuseIdentifier: "TableCell")
     }
-    
-    var questionImageList = MainRepository.shared.questionImageList
-    var explanationImageList = MainRepository.shared.explanationImageList
-    var answerList = MainRepository.shared.answerList
-    
+    var answerList = [String]() // 텍스트 필드때매 써야함..
     let collectionItemSize = (UIScreen.main.bounds.size.width - 20) / 3
     
     let questionImagePicker = UIImagePickerController()
     let explanationImagePicker = UIImagePickerController()
     
-    lazy var answerRelay = BehaviorRelay<[String]>(value: answerList)
-    lazy var questionImageRelay = BehaviorRelay<[UIImage]>(value: questionImageList)
-    lazy var explanationImageRelay = BehaviorRelay<[UIImage]>(value: explanationImageList)
+    let answerRelay = BehaviorRelay<[String]>(value: [])
+    let questionImageRelay = BehaviorRelay<[UIImage]>(value: [])
+    let explanationImageRelay = BehaviorRelay<[UIImage]>(value: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,49 +97,8 @@ class MultipleChoiceQuestionViewController_RxSwift: UIViewController {
         
         setLayout() // 레이아웃
         bindData() // RxSwift
-        
-//        var publishSubject = PublishSubject<String>()
-//        
-//        publishSubject.subscribe{(event) in
-//            print(event)
-//        }
-//        
-//        publishSubject.onNext("First value")
-//        publishSubject.onNext("Second value")
+        requestData()
     }
-    
-    func setLayout(){
-        makeViewArrays() // 어디에 들어가느냐에 따라나눈 뷰 배열 만들기
-        
-        // 모든 뷰 .addSubView 진행
-        self.view.addSubviews(inSelfViewViews)
-        scrollView.addSubviews(inScrollViewViews)
-        subView.addSubviews(inSubViewViews)
-
-        // 특정 뷰 테두리 그리기
-        questionTextView.setBorder()
-        questionCollectionView.setBorder()
-        tableView.setBorder()
-        explanationTextView.setBorder()
-        explanationCollectionView.setBorder()
-        completeButton.setBorder(UIColor.systemBlue)
-        
-        // 제약사항 추가
-        addConstraint()
-    }
-    
-    func bindData() {
-        bindQuestionCameraButton()
-        bindQuestionImagePickerController()
-        bindQuestionCollectionView()
-        bindPlusButton()
-        bindTableView()
-        bindExplanationCameraButton()
-        bindExplanationImagePickerController()
-        bindExplanationCollectionView()
-        bindCompleteButton()
-    }
-    
     
     deinit{
         print("RxSwift deinit")

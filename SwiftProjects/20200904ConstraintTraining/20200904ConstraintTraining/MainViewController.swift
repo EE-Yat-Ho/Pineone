@@ -12,6 +12,9 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let fontAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18.0)]
+        UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
+        UITabBarItem.appearance().titlePositionAdjustment.vertical = -8.5
     }
     @IBAction func StoryBoardButtonClick(_ sender: Any) {
         let questionTabBarController = UIStoryboard.init(name: "Storyboard", bundle: nil).instantiateViewController(withIdentifier: "QuestionTabBarController_StoryBoard") as! QuestionTabBarController_StoryBoard

@@ -6,21 +6,21 @@
          contextName = "closure #1 in closure #1 in MultipleChoiceQuestionViewController_RxSwift.bindTableView():MultipleChoiceQuestionViewController_RxSwift.swift">
          <PersistentStrings>
             <PersistentString
+               value = "tableView">
+            </PersistentString>
+            <PersistentString
                value = "answerRelay">
             </PersistentString>
             <PersistentString
                value = "answerList">
             </PersistentString>
-            <PersistentString
-               value = "tableView">
-            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #3 in MultipleChoiceQuestionViewController_RxSwift.bindButtons():MultipleChoiceQuestionViewController_RxSwift.swift">
+         contextName = "MultipleChoiceQuestionViewController_RxSwift.bindButtons():MultipleChoiceQuestionViewController_RxSwift.swift">
          <PersistentStrings>
             <PersistentString
-               value = "take(1)">
+               value = "info">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -49,16 +49,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #6 in TableCell.init(style:reuseIdentifier:):TableCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self?.delegate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "MultipleChoiceQuestionViewController_RxSwift.textFieldDidChangeSelection(_:):TextFieldMethods.swift">
          <PersistentStrings>
+            <PersistentString
+               value = "answerList">
+            </PersistentString>
             <PersistentString
                value = "textField.tag">
             </PersistentString>
             <PersistentString
                value = "indexPath.row">
-            </PersistentString>
-            <PersistentString
-               value = "answerList">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -74,13 +82,13 @@
          contextName = "MultipleChoiceQuestionViewController_RxSwift.tableReload():MultipleChoiceQuestionViewController_RxSwift.swift">
          <PersistentStrings>
             <PersistentString
+               value = "tableView">
+            </PersistentString>
+            <PersistentString
                value = "answerRelay">
             </PersistentString>
             <PersistentString
                value = "answerList">
-            </PersistentString>
-            <PersistentString
-               value = "tableView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -115,10 +123,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MultipleChoiceQuestionViewController_RxSwift.bindButtons():MultipleChoiceQuestionViewController_RxSwift.swift">
+         contextName = "MultipleChoiceQuestionViewController_RxSwift.tapXButton(_:):TapMethods.swift">
          <PersistentStrings>
             <PersistentString
-               value = "info">
+               value = "answerList">
+            </PersistentString>
+            <PersistentString
+               value = "button.tag">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #3 in MultipleChoiceQuestionViewController_RxSwift.bindButtons():MultipleChoiceQuestionViewController_RxSwift.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "take(1)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
