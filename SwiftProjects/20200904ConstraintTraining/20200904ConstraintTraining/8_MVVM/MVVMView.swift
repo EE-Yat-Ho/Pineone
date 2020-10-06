@@ -1,9 +1,99 @@
+//
+//  MVVMView.swift
+//  20200904ConstraintTraining
+//
+//  Created by 박영호 on 2020/10/06.
+//  Copyright © 2020 Park young ho. All rights reserved.
+//
 
 import UIKit
+import SnapKit
+import Then
 import RxSwift
+import RxCocoa
 
-extension MultipleChoiceQuestionViewController_RxSwift: vcDelegate {
-    func setLayout(){
+class MVVMView: UIBasePreviewType {
+    typealias Model = Void
+    
+    var disposeBag = DisposeBag()
+    
+    var inSelfViewViews: [UIView] = []
+    var inScrollViewViews: [UIView] = []
+    var inSubViewViews: [UIView] = []
+    
+    let scrollView = UIScrollView()
+    let subView = UIView()
+    
+    let questionLabel = UILabel().then{
+        $0.text = "문제"
+    }
+    let answerLabel = UILabel().then {
+        $0.text = "보기"
+    }
+    let explanationLabel = UILabel().then {
+        $0.text = "풀이"
+    }
+    
+    let questionCameraButton = UIButton().then {
+        $0.setImage(UIImage(systemName: "camera"), for: .normal)
+    }
+    let explanationCameraButton = UIButton().then {
+        $0.setImage(UIImage(systemName: "camera"), for: .normal)
+    }
+    let plusButton = UIButton().then {
+        $0.setImage(UIImage(systemName: "plus"), for: .normal)
+    }
+    let completeButton = UIButton().then{
+        $0.setTitle("완료", for: .normal)
+        $0.backgroundColor = UIColor.systemBlue
+    }
+    
+    let questionTextView = UITextView().then {
+        $0.text = MainRepository.shared.question
+    }
+    let explanationTextView = UITextView().then {
+        $0.text = MainRepository.shared.explanation
+    }
+    
+    lazy var questionCollectionView = UICollectionView(
+        frame: CGRect(x: 0, y: 0, width: 0, height: 0),
+        collectionViewLayout: UICollectionViewFlowLayout().then {
+            $0.itemSize = CGSize(width: collectionItemSize, height: collectionItemSize)
+            $0.minimumInteritemSpacing = 0
+            $0.minimumLineSpacing = 0
+        }).then {
+        $0.backgroundColor = UIColor.white
+        $0.register(CollectionCell.self, forCellWithReuseIdentifier: "CollectionCell")
+    }
+    lazy var explanationCollectionView = UICollectionView(
+        frame: CGRect(x: 0, y: 0, width: 0, height: 0),
+        collectionViewLayout: UICollectionViewFlowLayout().then {
+            $0.itemSize = CGSize(width: collectionItemSize, height: collectionItemSize)
+            $0.minimumInteritemSpacing = 0
+            $0.minimumLineSpacing = 0
+        }).then {
+        $0.backgroundColor = UIColor.white
+        $0.register(CollectionCell.self, forCellWithReuseIdentifier: "CollectionCell")
+    }
+    
+    let tableView = UITableView().then {
+        $0.rowHeight = 43.5
+        $0.allowsSelection = false
+        $0.register(TableCell.self, forCellReuseIdentifier: "TableCell")
+    }
+    
+    let collectionItemSize = (UIScreen.main.bounds.size.width - 20) / 3
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupLayout()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupLayout() {
         inSelfViewViews.append(scrollView)
         inSelfViewViews.append(completeButton)
         
@@ -22,7 +112,7 @@ extension MultipleChoiceQuestionViewController_RxSwift: vcDelegate {
         inSubViewViews.append(explanationCollectionView)
         
         // 모든 뷰 .addSubView 진행
-        self.view.addSubviews(inSelfViewViews)
+        addSubviews(inSelfViewViews)
         scrollView.addSubviews(inScrollViewViews)
         subView.addSubviews(inSubViewViews)
 
@@ -34,7 +124,7 @@ extension MultipleChoiceQuestionViewController_RxSwift: vcDelegate {
         explanationCollectionView.setBorder()
         completeButton.setBorder(UIColor.systemBlue)
         // 제약사항 추가
-        scrollView.snp.makeConstraints{ $0.edges.equalTo(self.view.safeAreaLayoutGuide) }
+        scrollView.snp.makeConstraints{ $0.edges.equalTo(safeAreaLayoutGuide) }
         
         subView.snp.makeConstraints{
             $0.edges.equalTo(scrollView.contentLayoutGuide)
@@ -46,12 +136,14 @@ extension MultipleChoiceQuestionViewController_RxSwift: vcDelegate {
         
         questionLabel.snp.makeConstraints{
             $0.leading.equalTo(subView.snp.leading).offset(30)
-            $0.top.equalTo(subView.snp.top).offset(55)
+            //$0.top.equalTo(subView.snp.top).offset(55)
+            $0.top.equalTo(subView.snp.top).offset(20)
             $0.height.equalTo(20) }
         
         questionCameraButton.snp.makeConstraints{
             $0.trailing.equalTo(subView.snp.trailing).offset(-30)
-            $0.top.equalTo(subView.snp.top).offset(50)
+            //$0.top.equalTo(subView.snp.top).offset(50)
+            $0.top.equalTo(subView.snp.top).offset(15)
             $0.height.equalTo(30)
             $0.width.equalTo(30)
         }
@@ -107,70 +199,8 @@ extension MultipleChoiceQuestionViewController_RxSwift: vcDelegate {
 
         }
         completeButton.snp.makeConstraints{
-            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(10)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(0)
+            $0.leading.trailing.equalTo(safeAreaLayoutGuide).inset(10)
+            $0.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-20)
             $0.height.equalTo(60) }
     }
-    func bindData() {
-        bindQuestionCameraButton()
-        bindQuestionImagePickerController()
-        bindQuestionCollectionView()
-        bindPlusButton()
-        bindTableView()
-        bindExplanationCameraButton()
-        bindExplanationImagePickerController()
-        bindExplanationCollectionView()
-        bindCompleteButton()
-    }
-    func requestData() {
-        answerList = MainRepository.shared.answerList
-        answerRelay.accept(MainRepository.shared.answerList)
-        questionImageRelay.accept(MainRepository.shared.questionImageList)
-        explanationImageRelay.accept(MainRepository.shared.explanationImageList)
-    }
-    
-    
-    func tapPlusButton() { // 텍스트 필드 때문에 어쩔수없이 answerList 사용
-//        var list = answerRelay.value
-//        list.append("")
-        answerList.append("")
-        answerRelay.accept(answerList)
-    }
-    func tapXButton(_ cell: TableCell) {
-//        var list = answerRelay.value
-//        list.remove(at: button.tag)
-        answerList.remove(at: tableView.indexPath(for: cell)!.row)
-        answerRelay.accept(answerList)
-    }
-    
-    func tapQuestionCameraButton() {
-        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
-            questionImagePicker.sourceType = .savedPhotosAlbum
-            questionImagePicker.allowsEditing = false
-            present(questionImagePicker, animated: true, completion: nil)
-        }
-    }
-    func tapExplanationCameraButton() {
-        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
-            explanationImagePicker.sourceType = .savedPhotosAlbum
-            explanationImagePicker.allowsEditing = false
-            present(explanationImagePicker, animated: true, completion: nil)
-        }
-    }
-    func tapCompleteButton() {
-        MainRepository.shared.question = questionTextView.text
-        MainRepository.shared.explanation = explanationTextView.text
-        MainRepository.shared.answerList = answerRelay.value
-        MainRepository.shared.questionImageList = questionImageRelay.value
-        MainRepository.shared.explanationImageList = explanationImageRelay.value
-        navigationController?.popViewController(animated: true)
-    }
-    
-    func textFieldDidChangeSelection(_ cell: TableCell) {
-        if tableView.indexPath(for: cell)!.row < answerList.count { // 삭제한 경우 뻑나서 추가
-            answerList[tableView.indexPath(for: cell)!.row] = cell.answerTextField.text!
-        }
-    }
-    
-    
 }

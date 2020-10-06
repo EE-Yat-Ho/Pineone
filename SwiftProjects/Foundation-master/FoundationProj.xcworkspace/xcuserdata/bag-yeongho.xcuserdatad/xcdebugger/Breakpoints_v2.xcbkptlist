@@ -66,6 +66,69 @@
             endingLineNumber = "71"
             landmarkName = "bindData()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "370D2D6D-E644-411F-B234-7EA848132FDD - e3374bd1efcb3648"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoundationProj.MultiCollectionCell.bindData() -&gt; ()"
+                  moduleName = "FoundationProj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/Foundation-master/FoundationProj/Feature/MultiCollection/MultiCollectionCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "369">
+               </Location>
+               <Location
+                  uuid = "370D2D6D-E644-411F-B234-7EA848132FDD - 153b0a9ed107cc28"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (FoundationProj.AssetType) -&gt; __C.PHAsset in FoundationProj.MultiCollectionCell.bindData() -&gt; ()"
+                  moduleName = "FoundationProj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/Foundation-master/FoundationProj/Feature/MultiCollection/MultiCollectionCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "37">
+               </Location>
+               <Location
+                  uuid = "370D2D6D-E644-411F-B234-7EA848132FDD - 7457780460b1b40e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.PHAsset) -&gt; () in FoundationProj.MultiCollectionCell.bindData() -&gt; ()"
+                  moduleName = "FoundationProj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/Foundation-master/FoundationProj/Feature/MultiCollection/MultiCollectionCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "43">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "097D1928-81E1-4C9E-B009-149716858958"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoundationProj/Extension/ViewBased.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "viewDidAppear"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

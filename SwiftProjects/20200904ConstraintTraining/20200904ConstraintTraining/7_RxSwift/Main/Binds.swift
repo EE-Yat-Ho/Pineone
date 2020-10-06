@@ -48,7 +48,7 @@ extension MultipleChoiceQuestionViewController_RxSwift { // TableView
             }
         }).bind(to: explanationCollectionView.rx.items(cellIdentifier: "CollectionCell", cellType: CollectionCell.self)) {
             index, data, cell in
-            cell.imageView.image = data//self!.explanationImageList[index]
+            cell.imageView.image = data
         }.disposed(by: disposeBag)
     }
     

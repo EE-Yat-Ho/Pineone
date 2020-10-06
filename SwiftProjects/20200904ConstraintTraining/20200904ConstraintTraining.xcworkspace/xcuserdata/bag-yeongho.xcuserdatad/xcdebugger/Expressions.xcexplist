@@ -6,21 +6,21 @@
          contextName = "closure #1 in closure #1 in MultipleChoiceQuestionViewController_RxSwift.bindTableView():MultipleChoiceQuestionViewController_RxSwift.swift">
          <PersistentStrings>
             <PersistentString
-               value = "tableView">
+               value = "answerList">
             </PersistentString>
             <PersistentString
                value = "answerRelay">
             </PersistentString>
             <PersistentString
-               value = "answerList">
+               value = "tableView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MultipleChoiceQuestionViewController_RxSwift.bindButtons():MultipleChoiceQuestionViewController_RxSwift.swift">
+         contextName = "closure #3 in MultipleChoiceQuestionViewController_RxSwift.bindButtons():MultipleChoiceQuestionViewController_RxSwift.swift">
          <PersistentStrings>
             <PersistentString
-               value = "info">
+               value = "take(1)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -57,16 +57,40 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "MainViewController.bindingViewModel():MainViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.init():AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "window">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.window.getter:AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "window">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "MultipleChoiceQuestionViewController_RxSwift.textFieldDidChangeSelection(_:):TextFieldMethods.swift">
          <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
             <PersistentString
                value = "answerList">
             </PersistentString>
             <PersistentString
                value = "textField.tag">
-            </PersistentString>
-            <PersistentString
-               value = "indexPath.row">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -82,13 +106,21 @@
          contextName = "MultipleChoiceQuestionViewController_RxSwift.tableReload():MultipleChoiceQuestionViewController_RxSwift.swift">
          <PersistentStrings>
             <PersistentString
-               value = "tableView">
+               value = "answerList">
             </PersistentString>
             <PersistentString
                value = "answerRelay">
             </PersistentString>
             <PersistentString
-               value = "answerList">
+               value = "tableView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.window.setter:AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "window">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -134,10 +166,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #3 in MultipleChoiceQuestionViewController_RxSwift.bindButtons():MultipleChoiceQuestionViewController_RxSwift.swift">
+         contextName = "MultipleChoiceQuestionViewController_RxSwift.bindButtons():MultipleChoiceQuestionViewController_RxSwift.swift">
          <PersistentStrings>
             <PersistentString
-               value = "take(1)">
+               value = "info">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -33,6 +33,28 @@
 		2A9403BC2507641000D539FC /* MultipleChoiceQuestionViewController_NSLayout_VisualFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9403BB2507641000D539FC /* MultipleChoiceQuestionViewController_NSLayout_VisualFormat.swift */; };
 		2A9403BE2507665800D539FC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A9403BD2507665800D539FC /* Storyboard.storyboard */; };
 		2ABC8F84250A23ED008B39C2 /* MutipleChoiceQuestionViewController_SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABC8F83250A23ED008B39C2 /* MutipleChoiceQuestionViewController_SnapKit.swift */; };
+		2ACEE795252BF1E200D7A809 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE794252BF1E200D7A809 /* Screen.swift */; };
+		2ACEE79A252BF38C00D7A809 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE799252BF38C00D7A809 /* MainViewModel.swift */; };
+		2ACEE79E252BF39600D7A809 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE79D252BF39600D7A809 /* MainView.swift */; };
+		2ACEE7A1252BF3A100D7A809 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7A0252BF3A100D7A809 /* MainCell.swift */; };
+		2ACEE7A4252BF45F00D7A809 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7A3252BF45F00D7A809 /* ViewModel.swift */; };
+		2ACEE7A7252BF9CD00D7A809 /* ViewBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7A6252BF9CD00D7A809 /* ViewBased.swift */; };
+		2ACEE7AE252C029700D7A809 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7AD252C029700D7A809 /* ViewModelType.swift */; };
+		2ACEE7B3252C031B00D7A809 /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7B2252C031B00D7A809 /* AppStep.swift */; };
+		2ACEE7B6252C050000D7A809 /* UIKitPreView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7B5252C050000D7A809 /* UIKitPreView+.swift */; };
+		2ACEE7BB252C055700D7A809 /* CustomRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7BA252C055700D7A809 /* CustomRefreshControl.swift */; };
+		2ACEE7C2252C0B6E00D7A809 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7C1252C0B6E00D7A809 /* AppCoordinator.swift */; };
+		2ACEE7C8252C0BC200D7A809 /* AppStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7C7252C0BC200D7A809 /* AppStepper.swift */; };
+		2ACEE7CC252C0BE500D7A809 /* InitFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7CB252C0BE500D7A809 /* InitFlow.swift */; };
+		2ACEE7D0252C0D5900D7A809 /* FlowSugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7CF252C0D5900D7A809 /* FlowSugar.swift */; };
+		2ACEE7D3252C0D8200D7A809 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7D2252C0D8200D7A809 /* NavigationController.swift */; };
+		2ACEE7D6252C0EFF00D7A809 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7D5252C0EFF00D7A809 /* Log.swift */; };
+		2ACEE7DB252C273100D7A809 /* DeviceOrientationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7DA252C273100D7A809 /* DeviceOrientationHelper.swift */; };
+		2ACEE7DE252C3CF400D7A809 /* MVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7DD252C3CF400D7A809 /* MVVMViewModel.swift */; };
+		2ACEE7E2252C3DA200D7A809 /* MVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7E1252C3DA200D7A809 /* MVVMViewController.swift */; };
+		2ACEE7E6252C3DB100D7A809 /* MVVMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7E5252C3DB100D7A809 /* MVVMView.swift */; };
+		2ACEE7E9252C3E5600D7A809 /* MVVMCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7E8252C3E5600D7A809 /* MVVMCell.swift */; };
+		2ACEE7ED252C5AAA00D7A809 /* QTBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7EC252C5AAA00D7A809 /* QTBViewModel.swift */; };
 		563FBE9C5D112805F6861D8F /* Pods_20200904ConstraintTraining.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6806C2BFE74618EACC09B285 /* Pods_20200904ConstraintTraining.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +87,28 @@
 		2A9403BB2507641000D539FC /* MultipleChoiceQuestionViewController_NSLayout_VisualFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuestionViewController_NSLayout_VisualFormat.swift; sourceTree = "<group>"; };
 		2A9403BD2507665800D539FC /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		2ABC8F83250A23ED008B39C2 /* MutipleChoiceQuestionViewController_SnapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutipleChoiceQuestionViewController_SnapKit.swift; sourceTree = "<group>"; };
+		2ACEE794252BF1E200D7A809 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		2ACEE799252BF38C00D7A809 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		2ACEE79D252BF39600D7A809 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		2ACEE7A0252BF3A100D7A809 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		2ACEE7A3252BF45F00D7A809 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		2ACEE7A6252BF9CD00D7A809 /* ViewBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBased.swift; sourceTree = "<group>"; };
+		2ACEE7AD252C029700D7A809 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		2ACEE7B2252C031B00D7A809 /* AppStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
+		2ACEE7B5252C050000D7A809 /* UIKitPreView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKitPreView+.swift"; sourceTree = "<group>"; };
+		2ACEE7BA252C055700D7A809 /* CustomRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRefreshControl.swift; sourceTree = "<group>"; };
+		2ACEE7C1252C0B6E00D7A809 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		2ACEE7C7252C0BC200D7A809 /* AppStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStepper.swift; sourceTree = "<group>"; };
+		2ACEE7CB252C0BE500D7A809 /* InitFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFlow.swift; sourceTree = "<group>"; };
+		2ACEE7CF252C0D5900D7A809 /* FlowSugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowSugar.swift; sourceTree = "<group>"; };
+		2ACEE7D2252C0D8200D7A809 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		2ACEE7D5252C0EFF00D7A809 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		2ACEE7DA252C273100D7A809 /* DeviceOrientationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceOrientationHelper.swift; sourceTree = "<group>"; };
+		2ACEE7DD252C3CF400D7A809 /* MVVMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewModel.swift; sourceTree = "<group>"; };
+		2ACEE7E1252C3DA200D7A809 /* MVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewController.swift; sourceTree = "<group>"; };
+		2ACEE7E5252C3DB100D7A809 /* MVVMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMView.swift; sourceTree = "<group>"; };
+		2ACEE7E8252C3E5600D7A809 /* MVVMCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMCell.swift; sourceTree = "<group>"; };
+		2ACEE7EC252C5AAA00D7A809 /* QTBViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTBViewModel.swift; sourceTree = "<group>"; };
 		6806C2BFE74618EACC09B285 /* Pods_20200904ConstraintTraining.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_20200904ConstraintTraining.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8692FF9603908454DA82AF04 /* Pods-20200904ConstraintTraining.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20200904ConstraintTraining.release.xcconfig"; path = "Target Support Files/Pods-20200904ConstraintTraining/Pods-20200904ConstraintTraining.release.xcconfig"; sourceTree = "<group>"; };
 		D596E7EA0012D6C6F074E5AF /* Pods-20200904ConstraintTraining.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20200904ConstraintTraining.debug.xcconfig"; path = "Target Support Files/Pods-20200904ConstraintTraining/Pods-20200904ConstraintTraining.debug.xcconfig"; sourceTree = "<group>"; };
@@ -96,7 +140,16 @@
 		2A133681251881130096F4E7 /* Extention */ = {
 			isa = PBXGroup;
 			children = (
+				2ACEE7B9252C054100D7A809 /* PullToRequestControl */,
 				2A13367E2518810A0096F4E7 /* UIView+.swift */,
+				2ACEE7A3252BF45F00D7A809 /* ViewModel.swift */,
+				2ACEE7A6252BF9CD00D7A809 /* ViewBased.swift */,
+				2ACEE7CF252C0D5900D7A809 /* FlowSugar.swift */,
+				2ACEE7B5252C050000D7A809 /* UIKitPreView+.swift */,
+				2ACEE7AD252C029700D7A809 /* ViewModelType.swift */,
+				2ACEE7D2252C0D8200D7A809 /* NavigationController.swift */,
+				2ACEE7D5252C0EFF00D7A809 /* Log.swift */,
+				2ACEE7DA252C273100D7A809 /* DeviceOrientationHelper.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -157,16 +210,19 @@
 		2A30C2382501F35400BEAC9E /* 20200904ConstraintTraining */ = {
 			isa = PBXGroup;
 			children = (
-				2A133681251881130096F4E7 /* Extention */,
 				2A30C2392501F35400BEAC9E /* AppDelegate.swift */,
+				2ACEE7B1252C030B00D7A809 /* Coordinator */,
+				2A133681251881130096F4E7 /* Extention */,
 				2A30C23B2501F35400BEAC9E /* SceneDelegate.swift */,
 				2A30C2452501F35900BEAC9E /* Assets.xcassets */,
 				2A30C2472501F35900BEAC9E /* LaunchScreen.storyboard */,
 				2A30C24A2501F35900BEAC9E /* Info.plist */,
 				2A30C2422501F35400BEAC9E /* _0200904ConstraintTraining.xcdatamodeld */,
 				2A30C23F2501F35400BEAC9E /* Main.storyboard */,
-				2A30C23D2501F35400BEAC9E /* MainViewController.swift */,
+				2ACEE798252BF37800D7A809 /* Main */,
 				2A9403B5250707EE00D539FC /* QuestionTabBarController.swift */,
+				2ACEE7EC252C5AAA00D7A809 /* QTBViewModel.swift */,
+				2ACEE794252BF1E200D7A809 /* Screen.swift */,
 				2A30C2522501FA9000BEAC9E /* 1_StoryBoard */,
 				2A9403AF250629F200D539FC /* 2_NSLayoutConstraint */,
 				2A9403B025062A1100D539FC /* 3_VisualFormatLanguege */,
@@ -174,6 +230,7 @@
 				2A30C2592502286D00BEAC9E /* 5_Anchor */,
 				2A9403B225062A6200D539FC /* 6_SnapKit */,
 				2A0EBF32251490E6002C9E01 /* 7_RxSwift */,
+				2ACEE7E0252C3D0900D7A809 /* 8_MVVM */,
 				2A30C2372501F35400BEAC9E /* Products */,
 			);
 			path = 20200904ConstraintTraining;
@@ -229,6 +286,71 @@
 				2ABC8F83250A23ED008B39C2 /* MutipleChoiceQuestionViewController_SnapKit.swift */,
 			);
 			path = 6_SnapKit;
+			sourceTree = "<group>";
+		};
+		2ACEE798252BF37800D7A809 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2A30C23D2501F35400BEAC9E /* MainViewController.swift */,
+				2ACEE799252BF38C00D7A809 /* MainViewModel.swift */,
+				2ACEE79D252BF39600D7A809 /* MainView.swift */,
+				2ACEE7A0252BF3A100D7A809 /* MainCell.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		2ACEE7B1252C030B00D7A809 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2ACEE7C1252C0B6E00D7A809 /* AppCoordinator.swift */,
+				2ACEE7BE252C0B5200D7A809 /* Step */,
+				2ACEE7BF252C0B5600D7A809 /* Stepper */,
+				2ACEE7C0252C0B5E00D7A809 /* Flow */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		2ACEE7B9252C054100D7A809 /* PullToRequestControl */ = {
+			isa = PBXGroup;
+			children = (
+				2ACEE7BA252C055700D7A809 /* CustomRefreshControl.swift */,
+			);
+			path = PullToRequestControl;
+			sourceTree = "<group>";
+		};
+		2ACEE7BE252C0B5200D7A809 /* Step */ = {
+			isa = PBXGroup;
+			children = (
+				2ACEE7B2252C031B00D7A809 /* AppStep.swift */,
+			);
+			path = Step;
+			sourceTree = "<group>";
+		};
+		2ACEE7BF252C0B5600D7A809 /* Stepper */ = {
+			isa = PBXGroup;
+			children = (
+				2ACEE7C7252C0BC200D7A809 /* AppStepper.swift */,
+			);
+			path = Stepper;
+			sourceTree = "<group>";
+		};
+		2ACEE7C0252C0B5E00D7A809 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				2ACEE7CB252C0BE500D7A809 /* InitFlow.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		2ACEE7E0252C3D0900D7A809 /* 8_MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				2ACEE7E5252C3DB100D7A809 /* MVVMView.swift */,
+				2ACEE7E1252C3DA200D7A809 /* MVVMViewController.swift */,
+				2ACEE7DD252C3CF400D7A809 /* MVVMViewModel.swift */,
+				2ACEE7E8252C3E5600D7A809 /* MVVMCell.swift */,
+			);
+			path = 8_MVVM;
 			sourceTree = "<group>";
 		};
 		4AFFE95EABB98FBC90CE57F4 /* Pods */ = {
@@ -364,28 +486,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ACEE7BB252C055700D7A809 /* CustomRefreshControl.swift in Sources */,
+				2ACEE7E9252C3E5600D7A809 /* MVVMCell.swift in Sources */,
 				2A30C23E2501F35400BEAC9E /* MainViewController.swift in Sources */,
 				2A13367C251880610096F4E7 /* TableCell.swift in Sources */,
 				2A30C25D25022ED200BEAC9E /* MultipleChoiceQuestionViewController_Anchor.swift in Sources */,
 				2A30C2582502201400BEAC9E /* TableViewCell.swift in Sources */,
 				2A30C23A2501F35400BEAC9E /* AppDelegate.swift in Sources */,
+				2ACEE7E6252C3DB100D7A809 /* MVVMView.swift in Sources */,
 				2A9403B825070C8F00D539FC /* MultipleChoiceQuestionViewController_NSLayoutConstraint.swift in Sources */,
+				2ACEE7C2252C0B6E00D7A809 /* AppCoordinator.swift in Sources */,
+				2ACEE7AE252C029700D7A809 /* ViewModelType.swift in Sources */,
 				2A1336A7251B64E60096F4E7 /* ImagePicker.swift in Sources */,
 				2A9403BC2507641000D539FC /* MultipleChoiceQuestionViewController_NSLayout_VisualFormat.swift in Sources */,
+				2ACEE7A7252BF9CD00D7A809 /* ViewBased.swift in Sources */,
 				2A9403BA250726EE00D539FC /* MutipleChoiceQuestionViewController_VisualFormat.swift in Sources */,
+				2ACEE795252BF1E200D7A809 /* Screen.swift in Sources */,
+				2ACEE7D6252C0EFF00D7A809 /* Log.swift in Sources */,
+				2ACEE7A4252BF45F00D7A809 /* ViewModel.swift in Sources */,
 				2A133677251865930096F4E7 /* MultipleChoiceQuestionViewController_RxSwift.swift in Sources */,
+				2ACEE7D0252C0D5900D7A809 /* FlowSugar.swift in Sources */,
+				2ACEE7DB252C273100D7A809 /* DeviceOrientationHelper.swift in Sources */,
 				2A30C2542501FAE000BEAC9E /* MultipleChoiceQuestionViewController_StoryBoard.swift in Sources */,
+				2ACEE7C8252C0BC200D7A809 /* AppStepper.swift in Sources */,
 				2A13368E251B3D570096F4E7 /* Binds.swift in Sources */,
+				2ACEE7ED252C5AAA00D7A809 /* QTBViewModel.swift in Sources */,
+				2ACEE79E252BF39600D7A809 /* MainView.swift in Sources */,
 				2A1336882518A35E0096F4E7 /* MainRepository.swift in Sources */,
 				2A30C25625021B4F00BEAC9E /* CollectionViewCell.swift in Sources */,
 				2A1336852518990D0096F4E7 /* CollectionCell.swift in Sources */,
+				2ACEE7D3252C0D8200D7A809 /* NavigationController.swift in Sources */,
 				2A30C2442501F35400BEAC9E /* _0200904ConstraintTraining.xcdatamodeld in Sources */,
+				2ACEE7A1252BF3A100D7A809 /* MainCell.swift in Sources */,
 				2A30C23C2501F35400BEAC9E /* SceneDelegate.swift in Sources */,
+				2ACEE7B6252C050000D7A809 /* UIKitPreView+.swift in Sources */,
+				2ACEE7DE252C3CF400D7A809 /* MVVMViewModel.swift in Sources */,
 				2ABC8F84250A23ED008B39C2 /* MutipleChoiceQuestionViewController_SnapKit.swift in Sources */,
 				2A13367F2518810A0096F4E7 /* UIView+.swift in Sources */,
+				2ACEE7B3252C031B00D7A809 /* AppStep.swift in Sources */,
 				2A1336BA251C785C0096F4E7 /* Methods.swift in Sources */,
 				2A9403B6250707EE00D539FC /* QuestionTabBarController.swift in Sources */,
 				2A30C2512501F7A500BEAC9E /* QuestionTabBarController_StoryBoard.swift in Sources */,
+				2ACEE79A252BF38C00D7A809 /* MainViewModel.swift in Sources */,
+				2ACEE7E2252C3DA200D7A809 /* MVVMViewController.swift in Sources */,
+				2ACEE7CC252C0BE500D7A809 /* InitFlow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

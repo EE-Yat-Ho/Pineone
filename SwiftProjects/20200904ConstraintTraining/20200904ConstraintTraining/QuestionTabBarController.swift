@@ -27,6 +27,8 @@ class QuestionTabBarController: UITabBarController, UITabBarControllerDelegate {
             item1 = MultipleChoiceQuestionViewController_SnapKit()
         case 7 :
             item1 = MultipleChoiceQuestionViewController_RxSwift()
+        case 8 :
+            item1 = MVVMViewController()
         default:
             print("VCNumber Error!")
         }

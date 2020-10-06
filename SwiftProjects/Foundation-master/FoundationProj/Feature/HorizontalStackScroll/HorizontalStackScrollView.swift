@@ -64,21 +64,9 @@ import SwiftUI
 @available(iOS 13.0, *)
 struct HorizontalStackScroll_Previews: PreviewProvider {
     static var previews: some View {
-        //        Group {
-        //            ForEach(UIView.previceSupportDevices, id: \.self) { deviceName in
-        //                DebugPreviewView {
-        //                    return HorizontalStackScrollView()
-        //                }.previewDevice(PreviewDevice(rawValue: deviceName))
-        //                    .previewDisplayName(deviceName)
-        //                    .previewLayout(.sizeThatFits)
-        //            }
-        //        }        
         Group {
             DebugPreviewView {
                 let view = HorizontalStackScrollView()
-                //                .then {
-                //                    $0.setupDI(observable: Observable.just([]))
-                //                }
                 return view
             }
         }
