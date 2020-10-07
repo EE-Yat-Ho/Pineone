@@ -1,14 +1,14 @@
 //
-//  CollectionCell.swift
+//  MVVMCollectionCell.swift
 //  20200904ConstraintTraining
 //
-//  Created by 박영호 on 2020/09/21.
+//  Created by 박영호 on 2020/10/07.
 //  Copyright © 2020 Park young ho. All rights reserved.
 //
 
 import UIKit
 
-class CollectionCell: UICollectionViewCell {
+class MVVMCollectionCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

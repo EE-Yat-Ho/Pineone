@@ -13,11 +13,14 @@ import Reusable
 import SnapKit
 import Then
 
-class MainViewController: UIBaseViewController, ViewModelProtocol {
+class MainViewController: UIViewController, ViewModelProtocol {
     typealias ViewModel = MainViewModel
-    // MARK: - ViewModelProtocol
-    var viewModel: ViewModel!
     
+    // MARK: - ViewModelProtocol
+    var viewModel: ViewModel! = ViewModel()
+    
+    // MARK: - Parameters
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,39 +32,25 @@ class MainViewController: UIBaseViewController, ViewModelProtocol {
         
         setupLayout() // 레이아웃
         bindingViewModel()
-        stateBind()
-        addNotification()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
-    
-    func addNotification(){
-        NotificationCenter.default.addObserver(self, selector: #selector(self.orientationChange(_:)), name: Notification.Name("CMOrientationChange"), object: nil)
-    }
-    
-    @objc func orientationChange(_ noti: Notification){
-        guard let orient = noti.userInfo?["UIDeviceOrientation"] as? UIDeviceOrientation else {
-            return
-        }
-        
-        print("orientaion : \(orient.rawValue)")
-    }
-    
-    func stateBind() {
-        viewModel.stateBind(state: ViewModel.State(viewLife: self.viewState))
     }
     
     func bindingViewModel(){
-        //화면 전환용
-        let res = viewModel.transform(req: ViewModel.Input(selectItem: subView.table.rx.modelSelected(Screen.self).asObservable()))
-        subView.setupDI(observable: res.itemList)
+        // 테이블 바인딩
+        viewModel.mainRelay.bind(to: subView.table.rx.items(cellIdentifier: "MainCell", cellType: MainCell.self)) {
+            index, data, cell in
+            cell.label.text = data.getTitle()
+        }.disposed(by: disposeBag)
         
+        // 테이블 셀 선택 바인딩
+        subView.table.rx.modelSelected(Screen.self).subscribe(onNext: {
+            screen in
+            let qusetionTabBarConstroller = QuestionTabBarController()
+            qusetionTabBarConstroller.screen = screen
+            self.navigationController?.pushViewController(qusetionTabBarConstroller, animated: true)
+        }).disposed(by: disposeBag)
         
-        
-        print("binding complete")
+        // VM 호출해서 테이블에 값 뿌리기
+        viewModel.transform(req: MainViewModel.ViewModel.Input())
     }
     
     let subView = MainView()
@@ -71,6 +60,8 @@ class MainViewController: UIBaseViewController, ViewModelProtocol {
         subView.snp.makeConstraints{
             $0.edges.equalToSuperview()
         }
+        
+        
     }
 }
 

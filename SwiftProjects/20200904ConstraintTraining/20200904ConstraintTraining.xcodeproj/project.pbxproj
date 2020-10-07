@@ -53,8 +53,8 @@
 		2ACEE7DE252C3CF400D7A809 /* MVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7DD252C3CF400D7A809 /* MVVMViewModel.swift */; };
 		2ACEE7E2252C3DA200D7A809 /* MVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7E1252C3DA200D7A809 /* MVVMViewController.swift */; };
 		2ACEE7E6252C3DB100D7A809 /* MVVMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7E5252C3DB100D7A809 /* MVVMView.swift */; };
-		2ACEE7E9252C3E5600D7A809 /* MVVMCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7E8252C3E5600D7A809 /* MVVMCell.swift */; };
-		2ACEE7ED252C5AAA00D7A809 /* QTBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7EC252C5AAA00D7A809 /* QTBViewModel.swift */; };
+		2ACEE7FA252D779400D7A809 /* MVVMTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7F9252D779400D7A809 /* MVVMTableCell.swift */; };
+		2ACEE7FD252D923800D7A809 /* MVVMCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEE7FC252D923800D7A809 /* MVVMCollectionCell.swift */; };
 		563FBE9C5D112805F6861D8F /* Pods_20200904ConstraintTraining.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6806C2BFE74618EACC09B285 /* Pods_20200904ConstraintTraining.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,8 +107,8 @@
 		2ACEE7DD252C3CF400D7A809 /* MVVMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewModel.swift; sourceTree = "<group>"; };
 		2ACEE7E1252C3DA200D7A809 /* MVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewController.swift; sourceTree = "<group>"; };
 		2ACEE7E5252C3DB100D7A809 /* MVVMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMView.swift; sourceTree = "<group>"; };
-		2ACEE7E8252C3E5600D7A809 /* MVVMCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMCell.swift; sourceTree = "<group>"; };
-		2ACEE7EC252C5AAA00D7A809 /* QTBViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTBViewModel.swift; sourceTree = "<group>"; };
+		2ACEE7F9252D779400D7A809 /* MVVMTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMTableCell.swift; sourceTree = "<group>"; };
+		2ACEE7FC252D923800D7A809 /* MVVMCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMCollectionCell.swift; sourceTree = "<group>"; };
 		6806C2BFE74618EACC09B285 /* Pods_20200904ConstraintTraining.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_20200904ConstraintTraining.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8692FF9603908454DA82AF04 /* Pods-20200904ConstraintTraining.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20200904ConstraintTraining.release.xcconfig"; path = "Target Support Files/Pods-20200904ConstraintTraining/Pods-20200904ConstraintTraining.release.xcconfig"; sourceTree = "<group>"; };
 		D596E7EA0012D6C6F074E5AF /* Pods-20200904ConstraintTraining.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20200904ConstraintTraining.debug.xcconfig"; path = "Target Support Files/Pods-20200904ConstraintTraining/Pods-20200904ConstraintTraining.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,10 +143,10 @@
 				2ACEE7B9252C054100D7A809 /* PullToRequestControl */,
 				2A13367E2518810A0096F4E7 /* UIView+.swift */,
 				2ACEE7A3252BF45F00D7A809 /* ViewModel.swift */,
+				2ACEE7AD252C029700D7A809 /* ViewModelType.swift */,
 				2ACEE7A6252BF9CD00D7A809 /* ViewBased.swift */,
 				2ACEE7CF252C0D5900D7A809 /* FlowSugar.swift */,
 				2ACEE7B5252C050000D7A809 /* UIKitPreView+.swift */,
-				2ACEE7AD252C029700D7A809 /* ViewModelType.swift */,
 				2ACEE7D2252C0D8200D7A809 /* NavigationController.swift */,
 				2ACEE7D5252C0EFF00D7A809 /* Log.swift */,
 				2ACEE7DA252C273100D7A809 /* DeviceOrientationHelper.swift */,
@@ -221,7 +221,6 @@
 				2A30C23F2501F35400BEAC9E /* Main.storyboard */,
 				2ACEE798252BF37800D7A809 /* Main */,
 				2A9403B5250707EE00D539FC /* QuestionTabBarController.swift */,
-				2ACEE7EC252C5AAA00D7A809 /* QTBViewModel.swift */,
 				2ACEE794252BF1E200D7A809 /* Screen.swift */,
 				2A30C2522501FA9000BEAC9E /* 1_StoryBoard */,
 				2A9403AF250629F200D539FC /* 2_NSLayoutConstraint */,
@@ -291,9 +290,9 @@
 		2ACEE798252BF37800D7A809 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				2ACEE79D252BF39600D7A809 /* MainView.swift */,
 				2A30C23D2501F35400BEAC9E /* MainViewController.swift */,
 				2ACEE799252BF38C00D7A809 /* MainViewModel.swift */,
-				2ACEE79D252BF39600D7A809 /* MainView.swift */,
 				2ACEE7A0252BF3A100D7A809 /* MainCell.swift */,
 			);
 			path = Main;
@@ -348,7 +347,8 @@
 				2ACEE7E5252C3DB100D7A809 /* MVVMView.swift */,
 				2ACEE7E1252C3DA200D7A809 /* MVVMViewController.swift */,
 				2ACEE7DD252C3CF400D7A809 /* MVVMViewModel.swift */,
-				2ACEE7E8252C3E5600D7A809 /* MVVMCell.swift */,
+				2ACEE7F9252D779400D7A809 /* MVVMTableCell.swift */,
+				2ACEE7FC252D923800D7A809 /* MVVMCollectionCell.swift */,
 			);
 			path = 8_MVVM;
 			sourceTree = "<group>";
@@ -487,9 +487,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ACEE7BB252C055700D7A809 /* CustomRefreshControl.swift in Sources */,
-				2ACEE7E9252C3E5600D7A809 /* MVVMCell.swift in Sources */,
 				2A30C23E2501F35400BEAC9E /* MainViewController.swift in Sources */,
 				2A13367C251880610096F4E7 /* TableCell.swift in Sources */,
+				2ACEE7FA252D779400D7A809 /* MVVMTableCell.swift in Sources */,
 				2A30C25D25022ED200BEAC9E /* MultipleChoiceQuestionViewController_Anchor.swift in Sources */,
 				2A30C2582502201400BEAC9E /* TableViewCell.swift in Sources */,
 				2A30C23A2501F35400BEAC9E /* AppDelegate.swift in Sources */,
@@ -507,10 +507,10 @@
 				2A133677251865930096F4E7 /* MultipleChoiceQuestionViewController_RxSwift.swift in Sources */,
 				2ACEE7D0252C0D5900D7A809 /* FlowSugar.swift in Sources */,
 				2ACEE7DB252C273100D7A809 /* DeviceOrientationHelper.swift in Sources */,
+				2ACEE7FD252D923800D7A809 /* MVVMCollectionCell.swift in Sources */,
 				2A30C2542501FAE000BEAC9E /* MultipleChoiceQuestionViewController_StoryBoard.swift in Sources */,
 				2ACEE7C8252C0BC200D7A809 /* AppStepper.swift in Sources */,
 				2A13368E251B3D570096F4E7 /* Binds.swift in Sources */,
-				2ACEE7ED252C5AAA00D7A809 /* QTBViewModel.swift in Sources */,
 				2ACEE79E252BF39600D7A809 /* MainView.swift in Sources */,
 				2A1336882518A35E0096F4E7 /* MainRepository.swift in Sources */,
 				2A30C25625021B4F00BEAC9E /* CollectionViewCell.swift in Sources */,

@@ -12,7 +12,7 @@ import Then
 import RxSwift
 import RxCocoa
 
-class MVVMView: UIBasePreviewType {
+class MVVMView: UIView {
     typealias Model = Void
     
     var disposeBag = DisposeBag()
@@ -63,7 +63,7 @@ class MVVMView: UIBasePreviewType {
             $0.minimumLineSpacing = 0
         }).then {
         $0.backgroundColor = UIColor.white
-        $0.register(CollectionCell.self, forCellWithReuseIdentifier: "CollectionCell")
+        $0.register(MVVMCollectionCell.self, forCellWithReuseIdentifier: "MVVMCollectionCell")
     }
     lazy var explanationCollectionView = UICollectionView(
         frame: CGRect(x: 0, y: 0, width: 0, height: 0),
@@ -73,13 +73,13 @@ class MVVMView: UIBasePreviewType {
             $0.minimumLineSpacing = 0
         }).then {
         $0.backgroundColor = UIColor.white
-        $0.register(CollectionCell.self, forCellWithReuseIdentifier: "CollectionCell")
+        $0.register(MVVMCollectionCell.self, forCellWithReuseIdentifier: "MVVMCollectionCell")
     }
     
     let tableView = UITableView().then {
         $0.rowHeight = 43.5
         $0.allowsSelection = false
-        $0.register(TableCell.self, forCellReuseIdentifier: "TableCell")
+        $0.register(MVVMTableCell.self, forCellReuseIdentifier: "MVVMTableCell")
     }
     
     let collectionItemSize = (UIScreen.main.bounds.size.width - 20) / 3
@@ -136,14 +136,14 @@ class MVVMView: UIBasePreviewType {
         
         questionLabel.snp.makeConstraints{
             $0.leading.equalTo(subView.snp.leading).offset(30)
-            //$0.top.equalTo(subView.snp.top).offset(55)
-            $0.top.equalTo(subView.snp.top).offset(20)
+            $0.top.equalTo(subView.snp.top).offset(55)
+            //$0.top.equalTo(subView.snp.top).offset(20)
             $0.height.equalTo(20) }
         
         questionCameraButton.snp.makeConstraints{
             $0.trailing.equalTo(subView.snp.trailing).offset(-30)
-            //$0.top.equalTo(subView.snp.top).offset(50)
-            $0.top.equalTo(subView.snp.top).offset(15)
+            $0.top.equalTo(subView.snp.top).offset(50)
+            //$0.top.equalTo(subView.snp.top).offset(15)
             $0.height.equalTo(30)
             $0.width.equalTo(30)
         }
@@ -200,7 +200,7 @@ class MVVMView: UIBasePreviewType {
         }
         completeButton.snp.makeConstraints{
             $0.leading.trailing.equalTo(safeAreaLayoutGuide).inset(10)
-            $0.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-20)
+            $0.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(20)
             $0.height.equalTo(60) }
     }
 }

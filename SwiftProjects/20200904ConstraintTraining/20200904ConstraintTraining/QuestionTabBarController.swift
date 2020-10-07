@@ -2,7 +2,7 @@
 import UIKit
 
 class QuestionTabBarController: UITabBarController, UITabBarControllerDelegate {
-    var VCNumber: Int?
+    var screen: Screen?
     var NVC_height = CGFloat(50.0)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,23 +14,26 @@ class QuestionTabBarController: UITabBarController, UITabBarControllerDelegate {
         
         // 객관식 만들기 화면 설정
         var item1 = UIViewController()
-        switch VCNumber {
-        case 2 :
+        switch screen {
+        case .storyBoard:
+            print("StrotBoard removed..;;")
+            //item1 = MultipleChoiceQuestionViewController_StoryBoard()
+        case .nSLayout:
             item1 = MultipleChoiceQuestionViewController_NSLayoutConstraint()
-        case 3 :
+        case .visualFormat:
             item1 = MultipleChoiceQuestionViewController_VisualFormat()
-        case 4 :
+        case .nSLayout_VisualFormat:
             item1 = MultipleChoiceQuestionViewController_NSLayout_VisualFormat()
-        case 5 :
+        case .anchor:
             item1 = MultipleChoiceQuestionViewController_Anchor()
-        case 6 :
+        case .snapKit:
             item1 = MultipleChoiceQuestionViewController_SnapKit()
-        case 7 :
+        case .rxSwift:
             item1 = MultipleChoiceQuestionViewController_RxSwift()
-        case 8 :
+        case .mVVM:
             item1 = MVVMViewController()
-        default:
-            print("VCNumber Error!")
+        case .none:
+            print("Tabbar VC Error")
         }
         item1.tabBarItem.title = "객관식 만들기"
         
