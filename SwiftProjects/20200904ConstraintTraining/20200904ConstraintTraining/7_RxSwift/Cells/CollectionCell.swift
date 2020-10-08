@@ -23,5 +23,4 @@ class CollectionCell: UICollectionViewCell {
             $0.edges.equalToSuperview().inset(5)
         }
     }
-    
 }

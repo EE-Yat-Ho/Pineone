@@ -10,4 +10,20 @@ struct MainRepository {
     var answerList = ["1", "2", "3"]//[String]()
     var questionImageList = [UIImage]()
     var explanationImageList = [UIImage]()
+    
+    static func mainList() -> [Screen]{
+        [.storyBoard,
+         .nSLayout,
+         .visualFormat,
+         .nSLayout_VisualFormat,
+         .anchor,
+         .snapKit,
+         .rxSwift,
+         .mVVM]
+    }
+}
+
+struct AssetType{
+    var text: String
+    var index: Int
 }

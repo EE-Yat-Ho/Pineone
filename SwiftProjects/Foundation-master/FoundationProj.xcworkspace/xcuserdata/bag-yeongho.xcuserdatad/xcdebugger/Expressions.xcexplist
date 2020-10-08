@@ -3,21 +3,26 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "implicit closure #2 in implicit closure #1 in MainViewModel.transform(req:):MainViewModel.swift">
+         contextName = "MainViewController.bindingViewModel():MainViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "ViewModel.Input">
-            </PersistentString>
-            <PersistentString
-               value = "Output(itemList: loadAction.elements)">
+               value = "viewModel">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in variable initialization expression of MainViewModel.loadAction:MainViewModel.swift">
+         contextName = "AppDelegate.init():AppDelegate.swift">
          <PersistentStrings>
             <PersistentString
-               value = "MainRepository.mainList()">
+               value = "window">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "InitFlow.navigateToMain():InitFlow.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MainViewController.viewModel">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -29,6 +34,49 @@
             </PersistentString>
             <PersistentString
                value = "screen">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainViewController.viewDidLoad():MainViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainViewController.init(nibName:bundle:):MainViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "implicit closure #2 in implicit closure #1 in MainViewModel.transform(req:):MainViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ViewModel.Input">
+            </PersistentString>
+            <PersistentString
+               value = "Output(itemList: loadAction.elements)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.window.setter:AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "window">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in variable initialization expression of MainViewModel.loadAction:MainViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MainRepository.mainList()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

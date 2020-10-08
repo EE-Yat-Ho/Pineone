@@ -3,70 +3,24 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #1 in closure #1 in MultipleChoiceQuestionViewController_RxSwift.bindTableView():MultipleChoiceQuestionViewController_RxSwift.swift">
+         contextName = "MVVMViewModel.tapXButton(_:):MVVMViewModel.swift">
          <PersistentStrings>
             <PersistentString
-               value = "answerRelay">
+               value = "cell.superview?">
             </PersistentString>
+            <PersistentString
+               value = "cell.superview?.superview">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MultipleChoiceQuestionViewController_RxSwift.tapXButton(_:):TapMethods.swift">
+         <PersistentStrings>
             <PersistentString
                value = "answerList">
             </PersistentString>
             <PersistentString
-               value = "tableView">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #3 in MultipleChoiceQuestionViewController_RxSwift.bindButtons():MultipleChoiceQuestionViewController_RxSwift.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "take(1)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MultipleChoiceQuestionViewController_RxSwift.xButtonClick(_:):MultipleChoiceQuestionViewController_RxSwift.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "answerList">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MultipleChoiceQuestionViewController_RxSwift.bindData():MultipleChoiceQuestionViewController_RxSwift.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "first">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in MultipleChoiceQuestionViewController_RxSwift.bindTableView():MultipleChoiceQuestionViewController_RxSwift.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "first">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MultipleChoiceQuestionViewController_RxSwift.textFieldDidChangeSelection(_:):TextFieldMethods.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "textField.tag">
-            </PersistentString>
-            <PersistentString
-               value = "indexPath.row">
-            </PersistentString>
-            <PersistentString
-               value = "answerList">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #2 in closure #3 in MultipleChoiceQuestionViewController_RxSwift.bindButtons():MultipleChoiceQuestionViewController_RxSwift.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "$0.rx.didFinishPickingMediaWithInfo">
+               value = "button.tag">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -85,24 +39,27 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "MainViewController.bindingViewModel():MainViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "MultipleChoiceQuestionViewController_RxSwift.xButtonTap(_:):MultipleChoiceQuestionViewController_RxSwift.swift">
       </ContextState>
       <ContextState
-         contextName = "MultipleChoiceQuestionViewController_RxSwift.addAnswer():MultipleChoiceQuestionViewController_RxSwift.swift">
+         contextName = "MultipleChoiceQuestionViewController_RxSwift.textFieldDidChangeSelection(_:):TextFieldMethods.swift">
          <PersistentStrings>
             <PersistentString
                value = "answerList">
             </PersistentString>
             <PersistentString
-               value = "Observable.of(answerList)">
+               value = "textField.tag">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MultipleChoiceQuestionViewController_RxSwift.textFieldDidChangeSelection(_:):TextField.swift">
-         <PersistentStrings>
             <PersistentString
-               value = "textField.text">
+               value = "indexPath.row">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -115,10 +72,123 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "AppDelegate.window.getter:AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "window">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MultipleChoiceQuestionViewController_RxSwift.textFieldDidChangeSelection(_:):TextField.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "textField.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.window.setter:AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "window">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in closure #3 in MultipleChoiceQuestionViewController_RxSwift.bindButtons():MultipleChoiceQuestionViewController_RxSwift.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "$0.rx.didFinishPickingMediaWithInfo">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "MultipleChoiceQuestionViewController_RxSwift.bindButtons():MultipleChoiceQuestionViewController_RxSwift.swift">
          <PersistentStrings>
             <PersistentString
                value = "info">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.init():AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "window">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #3 in MultipleChoiceQuestionViewController_RxSwift.bindButtons():MultipleChoiceQuestionViewController_RxSwift.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "take(1)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MultipleChoiceQuestionViewController_RxSwift.bindData():MultipleChoiceQuestionViewController_RxSwift.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "first">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MultipleChoiceQuestionViewController_RxSwift.xButtonClick(_:):MultipleChoiceQuestionViewController_RxSwift.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "answerList">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #6 in TableCell.init(style:reuseIdentifier:):TableCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self?.delegate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in MultipleChoiceQuestionViewController_RxSwift.bindTableView():MultipleChoiceQuestionViewController_RxSwift.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "answerRelay">
+            </PersistentString>
+            <PersistentString
+               value = "answerList">
+            </PersistentString>
+            <PersistentString
+               value = "tableView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MainViewController.bindingViewModel():MainViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MultipleChoiceQuestionViewController_RxSwift.bindTableView():MultipleChoiceQuestionViewController_RxSwift.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "first">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MultipleChoiceQuestionViewController_RxSwift.addAnswer():MultipleChoiceQuestionViewController_RxSwift.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "answerList">
+            </PersistentString>
+            <PersistentString
+               value = "Observable.of(answerList)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
