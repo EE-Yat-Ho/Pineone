@@ -25,6 +25,8 @@ class MVVMViewController: UIViewController, ViewModelProtocol {
     let questionImagePicker = UIImagePickerController()
     let explanationImagePicker = UIImagePickerController()
     
+    let action = PublishRelay<AnswerAction>()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,20 +40,27 @@ class MVVMViewController: UIViewController, ViewModelProtocol {
     
     // MARK: - Binding
     func bindingViewModel() {
+        
+        // 데이터 불러와서 accept하게하기
+        let res = viewModel.transform(req: ViewModel.Input(action: action))
+        
+        subView.setupDI(observable: res.answerList)
+                .setupDI(action: self.action)
+        
         // 테이블 바인딩
-        viewModel.answerRelay.do(onNext:{[weak self] data in
-            if data.count == 0 {
-                self?.subView.tableView.snp.updateConstraints{
-                    $0.height.equalTo(10) }
-            } else {
-                self?.subView.tableView.snp.updateConstraints{
-                    $0.height.equalTo(CGFloat(data.count) * 43.5) }
-            }
-        }).bind(to: subView.tableView.rx.items(cellIdentifier: "MVVMTableCell", cellType: MVVMTableCell.self)) { [weak self]
-            index, data, cell in
-            cell.delegate = self?.viewModel
-            cell.setupDI(asset: AssetType(text: data, index: index))
-        }.disposed(by: disposeBag)
+//        viewModel.answerRelay.do(onNext:{[weak self] data in
+//            if data.count == 0 {
+//                self?.subView.tableView.snp.updateConstraints{
+//                    $0.height.equalTo(10) }
+//            } else {
+//                self?.subView.tableView.snp.updateConstraints{
+//                    $0.height.equalTo(CGFloat(data.count) * 43.5) }
+//            }
+//        }).bind(to: subView.tableView.rx.items(cellIdentifier: "MVVMTableCell", cellType: MVVMTableCell.self)) { [weak self]
+//            index, data, cell in
+//            cell.delegate = self?.viewModel
+//            cell.setupDI(asset: AssetType(text: data, index: index))
+//        }.disposed(by: disposeBag)
         
         // 문제 콜렉션 바인딩
         viewModel.questionImageRelay.do(onNext:{ [weak self] data in
@@ -82,10 +91,6 @@ class MVVMViewController: UIViewController, ViewModelProtocol {
             cell.imageView.image = data
         }.disposed(by: disposeBag)
         
-        // +버튼 바인딩
-        subView.plusButton.rx.tap.bind{ [weak self] in
-            self?.viewModel.tapPlusButton()
-        }.disposed(by:disposeBag)
         
         // 완료 버튼 바인딩
         subView.completeButton.rx.tap.bind{ [weak self] in
@@ -131,8 +136,6 @@ class MVVMViewController: UIViewController, ViewModelProtocol {
             self?.present(self!.explanationImagePicker, animated: true, completion: nil)
         }.disposed(by:disposeBag)
         
-        // 데이터 불러와서 accept하게하기
-        viewModel.transform(req: ViewModel.Input())
     }
     
     // MARK: - View

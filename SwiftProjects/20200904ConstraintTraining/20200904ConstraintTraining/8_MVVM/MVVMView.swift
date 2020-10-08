@@ -87,10 +87,53 @@ class MVVMView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayout()
+        bindData()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func bindData() {
+        
+        // +버튼 바인딩
+        plusButton.rx
+            .tap
+            .map{ .plus }
+            .bind(to: actionRelay)
+        .disposed(by:disposeBag)
+    }
+    
+    let actionRelay = PublishRelay<AnswerAction>()
+    
+    @discardableResult
+    func setupDI<T>(observable: Observable<T>) -> Self{
+        if let o = observable as? Observable<[String]> {
+            o.do(onNext:{[weak self] data in
+                if data.count == 0 {
+                    self?.tableView.snp.updateConstraints{
+                        $0.height.equalTo(10) }
+                } else {
+                    self?.tableView.snp.updateConstraints{
+                        $0.height.equalTo(CGFloat(data.count) * 43.5) }
+                }
+            }).bind(to: tableView.rx.items(cellIdentifier: "MVVMTableCell", cellType: MVVMTableCell.self)) { [weak self]
+                index, data, cell in
+//                cell.delegate = self?.viewModel
+                cell.setupDI(asset: AssetType(text: data, index: index))
+            }.disposed(by: disposeBag)
+        }
+        return self
+    }
+    
+    @discardableResult
+    func setupDI<T>(action: PublishRelay<T>) -> Self {
+        
+        if let a = action as? PublishRelay<AnswerAction> {
+            actionRelay.bind(to: a).disposed(by: rx.disposeBag)
+        }
+        
+        return self
     }
     
     func setupLayout() {

@@ -69,7 +69,11 @@ class CollectionMultiSelectionViewController: UIBaseViewController, ViewModelPro
             $0.0?.item
         }
         
-        let res = viewModel.transform(req: ViewModel.Input(albumRequestTrigger: requestTrigger.asObservable(),prefetchItems: subView.collectionView.rx.prefetchItems.asObservable(), cancelPrefetchItems: subView.collectionView.rx.cancelPrefetchingForItems.asObservable(), modelSelect: modelSelect))
+        let res = viewModel.transform(req: ViewModel.Input(
+                                        albumRequestTrigger: requestTrigger.asObservable(),
+                                        prefetchItems: subView.collectionView.rx.prefetchItems.asObservable(),
+                                        cancelPrefetchItems: subView.collectionView.rx.cancelPrefetchingForItems.asObservable(),
+                                        modelSelect: modelSelect))
         
         
         subView.setupDI(observable: res.imageList)

@@ -14,6 +14,10 @@ import SnapKit
 import Then
 import NSObject_Rx
 
+enum AnswerAction {
+    case plus
+}
+
 class MVVMViewModel: ViewModelType, MVVMTableCellDelegate {
     // MARK: - Action
     func tapXButton(_ cell: MVVMTableCell) {
@@ -60,6 +64,7 @@ class MVVMViewModel: ViewModelType, MVVMTableCellDelegate {
     typealias ViewModel = MVVMViewModel
     
     struct Input { // 한번 그리면서, 바인드를 쫘아악?
+        let action: PublishRelay<AnswerAction>
         //var questionCameraAction: Observable<Void>
         //var explanationCameraAction: Observable<Void>
         //var answerPlusAction: Observable<Void>
@@ -67,12 +72,17 @@ class MVVMViewModel: ViewModelType, MVVMTableCellDelegate {
     }
     
     struct Output {
+        let answerList: Observable<[String]>
         //let questionImageList: Observable<[UIImage]>
         //let explanationImageList: Observable<[UIImage]>
         //let answerList: Observable<[String]>
     }
     
     func transform(req: ViewModel.Input) -> ViewModel.Output {
+        req.action.subscribe(onNext: { [weak self] action in
+            self?.actionProcess(action: action)
+        }).disposed(by: disposeBag)
+        
         let answerList = MainRepository.shared.answerList
         answerRelay.accept(answerList)
         
@@ -82,6 +92,13 @@ class MVVMViewModel: ViewModelType, MVVMTableCellDelegate {
         let explanationImageList = MainRepository.shared.explanationImageList
         explanationImageRelay.accept(explanationImageList)
         
-        return Output()
+        return Output(answerList: answerRelay.asObservable())
+    }
+    
+    func actionProcess(action: AnswerAction) {
+        switch action {
+        case .plus:
+            self.tapPlusButton()
+        }
     }
 }
