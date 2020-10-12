@@ -12,6 +12,11 @@ import RxSwift
 import RxCocoa
 import Then
 
+struct AssetType{
+    var text: String
+    var index: Int
+}
+
 protocol MVVMTableCellDelegate {
     func tapXButton(_ cell: MVVMTableCell)
 }
@@ -20,7 +25,8 @@ class MVVMTableCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    let assetRelay = PublishRelay<AssetType>()
+    let assetRelay = BehaviorRelay<AssetType>(value: AssetType(text: "", index: 0))
+    let actionRelay = PublishRelay<Action>()
     var delegate: MVVMTableCellDelegate!
     var disposeBag = DisposeBag()
     var exampleNumber = UIImageView()
@@ -83,13 +89,26 @@ class MVVMTableCell: UITableViewCell {
             self?.delegate.tapXButton(self!)
         }.disposed(by:disposeBag)
         
-        assetRelay.subscribe(onNext: { asset in
-            self.answerTextField.text = asset.text
-            self.exampleNumber.image = UIImage(systemName: String(asset.index + 1) + ".circle")
+        assetRelay.subscribe(onNext: { [weak self] asset in
+            self!.answerTextField.text = asset.text
+            self!.exampleNumber.image = UIImage(systemName: String(asset.index + 1) + ".circle")
         }).disposed(by: disposeBag)
+        
+        answerTextField.rx
+            .text
+            .map{ .answerTextChange($0!, self.assetRelay.value.index)}
+            .bind(to: actionRelay)
+            .disposed(by:disposeBag)
     }
     
     func setupDI(asset: AssetType){
         self.assetRelay.accept(asset)
+    }
+    @discardableResult
+    func setupDI<T>(action: PublishRelay<T>) -> Self {
+        if let a = action as? PublishRelay<Action> {
+            actionRelay.bind(to: a).disposed(by: rx.disposeBag)
+        }
+        return self
     }
 }

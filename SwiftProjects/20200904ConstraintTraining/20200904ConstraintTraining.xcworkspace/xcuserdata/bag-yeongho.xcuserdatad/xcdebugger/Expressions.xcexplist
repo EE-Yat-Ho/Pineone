@@ -3,13 +3,13 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "MVVMViewModel.tapXButton(_:):MVVMViewModel.swift">
+         contextName = "MultipleChoiceQuestionViewController_RxSwift.addAnswer():MultipleChoiceQuestionViewController_RxSwift.swift">
          <PersistentStrings>
             <PersistentString
-               value = "cell.superview?">
+               value = "answerList">
             </PersistentString>
             <PersistentString
-               value = "cell.superview?.superview">
+               value = "Observable.of(answerList)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -28,13 +28,13 @@
          contextName = "MultipleChoiceQuestionViewController_RxSwift.tableReload():MultipleChoiceQuestionViewController_RxSwift.swift">
          <PersistentStrings>
             <PersistentString
+               value = "tableView">
+            </PersistentString>
+            <PersistentString
                value = "answerRelay">
             </PersistentString>
             <PersistentString
                value = "answerList">
-            </PersistentString>
-            <PersistentString
-               value = "tableView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -53,13 +53,13 @@
          contextName = "MultipleChoiceQuestionViewController_RxSwift.textFieldDidChangeSelection(_:):TextFieldMethods.swift">
          <PersistentStrings>
             <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
                value = "answerList">
             </PersistentString>
             <PersistentString
                value = "textField.tag">
-            </PersistentString>
-            <PersistentString
-               value = "indexPath.row">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -100,6 +100,17 @@
          <PersistentStrings>
             <PersistentString
                value = "$0.rx.didFinishPickingMediaWithInfo">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MVVMViewModel.tapCompleteButton():MVVMViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "nowSceneData">
+            </PersistentString>
+            <PersistentString
+               value = "MainRepository.shared.dataForScene">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -155,13 +166,13 @@
          contextName = "closure #1 in closure #1 in MultipleChoiceQuestionViewController_RxSwift.bindTableView():MultipleChoiceQuestionViewController_RxSwift.swift">
          <PersistentStrings>
             <PersistentString
+               value = "tableView">
+            </PersistentString>
+            <PersistentString
                value = "answerRelay">
             </PersistentString>
             <PersistentString
                value = "answerList">
-            </PersistentString>
-            <PersistentString
-               value = "tableView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -182,13 +193,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MultipleChoiceQuestionViewController_RxSwift.addAnswer():MultipleChoiceQuestionViewController_RxSwift.swift">
+         contextName = "MVVMViewModel.tapXButton(_:):MVVMViewModel.swift">
          <PersistentStrings>
             <PersistentString
-               value = "answerList">
+               value = "cell.superview?">
             </PersistentString>
             <PersistentString
-               value = "Observable.of(answerList)">
+               value = "cell.superview?.superview">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

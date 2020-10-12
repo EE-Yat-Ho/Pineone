@@ -49,10 +49,10 @@ class MVVMView: UIView {
     }
     
     let questionTextView = UITextView().then {
-        $0.text = MainRepository.shared.question
+        $0.text = MainRepository.shared.dataForScene.question
     }
     let explanationTextView = UITextView().then {
-        $0.text = MainRepository.shared.explanation
+        $0.text = MainRepository.shared.dataForScene.explanation
     }
     
     lazy var questionCollectionView = UICollectionView(
@@ -94,22 +94,56 @@ class MVVMView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    let actionRelay = PublishRelay<Action>()
+    let cameraRelay = PublishRelay<CameraAction>()
+    var nowSceneData = DataForScene()
+    var savedSceneData = DataForScene()
     func bindData() {
-        
         // +버튼 바인딩
         plusButton.rx
             .tap
-            .map{ .plus }
+            .map{ .tapPlusButton } //여기서 플러스로 바뀌네
             .bind(to: actionRelay)
         .disposed(by:disposeBag)
+        
+        completeButton.rx
+            .tap
+            .map{ .tapCompleteButton(DataForScene(question: self.questionTextView.text, explanation: self.explanationTextView.text, answerList: ["1","2"], questionImageList: [], explanationImageList: [])) }
+            .bind(to: actionRelay)
+            .disposed(by:disposeBag)
+        
+        questionCameraButton.rx
+            .tap
+            .map{ .question}
+            .bind(to: cameraRelay)
+            .disposed(by:disposeBag)
+        
+        explanationCameraButton.rx
+            .tap
+            .map{ .explanation}
+            .bind(to: cameraRelay)
+            .disposed(by:disposeBag)
+        
+        questionTextView.rx
+            .text
+            .map{ .questionTextChange($0!)}
+            .bind(to: actionRelay)
+            .disposed(by:disposeBag)
+        
+        explanationTextView.rx
+            .text
+            .map{ .explanationTextChange($0!)}
+            .bind(to: actionRelay)
+            .disposed(by:disposeBag)
+        
     }
     
-    let actionRelay = PublishRelay<AnswerAction>()
-    
+    // MARK: - model Dependency Injection
     @discardableResult
     func setupDI<T>(observable: Observable<T>) -> Self{
         if let o = observable as? Observable<[String]> {
-            o.do(onNext:{[weak self] data in
+            o.do(onNext:{ [weak self] data in
                 if data.count == 0 {
                     self?.tableView.snp.updateConstraints{
                         $0.height.equalTo(10) }
@@ -117,22 +151,68 @@ class MVVMView: UIView {
                     self?.tableView.snp.updateConstraints{
                         $0.height.equalTo(CGFloat(data.count) * 43.5) }
                 }
-            }).bind(to: tableView.rx.items(cellIdentifier: "MVVMTableCell", cellType: MVVMTableCell.self)) { [weak self]
-                index, data, cell in
+            }).bind(to: tableView.rx.items(cellIdentifier: "MVVMTableCell", cellType: MVVMTableCell.self)) {
+                [weak self] index, data, cell in
 //                cell.delegate = self?.viewModel
                 cell.setupDI(asset: AssetType(text: data, index: index))
+                cell.setupDI(action: self!.actionRelay)
             }.disposed(by: disposeBag)
         }
         return self
     }
     
     @discardableResult
+    func setupDI<T>(questionImageList: Observable<T>) -> Self{
+        if let o = questionImageList as? Observable<[UIImage]> {
+            o.do(onNext:{ [weak self] data in
+                if data.count == 0 {
+                    self?.questionCollectionView.snp.updateConstraints{
+                        $0.height.equalTo(10) }
+                } else {
+                    self?.questionCollectionView.snp.updateConstraints{
+                        $0.height.equalTo(CGFloat((data.count + 2) / 3) * self!.collectionItemSize) }
+                }
+            }).bind(to: questionCollectionView.rx.items(cellIdentifier: "MVVMCollectionCell", cellType: MVVMCollectionCell.self)) {
+                index, data, cell in
+                cell.imageView.image = data//self!.questionImageList[index]
+            }.disposed(by: disposeBag)
+        }
+        return self
+    }
+    
+    @discardableResult
+    func setupDI<T>(explanationImageList: Observable<T>) -> Self{
+        if let o = explanationImageList as? Observable<[UIImage]> {
+            o.do(onNext:{ [weak self] data in
+                if data.count == 0 {
+                    self?.explanationCollectionView.snp.updateConstraints{
+                        $0.height.equalTo(10) }
+                } else {
+                    self?.explanationCollectionView.snp.updateConstraints{
+                        $0.height.equalTo(CGFloat((data.count + 2) / 3) * self!.collectionItemSize) }
+                }
+            }).bind(to: explanationCollectionView.rx.items(cellIdentifier: "MVVMCollectionCell", cellType: MVVMCollectionCell.self)) {
+                index, data, cell in
+                cell.imageView.image = data//self!.questionImageList[index]
+            }.disposed(by: disposeBag)
+        }
+        return self
+    }
+   
+    
+    @discardableResult
     func setupDI<T>(action: PublishRelay<T>) -> Self {
-        
-        if let a = action as? PublishRelay<AnswerAction> {
+        if let a = action as? PublishRelay<Action> {
             actionRelay.bind(to: a).disposed(by: rx.disposeBag)
         }
-        
+        return self
+    }
+    
+    @discardableResult
+    func setupDI<T>(camera: PublishRelay<T>) -> Self {
+        if let c = camera as? PublishRelay<CameraAction> {
+            cameraRelay.bind(to: c).disposed(by: rx.disposeBag)
+        }
         return self
     }
     
