@@ -15,6 +15,8 @@ import RxCocoa
 class MVVMView: UIView {
     typealias Model = Void
     
+    
+    // MARK: - Properties
     var disposeBag = DisposeBag()
     
     var inSelfViewViews: [UIView] = []
@@ -84,6 +86,10 @@ class MVVMView: UIView {
     
     let collectionItemSize = (UIScreen.main.bounds.size.width - 20) / 3
     
+    // View의 핵심!!
+    let actionRelay = PublishRelay<Action>()
+    
+    // MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayout()
@@ -94,112 +100,112 @@ class MVVMView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    let actionRelay = PublishRelay<Action>()
-    let cameraRelay = PublishRelay<CameraAction>()
-    var nowSceneData = DataForScene()
-    var savedSceneData = DataForScene()
+    // MARK: - View <-> VC Bind to [ actionRelay ]
     func bindData() {
-        // +버튼 바인딩
+        // [ +버튼, 완료버튼, 카메라버튼 2개, 텍스트뷰 입력 2개 ]바인드
         plusButton.rx
             .tap
-            .map{ .tapPlusButton } //여기서 플러스로 바뀌네
+            .map{ .tapPlusButton }
             .bind(to: actionRelay)
         .disposed(by:disposeBag)
         
         completeButton.rx
             .tap
-            .map{ .tapCompleteButton(DataForScene(question: self.questionTextView.text, explanation: self.explanationTextView.text, answerList: ["1","2"], questionImageList: [], explanationImageList: [])) }
+            .map{ .tapCompleteButton }
             .bind(to: actionRelay)
             .disposed(by:disposeBag)
         
         questionCameraButton.rx
             .tap
-            .map{ .question}
-            .bind(to: cameraRelay)
+            .map{ .tapCameraButton("question")}
+            .bind(to: actionRelay)
             .disposed(by:disposeBag)
         
         explanationCameraButton.rx
             .tap
-            .map{ .explanation}
-            .bind(to: cameraRelay)
+            .map{ .tapCameraButton("explanation")}
+            .bind(to: actionRelay)
             .disposed(by:disposeBag)
         
         questionTextView.rx
             .text
-            .map{ .questionTextChange($0!)}
+            .map{ .questionTextChange($0 ?? "Error")}
             .bind(to: actionRelay)
             .disposed(by:disposeBag)
         
         explanationTextView.rx
             .text
-            .map{ .explanationTextChange($0!)}
+            .map{ .explanationTextChange($0 ?? "Error")}
             .bind(to: actionRelay)
             .disposed(by:disposeBag)
-        
     }
     
-    // MARK: - model Dependency Injection
+    // MARK: - Dependency Injection to table and collections.
+    // 테이블 뷰 의존성 주입
     @discardableResult
-    func setupDI<T>(observable: Observable<T>) -> Self{
-        if let o = observable as? Observable<[String]> {
+    func setupDI<T>(answerList: Observable<T>) -> Self{
+        if let o = answerList as? Observable<[String]> {
+            // 셀 갯수에 따른 높이조절
             o.do(onNext:{ [weak self] data in
-                if data.count == 0 {
-                    self?.tableView.snp.updateConstraints{
-                        $0.height.equalTo(10) }
-                } else {
-                    self?.tableView.snp.updateConstraints{
-                        $0.height.equalTo(CGFloat(data.count) * 43.5) }
+                if let t = self?.tableView {
+                    self?.setTableViewHeight(tableView: t, cellCount: data.count)
                 }
-            }).bind(to: tableView.rx.items(cellIdentifier: "MVVMTableCell", cellType: MVVMTableCell.self)) {
+            })
+            // 셀마다 의존성 주입, 데이터 매핑
+            .bind(to: tableView.rx.items(cellIdentifier: "MVVMTableCell", cellType: MVVMTableCell.self)) {
                 [weak self] index, data, cell in
-//                cell.delegate = self?.viewModel
-                cell.setupDI(asset: AssetType(text: data, index: index))
-                cell.setupDI(action: self!.actionRelay)
+                // 테이블을 그릴때 마다 셀에 의존성 주입하는 것을 방지.
+                if cell.isSetupDI == false {
+                    guard let a = self?.actionRelay else {
+                        print("tableCell's actionRelay is nil!!")
+                        return
+                    }
+                    cell.setupDI(action: a)
+                    cell.isSetupDI = true
+                }
+                // 의존성 주입을 하든안하든 텍스트와 인덱스 값은 갱신해주어야함.
+                cell.dataMapping(text: data, index: index)
             }.disposed(by: disposeBag)
         }
         return self
     }
     
+    // 질문 콜렉션 뷰 의존성 주입
     @discardableResult
     func setupDI<T>(questionImageList: Observable<T>) -> Self{
         if let o = questionImageList as? Observable<[UIImage]> {
+            // 셀 갯수에 따른 높이조절
             o.do(onNext:{ [weak self] data in
-                if data.count == 0 {
-                    self?.questionCollectionView.snp.updateConstraints{
-                        $0.height.equalTo(10) }
-                } else {
-                    self?.questionCollectionView.snp.updateConstraints{
-                        $0.height.equalTo(CGFloat((data.count + 2) / 3) * self!.collectionItemSize) }
+                if let q = self?.questionCollectionView {
+                    self?.setCollectionViewHeight(collectionView: q, cellCount: data.count)
                 }
-            }).bind(to: questionCollectionView.rx.items(cellIdentifier: "MVVMCollectionCell", cellType: MVVMCollectionCell.self)) {
+            })
+            // 셀에 이미지 넣기
+            .bind(to: questionCollectionView.rx.items(cellIdentifier: "MVVMCollectionCell", cellType: MVVMCollectionCell.self)) {
                 index, data, cell in
-                cell.imageView.image = data//self!.questionImageList[index]
+                cell.imageView.image = data
             }.disposed(by: disposeBag)
         }
         return self
     }
     
+    // 풀이 콜렉션 뷰 의존성 주입
     @discardableResult
     func setupDI<T>(explanationImageList: Observable<T>) -> Self{
         if let o = explanationImageList as? Observable<[UIImage]> {
             o.do(onNext:{ [weak self] data in
-                if data.count == 0 {
-                    self?.explanationCollectionView.snp.updateConstraints{
-                        $0.height.equalTo(10) }
-                } else {
-                    self?.explanationCollectionView.snp.updateConstraints{
-                        $0.height.equalTo(CGFloat((data.count + 2) / 3) * self!.collectionItemSize) }
+                if let e = self?.explanationCollectionView {
+                    self?.setCollectionViewHeight(collectionView: e, cellCount: data.count)
                 }
             }).bind(to: explanationCollectionView.rx.items(cellIdentifier: "MVVMCollectionCell", cellType: MVVMCollectionCell.self)) {
                 index, data, cell in
-                cell.imageView.image = data//self!.questionImageList[index]
+                cell.imageView.image = data
             }.disposed(by: disposeBag)
         }
         return self
     }
    
-    
+    // 갖가지 유저 입력들(버튼들, 텍스트 입력들) 의존성 주입
     @discardableResult
     func setupDI<T>(action: PublishRelay<T>) -> Self {
         if let a = action as? PublishRelay<Action> {
@@ -208,14 +214,8 @@ class MVVMView: UIView {
         return self
     }
     
-    @discardableResult
-    func setupDI<T>(camera: PublishRelay<T>) -> Self {
-        if let c = camera as? PublishRelay<CameraAction> {
-            cameraRelay.bind(to: c).disposed(by: rx.disposeBag)
-        }
-        return self
-    }
     
+    // MARK: - Setup Layout
     func setupLayout() {
         inSelfViewViews.append(scrollView)
         inSelfViewViews.append(completeButton)
@@ -253,20 +253,14 @@ class MVVMView: UIView {
             $0.edges.equalTo(scrollView.contentLayoutGuide)
             $0.width.equalTo(scrollView.frameLayoutGuide.snp.width) }
         
-        questionLabel.leadingAnchor.constraint(equalTo: subView.leadingAnchor, constant: 30).isActive = true
-        questionLabel.topAnchor.constraint(equalTo: subView.topAnchor, constant: 55).isActive = true
-        questionLabel.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
-        
         questionLabel.snp.makeConstraints{
             $0.leading.equalTo(subView.snp.leading).offset(30)
             $0.top.equalTo(subView.snp.top).offset(55)
-            //$0.top.equalTo(subView.snp.top).offset(20)
             $0.height.equalTo(20) }
         
         questionCameraButton.snp.makeConstraints{
             $0.trailing.equalTo(subView.snp.trailing).offset(-30)
             $0.top.equalTo(subView.snp.top).offset(50)
-            //$0.top.equalTo(subView.snp.top).offset(15)
             $0.height.equalTo(30)
             $0.width.equalTo(30)
         }
@@ -325,5 +319,29 @@ class MVVMView: UIView {
             $0.leading.trailing.equalTo(safeAreaLayoutGuide).inset(10)
             $0.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(20)
             $0.height.equalTo(60) }
+    }
+    
+    func setCollectionViewHeight(collectionView: UICollectionView, cellCount: Int){
+        if cellCount == 0 {
+            collectionView.snp.updateConstraints{
+                $0.height.equalTo(10) }
+        } else {
+            collectionView.snp.updateConstraints{
+                $0.height.equalTo(CGFloat((cellCount + 2) / 3) * self.collectionItemSize) }
+        }
+    }
+    
+    func setTableViewHeight(tableView: UITableView, cellCount: Int) {
+        if cellCount == 0 {
+            tableView.snp.updateConstraints{
+                $0.height.equalTo(10) }
+        } else {
+            tableView.snp.updateConstraints{
+                $0.height.equalTo(CGFloat(cellCount) * 43.5) }
+        }
+    }
+    
+    deinit {
+        print("view deinit")
     }
 }

@@ -25,12 +25,18 @@ class MVVMViewController: UIViewController, ViewModelProtocol {
     // MARK: - Properties
     let disposeBag = DisposeBag()
     
-    let questionImagePicker = UIImagePickerController()
-    let explanationImagePicker = UIImagePickerController()
+    let questionImagePicker = UIImagePickerController().then {
+        $0.sourceType = .savedPhotosAlbum
+        $0.allowsEditing = false
+    }
+    let explanationImagePicker = UIImagePickerController().then {
+        $0.sourceType = .savedPhotosAlbum
+        $0.allowsEditing = false
+    }
     
     let action = PublishRelay<Action>()
-    let camera = PublishRelay<CameraAction>()
-    
+    let presentQImagePicker = PublishRelay<Void>()
+    let presentEImagePicker = PublishRelay<Void>()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -38,38 +44,43 @@ class MVVMViewController: UIViewController, ViewModelProtocol {
         
         bindingViewModel()
         setupLayout()
-        configure()
     }
-    
-    
     
     // MARK: - Binding
     func bindingViewModel() {
-        let res = viewModel.transform(req: ViewModel.Input(action: action))
+        let res = viewModel.transform(req: ViewModel.Input(action: action)) // 옵저버블만 넘겨주기 뷰모델은 관찰만하니까 
         
-        subView.setupDI(observable: res.answerList)
+        // 뷰에 있는 테이블뷰, 콜렉션뷰, 버튼들, 텍스트입력에 의존성 주입
+        subView.setupDI(answerList: res.answerList)
             .setupDI(questionImageList: res.questionImageList)
             .setupDI(explanationImageList: res.explanationImageList)
             .setupDI(action: self.action)
-            .setupDI(camera: camera)
 
+        // 뷰모델에서 내린 판단으로 어떤 이미지 피커를 올릴지 결정
+        res.questionCameraObb.bind(to: presentQImagePicker).disposed(by: disposeBag)
+        res.explanationCameraObb.bind(to: presentEImagePicker).disposed(by: disposeBag)
         
-        camera.bind(onNext: { [weak self] cameraAction in
-            switch cameraAction {
-            case .question:
-                self!.present(self!.questionImagePicker, animated: true, completion: nil)
-            case .explanation:
-                self!.present(self!.explanationImagePicker, animated: true, completion: nil)
+        presentQImagePicker.bind(onNext: { [weak self] in
+            if let q = self?.questionImagePicker {
+                self?.present(q, animated: true, completion: nil)
             }
         }).disposed(by: disposeBag)
-          
+        
+        presentEImagePicker.bind(onNext: { [weak self] in
+            if let e = self?.explanationImagePicker {
+                self?.present(e, animated: true, completion: nil)
+            }
+        }).disposed(by: disposeBag)
+        
+        
+        // 이미지 피커에서 이미지를 선택하면, 피커를 닫고 이미지를 뷰모델에 넘겨줌
         questionImagePicker.rx
             .didFinishPickingMediaWithInfo
             .asObservable()
             .do(onNext: { [weak self] _ in
-                self!.questionImagePicker.dismiss(animated: true, completion: nil)
+                self?.questionImagePicker.dismiss(animated: true, completion: nil)
             })
-            .map{ .questionImagePickerSelect($0[.originalImage] as! UIImage) }
+            .map{ .questionImagePickerSelect($0[.originalImage] as? UIImage ?? UIImage()) }
             .bind(to: action)
             .disposed(by:disposeBag)
         
@@ -77,9 +88,9 @@ class MVVMViewController: UIViewController, ViewModelProtocol {
             .didFinishPickingMediaWithInfo
             .asObservable()
             .do(onNext: { [weak self] _ in
-                self!.dismiss(animated: true, completion: nil)
+                self?.dismiss(animated: true, completion: nil)
             })
-            .map{ .explanationImagePickerSelect($0[.originalImage] as! UIImage) }
+            .map{ .explanationImagePickerSelect($0[.originalImage] as? UIImage ?? UIImage()) }
             .bind(to: action)
             .disposed(by:disposeBag)
     }
@@ -95,11 +106,7 @@ class MVVMViewController: UIViewController, ViewModelProtocol {
         }
     }
     
-    func configure() {
-        questionImagePicker.sourceType = .savedPhotosAlbum
-        questionImagePicker.allowsEditing = false
-        explanationImagePicker.sourceType = .savedPhotosAlbum
-        explanationImagePicker.allowsEditing = false
+    deinit {
+        print("VC deinit")
     }
-
 }

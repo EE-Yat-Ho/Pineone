@@ -36,5 +36,84 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6C9842F3-AB74-4C50-A4F8-AA9BD0765676"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/8_MVVM/MVVMView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "setupDI(answerList:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "55C6FD07-7A52-4041-A0AE-915142774A51"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "20200904ConstraintTraining/8_MVVM/MVVMView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "setupDI(answerList:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "55C6FD07-7A52-4041-A0AE-915142774A51 - 6c24c3322eb49c1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_0200904ConstraintTraining.MVVMView.setupDI&lt;A&gt;(observable: RxSwift.Observable&lt;A&gt;) -&gt; Self"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/8_MVVM/MVVMView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "1727">
+               </Location>
+               <Location
+                  uuid = "55C6FD07-7A52-4041-A0AE-915142774A51 - 6ba888e8c8af359b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Swift.String&gt;) -&gt; () in _0200904ConstraintTraining.MVVMView.setupDI&lt;A&gt;(observable: RxSwift.Observable&lt;A&gt;) -&gt; Self"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/8_MVVM/MVVMView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "801">
+               </Location>
+               <Location
+                  uuid = "55C6FD07-7A52-4041-A0AE-915142774A51 - e7c65118abe5196a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Int, Swift.String, _0200904ConstraintTraining.MVVMTableCell) -&gt; () in _0200904ConstraintTraining.MVVMView.setupDI&lt;A&gt;(observable: RxSwift.Observable&lt;A&gt;) -&gt; Self"
+                  moduleName = "20200904ConstraintTraining"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/20200904ConstraintTraining/20200904ConstraintTraining/8_MVVM/MVVMView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "149"
+                  endingLineNumber = "149"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

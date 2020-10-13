@@ -12,22 +12,12 @@ import RxSwift
 import RxCocoa
 import Then
 
-struct AssetType{
-    var text: String
-    var index: Int
-}
-
-protocol MVVMTableCellDelegate {
-    func tapXButton(_ cell: MVVMTableCell)
-}
-
 class MVVMTableCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    let assetRelay = BehaviorRelay<AssetType>(value: AssetType(text: "", index: 0))
+    var index: Int?
     let actionRelay = PublishRelay<Action>()
-    var delegate: MVVMTableCellDelegate!
     var disposeBag = DisposeBag()
     var exampleNumber = UIImageView()
     let answerTextField = UITextField().then {
@@ -43,7 +33,7 @@ class MVVMTableCell: UITableViewCell {
     let xButton = UIButton().then {
         $0.setImage(UIImage(systemName: "xmark"), for: .normal)
     }
-    
+    var isSetupDI: Bool = false
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -51,10 +41,6 @@ class MVVMTableCell: UITableViewCell {
         
         setupLayout()
         bindData()
-    }
-    
-    deinit {
-        print("deinit TableCell")
     }
     
     func setupLayout(){
@@ -84,31 +70,36 @@ class MVVMTableCell: UITableViewCell {
         }
     }
     
+    func dataMapping(text: String, index: Int) {
+        self.answerTextField.text = text
+        self.exampleNumber.image = UIImage(systemName: String(index + 1) + ".circle")
+        self.index = index
+    }
+    
     func bindData(){
-        xButton.rx.tap.bind { [weak self] in
-            self?.delegate.tapXButton(self!)
-        }.disposed(by:disposeBag)
-        
-        assetRelay.subscribe(onNext: { [weak self] asset in
-            self!.answerTextField.text = asset.text
-            self!.exampleNumber.image = UIImage(systemName: String(asset.index + 1) + ".circle")
-        }).disposed(by: disposeBag)
-        
+        // 셀 안에 텍스트가 변경 될 때, 엑션 릴레이를 쭉 연결하여 뷰 모델까지 데이터를 전달하는 부분
         answerTextField.rx
             .text
-            .map{ .answerTextChange($0!, self.assetRelay.value.index)}
+            .map{[weak self] in .answerTextChange($0 ?? "error", (self?.index) ?? 0)} // 인덱스 일단은 쓰고 셀프 쓰는거만 바꿔보기.
+            .bind(to: actionRelay)
+            .disposed(by:disposeBag)
+        
+        // 셀의 x버튼을 누를 시, 액션 릴레이를 쭉 연결하여 뷰 모델까지 데이터를 전달하는 부분
+        xButton.rx
+            .tap
+            .map{[weak self] _ in .tapXButton((self?.index) ?? 0)}
             .bind(to: actionRelay)
             .disposed(by:disposeBag)
     }
     
-    func setupDI(asset: AssetType){
-        self.assetRelay.accept(asset)
-    }
     @discardableResult
     func setupDI<T>(action: PublishRelay<T>) -> Self {
         if let a = action as? PublishRelay<Action> {
-            actionRelay.bind(to: a).disposed(by: rx.disposeBag)
+            actionRelay.bind(to: a).disposed(by: disposeBag)
         }
         return self
+    }
+    deinit {
+        print("tableCell deinit")
     }
 }

@@ -23,4 +23,7 @@ class MVVMCollectionCell: UICollectionViewCell {
             $0.edges.equalToSuperview().inset(5)
         }
     }
+    deinit {
+        print("collectionCell deinit")
+    }
 }
