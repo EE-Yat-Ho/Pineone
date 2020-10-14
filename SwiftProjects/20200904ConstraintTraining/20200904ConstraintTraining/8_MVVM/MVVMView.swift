@@ -15,7 +15,6 @@ import RxCocoa
 class MVVMView: UIView {
     typealias Model = Void
     
-    
     // MARK: - Properties
     var disposeBag = DisposeBag()
     
@@ -84,9 +83,13 @@ class MVVMView: UIView {
         $0.register(MVVMTableCell.self, forCellReuseIdentifier: "MVVMTableCell")
     }
     
+    // 화면에 따라 콜렉션뷰의 셀 크기를 달리함.
     let collectionItemSize = (UIScreen.main.bounds.size.width - 20) / 3
     
     // View의 핵심!!
+    // Publish인 이유 : 지난 데이터를 가지고 있을 필요 없음.
+    // Observable이 아닌 Reley인 이유 : 버튼들, 텍스트필드 입력들을 관찰하고있고, VC에게 관찰 당함.
+    // Subject가 아닌 Relay인 이유 : UI이벤트를 처리하기 때문.
     let actionRelay = PublishRelay<Action>()
     
     // MARK: - Initializer
@@ -205,7 +208,7 @@ class MVVMView: UIView {
         return self
     }
    
-    // 갖가지 유저 입력들(버튼들, 텍스트 입력들) 의존성 주입
+    // 갖가지 User 입력들(버튼들, 텍스트 입력들) 의존성 주입
     @discardableResult
     func setupDI<T>(action: PublishRelay<T>) -> Self {
         if let a = action as? PublishRelay<Action> {
@@ -246,8 +249,10 @@ class MVVMView: UIView {
         explanationTextView.setBorder()
         explanationCollectionView.setBorder()
         completeButton.setBorder(UIColor.systemBlue)
+        
         // 제약사항 추가
-        scrollView.snp.makeConstraints{ $0.edges.equalTo(safeAreaLayoutGuide) }
+        scrollView.snp.makeConstraints{
+            $0.edges.equalTo(safeAreaLayoutGuide) }
         
         subView.snp.makeConstraints{
             $0.edges.equalTo(scrollView.contentLayoutGuide)
@@ -321,6 +326,7 @@ class MVVMView: UIView {
             $0.height.equalTo(60) }
     }
     
+    // 셀 갯수에 따른 콜렉션 뷰 높이 조절
     func setCollectionViewHeight(collectionView: UICollectionView, cellCount: Int){
         if cellCount == 0 {
             collectionView.snp.updateConstraints{
@@ -331,6 +337,7 @@ class MVVMView: UIView {
         }
     }
     
+    // 셀 갯수에 따른 테이블 뷰 높이 조절
     func setTableViewHeight(tableView: UITableView, cellCount: Int) {
         if cellCount == 0 {
             tableView.snp.updateConstraints{

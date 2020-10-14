@@ -14,6 +14,7 @@ import SnapKit
 import Then
 import NSObject_Rx
 
+// 갖가지 유저 입력들을 액션타입으로 한번에 들고오기 위한 enum 선언
 enum Action {
     case tapPlusButton
     case tapCompleteButton
@@ -27,8 +28,30 @@ enum Action {
 }
 
 
+
 class MVVMViewModel: ViewModelType { //주석달기 이 소스가 이런 역할을 한다
+    
+    // MARK: - Properties
+    // 테이블과 콜렉션을 위한 릴레이들.
+    // 이전 데이터가 필요한가 싶어서 Publish로 바꿨었는데,
+    // 테이블이랑 콜렉션은 얘내들이 가지고 있는 데이터를 가지고 리로드하는 경우가 있어서 Behavior로 해야함
+    let answerRelay = BehaviorRelay<[String]>(value: [])
+    let questionImageRelay = BehaviorRelay<[UIImage]>(value: [])
+    let explanationImageRelay = BehaviorRelay<[UIImage]>(value: [])
+
+    // 카메라 액션에 대해 어떤 이미지피커를 띄울지 정하는데,
+    // 그 결과를 넘겨주기위한 서브젝트들.
+    // 그저 관찰 당하기만해서 옵저버블로 바꿔봤는데, 옵저ㅂ
+    let questionCameraObb = PublishSubject<Void>()
+    let explanationCameraObb = PublishSubject<Void>()
+
+    let disposeBag = DisposeBag()
+
+    // "저장"과 "삭제시 업데이트"의 용이성을 위해 현재 TextField들, 셀들의 정보를 가지고있어야함.
+    var nowSceneData = DataForScene()
+    
     // MARK: - Action
+    // Plus버튼을 누를시,
     func tapPlusButton(){
         nowSceneData.answerList.append("")
         answerRelay.accept(nowSceneData.answerList)
@@ -83,22 +106,12 @@ class MVVMViewModel: ViewModelType { //주석달기 이 소스가 이런 역할�
     }
     
     
-    // MARK: - Properties
-    let answerRelay = BehaviorRelay<[String]>(value: [])
-    let questionImageRelay = BehaviorRelay<[UIImage]>(value: [])
-    let explanationImageRelay = BehaviorRelay<[UIImage]>(value: [])
-    let questionCameraObb = PublishSubject<Void>()
-    let explanationCameraObb = PublishSubject<Void>()
-    
-    let disposeBag = DisposeBag()
-    
-    var nowSceneData = DataForScene()
     
     // MARK: - ViewModelType Protocol
     typealias ViewModel = MVVMViewModel
     
     struct Input { // 한번 그리면서, 바인드를 쫘아악?
-        let action: PublishRelay<Action>
+        let action: Observable<Action>
     }
     
     struct Output {
