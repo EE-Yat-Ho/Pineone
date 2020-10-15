@@ -13,6 +13,7 @@ class MVVMCollectionCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // 콜렉션 뷰는 간단. 별로 구현을 안해서 ㅎㅎ;
     let imageView = UIImageView()
     
     override init(frame: CGRect) {

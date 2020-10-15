@@ -11,7 +11,6 @@ class Cell: UITableViewCell {
     let kind = UILabel()
     var models = [String]()
     let tableView = UITableView()
-    var hegihtConstraint = NSLayoutConstraint()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -24,6 +23,7 @@ class Cell: UITableViewCell {
         super.init(coder: coder)
     }
     
+    // 테이블과 레이블 설정들.
     func configure() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -34,20 +34,19 @@ class Cell: UITableViewCell {
         kind.textAlignment = .center
     }
     
+    // 테이블과 레이블 레이아웃.
     func setupLayout() {
         contentView.addSubview(kind)
         contentView.addSubview(tableView)
-        //tableView.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1), for: .vertical)
         
         kind.translatesAutoresizingMaskIntoConstraints = false
         kind.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         kind.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -30).isActive = true
+        kind.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         kind.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         kind.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         kind.layer.borderWidth = 0.5
         kind.layer.borderColor = UIColor.lightGray.cgColor
-        hegihtConstraint = kind.heightAnchor.constraint(equalToConstant: CGFloat(40 * models.count))
-        hegihtConstraint.isActive = true
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -30).isActive = true
@@ -56,24 +55,14 @@ class Cell: UITableViewCell {
         tableView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         tableView.layer.borderWidth = 0.5
         tableView.layer.borderColor = UIColor.lightGray.cgColor
-        
     }
     
+    // 큰 셀에 데이터 넣어주기
     func dataMapping (modelNames: [String], kindName: String) {
         models = modelNames
-        //setHeight()
         kind.text = kindName
     }
     
-    func setHeight() {
-        hegihtConstraint = kind.heightAnchor.constraint(equalToConstant: CGFloat(40 * models.count))
-        hegihtConstraint.isActive = true
-    }
-    
-    func updataHeight() {
-        hegihtConstraint.constant = CGFloat(40 * models.count)
-        kind.layoutIfNeeded()
-    }
 }
 
 extension Cell: UITableViewDelegate, UITableViewDataSource {

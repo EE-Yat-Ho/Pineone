@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         loadData()
     }
     
+    // 테이블 설정들
     func configure() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
         tableView.separatorColor = UIColor.clear
     }
     
+    // 테이블 레이아웃들
     func setupLayout() {
         view.addSubview(tableView)
         
@@ -62,17 +64,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return kindList.count
     }
 
-    // 모든 셀에 모델명 레이블 세팅.
-    // 제품군에 속한 모델의 수에 따라 중간 셀에 제품군 레이블 세팅.
-    // 제품군에 속한 모델의 수가 짝수면 제품군 레이블 살짝 내림.
+    // 셀이 재사용큐에서 빠져나왔을 때,
+    // 셀안의 테이블에 올바른 데이터를 넣어준다고해도,
+    // 자동으로 리로드되지않음!! 그래서 리로드해줌.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! Cell
         cell.dataMapping(modelNames: modelList[indexPath.row], kindName: kindList[indexPath.row])
-        cell.updataHeight()
+        cell.tableView.reloadData()
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return CGFloat(modelList[indexPath.section].count * 40)
-//    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(modelList[indexPath.row].count * 40)
+    }
 }

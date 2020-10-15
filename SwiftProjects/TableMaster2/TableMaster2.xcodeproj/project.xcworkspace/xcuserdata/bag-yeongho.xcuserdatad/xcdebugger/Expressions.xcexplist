@@ -3,18 +3,37 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "Cell.tableView(_:numberOfRowsInSection:):Cell.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "modelNames.count">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "ViewController.tableView(_:heightForRowAt:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.tableView(_:cellForRowAt:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "modelList[indexPath.row]">
+            </PersistentString>
+            <PersistentString
+               value = "kindList[indexPath.row]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Cell.tableView(_:cellForRowAt:):Cell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "models">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Cell.tableView(_:numberOfRowsInSection:):Cell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "modelNames.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
