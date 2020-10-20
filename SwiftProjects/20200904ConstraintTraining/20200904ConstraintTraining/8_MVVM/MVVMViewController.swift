@@ -13,129 +13,143 @@ import Reusable
 import SnapKit
 import Then
 
+
+
 class MVVMViewController: UIViewController, ViewModelProtocol {
     
-    typealias ViewModel = MVVMViewModel
+    
     
     // MARK: - ViewModelProtocol
-    var viewModel: ViewModel! = ViewModel()
+    typealias ViewModel = MVVMViewModel
+    var viewModel = ViewModel()
     
     // MARK: - Properties
-    let disposeBag = DisposeBag()
-    let questionImagePicker = UIImagePickerController()
-    let explanationImagePicker = UIImagePickerController()
     
-    let action = PublishRelay<AnswerAction>()
+//    let questionImagePicker = UIImagePickerController().then {
+//        $0.sourceType = .savedPhotosAlbum
+//        $0.allowsEditing = false
+//    }
+//    let explanationImagePicker = UIImagePickerController().then {
+//        $0.sourceType = .savedPhotosAlbum
+//        $0.allowsEditing = false
+//    }
+    let imagePicker = UIImagePickerController().then {
+        $0.sourceType = .savedPhotosAlbum
+        $0.allowsEditing = false
+    }
+    var imagePickerType: ImagePickerType?
+    
+    // Publish인 이유 : 지난 데이터를 가지고 있을 필요 없음.
+    // Observable이 아닌 Reley인 이유 : 버튼들, 텍스트필드 입력들을 관찰하고있고, VC에게 관찰 당함.
+    // Subject가 아닌 Relay인 이유 : UI이벤트를 처리하기 때문.
+    let actionRelay = PublishRelay<Action>()
+    
+    // 뷰 윌 어피어에서 데이터 로드 이벤트를 발생시키기 위한 트리거
+    let dataLoadTrigger = PublishSubject<Void>()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
         
-        setupLayout()
         bindingViewModel()
+        setupLayout()
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        dataLoadTrigger.onNext(())
+    }
     
     // MARK: - Binding
     func bindingViewModel() {
+        // VM에서 관찰 할 수 있도록 액션을 넘겨주고,
+        // 테이블과 콜렉션들이 관찰 하기 위한 옵저버블과,
+        // 이미지 피커를 띄우는 클로저가 관찰하기 위한 옵저버블을 받음
+        let res = viewModel.transform(req: ViewModel.Input(action: actionRelay.asObservable())) // 옵저버블만 넘겨주기 뷰모델은 관찰만하니까
         
-        // 데이터 불러와서 accept하게하기
-        let res = viewModel.transform(req: ViewModel.Input(action: action))
+        // VM에서 받은 옵저버블로 뷰에 있는 테이블과 콜렉션에 의존성을 주입.
+        // 뷰에서 들어오는 액션을 받기위해 VC에 있는 릴레이로 의존성 주입.
+        subView.setupDI(answerList: res.answerList)
+            .setupDI(questionImageList: res.questionImageList)
+            .setupDI(explanationImageList: res.explanationImageList)
+            .setupDI(action: self.actionRelay)
         
-        subView.setupDI(observable: res.answerList)
-                .setupDI(action: self.action)
-        
-        // 테이블 바인딩
-//        viewModel.answerRelay.do(onNext:{[weak self] data in
-//            if data.count == 0 {
-//                self?.subView.tableView.snp.updateConstraints{
-//                    $0.height.equalTo(10) }
-//            } else {
-//                self?.subView.tableView.snp.updateConstraints{
-//                    $0.height.equalTo(CGFloat(data.count) * 43.5) }
+        dataLoadTrigger
+            .map{.dataLoadTrigger}
+            .bind(to: actionRelay)
+            .disposed(by: rx.disposeBag)
+
+        // 뷰모델에서 내린 판단으로 이미지 피커 올리기
+        // 얘를 가지고 띄우고 닫고 다 해야함 ㅠㅠ 이 아니라 띄우기 1개, 닫기 1개 인듯
+//        res.questionCameraObb.bind(onNext: { [weak self] in
+//            if let q = self?.questionImagePicker {
+//                self?.present(q, animated: true, completion: nil)
 //            }
-//        }).bind(to: subView.tableView.rx.items(cellIdentifier: "MVVMTableCell", cellType: MVVMTableCell.self)) { [weak self]
-//            index, data, cell in
-//            cell.delegate = self?.viewModel
-//            cell.setupDI(asset: AssetType(text: data, index: index))
-//        }.disposed(by: disposeBag)
-        
-        // 문제 콜렉션 바인딩
-        viewModel.questionImageRelay.do(onNext:{ [weak self] data in
-            if data.count == 0 {
-                self?.subView.questionCollectionView.snp.updateConstraints{
-                    $0.height.equalTo(10) }
-            } else {
-                self?.subView.questionCollectionView.snp.updateConstraints{
-                    $0.height.equalTo(CGFloat((data.count + 2) / 3) * self!.subView.collectionItemSize) }
+//        }).disposed(by: rx.disposeBag)
+//        res.explanationCameraObb.bind(onNext: { [weak self] in
+//            if let e = self?.explanationImagePicker {
+//                self?.present(e, animated: true, completion: nil)
+//            }
+//        }).disposed(by: rx.disposeBag)
+        res.cameraObservable.bind(onNext: {[weak self] kind in
+//            switch kind {
+//            case "question" :
+//                if let q = self?.questionImagePicker {
+//                    self?.present(q, animated: true, completion: nil)
+//                }
+//            case "explanation" :
+//                if let e = self?.explanationImagePicker {
+//                    self?.present(e, animated: true, completion: nil)
+//                }
+//            default:
+//                print("cameraObservable Error!!")
+//            }
+            switch kind {
+            case .question :
+                self?.imagePickerType = .question
+                
+            case .explanation :
+                self?.imagePickerType = .explanation
+            default:
+                print("cameraObservable Error!!")
             }
-        }).bind(to: subView.questionCollectionView.rx.items(cellIdentifier: "MVVMCollectionCell", cellType: MVVMCollectionCell.self)) {
-            index, data, cell in
-            cell.imageView.image = data//self!.questionImageList[index]
-        }.disposed(by: disposeBag)
-        
-        // 풀이 콜렉션 바인딩
-        viewModel.explanationImageRelay.do(onNext: { [weak self] data in
-            if data.count == 0 {
-                self?.subView.explanationCollectionView.snp.updateConstraints{
-                    $0.height.equalTo(10) }
-            } else {
-                self?.subView.explanationCollectionView.snp.updateConstraints{
-                    $0.height.equalTo(CGFloat((data.count + 2) / 3) * self!.subView.collectionItemSize)
-                }
+            if let i = self?.imagePicker {
+                self?.present(i, animated: true, completion: nil)
             }
-        }).bind(to: subView.explanationCollectionView.rx.items(cellIdentifier: "MVVMCollectionCell", cellType: MVVMCollectionCell.self)) {
-            index, data, cell in
-            cell.imageView.image = data
-        }.disposed(by: disposeBag)
+        }).disposed(by: rx.disposeBag)
+        // 얘는 일단 1개로 만들었는데 흐으으으음
         
         
-        // 완료 버튼 바인딩
-        subView.completeButton.rx.tap.bind{ [weak self] in
-            self?.viewModel.tapCompleteButton(questionTextView: self!.subView.questionTextView, explanationTextView: self!.subView.explanationTextView, tableView: self!.subView.tableView)
-            self?.navigationController?.popViewController(animated: true)
-        }.disposed(by:disposeBag)
-        
-        // 문제 이미지 피커 바인딩
-        questionImagePicker.rx.didFinishPickingMediaWithInfo.asObservable()
-            .subscribe(onNext: { [weak self] // 섭스크라이브 쓰라하심
-                info in
-                self?.dismiss(animated: true, completion: nil)
-                if let img = info[.originalImage] as? UIImage{
-                    var list = self!.viewModel.questionImageRelay.value
-                    list.append(img)
-                    self!.viewModel.questionImageRelay.accept(list)
-                }
-            }).disposed(by: disposeBag)
-        
-        // 풀이 이미지 피커 바인딩
-        explanationImagePicker.rx.didFinishPickingMediaWithInfo.asObservable()
-            .subscribe(onNext: { [weak self]
-                info in
-                self?.dismiss(animated: true, completion: nil)
-                if let img = info[.originalImage] as? UIImage{
-                    var list = self!.viewModel.explanationImageRelay.value
-                    list.append(img)
-                    self!.viewModel.explanationImageRelay.accept(list)
-                }
-            }).disposed(by: disposeBag)
-        
-        // 문제 카메라버튼 바인딩
-        subView.questionCameraButton.rx.tap.bind{ [weak self] in
-            self?.questionImagePicker.sourceType = .savedPhotosAlbum
-            self?.questionImagePicker.allowsEditing = false
-            self?.present(self!.questionImagePicker, animated: true, completion: nil)
-        }.disposed(by:disposeBag)
-        
-        // 풀이 카메라버튼 바인딩
-        subView.explanationCameraButton.rx.tap.bind{ [weak self] in
-            self?.explanationImagePicker.sourceType = .savedPhotosAlbum
-            self?.explanationImagePicker.allowsEditing = false
-            self?.present(self!.explanationImagePicker, animated: true, completion: nil)
-        }.disposed(by:disposeBag)
-        
+        // 이미지 피커에서 이미지를 선택하면, 피커를 닫고 이미지를 뷰모델에 넘겨줌
+//        questionImagePicker.rx
+//            .didFinishPickingMediaWithInfo
+//            .asObservable()
+//            .do(onNext: { [weak self] _ in
+//                self?.questionImagePicker.dismiss(animated: true, completion: nil)
+//            })
+//            .map{ .questionImagePickerSelect($0[.originalImage] as? UIImage ?? UIImage()) }
+//            .bind(to: actionRelay)
+//            .disposed(by:rx.disposeBag)
+//
+//        explanationImagePicker.rx
+//            .didFinishPickingMediaWithInfo
+//            .asObservable()
+//            .do(onNext: { [weak self] _ in
+//                self?.dismiss(animated: true, completion: nil)
+//            })
+//            .map{ .explanationImagePickerSelect($0[.originalImage] as? UIImage ?? UIImage()) }
+//            .bind(to: actionRelay)
+//            .disposed(by:rx.disposeBag)
+        imagePicker.rx
+            .didFinishPickingMediaWithInfo
+            .asObservable()
+            .do(onNext: { [weak self] _ in
+                self?.imagePicker.dismiss(animated: true, completion: nil)
+            })
+            .map{ [weak self] in
+                .imagePickerSelect($0[.originalImage] as? UIImage ?? UIImage(), (self?.imagePickerType) ?? .question)
+            }
+            .bind(to: actionRelay)
+            .disposed(by:rx.disposeBag)
     }
     
     // MARK: - View
@@ -143,9 +157,13 @@ class MVVMViewController: UIViewController, ViewModelProtocol {
     
     func setupLayout() {
         self.view.addSubview(subView)
+        self.view.backgroundColor = UIColor.white
         subView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }
-
+    
+    deinit {
+        print("VC deinit")
+    }
 }

@@ -1,0 +1,6 @@
+framework module RuntimeNew {
+  umbrella header "RuntimeNew-umbrella.h"
+
+  export *
+  module * { export * }
+}

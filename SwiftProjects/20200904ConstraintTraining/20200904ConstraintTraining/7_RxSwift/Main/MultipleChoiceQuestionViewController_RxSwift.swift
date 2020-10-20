@@ -48,12 +48,14 @@ class MultipleChoiceQuestionViewController_RxSwift: UIViewController {
         $0.backgroundColor = UIColor.systemBlue
     }
     
-    let questionTextView = UITextView().then {
-        $0.text = MainRepository.shared.question
-    }
-    let explanationTextView = UITextView().then {
-        $0.text = MainRepository.shared.explanation
-    }
+    let questionTextView = UITextView()
+//        .then {
+//        $0.text = MainRepository.shared.question
+//    }
+    let explanationTextView = UITextView()
+//        .then {
+//        $0.text = MainRepository.shared.explanation
+//    }
     
     lazy var questionCollectionView = UICollectionView(
         frame: CGRect(x: 0, y: 0, width: 0, height: 0),

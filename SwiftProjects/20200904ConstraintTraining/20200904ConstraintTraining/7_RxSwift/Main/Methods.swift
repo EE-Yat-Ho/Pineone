@@ -123,10 +123,10 @@ extension MultipleChoiceQuestionViewController_RxSwift: vcDelegate {
         bindCompleteButton()
     }
     func requestData() {
-        answerList = MainRepository.shared.answerList
-        answerRelay.accept(MainRepository.shared.answerList)
-        questionImageRelay.accept(MainRepository.shared.questionImageList)
-        explanationImageRelay.accept(MainRepository.shared.explanationImageList)
+//        answerList = MainRepository.shared.answerList
+//        answerRelay.accept(MainRepository.shared.answerList)
+//        questionImageRelay.accept(MainRepository.shared.questionImageList)
+//        explanationImageRelay.accept(MainRepository.shared.explanationImageList)
     }
     
     
@@ -158,12 +158,12 @@ extension MultipleChoiceQuestionViewController_RxSwift: vcDelegate {
         }
     }
     func tapCompleteButton() {
-        MainRepository.shared.question = questionTextView.text
-        MainRepository.shared.explanation = explanationTextView.text
-        MainRepository.shared.answerList = answerRelay.value
-        MainRepository.shared.questionImageList = questionImageRelay.value
-        MainRepository.shared.explanationImageList = explanationImageRelay.value
-        navigationController?.popViewController(animated: true)
+//        MainRepository.shared.question = questionTextView.text
+//        MainRepository.shared.explanation = explanationTextView.text
+//        MainRepository.shared.answerList = answerRelay.value
+//        MainRepository.shared.questionImageList = questionImageRelay.value
+//        MainRepository.shared.explanationImageList = explanationImageRelay.value
+//        navigationController?.popViewController(animated: true)
     }
     
     func textFieldDidChangeSelection(_ cell: TableCell) {

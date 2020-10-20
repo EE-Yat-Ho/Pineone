@@ -19,7 +19,7 @@ protocol ServicesViewModel: ViewModel {
 
 protocol ViewModelProtocol: AnyObject {
     associatedtype ViewModelType: ViewModel
-    var viewModel: ViewModelType! { get set }
+    var viewModel: ViewModelType { get set }
 }
 
 extension ViewModelProtocol where Self: UIViewController {

@@ -6,10 +6,24 @@
          contextName = "MVVMViewModel.tapXButton(_:):MVVMViewModel.swift">
          <PersistentStrings>
             <PersistentString
+               value = "nowSceneData.answerList">
+            </PersistentString>
+            <PersistentString
                value = "cell.superview?">
             </PersistentString>
             <PersistentString
                value = "cell.superview?.superview">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MVVMViewModel.answerTextChange(_:_:):MVVMViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "nowSceneData.answerList">
+            </PersistentString>
+            <PersistentString
+               value = "MainRepository.shared.dataForScene">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -25,13 +39,29 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "MVVMTableCell.bindData():MVVMTableCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "disposeBag">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MVVMTableCell.init(style:reuseIdentifier:):MVVMTableCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "disposeBag">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "MultipleChoiceQuestionViewController_RxSwift.tableReload():MultipleChoiceQuestionViewController_RxSwift.swift">
          <PersistentStrings>
             <PersistentString
-               value = "answerRelay">
+               value = "answerList">
             </PersistentString>
             <PersistentString
-               value = "answerList">
+               value = "answerRelay">
             </PersistentString>
             <PersistentString
                value = "tableView">
@@ -53,13 +83,13 @@
          contextName = "MultipleChoiceQuestionViewController_RxSwift.textFieldDidChangeSelection(_:):TextFieldMethods.swift">
          <PersistentStrings>
             <PersistentString
-               value = "answerList">
-            </PersistentString>
-            <PersistentString
                value = "textField.tag">
             </PersistentString>
             <PersistentString
                value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
+               value = "answerList">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -68,6 +98,17 @@
          <PersistentStrings>
             <PersistentString
                value = "disposeBag">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MVVMViewModel.transform(req:):MVVMViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "nowSceneData">
+            </PersistentString>
+            <PersistentString
+               value = "MainRepository.shared.dataForScene">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -96,6 +137,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "MVVMViewModel.tapCompleteButton():MVVMViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "nowSceneData">
+            </PersistentString>
+            <PersistentString
+               value = "MainRepository.shared.dataForScene">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #2 in closure #3 in MultipleChoiceQuestionViewController_RxSwift.bindButtons():MultipleChoiceQuestionViewController_RxSwift.swift">
          <PersistentStrings>
             <PersistentString
@@ -112,10 +164,26 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in MVVMTableCell.bindData():MVVMTableCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "disposeBag">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "AppDelegate.init():AppDelegate.swift">
          <PersistentStrings>
             <PersistentString
                value = "window">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MVVMView.setupDI&lt;A&gt;(observable:):MVVMView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self?.tableView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -155,10 +223,10 @@
          contextName = "closure #1 in closure #1 in MultipleChoiceQuestionViewController_RxSwift.bindTableView():MultipleChoiceQuestionViewController_RxSwift.swift">
          <PersistentStrings>
             <PersistentString
-               value = "answerRelay">
+               value = "answerList">
             </PersistentString>
             <PersistentString
-               value = "answerList">
+               value = "answerRelay">
             </PersistentString>
             <PersistentString
                value = "tableView">
@@ -174,14 +242,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in MultipleChoiceQuestionViewController_RxSwift.bindTableView():MultipleChoiceQuestionViewController_RxSwift.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "first">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "MultipleChoiceQuestionViewController_RxSwift.addAnswer():MultipleChoiceQuestionViewController_RxSwift.swift">
          <PersistentStrings>
             <PersistentString
@@ -189,6 +249,14 @@
             </PersistentString>
             <PersistentString
                value = "Observable.of(answerList)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MultipleChoiceQuestionViewController_RxSwift.bindTableView():MultipleChoiceQuestionViewController_RxSwift.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "first">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

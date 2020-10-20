@@ -7,6 +7,9 @@ target 'FoundationProj' do
 
   # Pods for FoundationProj
  
+    #pod 'Alamofire', '~> 4.8'
+  pod 'Moya/RxSwift',   '~> 14.0'
+  
   pod 'RxSwift',    '~> 5'
   pod 'RxCocoa',    '~> 5'
   pod 'RxFlow'
@@ -15,22 +18,52 @@ target 'FoundationProj' do
   pod 'NSObject+Rx'
   pod 'RxDataSources'
   pod 'Cell+Rx'
+  
   pod 'Action'
 
-  pod 'Then'
+  pod 'SwiftLint'
+  pod 'KeychainSwift'
   pod 'SnapKit'
   pod 'Reusable'
+  pod 'Then'
   
-  pod 'SDWebImage'
+  # Firebase
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'FirebaseFirestoreSwift'
+  pod 'Firebase/DynamicLinks'
+  
+  # Firebase CloudStore Codable Extension
+  pod 'CodableFirebase'
+  
+  pod 'CryptoSwift', '~> 1.0'
+  
+  # Image
+  pod 'SDWebImage', '~> 5.0'
   pod 'lottie-ios'
   
-  target 'FoundationProjTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'FoundationProjUITests' do
-    # Pods for testing
-  end
-
+  # Database
+  pod 'RealmSwift'
+  pod "RxRealm"
+  pod 'Unrealm'
+  
+  # zip
+  pod 'Zip', '~> 1.1'
+  
+  # font customing
+  pod 'BonMot'
 end
+
+target 'FoundationProjTests' do
+  inherit! :search_paths
+  # Pods for testing
+end
+
+target 'FoundationProjUITests' do
+  # Pods for testing
+end
+

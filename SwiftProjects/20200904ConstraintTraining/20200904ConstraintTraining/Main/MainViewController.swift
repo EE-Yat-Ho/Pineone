@@ -17,7 +17,7 @@ class MainViewController: UIViewController, ViewModelProtocol {
     typealias ViewModel = MainViewModel
     
     // MARK: - ViewModelProtocol
-    var viewModel: ViewModel! = ViewModel()
+    var viewModel = ViewModel()
     
     // MARK: - Parameters
     let disposeBag = DisposeBag()

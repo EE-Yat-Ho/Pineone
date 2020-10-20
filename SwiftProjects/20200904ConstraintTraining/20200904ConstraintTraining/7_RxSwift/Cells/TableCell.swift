@@ -17,6 +17,11 @@ protocol vcDelegate {
     func textFieldDidChangeSelection(_ cell: TableCell)
 }
 
+struct AssetType{
+    var text: String
+    var index: Int
+}
+
 class TableCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

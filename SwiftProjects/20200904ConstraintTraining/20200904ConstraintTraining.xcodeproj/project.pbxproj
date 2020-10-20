@@ -27,6 +27,7 @@
 		2A30C25625021B4F00BEAC9E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C25525021B4F00BEAC9E /* CollectionViewCell.swift */; };
 		2A30C2582502201400BEAC9E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C2572502201400BEAC9E /* TableViewCell.swift */; };
 		2A30C25D25022ED200BEAC9E /* MultipleChoiceQuestionViewController_Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30C25C25022ED200BEAC9E /* MultipleChoiceQuestionViewController_Anchor.swift */; };
+		2A36E2672533EF8F0031E55C /* DataForScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A36E2662533EF8F0031E55C /* DataForScene.swift */; };
 		2A9403B6250707EE00D539FC /* QuestionTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9403B5250707EE00D539FC /* QuestionTabBarController.swift */; };
 		2A9403B825070C8F00D539FC /* MultipleChoiceQuestionViewController_NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9403B725070C8F00D539FC /* MultipleChoiceQuestionViewController_NSLayoutConstraint.swift */; };
 		2A9403BA250726EE00D539FC /* MutipleChoiceQuestionViewController_VisualFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9403B9250726EE00D539FC /* MutipleChoiceQuestionViewController_VisualFormat.swift */; };
@@ -81,6 +82,7 @@
 		2A30C25525021B4F00BEAC9E /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		2A30C2572502201400BEAC9E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		2A30C25C25022ED200BEAC9E /* MultipleChoiceQuestionViewController_Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuestionViewController_Anchor.swift; sourceTree = "<group>"; };
+		2A36E2662533EF8F0031E55C /* DataForScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataForScene.swift; sourceTree = "<group>"; };
 		2A9403B5250707EE00D539FC /* QuestionTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTabBarController.swift; sourceTree = "<group>"; };
 		2A9403B725070C8F00D539FC /* MultipleChoiceQuestionViewController_NSLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuestionViewController_NSLayoutConstraint.swift; sourceTree = "<group>"; };
 		2A9403B9250726EE00D539FC /* MutipleChoiceQuestionViewController_VisualFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutipleChoiceQuestionViewController_VisualFormat.swift; sourceTree = "<group>"; };
@@ -132,7 +134,6 @@
 				2A1336D2251C88240096F4E7 /* Main */,
 				2A1336B0251C671F0096F4E7 /* DelegateToRx */,
 				2A1336C7251C7A450096F4E7 /* Cells */,
-				2A1336C8251C7A550096F4E7 /* DataRepository */,
 			);
 			path = 7_RxSwift;
 			sourceTree = "<group>";
@@ -175,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				2A1336872518A35E0096F4E7 /* MainRepository.swift */,
+				2A36E2662533EF8F0031E55C /* DataForScene.swift */,
 			);
 			path = DataRepository;
 			sourceTree = "<group>";
@@ -219,6 +221,7 @@
 				2A30C24A2501F35900BEAC9E /* Info.plist */,
 				2A30C2422501F35400BEAC9E /* _0200904ConstraintTraining.xcdatamodeld */,
 				2A30C23F2501F35400BEAC9E /* Main.storyboard */,
+				2A1336C8251C7A550096F4E7 /* DataRepository */,
 				2ACEE798252BF37800D7A809 /* Main */,
 				2A9403B5250707EE00D539FC /* QuestionTabBarController.swift */,
 				2ACEE794252BF1E200D7A809 /* Screen.swift */,
@@ -488,6 +491,7 @@
 			files = (
 				2ACEE7BB252C055700D7A809 /* CustomRefreshControl.swift in Sources */,
 				2A30C23E2501F35400BEAC9E /* MainViewController.swift in Sources */,
+				2A36E2672533EF8F0031E55C /* DataForScene.swift in Sources */,
 				2A13367C251880610096F4E7 /* TableCell.swift in Sources */,
 				2ACEE7FA252D779400D7A809 /* MVVMTableCell.swift in Sources */,
 				2A30C25D25022ED200BEAC9E /* MultipleChoiceQuestionViewController_Anchor.swift in Sources */,
