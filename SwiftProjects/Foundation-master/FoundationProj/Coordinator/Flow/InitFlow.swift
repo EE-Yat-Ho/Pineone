@@ -84,7 +84,8 @@ extension InitFlow{
     }
     
     private func navigateToMultiTable() -> FlowContributors{
-        FlowSugar(TableMultiSelectionViewModel(), TableMultiSelectionViewController.self)
+        FlowSugar(RecentlyViewModel(),
+                  RecentlyViewController.self)
             .navigationItem(with:{
                 $0.title = "multiSelectTable"
             }).oneStepPushBy(self.rootViewController)

@@ -3,6 +3,49 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "Cell.tableView(_:willDisplay:forRowAt:):Cell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tableView.contentSize.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.setupLayout():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tableView.contentSize.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Cell.tableView(_:cellForRowAt:):Cell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "models">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.init(coder:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "kindList">
+            </PersistentString>
+            <PersistentString
+               value = "modelList">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Cell.tableView(_:numberOfRowsInSection:):Cell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "modelNames.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ViewController.tableView(_:heightForRowAt:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -22,18 +65,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "Cell.tableView(_:cellForRowAt:):Cell.swift">
+         contextName = "ViewController.viewDidLayoutSubviews():ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "models">
+               value = "tableView.contentSize.height">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "Cell.tableView(_:numberOfRowsInSection:):Cell.swift">
+         contextName = "Cell.setupLayout():Cell.swift">
          <PersistentStrings>
             <PersistentString
-               value = "modelNames.count">
+               value = "tableView.contentSize.height">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

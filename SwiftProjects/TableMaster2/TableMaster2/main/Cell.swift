@@ -11,6 +11,7 @@ class Cell: UITableViewCell {
     let kind = UILabel()
     var models = [String]()
     let tableView = UITableView()
+   // var tableHeight = NSLayoutConstraint()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -55,6 +56,9 @@ class Cell: UITableViewCell {
         tableView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         tableView.layer.borderWidth = 0.5
         tableView.layer.borderColor = UIColor.lightGray.cgColor
+//
+//        tableHeight = tableView.heightAnchor.constraint(equalToConstant: tableView.contentSize.height)
+//        tableHeight.isActive = true
     }
     
     // 큰 셀에 데이터 넣어주기
@@ -78,4 +82,8 @@ extension Cell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
     }
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        tableHeight.constant = tableView.contentSize.height
+//        tableView.layoutIfNeeded()
+//    }
 }

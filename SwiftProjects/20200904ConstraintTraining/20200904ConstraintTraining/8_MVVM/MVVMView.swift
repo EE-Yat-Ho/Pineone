@@ -125,13 +125,13 @@ class MVVMView: UIView {
         
         questionCameraButton.rx
             .tap
-            .map{ .tapCameraButton("question")}
+            .map{ .tapCameraButton(.question)}
             .bind(to: actionRelay)
             .disposed(by:rx.disposeBag)
         
         explanationCameraButton.rx
             .tap
-            .map{ .tapCameraButton("explanation")}
+            .map{ .tapCameraButton(.explanation)}
             .bind(to: actionRelay)
             .disposed(by:rx.disposeBag)
         
@@ -161,22 +161,24 @@ class MVVMView: UIView {
         // 셀마다 의존성 주입, 데이터 매핑
         .bind(to: tableView.rx.items(cellIdentifier: "MVVMTableCell", cellType: MVVMTableCell.self)) {
             [weak self] index, data, cell in
-            // 테이블을 그릴때 마다 셀에 의존성 주입하는 것을 방지.
-            if cell.isSetupDI == false {
-                guard let a = self?.actionRelay else {
-                    print("tableCell's actionRelay is nil!!")
-                    return
-                }
+            // 의존성 주입, 데이터 매핑
+            if let a = self?.actionRelay {
                 cell.setupDI(action: a)
-                cell.isSetupDI = true
             }
-            // 의존성 주입을 하든안하든 텍스트와 인덱스 값은 갱신해주어야함.
             cell.dataMapping(text: data, index: index)
         }.disposed(by: rx.disposeBag)
         return self
     }
     
     // 질문 콜렉션 뷰 의존성 주입
+    // 이 setupDI들을 합칠 수는 없을 까..?
+    // => 제네릭? : 똑같은 타입인데 행동이 다른게 있음. 콜렉션 두개.
+    // => 매개변수 3개 받기 : 기능이 너무 독립적이지 못한거같음.
+    // => 테이블과 콜렉션만 제네릭으로 구별 : 3덩이에서 4덩이가 되버림
+    // => 아에 res를 받기 : 이미지피커까지 딸려와버림
+    // => 매개변수 3개 구조체로 만들어서 받기 : 오버헤드가 더 크지않나 싶음
+    // 이게 젤 나은듯..?
+    // 그럼에도 제네릭을 써놓은 이유는? 그러게요 지워야지.
     @discardableResult
     func setupDI(questionImageList: Observable<[UIImage]>) -> Self{
         // 셀 갯수에 따른 높이조절
@@ -194,14 +196,6 @@ class MVVMView: UIView {
     }
     
     // 풀이 콜렉션 뷰 의존성 주입
-    // 이 setupDI들을 합칠 수는 없을 까..?
-    // => 제네릭? : 똑같은 타입인데 행동이 다른게 있음. 콜렉션 두개.
-    // => 매개변수 3개 받기 : 기능이 너무 독립적이지 못한거같음.
-    // => 테이블과 콜렉션만 제네릭으로 구별 : 3덩이에서 4덩이가 되버림
-    // => 아에 res를 받기 : 이미지피커까지 딸려와버림
-    // => 매개변수 3개 구조체로 만들어서 받기 : 오버헤드가 더 크지않나 싶음
-    // 이게 젤 나은듯..?
-    // 그럼에도 제네릭을 써놓은 이유는? 그러게요 지워야지.
     @discardableResult
     func setupDI(explanationImageList: Observable<[UIImage]>) -> Self{
         explanationImageList.do(onNext: { [weak self] data in
@@ -214,7 +208,6 @@ class MVVMView: UIView {
         }.disposed(by: rx.disposeBag)
         return self
     }
-    
    
     // 갖가지 User 입력들(버튼들, 텍스트 입력들) 의존성 주입
     @discardableResult
@@ -222,7 +215,6 @@ class MVVMView: UIView {
         actionRelay.bind(to: action).disposed(by: rx.disposeBag)
         return self
     }
-    
     
     // MARK: - Setup Layout
     func setupLayout() {

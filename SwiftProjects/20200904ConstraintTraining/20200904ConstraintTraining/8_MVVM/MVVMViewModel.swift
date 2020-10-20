@@ -17,13 +17,21 @@ import Then
 enum Action {
     case tapPlusButton
     case tapCompleteButton
-    case questionImagePickerSelect(UIImage)
-    case explanationImagePickerSelect(UIImage)
+//    case questionImagePickerSelect(UIImage)
+//    case explanationImagePickerSelect(UIImage)
+    case imagePickerSelect(UIImage, ImagePickerType)
     case questionTextChange(String)
     case explanationTextChange(String)
     case answerTextChange(String, Int)
     case tapXButton(Int)
-    case tapCameraButton(String)
+    case tapCameraButton(ImagePickerType)
+    case dataLoadTrigger
+}
+
+enum ImagePickerType {
+    case question
+    case explanation
+    case error
 }
 
 
@@ -34,16 +42,17 @@ class MVVMViewModel: ViewModelType { //주석달기 이 소스가 이런 역할�
     // 테이블과 콜렉션을 위한 릴레이들.
     // 이전 데이터가 필요한가 싶어서 Publish로 바꿨었는데,
     // 테이블이랑 콜렉션은 얘내들이 가지고 있는 데이터를 가지고 리로드하는 경우가 있어서 Behavior로 해야함
-    let answerRelay = BehaviorRelay<[String]>(value: [])
-    let questionImageRelay = BehaviorRelay<[UIImage]>(value: [])
-    let explanationImageRelay = BehaviorRelay<[UIImage]>(value: [])
+    let answerRelay = PublishRelay<[String]>()
+    let questionImageRelay = PublishRelay<[UIImage]>()
+    let explanationImageRelay = PublishRelay<[UIImage]>()
 
     // 카메라 액션에 대해 어떤 이미지피커를 띄울지 정하는데,
     // 그 결과를 넘겨주기위한 서브젝트들.
     // 그저 관찰 당하기만해서 옵저버블로 바꿔봤는데, 옵저버블은 초기 구독시 혹은 정기적으로 이벤트를 발생 시키는거만 되는거같음.
     // 내가 원하는 타이밍에 이벤트를 발생 시키기 위해서는 Subject나 Relay를 사용해야함.
-    let questionCameraObb = PublishSubject<Void>()
-    let explanationCameraObb = PublishSubject<Void>()
+   // let questionCameraObb = PublishSubject<Void>()
+   // let explanationCameraObb = PublishSubject<Void>()
+    let cameraObservable = PublishSubject<ImagePickerType>()
 //    let questionCameraObb = Observable<Void>.just(())
 //    let explanationCameraObb = Observable<Void>.just(())
 
@@ -76,28 +85,44 @@ class MVVMViewModel: ViewModelType { //주석달기 이 소스가 이런 역할�
     }
     
     /// 카메라 버튼 누를시, 이미지 피커를 띄우는 클로저가 관찰하고있는 Observable에 onNext하여, 이미지 피커를 띄움
-    func tapCameraButton(_ kind: String){
-        switch kind {
-        case "question":
-            questionCameraObb.onNext(())
-        case "explanation":
-            explanationCameraObb.onNext(())
-        default:
-            print("cameraButton Kind Error!!")
-        }
+    func tapCameraButton(_ kind: ImagePickerType){
+//        switch kind {
+//        case "question":
+//            questionCameraObb.onNext(())
+//        case "explanation":
+//            explanationCameraObb.onNext(())
+//        default:
+//            print("cameraButton Kind Error!!")
+//        }
+        cameraObservable.onNext(kind)
     }
     
     /// 질문 이미지 피커에서 사진을 선택 했을 경우, 이미지 피커 배열에 넣고 콜렉션 갱신
-    func questionImagePickerSelected(_ img: UIImage){
-        nowSceneData.questionImageList.append(img)
-        questionImageRelay.accept(nowSceneData.questionImageList)
+//    func questionImagePickerSelected(_ img: UIImage){
+//        nowSceneData.questionImageList.append(img)
+//        questionImageRelay.accept(nowSceneData.questionImageList)
+//    }
+//
+//    /// 풀이 이미지 피커에서 사진을 선택 했을 경우, 이미지 피커 배열에 넣고 콜렉션 갱신
+//    func explanationImagePickerSelected(_ img: UIImage){
+//        nowSceneData.explanationImageList.append(img)
+//        explanationImageRelay.accept(nowSceneData.explanationImageList)
+//    }
+    func imagePickerSelected(_ img: UIImage, _ type: ImagePickerType){
+        switch type {
+        case .question :
+            nowSceneData.questionImageList.append(img)
+            questionImageRelay.accept(nowSceneData.questionImageList)
+        case .explanation :
+            nowSceneData.explanationImageList.append(img)
+            explanationImageRelay.accept(nowSceneData.explanationImageList)
+        case .error:
+            print("imagePickerType Error!!")
+        }
+//        nowSceneData.explanationImageList.append(img)
+//        explanationImageRelay.accept(nowSceneData.explanationImageList)
     }
     
-    /// 풀이 이미지 피커에서 사진을 선택 했을 경우, 이미지 피커 배열에 넣고 콜렉션 갱신
-    func explanationImagePickerSelected(_ img: UIImage){
-        nowSceneData.explanationImageList.append(img)
-        explanationImageRelay.accept(nowSceneData.explanationImageList)
-    }
     
     /// "저장"과 "셀 삭제시 업데이트"의 용이성을 위해 매 입력마다 현재 데이터를 저장함
     func questionTextChange(_ text: String){
@@ -113,7 +138,12 @@ class MVVMViewModel: ViewModelType { //주석달기 이 소스가 이런 역할�
         }
     }
     
-    
+    func loadData() {
+        nowSceneData = MainRepository.shared.dataForScene
+        answerRelay.accept(nowSceneData.answerList)
+        questionImageRelay.accept(nowSceneData.questionImageList)
+        explanationImageRelay.accept(nowSceneData.explanationImageList)
+    }
     
     // MARK: - ViewModelType Protocol
     typealias ViewModel = MVVMViewModel
@@ -128,8 +158,9 @@ class MVVMViewModel: ViewModelType { //주석달기 이 소스가 이런 역할�
         let answerList: Observable<[String]>
         let questionImageList: Observable<[UIImage]>
         let explanationImageList: Observable<[UIImage]>
-        let questionCameraObb: Observable<Void>
-        let explanationCameraObb: Observable<Void>
+//        let questionCameraObb: Observable<Void>
+//        let explanationCameraObb: Observable<Void>
+        let cameraObservable: Observable<ImagePickerType>
     }
     
     /// 유저 입력을 actionProcess에 구독. 데이터 불러오기 해주고, 출력까지 완벽-
@@ -138,46 +169,42 @@ class MVVMViewModel: ViewModelType { //주석달기 이 소스가 이런 역할�
             self?.actionProcess(action: action)
         }).disposed(by: disposeBag)
         
-        loadData()
-        
         return Output(answerList: answerRelay.asObservable(),
                       questionImageList: questionImageRelay.asObservable(),
                       explanationImageList: explanationImageRelay.asObservable(),
-                      questionCameraObb: questionCameraObb.asObservable(),
-                      explanationCameraObb: explanationCameraObb.asObservable())
+//                      questionCameraObb: questionCameraObb.asObservable(),
+//                      explanationCameraObb: explanationCameraObb.asObservable(),
+                      cameraObservable: cameraObservable.asObservable())
     }
     
     /// 유저 입력에 어떻게 반응할 지 매핑
     func actionProcess(action: Action) {
         switch action {
         case .tapPlusButton:
-            self.tapPlusButton()
+            tapPlusButton()
         case .tapCompleteButton:
-            self.tapCompleteButton()
-        case .questionImagePickerSelect(let img):
-            self.questionImagePickerSelected(img)
-        case .explanationImagePickerSelect(let img):
-            self.explanationImagePickerSelected(img)
+            tapCompleteButton()
+//        case .questionImagePickerSelect(let img):
+//            questionImagePickerSelected(img)
+//        case .explanationImagePickerSelect(let img):
+//            explanationImagePickerSelected(img)
+        case .imagePickerSelect(let img, let type):
+            imagePickerSelected(img, type)
         case .questionTextChange(let text):
-            self.questionTextChange(text) // 알트누르고 설명 나오는거. 함수의 역할, 파라미터, 결과값 뭐 이런거까지는 아니더라도 함수의 역할은 꼭 쓰자
+            questionTextChange(text) // 알트누르고 설명 나오는거. 함수의 역할, 파라미터, 결과값 뭐 이런거까지는 아니더라도 함수의 역할은 꼭 쓰자
         case .explanationTextChange(let text):
-            self.explanationTextChange(text)
+            explanationTextChange(text)
         case .answerTextChange(let text, let index):
-            self.answerTextChange(text, index)
+            answerTextChange(text, index)
         case .tapXButton(let index):
-            self.tapXButton(index)
-        case .tapCameraButton(let kind):
-            self.tapCameraButton(kind)
+            tapXButton(index)
+        case .tapCameraButton(let type):
+            tapCameraButton(type)
+        case .dataLoadTrigger:
+            loadData()
         }
     }
     
-    // MARK: - Load Data
-    func loadData() {
-        nowSceneData = MainRepository.shared.dataForScene
-        answerRelay.accept(nowSceneData.answerList)
-        questionImageRelay.accept(nowSceneData.questionImageList)
-        explanationImageRelay.accept(nowSceneData.explanationImageList)
-    }
     deinit {
         print("VM deinit")
     }

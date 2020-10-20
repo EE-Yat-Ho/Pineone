@@ -27,6 +27,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "static UIFont.notoSans(_:size:):UIFont+.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "style.rawValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "MainViewModel.transform(req:):MainViewModel.swift">
          <PersistentStrings>
             <PersistentString

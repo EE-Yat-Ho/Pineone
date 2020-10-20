@@ -97,9 +97,12 @@ class MVVMTableCell: UITableViewCell {
     
     /// 셀의 액션릴레이를 뷰의 액션릴레이가 관찰하도록 해서 의존성을 주입.
     @discardableResult
-    func setupDI<T>(action: PublishRelay<T>) -> Self {
-        if let a = action as? PublishRelay<Action> {// 여기서 판단해야지 내가 내 프로퍼티가 아닌거에접근하지않게 하기위해 setupDI만 쓰는거임 뷰에서 isBinded를 쓰면 안됨 
-            actionRelay.bind(to: a).disposed(by: disposeBag)
+    func setupDI(action: PublishRelay<Action>) -> Self {
+        // 여기서 판단해야지 내가 내 프로퍼티가 아닌거에접근하지않게 하기위해 setupDI만 쓰는거임 뷰에서 isBinded를 쓰면 안됨
+        // 중복 의존성주입 방지
+        if isSetupDI == false {
+            actionRelay.bind(to: action).disposed(by: disposeBag)
+            isSetupDI = true
         }
         return self
     }

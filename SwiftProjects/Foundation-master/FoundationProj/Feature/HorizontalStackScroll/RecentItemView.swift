@@ -14,13 +14,13 @@ import UIKit
 //}
 
 /// 폰트가 적용 된 String의 길이를 반환
-extension String {
-    func widthOfString(usingFont font: UIFont) -> CGFloat {
-        let fontAttributes = [NSAttributedString.Key.font: font]
-        let size = self.size(withAttributes: fontAttributes)
-        return size.width
-    }
-}
+//extension String {
+//    func widthOfString(usingFont font: UIFont) -> CGFloat {
+//        let fontAttributes = [NSAttributedString.Key.font: font]
+//        let size = self.size(withAttributes: fontAttributes)
+//        return size.width
+//    }
+//}
 
 class RecentItemView: UIView {
     
