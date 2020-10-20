@@ -20,12 +20,57 @@ class RecentlyViewModel: ViewModelType, Stepper {
     typealias ViewModel = RecentlyViewModel
     let disposeBag = DisposeBag()
     static let RECENTLY_LIST_COUNT_MAX = 30
-
-    var testRecetlyLikeList = [
-        RecentlyLikeList(key: 0, name: "name1", type: .performance, image_url: nil, playtime: "10:00", req_date: 10, visible_yn: "Y", sb_info: RecentlyLikeSbInfo(view_cnt: 1, like_cnt: 2, reply_cnt: 3), type_badge_url: nil, event_badge_url: nil, start_dt: 1, end_dt: 200000000000000000, adult_yn: "N", downloadable: .N)
+    var testRecentlyLikeList = [
+        RecentlyLikeList(
+            key: 0,
+            name: "performance,adultN,dwonN",
+            type: .performance,
+            image_url: nil,
+            playtime: "10:00",
+            req_date: 10,
+            visible_yn: "Y",
+            sb_info: RecentlyLikeSbInfo(view_cnt: 1, like_cnt: 2, reply_cnt: 3),
+            type_badge_url: nil,
+            event_badge_url: nil,
+            start_dt: 1,
+            end_dt: 200000000000000000,
+            adult_yn: "N",
+            downloadable: .N),
+        RecentlyLikeList(
+            key: 0,
+            name: "andGame,adultY,dwonN",
+            type: .aosInstallGame,
+            image_url: nil,
+            playtime: "10:00",
+            req_date: 10,
+            visible_yn: "Y",
+            sb_info: RecentlyLikeSbInfo(view_cnt: 1, like_cnt: 2, reply_cnt: 3),
+            type_badge_url: nil,
+            event_badge_url: nil,
+            start_dt: 1,
+            end_dt: 200000000000000000,
+            adult_yn: "Y",
+            downloadable: .N),
+        RecentlyLikeList(
+            key: 0,
+            name: "iosGame,adultY,dwonY",
+            type: .iosInstallGame,
+            image_url: nil,
+            playtime: "10:00",
+            req_date: 10,
+            visible_yn: "Y",
+            sb_info: RecentlyLikeSbInfo(view_cnt: 1, like_cnt: 2, reply_cnt: 3),
+            type_badge_url: nil,
+            event_badge_url: nil,
+            start_dt: 1,
+            end_dt: 200000000000000000,
+            adult_yn: "Y",
+            downloadable: .Y)
     ]
     
-    lazy var recentlyList = BehaviorRelay(value: testRecetlyLikeList)
+//    var testRecentlyLikeList: [RecentlyLikeList] = []
+    
+    lazy var recentlyList = BehaviorRelay(value: testRecentlyLikeList + testRecentlyLikeList + testRecentlyLikeList + testRecentlyLikeList + testRecentlyLikeList + testRecentlyLikeList)
     var deleteItem = BehaviorRelay(value: String())
     var buttonActionRelay = PublishRelay<ARTableViewHeaderActionType>()
 

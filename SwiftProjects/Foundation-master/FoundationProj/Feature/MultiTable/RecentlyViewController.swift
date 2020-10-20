@@ -20,6 +20,8 @@ class RecentlyViewController: UIBaseViewController, ViewModelProtocol {
     private let buttonActionTrigger = PublishRelay<ARTableViewHeaderActionType>()
     private let deleteItemsTrigger = PublishRelay<[IndexPath]>()
 
+    // 넌뭐니 대췌..? 옵저버블이네 ㅎㅇ
+    // 근데 테이블뷰의 콘텐츠오프셋을 flatMap(바텀엣지와 가까운가) 해서, 아 맨밑에 스크롤하면 더 로드하는 그거같은데?
     private lazy var loadMoreTrigger: Observable<Void> = {
         return self.recentlyView.tableView.rx.contentOffset
             .flatMap {[unowned self] _ -> Observable<Void> in
@@ -77,7 +79,9 @@ class RecentlyViewController: UIBaseViewController, ViewModelProtocol {
     func setupLayout() {
         self.view.addSubview(recentlyView)
         recentlyView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            //$0.edges.equalToSuperview()
+            $0.trailing.leading.bottom.equalToSuperview()
+            $0.top.equalToSuperview().offset(56)
         }
     }
 

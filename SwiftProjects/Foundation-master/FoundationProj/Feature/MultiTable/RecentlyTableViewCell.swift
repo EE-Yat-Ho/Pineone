@@ -7,6 +7,7 @@
 //
 
 import RxCocoa
+import RxSwift
 import UIKit
 
 class RecentlyTableViewCell: ActivityBaseTableViewCell {
@@ -31,7 +32,7 @@ class RecentlyTableViewCell: ActivityBaseTableViewCell {
 extension RecentlyTableViewCell {
     func bindingData() {
         guard let item = item else { return }
-
+        // item에서 꺼내와서 base에서 정의한 뷰들에 데이터 매핑
         if let imageURL = item.image_url {
             thumbnailImageView.sd_setImage(with: URL(string: imageURL))
         }
@@ -63,5 +64,15 @@ extension RecentlyTableViewCell {
         } else {
             adultBadgeImageView.isHidden = true
         }
+    }
+    
+    func setupDI(observable: PublishRelay<RecentlyLikeList>) {
+        playButton.rx
+            .tap
+            .subscribe(onNext: { [weak self] in
+                guard let item = self?.item else { return }
+                observable.accept(item)
+            })
+            .disposed(by:rx.disposeBag)
     }
 }

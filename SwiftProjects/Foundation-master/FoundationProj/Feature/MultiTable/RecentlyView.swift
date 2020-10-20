@@ -26,6 +26,7 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
     override init(naviType: ARNavigationShowType = .none) {
         super.init(naviType: naviType)
         setupLayout()
+        bindData()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -35,8 +36,9 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
     // MARK: - View
 
     // 해더뷰
+    // 얘 왜 위에 딱붙어서 안내려오냐 > 해결
     lazy var topView = ARTableViewHeaderView(type: .rightOneButton).then {
-        $0.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 56)
+        $0.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 56)//56 trash
         $0.headerViewAction.bind(to: buttonActionTrigger).disposed(by: rx.disposeBag)
     }
 
@@ -48,13 +50,13 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
         $0.estimatedRowHeight = 92
         $0.separatorStyle = .none
         $0.rowHeight = 92
-//        $0.tableHeaderView = topView
         $0.backgroundView = ARTableViewEmptyView(type: .recently)
         $0.register(RecentlyTableViewCell.self, forCellReuseIdentifier: RecentlyTableViewCell.reuseIdentifier())
     }
 
     // 상단 새로고침 컨트롤
     let refreshControl = CustomRefreshControl()
+    
     // 삭제 버튼 배경
     lazy var bottomView = UIImageView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -86,7 +88,7 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
         addSubviews([topView, tableView, bottomView], needTopMoveButton: true)
 
         topView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(12)
+            $0.top.equalToSuperview().offset(18)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(44)
         }
@@ -109,85 +111,39 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
             $0.bottom.equalToSuperview().offset(-15)
         }
 
+        
+    }
+
+    func bindData() {
+        //테이블뷰 스크롤로 내려간 길이가 테이블뷰의 프레임 높이보다 커지면 버튼 나오게하는 바인딩
+        // 애매한데,,판단이 들어가긴했는데 모델까지 갈필요가..
         tableView.rx.contentOffset.map({[weak self]  position -> Bool in
             guard let `self` = self else { return true }
             if position.y > self.tableView.frame.height {
                 return false
             }
             return true
-        }).bind(to: topMoveButton.rx.isHidden).disposed(by: rx.disposeBag)
-
+        }).bind(to: topMoveButton.rx.isHidden)
+        .disposed(by: rx.disposeBag)
+        
+        // 버튼 눌렀을때 반응하는 클로저랑 바인딩
         topMoveButton.rx.tap.on(next: {[weak self] _ in
             guard let `self` = self else { return }
             self.tableView.setContentOffset(CGPoint(x: 0, y: -(self.realSafeAreaInsetTop - 56)), animated: true)
         }).disposed(by: rx.disposeBag)
-    }
-
-    // 최근본 데이터
-    func setupDI(observable: BehaviorRelay<[Model]>) {
-        // model Dependency Injection
-        observable.asObservable().bind(to: tableView.rx.items(cellIdentifier: RecentlyTableViewCell.reuseIdentifier(), cellType: RecentlyTableViewCell.self)) { [weak self] _, element, cell in
-            guard let `self` = self else { return }
-            cell.isDeleteMode = ((self.topView).type == .checkAndButton) ? true : false
-//            cell.isDeleteMode = ((self.tableView.tableHeaderView as! ARTableViewHeaderView).type == .checkAndButton) ? true : false
-            cell.item = element
-            cell.playButton
-                .rx
-                .tap
-                .subscribe(onNext: { _ in
-                    self.playContentTrigger.accept(element)
-                })
-                .disposed(by: cell.disposeBag)
-        }.disposed(by: rx.disposeBag)
-
-        // Table Header View 숨김 유무
-        observable
-            .asObservable()
-            .map { $0.count == 0 }
-            .bind(to: topView.rx.isHidden)
-            .disposed(by: rx.disposeBag)
-//        observable
-//            .asObservable()
-//            .map { $0.count == 0 }
-//            .bind(to: tableView.tableHeaderView!.rx.isHidden)
-//            .disposed(by: rx.disposeBag)
-
-        // Table Background View 숨김 유무
-//        observable
-//            .asObservable()
-//            .map { $0.count != 0 }
-//            .bind(to: tableView.backgroundView!.rx.isHidden)
-//            .disposed(by: rx.disposeBag)
-        observable.asObservable()
-            .map { $0.count == 0 }
-            .subscribe(onNext: {[weak self]  needHidden in
-            guard let `self` = self else { return }
-            self.topView.snp.remakeConstraints {
-                $0.top.equalToSuperview().offset(12)
-                $0.leading.trailing.equalToSuperview()
-                let height = needHidden ? 0.0 : 44.0
-                $0.height.equalTo(height)
-            }
-
-            self.tableView.snp.remakeConstraints {
-                if needHidden { $0.top.equalToSuperview() } else { $0.top.equalTo(self.topView.snp.bottom) }
-                $0.leading.trailing.bottom.equalToSuperview()
-            }
-            self.tableView.backgroundView?.isHidden = !needHidden
-        }).disposed(by: rx.disposeBag)
-
+        
         // TableView Reloading
         tableView
             .rx
             .reloaded
-            .filter { _ in self.tableView.allowsMultipleSelection == false }
+            .filter { _ in self.tableView.allowsMultipleSelection == false } // 뭐지이게 으음? 아 삭제모드가 아닐때구나..?
             .subscribe(onNext: refreshControl.endRefresh)
             .disposed(by: rx.disposeBag)
 
         // TableView Select Cell(delete mode)
         tableView
             .rx
-            .selectedRows
+            .selectedRows // Rx+ 에 정의한 녀석
             .filter { _ in self.tableView.allowsMultipleSelection == true }
             .subscribe(onNext: showDeleteButton)
             .disposed(by: rx.disposeBag)
@@ -195,7 +151,7 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
         // TableView Select Cell(not delete mode)
         tableView
             .rx
-            .modelSelected(RecentlyLikeList.self)
+            .modelSelected(RecentlyLikeList.self) // 기본 RX에서 제공하는 MODELSELECTED로 처리
             .filter { _ in self.tableView.allowsMultipleSelection == false }
             .filter { item in item.visible_yn == "Y" }
             .filter { item in
@@ -205,12 +161,6 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
             .bind(to: showDetailTrigger)
             .disposed(by: rx.disposeBag)
 
-        // HeaderView Check Button Select
-//        tableView
-//            .rx
-//            .isAllSelectedItems
-//            .bind(to: (self.tableView.tableHeaderView as! ARTableViewHeaderView).checkButton.rx.isSelected)
-//            .disposed(by: rx.disposeBag)
         tableView
             .rx
             .isAllSelectedItems
@@ -226,9 +176,39 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
         refreshTrigger.on(next: { [weak self] in
             self?.refreshControl.endRefresh()
         }).disposed(by: rx.disposeBag)
+        
+        //        networkErrorView
+        //            .setupDI(refreshTrigger)
+    }
+    
+    // 최근본 데이터 recentlyList
+    func setupDI(observable: BehaviorRelay<[Model]>) {
+        // model Dependency Injection
+        observable.asObservable().bind(to: tableView.rx.items(cellIdentifier: RecentlyTableViewCell.reuseIdentifier(), cellType: RecentlyTableViewCell.self)) { [weak self] _, element, cell in
+            guard let `self` = self else { return }
+            cell.isDeleteMode = ((self.topView).type == .checkAndButton) ? true : false
+            cell.item = element
+            cell.setupDI(observable: self.playContentTrigger)
+        }.disposed(by: rx.disposeBag)
 
-//        networkErrorView
-//            .setupDI(refreshTrigger)
+        observable.asObservable()
+            .map { $0.count == 0 } // 아 true일때만 실행되는게 아니라 얘를 가지고 판별하는거구나 오우;
+            .subscribe(onNext: {[weak self] needHidden in
+                guard let `self` = self else { return }// 이거 왜있는거임? 아 셀프에 물음표안하기 + topView.snp.bottom 에 as! 안넣기 와우아아아
+                
+                self.topView.isHidden = needHidden
+                // 탑뷰 없어졌으면 테이블뷰 탑 콘스트레인트 맨위로 쭉
+                self.tableView.snp.remakeConstraints {
+                    if needHidden { $0.top.equalToSuperview() } else { $0.top.equalTo(self.topView.snp.bottom) }
+                    $0.leading.trailing.bottom.equalToSuperview()
+                }
+                // ARTableViewEmptyView 띄우기
+                self.tableView.backgroundView?.isHidden = !needHidden
+            })
+            .disposed(by: rx.disposeBag)
+
+        
+
     }
 
     @discardableResult
@@ -256,7 +236,7 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
         }
         return self
     }
-
+    //아 위에랑 분리한이유가있네
     func setupDI(playRelay: PublishRelay<RecentlyLikeList>) {
         playContentTrigger.bind(to: playRelay).disposed(by: rx.disposeBag)
     }
@@ -316,7 +296,6 @@ extension RecentlyView {
     // View 상태 업데이트
     func updateRecentlyView(status: ARTableViewHeaderActionType) {
         let tableHeaderView = topView
-//        let tableHeaderView = tableView.tableHeaderView as! ARTableViewHeaderView
         switch status {
         case .delete:               // 삭제 모드
             tableView.reloadData()
