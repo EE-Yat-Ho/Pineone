@@ -11,18 +11,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MainViewController.bindingViewModel():MainViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "viewModel">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "AppDelegate.init():AppDelegate.swift">
          <PersistentStrings>
             <PersistentString
                value = "window">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainViewController.bindingViewModel():MainViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -71,6 +71,14 @@
          <PersistentStrings>
             <PersistentString
                value = "viewModel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Action.execute(_:):Action.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "inputs">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

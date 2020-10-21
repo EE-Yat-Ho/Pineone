@@ -10,7 +10,7 @@ import Foundation
 
 
 /// 2.10 사용자 컨텐츠 조회 (시청/좋아요) - Response - 컨텐츠 목록
-struct RecentlyLikeList: Decodable {
+struct RecentlyCellInfo: Decodable {
     /// 컨텐츠 유니크 키
     let key: Int?
     /// 컨텐츠 명
@@ -48,7 +48,7 @@ struct ContentsRecentlyLike: Decodable {
     /// cursor가 null인 경우에만 (최초 요청) 제공
     let total_cnt: Int?
     /// 컨텐츠 목록
-    let contents_list: [RecentlyLikeList]?
+    let contents_list: [RecentlyCellInfo]?
 }
 
 /// 2.10 사용자 컨텐츠 조회 (시청/좋아요) - Response - score board 정보

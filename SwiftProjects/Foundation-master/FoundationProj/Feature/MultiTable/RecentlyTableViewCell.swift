@@ -12,7 +12,7 @@ import UIKit
 
 class RecentlyTableViewCell: ActivityBaseTableViewCell {
     // 셀 item
-    var item: RecentlyLikeList? {
+    var item: RecentlyCellInfo? {
         didSet {
             self.bindingData()
         }
@@ -66,13 +66,15 @@ extension RecentlyTableViewCell {
         }
     }
     
-    func setupDI(observable: PublishRelay<RecentlyLikeList>) {
+    func setupDI(observable: PublishRelay<UserInput>) {
+        // 셀의 플레이 버튼 누를시, 셀의 아이템을 전달
         playButton.rx
             .tap
-            .subscribe(onNext: { [weak self] in
-                guard let item = self?.item else { return }
-                observable.accept(item)
-            })
+            .map{ [weak self] in
+                .cellPlay((self?.item) ?? RecentlyCellInfo(key: 0, name: "0", type: .aosInstallGame, image_url: "0", playtime: "0", req_date: 0, visible_yn: .none, sb_info: .none, type_badge_url: "0", event_badge_url: "0", start_dt: 0, end_dt: 0, adult_yn: "0", downloadable: .N) )
+                // 아 개 맘에 안들어 진짜
+            }
+            .bind(to: observable)
             .disposed(by:rx.disposeBag)
     }
 }

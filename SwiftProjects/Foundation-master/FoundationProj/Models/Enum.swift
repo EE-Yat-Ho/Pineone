@@ -19,3 +19,8 @@ enum Contain3DContentType: String, Codable, RealmableEnumString {
     case Y = "Y"
     case N = "N"
 }
+
+enum FirebaseLinkType: String, Codable {
+    case web = "WEB"
+    case deep = "DEEP"
+}
