@@ -19,9 +19,8 @@ class RecentlyViewController: UIBaseViewController, ViewModelProtocol {
     var viewModel: ViewModel!
 
     // MARK: - Properties
-    private let userInputs = PublishRelay<UserInput>()
-    private let systemInputs = PublishRelay<SystemInput>()
-    private let systemOutputs = PublishRelay<SystemOutput>()
+    private let inputAction = PublishRelay<InputAction>()
+    private let tableRelay = PublishRelay<[RecentlyCellInfo]>()
         
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -29,28 +28,21 @@ class RecentlyViewController: UIBaseViewController, ViewModelProtocol {
 
         setupLayout()
         bindingViewModel()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
         
         /// Init Data Load
-        systemInputs.accept(.refreshData)
+        inputAction.accept(.refreshData)
     }
-
 
     // MARK: - Input Observables to VM. SetUpDI to View use Output.
     func bindingViewModel() {
-        /// Input VM, get Output.
-        let response = viewModel.transform(
-            req: RecentlyViewModel.Input(
-                userInputs: userInputs.asObservable(),
-                systemInputs: systemInputs.asObservable()
-            )
-        )
+        /// 바인드를 위한 릴레이 교환
+        let response = viewModel.transform(req: RecentlyViewModel.Input(inputAction: inputAction.asObservable()))
         
-//        recentlyView.setupDI(observable: response.recentlyTableOv)
-//        recentlyView.setupDI(changeShowType: response.changeShowType)
+        /// VC가 View를 관찰하기 위한 DI
+        recentlyView.setupDI(inputAction: inputAction)
+            
+        /// 비즈니스 로직 결과를 View가 관찰하기 위한 DI
+        recentlyView.setupDI(tableOv: response.tableRelay.asObservable())
     }
 
     // MARK: - View
@@ -63,7 +55,4 @@ class RecentlyViewController: UIBaseViewController, ViewModelProtocol {
             $0.top.equalToSuperview().offset(56)
         }
     }
-
-    // MARK: - Methods
-
 }

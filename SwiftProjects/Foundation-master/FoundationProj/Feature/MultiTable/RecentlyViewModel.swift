@@ -12,28 +12,11 @@ import RxFlow
 import RxSwift
 import UIKit
 
-enum UserInput {
-    //case trashCanButton
-    //case cancel
-    case bottomDeleteButton
-    case topMoveButton
-    //case checkAll
-    case cellCheck
-    case cellDetail
+enum InputAction {
+    case deleteItems([IndexPath])
+    case cellDetail(RecentlyCellInfo)
     case cellPlay(RecentlyCellInfo)
-    case scrollUp
-    case scrollDown
-    case topView(ARTableViewHeaderShowType)
-}
-
-enum SystemInput {
-    case isAllCheck
-    case isDeleteButton
     case refreshData
-}
-
-enum SystemOutput {
-    case tableView([RecentlyCellInfo])
 }
 
 
@@ -47,83 +30,84 @@ class RecentlyViewModel: ViewModelType, Stepper {
     // MARK: - Properties
     let disposeBag = DisposeBag()
     
-    private let userInputs = PublishRelay<UserInput>()
-    private let systemInputs = PublishRelay<SystemInput>()
-    private let systemOutputs = PublishRelay<SystemOutput>()
-
+    private let tableRelay = PublishRelay<[RecentlyCellInfo]>()
+    private let topViewRelay = PublishRelay<ARTableViewHeaderActionType>()
     
     
 
     struct Input {
-        let userInputs: Observable<UserInput>
-        let systemInputs: Observable<SystemInput>
+        let inputAction: Observable<InputAction>
     }
 
     struct Output {
-        let systemOutputs: PublishRelay<SystemOutput>
+        let tableRelay: PublishRelay<[RecentlyCellInfo]>
+        let topViewRelay: PublishRelay<ARTableViewHeaderActionType>
+        
     }
 
     func transform(req: ViewModel.Input) -> ViewModel.Output {
-        // MARK: - Observe Input from Action
-        req.systemInputs
+        // MARK: - Observe Input from Closure
+        /// 들어온 입력들 프로세서 클로저로
+        req.inputAction
             .on(next: { [weak self] in
-                self?.systemInputProcessor(systemInput: $0) })
+                self?.inputActionProcessor(inputAction: $0) })
             .disposed(by: disposeBag)
         
-//        req.topViewInput
-//            .bind(to: topViewActions.inputs)
-//            .disposed(by: disposeBag)
-        
         // MARK: - Observe Action from Output
-//        loadRecentlyDataAction
-//            .elements
-//            .bind(to: recentlyTableRelay)
-//            .disposed(by: disposeBag)
+        /// 데이터를 로드해오면 테이블 리프래쉬
+        loadRecentlyDataAction
+            .elements
+            .bind(to: tableRelay)
+            .disposed(by: disposeBag)
         
-        return Output(systemOutputs: systemOutputs)
+        /// 데이터를 삭제했으면 데이터 로드
+        deleteRecentlyDataAction
+            .elements
+            .bind(to: loadRecentlyDataAction.inputs)
+            .disposed(by: disposeBag)
+        
+        return Output(tableRelay: tableRelay, topViewRelay: topViewRelay)
     }
     
-    // MARK: - Actions Declaration
-    
-//    private func userInputProcessor(userInput: UserInput) {
-//
-//    }
-    
-    private func systemInputProcessor(systemInput: SystemInput) {
-        switch systemInput {
-        case .isAllCheck:
-            print("isAllCheck")
-        case .isDeleteButton:
-            print("isDeleteButton")
+    // MARK: - Processor Declaration
+    private func inputActionProcessor(inputAction: InputAction) {
+        switch inputAction {
         case .refreshData:
-            systemOutputs.accept(SystemOutput.tableView(Server.shared.getUserRecentlyContents()))
+            loadRecentlyDataAction.inputs.onNext(())
+        case .deleteItems(let indexPaths):
+            deleteItems(indexPaths) // 서버에는 배열이 아닌 스트링값 1개만 넘겨주기위한 전초작업
+        case .cellDetail(let cellInfo):
+            cellDetail(cellInfo)
+        case .cellPlay(let cellInfo):
+            cellPlay(cellInfo)
         }
     }
 
+    private func deleteItems(_ indexPaths: [IndexPath]) {
+        var selectIP: [String] = []
+        for indexPath in indexPaths {
+            selectIP.append(String(indexPath.row))
+        }
+        let result = selectIP.joined(separator: ",")
+        deleteRecentlyDataAction.inputs.onNext(result)
+    }
     
-    /// Load Data Action
-//    private lazy var loadRecentlyDataAction = Action<(Void), [RecentlyCellInfo]>(workFactory: {
-//        //return NetworkService.getUserContents(type: .view, count: RecentlyViewModel.RECENTLY_LIST_COUNT_MAX)
-//        return Server.shared.getUserRecentlyContents()
-//    })
-//
-//    /// Top View Action ( trashcan, checkAll, cancel )
-//    private lazy var topViewActions = Action<ARTableViewHeaderActionType, Void>(workFactory:
-//    { [weak self] in
-//        guard let `self` = self else { return .empty() }
-//        switch $0 {
-//        case .delete:
-//            self.changeShowType.accept(.checkAndButton)
-//            //여기서 탑뷰의 타입을 바꿔여해
-//        case .check:
-//            print("check")
-//        case .cancel:
-//            self.changeShowType.accept(.rightOneButton)
-//        case .dropdown:
-//            print("dropdown")
-//        default:
-//            break
-//        }
-//        return .empty()
-//    })
+    private func cellDetail(_ cellInfo: RecentlyCellInfo) {
+        print("cellDetail")
+    }
+    
+    private func cellPlay(_ cellInfo: RecentlyCellInfo) {
+        print("cellPlay")
+    }
+    
+    
+    // MARK: - Actions for Server Communication
+    private lazy var loadRecentlyDataAction = Action<(Void), [RecentlyCellInfo]>(workFactory: {
+        return Observable<[RecentlyCellInfo]>.just(Server.shared.getUserRecentlyContents())
+    })
+    
+    private lazy var deleteRecentlyDataAction = Action<(String), Void>(workFactory: { indexPathString in
+        return Observable<Void>.just(Server.shared.deleteUserContents(indexPathString: indexPathString))
+    })
 }
+    

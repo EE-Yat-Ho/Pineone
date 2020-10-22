@@ -66,7 +66,12 @@ extension RecentlyTableViewCell {
         }
     }
     
-    func setupDI(observable: PublishRelay<UserInput>) {
+    func mappingData(item: RecentlyCellInfo, isDeleteMode: Bool){
+        self.item = item
+        self.isDeleteMode = isDeleteMode
+    }
+    
+    func setupDI(observable: PublishRelay<InputAction>) {
         // 셀의 플레이 버튼 누를시, 셀의 아이템을 전달
         playButton.rx
             .tap
@@ -75,6 +80,6 @@ extension RecentlyTableViewCell {
                 // 아 개 맘에 안들어 진짜
             }
             .bind(to: observable)
-            .disposed(by:rx.disposeBag)
+            .disposed(by:disposeBag)
     }
 }

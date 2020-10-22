@@ -10,10 +10,10 @@ import UIKit
 import RxSwift
 
 struct Server {
-    static let shared = Server()
+    static var shared = Server()
     
 //    var testRecentlyCellInfos: [RecentlyCellInfo] = []
-    private var RecentlyCellInfos = [
+    private var recentlyCellInfos = [
         RecentlyCellInfo(
             key: 0,
             name: "performance,adultN,dwonN",
@@ -62,8 +62,19 @@ struct Server {
     ]
     
     func getUserRecentlyContents() -> [RecentlyCellInfo] {
-       // let result =
-        return RecentlyCellInfos
+        return recentlyCellInfos
+    }
+    
+    mutating func deleteUserContents(indexPathString: String) {
+        let splitedIndexPathString = indexPathString.split(separator: ",").map(String.init) // "1", "2"
+        let keys = splitedIndexPathString.map({
+            (string:String) -> Int in
+                if let index = Int(string) {
+                    return recentlyCellInfos[index].key ?? -1
+                }
+                return -1
+            })
+        recentlyCellInfos = recentlyCellInfos.filter{!keys.contains($0.key ?? -1)}
     }
     
 }
