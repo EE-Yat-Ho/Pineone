@@ -17,7 +17,7 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
     typealias Model = RecentlyCellInfo
 
     // MARK: - Properties
-    /// 유저와 시스템의 모든 입력을 ViewModel에 전달해주는 릴레이
+    /// 비즈니스 로직이 필요한 모든 입력을 ViewModel에 전달해주기 위한 릴레이
     private let inputAction = PublishRelay<InputAction>()
     
     /// 상단 새로고침 컨트롤
@@ -53,7 +53,7 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
         $0.refreshControl = refreshControl
     }
 
-    /// 삭제버튼을 포함하는 하단뷰
+    /// 분홍색 삭제버튼을 포함하는 하단뷰
     lazy var bottomView = UIImageView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.image = #imageLiteral(resourceName: "bgButtonGra01")
@@ -61,13 +61,13 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
         $0.isUserInteractionEnabled = true
     }
     
-    /// 하단 삭제 버튼
+    /// 하단의 분홍색 삭제 버튼
     lazy var bottomDeleteButton = UIButton().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.titleLabel?.font = .notoSans(.bold, size: 17)
         $0.setTitle("", for: .normal)
         $0.setTitleColor(.white, for: .normal)
-        $0.addGradientForButton()
+        $0.addGradientForButton() /// 오우 그라디에이션 넣어주는 함수!!
         $0.isHidden = true
         $0.isUserInteractionEnabled = true
         $0.cornerRadius = 12.0
@@ -77,10 +77,11 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
     func setupLayout() {
         backgroundColor = #colorLiteral(red: 0.114654012, green: 0.1092678383, blue: 0.1311254203, alpha: 1)
         bottomView.addSubviews([bottomDeleteButton])
+        /// BaseView에서 정의한 topMoveButton이 있으며, needTopMoveButton == true인 경우 topMoveButton를 화면 앞으로 가져옴
         addSubviews([topView, tableView, bottomView], needTopMoveButton: true)
 
         topView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(18)
+            $0.top.equalToSuperview().offset(18) /// 테이블의 섹션 헤더 높이와 같게 18로 설정.
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(44)
         }
@@ -106,11 +107,10 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
     // MARK: - Observe UserInputs
     func bindData() {
         // Inputs. Required Business Logic
-        /// 삭제모드 아닐때 셀 선택시, cellDetail 전달. 성인이나 기간 판단은 ViewModel 에서!
+        /// 셀 선택시, cellDetail이벤트 전달. 성인이나 기간만료에 의한 판단은 ViewModel 에서!
         tableView
             .rx
             .modelSelected(RecentlyCellInfo.self)
-            .filter { _ in self.tableView.allowsMultipleSelection == false }
             .map {.cellDetail($0)}
             .bind(to: inputAction)
             .disposed(by: rx.disposeBag)
@@ -161,6 +161,27 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
             .filter { _ in self.tableView.allowsMultipleSelection == false }
             .subscribe(onNext: refreshControl.endRefresh)
             .disposed(by: rx.disposeBag)
+        
+        /// 테이블 뷰가 스크롤 다운으로 내려간 거리가, 테이블 뷰 높이보다 커지면 topMoveButton 표시
+        tableView
+            .rx
+            .contentOffset
+            .map({[weak self]  position -> Bool in
+                guard let `self` = self else { return true }
+                if position.y > self.tableView.frame.height {
+                    return false
+                }
+                return true})
+            .bind(to: topMoveButton.rx.isHidden).disposed(by: rx.disposeBag)
+        
+        /// topMoveButton 누르면 상단으로 올라가기
+        topMoveButton
+            .rx
+            .tap
+            .on(next: {[weak self] _ in
+                guard let `self` = self else { return }
+                self.tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)}) /// 원래 y는 -(self.realSafeAreaInsetTop - 56) 였음.
+            .disposed(by: rx.disposeBag)
     }
     
     // MARK: - setupDIes
@@ -169,8 +190,9 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
         self.inputAction.bind(to: inputAction).disposed(by: rx.disposeBag)
     }
     
-    /// VM에서 온 옵저버블을 테이블이 관찰
-    func setupDI(tableOv: Observable<[RecentlyCellInfo]>) {
+    /// VM에서 온 테이블용 셀정보들 옵저버블 관찰하기
+    func setupDI(tableOv: Observable<[RecentlyCellInfo]>) -> Self {
+        /// VM에서 온 셀정보들로 tableView 그리기
         tableOv
             .bind(to: tableView.rx.items(cellIdentifier: RecentlyTableViewCell.reuseIdentifier(), cellType: RecentlyTableViewCell.self))
                 { [weak self] _, element, cell in
@@ -179,11 +201,13 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
                     cell.setupDI(observable: self.inputAction)
                 }.disposed(by: rx.disposeBag)
         
+        /// VM에서 온 셀 정보의 갯수로 topView 숨김여부
         tableOv
             .map { $0.count == 0 }
             .bind(to: topView.rx.isHidden)
             .disposed(by: rx.disposeBag)
         
+        /// VM에서 온 셀 정보의 갯수로 topView의 사라짐에 따른 tableView제약 수정과 배경 설정
         tableOv
             .map { $0.count == 0 }
             .subscribe(onNext: {[weak self]  needHidden in
@@ -201,6 +225,27 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
             }
             self.tableView.backgroundView?.isHidden = !needHidden
         }).disposed(by: rx.disposeBag)
+        
+        return self
+    }
+    
+    /// VM에서보낸 삭제 완료 신호를 받기 위한 DI
+    func setupDI(deleteCompleteOv: Observable<Void>) -> Self{
+        /// 삭제 완료시 삭제화면 cancel
+        deleteCompleteOv
+            .on(next: { [weak self] in
+                self?.topViewEventProcessor(actionType: .cancel)
+            }).disposed(by: rx.disposeBag)
+        return self
+    }
+    
+    func setupDI(deleteModeSelectOv: Observable<Int>){
+        /// 삭제 모드에서 셀 선택시 셀 수정
+        deleteModeSelectOv
+            .on(next: { [weak self] in
+                let cell = self?.tableView.cellForRow(at: IndexPath(row: $0, section: 0))
+                cell?.isSelected
+            }).disposed(by: rx.disposeBag)
     }
     
     
@@ -209,7 +254,7 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
     func topViewEventProcessor(actionType: ARTableViewHeaderActionType){
         switch actionType {
         case .delete:
-            tableView.reloadData()
+            tableView.reloadData() // 데이터 통신이 아님. 원래 데이터를 가지고 다른모드로 새로 그리는 것일 뿐.
             topView.type = .checkAndButton
             topView.checkButton.setTitle(R.String.selectAll, for: .normal)
             topView.checkButton.setTitle(R.String.selectAll, for: .selected)

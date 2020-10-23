@@ -19,8 +19,8 @@ class RecentlyViewController: UIBaseViewController, ViewModelProtocol {
     var viewModel: ViewModel!
 
     // MARK: - Properties
+    /// 비즈니스 로직이 필요한 모든 입력을 ViewModel에 전달해주기 위한 릴레이
     private let inputAction = PublishRelay<InputAction>()
-    private let tableRelay = PublishRelay<[RecentlyCellInfo]>()
         
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -33,16 +33,26 @@ class RecentlyViewController: UIBaseViewController, ViewModelProtocol {
         inputAction.accept(.refreshData)
     }
 
-    // MARK: - Input Observables to VM. SetUpDI to View use Output.
+    // MARK: - Input Observables & Get Relay to VM. SetupDI to View use VM's Output.
     func bindingViewModel() {
-        /// 바인드를 위한 릴레이 교환
+        /// 바인드를 위한 VM과의 릴레이 교환
         let response = viewModel.transform(req: RecentlyViewModel.Input(inputAction: inputAction.asObservable()))
         
-        /// VC가 View를 관찰하기 위한 DI
+        /// [View -(emit)-> VC]
+        /// VC가 View를 관찰하여 inputAction을 받기 위한 DI
         recentlyView.setupDI(inputAction: inputAction)
             
+        /// [View <-(emit)- VC]
         /// 비즈니스 로직 결과를 View가 관찰하기 위한 DI
         recentlyView.setupDI(tableOv: response.tableRelay.asObservable())
+                    .setupDI(deleteCompleteOv: response.deleteComplete.asObservable())
+                    //.setupDI(deleteModeSelectOv: response.deleteModeSelect.asObservable())
+        /// normalModeSelect 인 경우, Cell Detial로 넘어가게 VC에서 바인드
+//        response
+//            .normalModeSelect
+//            .on(next: { print("indexRow = \($0). cellDetail")})
+//            .disposed(by: rx.disposeBag)
+        
     }
 
     // MARK: - View
@@ -52,7 +62,7 @@ class RecentlyViewController: UIBaseViewController, ViewModelProtocol {
         self.view.addSubview(recentlyView)
         recentlyView.snp.makeConstraints {
             $0.trailing.leading.bottom.equalToSuperview()
-            $0.top.equalToSuperview().offset(56)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
         }
     }
 }

@@ -461,8 +461,8 @@
             filePath = "FoundationProj/Feature/MultiTable/RecentlyView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "setupDI(tableOv:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -579,22 +579,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C98DBCE4-9E63-4B72-AC93-9E8B44E27CEA"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoundationProj/Feature/MultiTable/RecentlyViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "inputActionProcessor(inputAction:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "DEAE9762-10B1-4D67-B471-FE10E218AD39"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -602,8 +586,8 @@
             filePath = "FoundationProj/Feature/MultiTable/RecentlyView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "setupDI(tableOv:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -618,8 +602,8 @@
             filePath = "FoundationProj/Feature/MultiTable/RecentlyTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "setupDI(observable:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -634,8 +618,8 @@
             filePath = "FoundationProj/Feature/MultiTable/RecentlyView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
             landmarkName = "setupDI(inputAction:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -669,22 +653,6 @@
             startingLineNumber = "33"
             endingLineNumber = "33"
             landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9CDB6F4B-6F03-403B-B5DC-DEF41F89CA8C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoundationProj/Feature/MultiTable/RecentlyTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "setSelected(_:animated:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
