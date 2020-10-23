@@ -128,11 +128,22 @@
 		2A34680D253D79BE003E4BC7 /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A34680C253D79BE003E4BC7 /* UIScrollView+.swift */; };
 		2A346812253D7DD6003E4BC7 /* UITableView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A346811253D7DD6003E4BC7 /* UITableView+Rx.swift */; };
 		2A346836253D8273003E4BC7 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A346835253D8273003E4BC7 /* UILabel+.swift */; };
-		2A346842253D8866003E4BC7 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A34683E253D8866003E4BC7 /* NotoSansKR-Light.otf */; };
-		2A346843253D8866003E4BC7 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A34683F253D8866003E4BC7 /* NotoSansKR-Bold.otf */; };
-		2A346844253D8866003E4BC7 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A346840253D8866003E4BC7 /* NotoSansKR-Medium.otf */; };
-		2A346845253D8866003E4BC7 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A346841253D8866003E4BC7 /* NotoSansKR-Regular.otf */; };
 		2A34684A253D8DEE003E4BC7 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A346849253D8DEE003E4BC7 /* Server.swift */; };
+		2A3468C9253E677E003E4BC7 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A3468C5253E677E003E4BC7 /* NotoSansKR-Light.otf */; };
+		2A3468CA253E677E003E4BC7 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A3468C6253E677E003E4BC7 /* NotoSansKR-Bold.otf */; };
+		2A3468CB253E677E003E4BC7 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A3468C7253E677E003E4BC7 /* NotoSansKR-Medium.otf */; };
+		2A3468CC253E677E003E4BC7 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A3468C8253E677E003E4BC7 /* NotoSansKR-Regular.otf */; };
+		2A3468DC253FBADD003E4BC7 /* RxAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3468DB253FBADD003E4BC7 /* RxAlertView.swift */; };
+		2A3468E5253FBBA7003E4BC7 /* Content_Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3468E4253FBBA7003E4BC7 /* Content_Text.swift */; };
+		2A3468ED253FBC7D003E4BC7 /* DefaultStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3468EC253FBC7D003E4BC7 /* DefaultStyle.swift */; };
+		2A3468F2253FBD23003E4BC7 /* FDPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3468F1253FBD23003E4BC7 /* FDPopup.swift */; };
+		2A3468F7253FBE1A003E4BC7 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3468F6253FBE1A003E4BC7 /* CustomAlertViewController.swift */; };
+		2A3468FC253FBEA3003E4BC7 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3468FB253FBEA3003E4BC7 /* CustomAlertView.swift */; };
+		2A346902253FC097003E4BC7 /* UILabel+Extension+UserPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A346901253FC097003E4BC7 /* UILabel+Extension+UserPopup.swift */; };
+		2A346907253FC0BC003E4BC7 /* UIView+Extension+UsePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A346906253FC0BC003E4BC7 /* UIView+Extension+UsePopup.swift */; };
+		2A34690C253FC4A9003E4BC7 /* CustomAlertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A34690B253FC4A9003E4BC7 /* CustomAlertButton.swift */; };
+		2A346914253FC816003E4BC7 /* AlertPresentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A346913253FC816003E4BC7 /* AlertPresentManager.swift */; };
+		2A346919253FC9B7003E4BC7 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A346918253FC9B7003E4BC7 /* AlertService.swift */; };
 		3721899AFC42180B0556079E /* libPods-FoundationProjTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0741FBCCE752AE22252AB268 /* libPods-FoundationProjTests.a */; };
 		58483EECD5DCA3E880BCF4D8 /* libPods-FoundationProjUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 715B2D612CCB885BD1329FB5 /* libPods-FoundationProjUITests.a */; };
 		AFEEA1B07FE9B7A86105219C /* Pods_FoundationProj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E123FAA7DA87CE8462A205 /* Pods_FoundationProj.framework */; };
@@ -287,11 +298,22 @@
 		2A34680C253D79BE003E4BC7 /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
 		2A346811253D7DD6003E4BC7 /* UITableView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Rx.swift"; sourceTree = "<group>"; };
 		2A346835253D8273003E4BC7 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
-		2A34683E253D8866003E4BC7 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
-		2A34683F253D8866003E4BC7 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
-		2A346840253D8866003E4BC7 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
-		2A346841253D8866003E4BC7 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		2A346849253D8DEE003E4BC7 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		2A3468C5253E677E003E4BC7 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
+		2A3468C6253E677E003E4BC7 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		2A3468C7253E677E003E4BC7 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		2A3468C8253E677E003E4BC7 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
+		2A3468DB253FBADD003E4BC7 /* RxAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAlertView.swift; sourceTree = "<group>"; };
+		2A3468E4253FBBA7003E4BC7 /* Content_Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content_Text.swift; sourceTree = "<group>"; };
+		2A3468EC253FBC7D003E4BC7 /* DefaultStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStyle.swift; sourceTree = "<group>"; };
+		2A3468F1253FBD23003E4BC7 /* FDPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDPopup.swift; sourceTree = "<group>"; };
+		2A3468F6253FBE1A003E4BC7 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		2A3468FB253FBEA3003E4BC7 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		2A346901253FC097003E4BC7 /* UILabel+Extension+UserPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension+UserPopup.swift"; sourceTree = "<group>"; };
+		2A346906253FC0BC003E4BC7 /* UIView+Extension+UsePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension+UsePopup.swift"; sourceTree = "<group>"; };
+		2A34690B253FC4A9003E4BC7 /* CustomAlertButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertButton.swift; sourceTree = "<group>"; };
+		2A346913253FC816003E4BC7 /* AlertPresentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentManager.swift; sourceTree = "<group>"; };
+		2A346918253FC9B7003E4BC7 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		54E123FAA7DA87CE8462A205 /* Pods_FoundationProj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoundationProj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		715B2D612CCB885BD1329FB5 /* libPods-FoundationProjUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FoundationProjUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CAB8BC88E95D14405A7A5F5 /* Pods-FoundationProj-FoundationProjUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoundationProj-FoundationProjUITests.release.xcconfig"; path = "Target Support Files/Pods-FoundationProj-FoundationProjUITests/Pods-FoundationProj-FoundationProjUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -383,6 +405,7 @@
 		1111E81B2463A7C6000BFDFE /* FoundationProj */ = {
 			isa = PBXGroup;
 			children = (
+				2A3468DA253FBAB7003E4BC7 /* popup */,
 				2A3467D2253D64A5003E4BC7 /* Network */,
 				2A3467B5253D604D003E4BC7 /* Foundation */,
 				2A34678C253D5DA5003E4BC7 /* Models */,
@@ -392,8 +415,8 @@
 				11E3409324878BA30063D04F /* Coordinator */,
 				11E3407624878BA30063D04F /* Feature */,
 				11E3408F24878BA30063D04F /* ImageCollection */,
+				2A3468C4253E677E003E4BC7 /* font */,
 				1111E8222463A7C6000BFDFE /* Main.storyboard */,
-				2A34683D253D8866003E4BC7 /* font */,
 				1111E8252463A7C8000BFDFE /* Assets.xcassets */,
 				1111E8272463A7C8000BFDFE /* LaunchScreen.storyboard */,
 				1111E82A2463A7C8000BFDFE /* Info.plist */,
@@ -586,11 +609,11 @@
 		11E3408B24878BA30063D04F /* MultiTable */ = {
 			isa = PBXGroup;
 			children = (
+				2A34676B253D5B95003E4BC7 /* ActivityBaseTableViewCell.swift */,
+				2A346787253D5D14003E4BC7 /* RecentlyTableViewCell.swift */,
 				11E3408D24878BA30063D04F /* RecentlyView.swift */,
 				11E3408E24878BA30063D04F /* RecentlyViewController.swift */,
 				11E3408C24878BA30063D04F /* RecentlyViewModel.swift */,
-				2A34676B253D5B95003E4BC7 /* ActivityBaseTableViewCell.swift */,
-				2A346787253D5D14003E4BC7 /* RecentlyTableViewCell.swift */,
 				2A346849253D8DEE003E4BC7 /* Server.swift */,
 			);
 			path = MultiTable;
@@ -718,6 +741,7 @@
 			children = (
 				2A346790253D5DB5003E4BC7 /* ContentsRecentlyLike.swift */,
 				2A34679D253D5E7C003E4BC7 /* Enum.swift */,
+				2A3468F1253FBD23003E4BC7 /* FDPopup.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -755,16 +779,48 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		2A34683D253D8866003E4BC7 /* font */ = {
+		2A3468C4253E677E003E4BC7 /* font */ = {
 			isa = PBXGroup;
 			children = (
-				2A34683E253D8866003E4BC7 /* NotoSansKR-Light.otf */,
-				2A34683F253D8866003E4BC7 /* NotoSansKR-Bold.otf */,
-				2A346840253D8866003E4BC7 /* NotoSansKR-Medium.otf */,
-				2A346841253D8866003E4BC7 /* NotoSansKR-Regular.otf */,
+				2A3468C5253E677E003E4BC7 /* NotoSansKR-Light.otf */,
+				2A3468C6253E677E003E4BC7 /* NotoSansKR-Bold.otf */,
+				2A3468C7253E677E003E4BC7 /* NotoSansKR-Medium.otf */,
+				2A3468C8253E677E003E4BC7 /* NotoSansKR-Regular.otf */,
 			);
-			name = font;
-			path = "../../AR_SRC/UPlusAR/Suppoting Files/font";
+			path = font;
+			sourceTree = "<group>";
+		};
+		2A3468DA253FBAB7003E4BC7 /* popup */ = {
+			isa = PBXGroup;
+			children = (
+				2A346900253FC059003E4BC7 /* Extension */,
+				2A3468E3253FBB8D003E4BC7 /* content */,
+				2A3468FB253FBEA3003E4BC7 /* CustomAlertView.swift */,
+				2A34690B253FC4A9003E4BC7 /* CustomAlertButton.swift */,
+				2A3468DB253FBADD003E4BC7 /* RxAlertView.swift */,
+				2A3468F6253FBE1A003E4BC7 /* CustomAlertViewController.swift */,
+				2A346913253FC816003E4BC7 /* AlertPresentManager.swift */,
+				2A346918253FC9B7003E4BC7 /* AlertService.swift */,
+			);
+			path = popup;
+			sourceTree = "<group>";
+		};
+		2A3468E3253FBB8D003E4BC7 /* content */ = {
+			isa = PBXGroup;
+			children = (
+				2A3468E4253FBBA7003E4BC7 /* Content_Text.swift */,
+				2A3468EC253FBC7D003E4BC7 /* DefaultStyle.swift */,
+			);
+			path = content;
+			sourceTree = "<group>";
+		};
+		2A346900253FC059003E4BC7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2A346901253FC097003E4BC7 /* UILabel+Extension+UserPopup.swift */,
+				2A346906253FC0BC003E4BC7 /* UIView+Extension+UsePopup.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		2A8C5D7D1B2B03DB8B9B8FB2 /* Pods */ = {
@@ -902,12 +958,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				110EB0572490683200D3C6A2 /* Full to refresh_Magic hat.json in Resources */,
-				2A346842253D8866003E4BC7 /* NotoSansKR-Light.otf in Resources */,
-				2A346844253D8866003E4BC7 /* NotoSansKR-Medium.otf in Resources */,
+				2A3468C9253E677E003E4BC7 /* NotoSansKR-Light.otf in Resources */,
+				2A3468CB253E677E003E4BC7 /* NotoSansKR-Medium.otf in Resources */,
 				1111E8292463A7C8000BFDFE /* LaunchScreen.storyboard in Resources */,
 				1111E8262463A7C8000BFDFE /* Assets.xcassets in Resources */,
-				2A346843253D8866003E4BC7 /* NotoSansKR-Bold.otf in Resources */,
-				2A346845253D8866003E4BC7 /* NotoSansKR-Regular.otf in Resources */,
+				2A3468CA253E677E003E4BC7 /* NotoSansKR-Bold.otf in Resources */,
+				2A3468CC253E677E003E4BC7 /* NotoSansKR-Regular.otf in Resources */,
 				1111E8242463A7C6000BFDFE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1019,6 +1075,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A346914253FC816003E4BC7 /* AlertPresentManager.swift in Sources */,
 				11FF373F24988383008B31A6 /* RecentItemView.swift in Sources */,
 				117B53A124D80CFF000B8712 /* RPImageButton.swift in Sources */,
 				11FF374024988383008B31A6 /* HorizontalStackView.swift in Sources */,
@@ -1058,6 +1115,7 @@
 				11E340B824878BA30063D04F /* RecentlyView.swift in Sources */,
 				117B539B24D80250000B8712 /* RotateSSViewController.swift in Sources */,
 				11E340A824878BA30063D04F /* CollectionMultiSelectionViewController.swift in Sources */,
+				2A34690C253FC4A9003E4BC7 /* CustomAlertButton.swift in Sources */,
 				11FE377B2488F105004D452B /* LinkImageGridViewModel.swift in Sources */,
 				11E340AA24878BA30063D04F /* ZoomingView.swift in Sources */,
 				11F5753F24BEB293003ACB4B /* PlayerView.swift in Sources */,
@@ -1071,6 +1129,7 @@
 				11B7993824B434C10076C541 /* FollowButton.swift in Sources */,
 				11F5754224BEB474003ACB4B /* PlayerSliderView.swift in Sources */,
 				11FE377A2488F105004D452B /* LinkImageGridView.swift in Sources */,
+				2A3468F7253FBE1A003E4BC7 /* CustomAlertViewController.swift in Sources */,
 				11E340BB24878BA30063D04F /* CheckBox.swift in Sources */,
 				11E340B324878BA30063D04F /* PHAsset+.swift in Sources */,
 				2A346799253D5E0E003E4BC7 /* Date+.swift in Sources */,
@@ -1084,6 +1143,7 @@
 				11E340B124878BA30063D04F /* ImageSlider.swift in Sources */,
 				11E340AF24878BA30063D04F /* ZoomDismissalInteractionController.swift in Sources */,
 				11E340A624878BA30063D04F /* UIApplication+.swift in Sources */,
+				2A3468DC253FBADD003E4BC7 /* RxAlertView.swift in Sources */,
 				11FE377F2488F317004D452B /* LinkRepository.swift in Sources */,
 				2A34679E253D5E7C003E4BC7 /* Enum.swift in Sources */,
 				2A3467FB253D6F1D003E4BC7 /* Button.swift in Sources */,
@@ -1101,21 +1161,26 @@
 				1186308C248A2DE5006F3044 /* ARVideoLayerObject.swift in Sources */,
 				1186308E248A2DE5006F3044 /* ARVideoContainer.swift in Sources */,
 				1155A07324AEEFDF0082074C /* WebTestViewModel.swift in Sources */,
+				2A3468FC253FBEA3003E4BC7 /* CustomAlertView.swift in Sources */,
 				11E3409B24878BA30063D04F /* Log.swift in Sources */,
 				11E340B024878BA30063D04F /* ZoomAnimator.swift in Sources */,
+				2A346919253FC9B7003E4BC7 /* AlertService.swift in Sources */,
 				1155A07224AEEFDF0082074C /* WebTestView.swift in Sources */,
 				2A3467A8253D5F28003E4BC7 /* Double+.swift in Sources */,
 				1108EAEA24AC263E001514A3 /* DeviceOrientationHelper.swift in Sources */,
+				2A346902253FC097003E4BC7 /* UILabel+Extension+UserPopup.swift in Sources */,
 				11E340CC24878C590063D04F /* AppDelegate.swift in Sources */,
 				117B539F24D8025F000B8712 /* RotatePickerView.swift in Sources */,
 				11E340B924878BA30063D04F /* RecentlyViewController.swift in Sources */,
 				2A346800253D6F69003E4BC7 /* UIImage+.swift in Sources */,
+				2A3468E5253FBBA7003E4BC7 /* Content_Text.swift in Sources */,
 				11B5A16F24ED4319000E4B25 /* FilterSliderView.swift in Sources */,
 				2A346771253D5BC3003E4BC7 /* UIFont+.swift in Sources */,
 				2A3467EB253D6A29003E4BC7 /* BaseView.swift in Sources */,
 				11B5A16E24ED4319000E4B25 /* FilterSliderViewController.swift in Sources */,
 				11E340A924878BA30063D04F /* ImageSliderCellPorotol.swift in Sources */,
 				11E340B424878BA30063D04F /* CollectionMultiSelectionView.swift in Sources */,
+				2A3468ED253FBC7D003E4BC7 /* DefaultStyle.swift in Sources */,
 				117C1BE924C024EC002CC5A3 /* Color+.swift in Sources */,
 				2A34684A253D8DEE003E4BC7 /* Server.swift in Sources */,
 				11E340C724878BFC0063D04F /* MainView.swift in Sources */,
@@ -1124,6 +1189,7 @@
 				11E340AE24878BA30063D04F /* ZoomTransitionController.swift in Sources */,
 				11FE37792488F105004D452B /* LinkImageGridViewController.swift in Sources */,
 				11E340C824878BFC0063D04F /* MainCell.swift in Sources */,
+				2A346907253FC0BC003E4BC7 /* UIView+Extension+UsePopup.swift in Sources */,
 				2A346805253D7788003E4BC7 /* UIKitPreview.swift in Sources */,
 				110EB0542490675C00D3C6A2 /* CustomRefreshControl.swift in Sources */,
 				1186308D248A2DE5006F3044 /* ARVideoPlayerController.swift in Sources */,
@@ -1134,6 +1200,7 @@
 				117B539C24D80250000B8712 /* RotateSSView.swift in Sources */,
 				11E340AB24878BA30063D04F /* ZoomImageCell.swift in Sources */,
 				11E340B524878BA30063D04F /* MultiCollectionCell.swift in Sources */,
+				2A3468F2253FBD23003E4BC7 /* FDPopup.swift in Sources */,
 				11B5A17024ED4319000E4B25 /* FilterSliderViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

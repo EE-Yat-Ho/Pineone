@@ -26,20 +26,40 @@ class CustomRefreshControl: UIRefreshControl {
     }
 
     override func didMoveToSuperview() {
+//        super.didMoveToSuperview()
+//        self.snp.makeConstraints{
+//            $0.centerY.equalTo(superview!.snp.top).offset(-20)
+//            $0.centerX.equalToSuperview()
+//        }
+//
+//        self.addSubview(animationView)
+//         animationView.snp.makeConstraints{ make in
+//             make.width.equalTo(50)
+//             make.height.equalTo(50)
+//             make.centerX.equalToSuperview()
+//             let offset = 50 / CGFloat(2.0)
+//             make.centerY.equalToSuperview().offset(offset)
+//         }
         super.didMoveToSuperview()
-        self.snp.makeConstraints{
-            $0.centerY.equalTo(superview!.snp.top).offset(-20)
+        guard let superView = superview else {
+            self.snp.removeConstraints()
+            self.animationView.snp.removeConstraints()
+            self.animationView.removeFromSuperview()
+            return
+        }
+        self.snp.makeConstraints {
+            $0.centerY.equalTo(superView.snp.top).offset(-20)
             $0.centerX.equalToSuperview()
         }
-        
+
         self.addSubview(animationView)
-         animationView.snp.makeConstraints{ make in
-             make.width.equalTo(50)
-             make.height.equalTo(50)
-             make.centerX.equalToSuperview()
-             let offset = 50 / CGFloat(2.0)
-             make.centerY.equalToSuperview().offset(offset)
-         }
+        animationView.snp.makeConstraints { make in
+            make.width.equalTo(50)
+            make.height.equalTo(50)
+            make.centerX.equalToSuperview()
+            let offset = 50 / CGFloat(2.0)
+            make.centerY.equalToSuperview().offset(offset)
+        }
     }
     
     var animationView: AnimationView!

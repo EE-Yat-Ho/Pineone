@@ -7,16 +7,16 @@
 //
 
 import RxCocoa
+import RxSwift
 import UIKit
 
 class RecentlyTableViewCell: ActivityBaseTableViewCell {
-    // 셀 item
-    var item: RecentlyLikeList? {
+    // item이 세팅되면, ActivityBaseTableViewCell에서 정의한 뷰들에 데이터 넣어주기
+    var item: RecentlyCellInfo? {
         didSet {
             self.bindingData()
         }
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         if isDeleteMode {
@@ -31,7 +31,7 @@ class RecentlyTableViewCell: ActivityBaseTableViewCell {
 extension RecentlyTableViewCell {
     func bindingData() {
         guard let item = item else { return }
-
+        // item이 세팅되면, ActivityBaseTableViewCell에서 정의한 뷰들에 데이터 넣어주기
         if let imageURL = item.image_url {
             thumbnailImageView.sd_setImage(with: URL(string: imageURL))
         }
@@ -63,5 +63,24 @@ extension RecentlyTableViewCell {
         } else {
             adultBadgeImageView.isHidden = true
         }
+    }
+    
+    /// 셀 정보와 삭제모드 여부를 매핑
+    func mappingData(item: RecentlyCellInfo, isDeleteMode: Bool){
+        self.item = item
+        self.isDeleteMode = isDeleteMode
+    }
+    
+    /// 플레이 버튼 누를 시, VM으로 이벤트를 전달하기 위한 DI
+    func setupDI(observable: PublishRelay<InputAction>) {
+        // 셀의 플레이 버튼 누를시, 셀의 아이템을 전달
+        playButton.rx
+            .tap
+            .map{ [weak self] in
+                guard let item = self?.item else { return .error }
+                return .cellPlay(item)
+            }
+            .bind(to: observable)
+            .disposed(by:disposeBag)
     }
 }

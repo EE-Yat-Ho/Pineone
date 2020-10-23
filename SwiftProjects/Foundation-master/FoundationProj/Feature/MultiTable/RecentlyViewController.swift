@@ -14,61 +14,45 @@ import Then
 import UIKit
 
 class RecentlyViewController: UIBaseViewController, ViewModelProtocol {
-    private let refreshTrigger = PublishRelay<Void>()
-    private let showDetailTrigger = PublishRelay<RecentlyLikeList>()
-    private let playContentTrigger = PublishRelay<RecentlyLikeList>()
-    private let buttonActionTrigger = PublishRelay<ARTableViewHeaderActionType>()
-    private let deleteItemsTrigger = PublishRelay<[IndexPath]>()
-
-    private lazy var loadMoreTrigger: Observable<Void> = {
-        return self.recentlyView.tableView.rx.contentOffset
-            .flatMap {[unowned self] _ -> Observable<Void> in
-                self.recentlyView.tableView.isNearBottomEdge(edgeOffset: 0) ? Observable.just(Void()) : Observable.empty()
-            }
-    }()
-
-    typealias ViewModel = RecentlyViewModel
-
     // MARK: - ViewModelProtocol
+    typealias ViewModel = RecentlyViewModel
     var viewModel: ViewModel!
 
     // MARK: - Properties
-
+    /// 비즈니스 로직이 필요한 모든 입력을 ViewModel에 전달해주기 위한 릴레이
+    private let inputAction = PublishRelay<InputAction>()
+        
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         setupLayout()
         bindingViewModel()
-        refreshTrigger.accept(())
+        
+        /// Init Data Load
+        inputAction.accept(.refreshData)
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        buttonActionTrigger.accept(.cancel)
-    }
-
-    // MARK: - Binding
+    // MARK: - Input Observables & Get Relay to VM. SetupDI to View use VM's Output.
     func bindingViewModel() {
-        let response = viewModel.transform(req: RecentlyViewModel.Input(refreshTrigger: refreshTrigger.asObservable(),
-                loadMoreTrigger: loadMoreTrigger.asObservable(),
-                showDetailTrigger: showDetailTrigger.asObservable(),
-                playContentTrigger: playContentTrigger.asObservable(),
-                buttonActionTrigger: buttonActionTrigger.asObservable(),
-                deleteItemsTrigger: deleteItemsTrigger.asObservable()
-))
-
-        recentlyView.setupDI(relay: refreshTrigger)
-                .setupDI(relay: showDetailTrigger)
-                .setupDI(relay: buttonActionTrigger)
-                .setupDI(relay: deleteItemsTrigger)
-                .setupDI(playRelay: playContentTrigger)
-
-        // UI 데이터 셋팅
-        recentlyView.setupDI(observable: response.recentlyList)
-        recentlyView.updateView(action: response.buttonActionRelay)
-        recentlyView.updateDeleteItem(observable: response.deleteItem)
+        /// 바인드를 위한 VM과의 릴레이 교환
+        let response = viewModel.transform(req: RecentlyViewModel.Input(inputAction: inputAction.asObservable()))
+        
+        /// [View -(emit)-> VC]
+        /// VC가 View를 관찰하여 inputAction을 받기 위한 DI
+        recentlyView.setupDI(inputAction: inputAction)
+            
+        /// [View <-(emit)- VC]
+        /// 비즈니스 로직 결과를 View가 관찰하기 위한 DI
+        recentlyView.setupDI(tableOv: response.tableRelay.asObservable())
+                    .setupDI(deleteCompleteOv: response.deleteComplete.asObservable())
+                    //.setupDI(deleteModeSelectOv: response.deleteModeSelect.asObservable())
+        /// normalModeSelect 인 경우, Cell Detial로 넘어가게 VC에서 바인드
+//        response
+//            .normalModeSelect
+//            .on(next: { print("indexRow = \($0). cellDetail")})
+//            .disposed(by: rx.disposeBag)
+        
     }
 
     // MARK: - View
@@ -77,10 +61,8 @@ class RecentlyViewController: UIBaseViewController, ViewModelProtocol {
     func setupLayout() {
         self.view.addSubview(recentlyView)
         recentlyView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.trailing.leading.bottom.equalToSuperview()
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
         }
     }
-
-    // MARK: - Methods
-
 }

@@ -14,18 +14,20 @@ import UIKit
 
 class RecentlyView: UIBasePreviewTypeForRecentrly {
     // MARK: - Model type implemente
-    typealias Model = RecentlyLikeList
+    typealias Model = RecentlyCellInfo
 
-    let refreshTrigger = PublishRelay<Void>()
-    let showDetailTrigger = PublishRelay<RecentlyLikeList>()
-    let playContentTrigger = PublishRelay<RecentlyLikeList>()
-    let buttonActionTrigger = PublishRelay<ARTableViewHeaderActionType>()
-    let deleteItemsTrigger = PublishRelay<[IndexPath]>()
-
+    // MARK: - Properties
+    /// 비즈니스 로직이 필요한 모든 입력을 ViewModel에 전달해주기 위한 릴레이
+    private let inputAction = PublishRelay<InputAction>()
+    
+    /// 상단 새로고침 컨트롤
+    let refreshControl = CustomRefreshControl()
+    
     // MARK: - init
     override init(naviType: ARNavigationShowType = .none) {
         super.init(naviType: naviType)
         setupLayout()
+        bindData()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -33,14 +35,12 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
     }
 
     // MARK: - View
-
-    // 해더뷰
+    /// 상단 topView ( 쓰레기통, 체크박스, X버튼 )
     lazy var topView = ARTableViewHeaderView(type: .rightOneButton).then {
-        $0.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 56)
-        $0.headerViewAction.bind(to: buttonActionTrigger).disposed(by: rx.disposeBag)
+        $0.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 56)//56 trash
     }
 
-    // 최근 본 테이블리스트
+    /// 테이블뷰
     lazy var tableView = UITableView().then {
         $0.rx.setDelegate(self).disposed(by: rx.disposeBag)
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -48,117 +48,167 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
         $0.estimatedRowHeight = 92
         $0.separatorStyle = .none
         $0.rowHeight = 92
-//        $0.tableHeaderView = topView
         $0.backgroundView = ARTableViewEmptyView(type: .recently)
         $0.register(RecentlyTableViewCell.self, forCellReuseIdentifier: RecentlyTableViewCell.reuseIdentifier())
+        $0.refreshControl = refreshControl
     }
 
-    // 상단 새로고침 컨트롤
-    let refreshControl = CustomRefreshControl()
-    // 삭제 버튼 배경
+    /// 분홍색 삭제버튼을 포함하는 하단뷰
     lazy var bottomView = UIImageView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.image = #imageLiteral(resourceName: "bgButtonGra01")
         $0.isHidden = true
         $0.isUserInteractionEnabled = true
     }
-
-    // 하단 삭제 버튼
+    
+    /// 하단의 분홍색 삭제 버튼
     lazy var bottomDeleteButton = UIButton().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.titleLabel?.font = .notoSans(.bold, size: 17)
         $0.setTitle("", for: .normal)
         $0.setTitleColor(.white, for: .normal)
-        $0.addGradientForButton()
+        $0.addGradientForButton() /// 오우 그라디에이션 넣어주는 함수!!
         $0.isHidden = true
         $0.isUserInteractionEnabled = true
         $0.cornerRadius = 12.0
-//        $0.rx.tap
-//            .throttle(.seconds(1), latest: false, scheduler: MainScheduler.instance)
-//            .map { _ -> [IndexPath] in return self.tableView.indexPathsForSelectedRows!.sorted() }.subscribe(onNext: showAlert).disposed(by: rx.disposeBag)
     }
-
-    // MARK: - Methods
+    
+    // MARK: - Layout
     func setupLayout() {
-        //networkErrorView.bindingViewModel()
         backgroundColor = #colorLiteral(red: 0.114654012, green: 0.1092678383, blue: 0.1311254203, alpha: 1)
         bottomView.addSubviews([bottomDeleteButton])
+        /// BaseView에서 정의한 topMoveButton이 있으며, needTopMoveButton == true인 경우 topMoveButton를 화면 앞으로 가져옴
         addSubviews([topView, tableView, bottomView], needTopMoveButton: true)
 
         topView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(12)
+            $0.top.equalToSuperview().offset(18) /// 테이블의 섹션 헤더 높이와 같게 18로 설정.
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(44)
         }
 
         tableView.snp.makeConstraints {
-            $0.top.leading.trailing.bottom.equalToSuperview()
+            $0.top.equalTo(topView.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
-
-        tableView.refreshControl = refreshControl
-
+        
         bottomView.snp.makeConstraints {
             $0.height.equalTo(112)
             $0.leading.bottom.trailing.equalToSuperview()
         }
-
+        
         bottomDeleteButton.snp.makeConstraints {
             $0.height.equalTo(56)
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)
             $0.bottom.equalToSuperview().offset(-15)
         }
-
-        tableView.rx.contentOffset.map({[weak self]  position -> Bool in
-            guard let `self` = self else { return true }
-            if position.y > self.tableView.frame.height {
-                return false
-            }
-            return true
-        }).bind(to: topMoveButton.rx.isHidden).disposed(by: rx.disposeBag)
-
-        topMoveButton.rx.tap.on(next: {[weak self] _ in
-            guard let `self` = self else { return }
-            self.tableView.setContentOffset(CGPoint(x: 0, y: -(self.realSafeAreaInsetTop - 56)), animated: true)
-        }).disposed(by: rx.disposeBag)
     }
+    
+    // MARK: - Observe UserInputs
+    func bindData() {
+        // Inputs. Required Business Logic
+        /// 셀 선택시, cellDetail이벤트 전달. 성인이나 기간만료에 의한 판단은 ViewModel 에서!
+        tableView
+            .rx
+            .modelSelected(RecentlyCellInfo.self)
+            .map {.cellDetail($0)}
+            .bind(to: inputAction)
+            .disposed(by: rx.disposeBag)
+        
+        /// refreshController에서 refreshTrigger 발생시 VM에 .refreshData emit하기
+        refreshControl
+            .rx
+            .refreshTrigger
+            .map{ .refreshData}
+            .bind(to: inputAction)
+            .disposed(by: rx.disposeBag)
+        
+        
+        // Inputs. Not Required Business Logic
+        /// topView의 입력을 topViewEventProcessor로 emit
+        topView
+            .headerViewAction
+            .subscribe(onNext: topViewEventProcessor)
+            .disposed(by: rx.disposeBag)
+        
+        /// tableView가 삭제모드일때, 셀 선택시 하단 버튼처리
+        tableView
+            .rx
+            .selectedRows
+            .filter { _ in self.tableView.allowsMultipleSelection == true } // 삭제모드
+            .subscribe(onNext: showDeleteButton)
+            .disposed(by: rx.disposeBag)
+        
+        /// tableView의 모든 셀 선택시 topView의 체크버튼 선택
+        tableView
+            .rx
+            .isAllSelectedItems
+            .bind(to: self.topView.checkButton.rx.isSelected)
+            .disposed(by: rx.disposeBag)
 
-    // 최근본 데이터
-    func setupDI(observable: BehaviorRelay<[Model]>) {
-        // model Dependency Injection
-        observable.asObservable().bind(to: tableView.rx.items(cellIdentifier: RecentlyTableViewCell.reuseIdentifier(), cellType: RecentlyTableViewCell.self)) { [weak self] _, element, cell in
-            guard let `self` = self else { return }
-            cell.isDeleteMode = ((self.topView).type == .checkAndButton) ? true : false
-//            cell.isDeleteMode = ((self.tableView.tableHeaderView as! ARTableViewHeaderView).type == .checkAndButton) ? true : false
-            cell.item = element
-            cell.playButton
-                .rx
-                .tap
-                .subscribe(onNext: { _ in
-                    self.playContentTrigger.accept(element)
-                })
-                .disposed(by: cell.disposeBag)
-        }.disposed(by: rx.disposeBag)
-
-        // Table Header View 숨김 유무
-        observable
-            .asObservable()
+        /// 하단 삭제버튼 누르면, 테이블뷰의 선택된 셀들을 [IndexPath]로 넘겨주면서 알람띄우기
+        bottomDeleteButton
+            .rx
+            .tap
+            .map { _ -> [IndexPath] in return self.tableView.indexPathsForSelectedRows!.sorted() }
+            .subscribe(onNext: showAlert)
+            .disposed(by: rx.disposeBag)
+        
+        /// 테이블뷰이 리로드되면 refreshControl의 애니메이션이나 위치 조정. 삭제모드가 아니여야 하는 이유는 삭제모드에서 refreshControl이 없기때문
+        tableView
+            .rx
+            .reloaded
+            .filter { _ in self.tableView.allowsMultipleSelection == false }
+            .subscribe(onNext: refreshControl.endRefresh)
+            .disposed(by: rx.disposeBag)
+        
+        /// 테이블 뷰가 스크롤 다운으로 내려간 거리가, 테이블 뷰 높이보다 커지면 topMoveButton 표시
+        tableView
+            .rx
+            .contentOffset
+            .map({[weak self]  position -> Bool in
+                guard let `self` = self else { return true }
+                if position.y > self.tableView.frame.height {
+                    return false
+                }
+                return true})
+            .bind(to: topMoveButton.rx.isHidden).disposed(by: rx.disposeBag)
+        
+        /// topMoveButton 누르면 상단으로 올라가기
+        topMoveButton
+            .rx
+            .tap
+            .on(next: {[weak self] _ in
+                guard let `self` = self else { return }
+                self.tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)}) /// 원래 y는 -(self.realSafeAreaInsetTop - 56) 였음.
+            .disposed(by: rx.disposeBag)
+    }
+    
+    // MARK: - setupDIes
+    /// 입력을 전달해주는 inputAction을 ViewController에서 관찰하게하기
+    func setupDI(inputAction: PublishRelay<InputAction>){
+        self.inputAction.bind(to: inputAction).disposed(by: rx.disposeBag)
+    }
+    
+    /// VM에서 온 테이블용 셀정보들 옵저버블 관찰하기
+    func setupDI(tableOv: Observable<[RecentlyCellInfo]>) -> Self {
+        /// VM에서 온 셀정보들로 tableView 그리기
+        tableOv
+            .bind(to: tableView.rx.items(cellIdentifier: RecentlyTableViewCell.reuseIdentifier(), cellType: RecentlyTableViewCell.self))
+                { [weak self] _, element, cell in
+                    guard let `self` = self else { return }
+                    cell.mappingData(item: element, isDeleteMode: ((self.topView).type == .checkAndButton) ? true : false)
+                    cell.setupDI(observable: self.inputAction)
+                }.disposed(by: rx.disposeBag)
+        
+        /// VM에서 온 셀 정보의 갯수로 topView 숨김여부
+        tableOv
             .map { $0.count == 0 }
             .bind(to: topView.rx.isHidden)
             .disposed(by: rx.disposeBag)
-//        observable
-//            .asObservable()
-//            .map { $0.count == 0 }
-//            .bind(to: tableView.tableHeaderView!.rx.isHidden)
-//            .disposed(by: rx.disposeBag)
-
-        // Table Background View 숨김 유무
-//        observable
-//            .asObservable()
-//            .map { $0.count != 0 }
-//            .bind(to: tableView.backgroundView!.rx.isHidden)
-//            .disposed(by: rx.disposeBag)
-        observable.asObservable()
+        
+        /// VM에서 온 셀 정보의 갯수로 topView의 사라짐에 따른 tableView제약 수정과 배경 설정
+        tableOv
             .map { $0.count == 0 }
             .subscribe(onNext: {[weak self]  needHidden in
             guard let `self` = self else { return }
@@ -175,171 +225,81 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
             }
             self.tableView.backgroundView?.isHidden = !needHidden
         }).disposed(by: rx.disposeBag)
-
-        // TableView Reloading
-        tableView
-            .rx
-            .reloaded
-            .filter { _ in self.tableView.allowsMultipleSelection == false }
-            .subscribe(onNext: refreshControl.endRefresh)
-            .disposed(by: rx.disposeBag)
-
-        // TableView Select Cell(delete mode)
-        tableView
-            .rx
-            .selectedRows
-            .filter { _ in self.tableView.allowsMultipleSelection == true }
-            .subscribe(onNext: showDeleteButton)
-            .disposed(by: rx.disposeBag)
-
-        // TableView Select Cell(not delete mode)
-        tableView
-            .rx
-            .modelSelected(RecentlyLikeList.self)
-            .filter { _ in self.tableView.allowsMultipleSelection == false }
-            .filter { item in item.visible_yn == "Y" }
-            .filter { item in
-                guard let endDt = item.end_dt else { return false }
-                return endDt.getJavaTimestampDate() > Date()
-            }
-            .bind(to: showDetailTrigger)
-            .disposed(by: rx.disposeBag)
-
-        // HeaderView Check Button Select
-//        tableView
-//            .rx
-//            .isAllSelectedItems
-//            .bind(to: (self.tableView.tableHeaderView as! ARTableViewHeaderView).checkButton.rx.isSelected)
-//            .disposed(by: rx.disposeBag)
-        tableView
-            .rx
-            .isAllSelectedItems
-            .bind(to: self.topView.checkButton.rx.isSelected)
-            .disposed(by: rx.disposeBag)
-
-        refreshControl
-            .rx
-            .refreshTrigger
-            .bind(to: refreshTrigger)
-            .disposed(by: rx.disposeBag)
-
-        refreshTrigger.on(next: { [weak self] in
-            self?.refreshControl.endRefresh()
-        }).disposed(by: rx.disposeBag)
-
-//        networkErrorView
-//            .setupDI(refreshTrigger)
-    }
-
-    @discardableResult
-    func setupDI<T>(relay: PublishRelay<T>) -> Self {
-        if let r = relay as? PublishRelay<Void> {
-            // refreshTrigger
-            refreshTrigger
-                .bind(to: r)
-                .disposed(by: rx.disposeBag)
-        } else if let r = relay as? PublishRelay<RecentlyLikeList> {
-            // showDetailTrigger 컨텐츠 상세 화면 진입
-            showDetailTrigger
-                .bind(to: r)
-                .disposed(by: rx.disposeBag)
-        } else if let r = relay as? PublishRelay<ARTableViewHeaderActionType> {
-            // ARTableViewHeaderActionType 헤더 버튼 동작
-            buttonActionTrigger
-                .bind(to: r)
-                .disposed(by: rx.disposeBag)
-        } else if let r = relay as? PublishRelay<[IndexPath]> {
-            // 삭제 동작
-            deleteItemsTrigger
-                .bind(to: r)
-                .disposed(by: rx.disposeBag)
-        }
+        
         return self
     }
-
-    func setupDI(playRelay: PublishRelay<RecentlyLikeList>) {
-        playContentTrigger.bind(to: playRelay).disposed(by: rx.disposeBag)
+    
+    /// VM에서보낸 삭제 완료 신호를 받기 위한 DI
+    func setupDI(deleteCompleteOv: Observable<Void>) -> Self{
+        /// 삭제 완료시 삭제화면 cancel
+        deleteCompleteOv
+            .on(next: { [weak self] in
+                self?.topViewEventProcessor(actionType: .cancel)
+            }).disposed(by: rx.disposeBag)
+        return self
     }
-
-    // 삭제 결과 데이터
-    func updateDeleteItem(observable: BehaviorRelay<String>) {
-        observable
-            .asObservable()
-            .subscribe(onNext: updateResultCode)
-            .disposed(by: rx.disposeBag)
+    
+    func setupDI(deleteModeSelectOv: Observable<Int>){
+        /// 삭제 모드에서 셀 선택시 셀 수정
+        deleteModeSelectOv
+            .on(next: { [weak self] in
+                let cell = self?.tableView.cellForRow(at: IndexPath(row: $0, section: 0))
+                cell?.isSelected
+            }).disposed(by: rx.disposeBag)
     }
-
-    // UI 데이터
-    func updateView(action: PublishRelay<ARTableViewHeaderActionType>) {
-        action
-            .asObservable()
-            .subscribe(onNext: updateRecentlyView)
-            .disposed(by: rx.disposeBag)
+    
+    
+    // MARK: - Methods for Events
+    /// topView 이벤트들 처리
+    func topViewEventProcessor(actionType: ARTableViewHeaderActionType){
+        switch actionType {
+        case .delete:
+            tableView.reloadData() // 데이터 통신이 아님. 원래 데이터를 가지고 다른모드로 새로 그리는 것일 뿐.
+            topView.type = .checkAndButton
+            topView.checkButton.setTitle(R.String.selectAll, for: .normal)
+            topView.checkButton.setTitle(R.String.selectAll, for: .selected)
+            tableView.allowsMultipleSelection = true
+            tableView.refreshControl = nil
+        case .check:
+            topView.checkButton.isSelected.toggle()
+            topView.checkButton.isSelected ? tableView.selectRowAll(animated: false, scrollPosition: .none) : tableView.deSelectRowAll(animated: false)
+            topView.checkButton.isSelected ? showDeleteButton(select: tableView.indexPathsForSelectedRows!.sorted()) : showDeleteButton(select: [])
+        case .cancel:
+            tableView.reloadData()
+            topView.type = .rightOneButton
+            topView.checkButton.isSelected = false
+            tableView.allowsMultipleSelection = false
+            tableView.refreshControl = refreshControl
+            showDeleteButton(select: [])
+        default:
+            print("TopView Another Event Accept!")
+        }
     }
-}
-
-extension RecentlyView {
-    // 하단 삭제 버튼 표시 유무
+    
+    /// 하단 삭제 버튼 표시 유무
     func showDeleteButton(select indexPaths: [IndexPath]) {
         tableView.contentInset = (indexPaths.count > 0) ? UIEdgeInsets(top: 0, left: 0, bottom: 110, right: 0) : UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         bottomView.isHidden = (indexPaths.count > 0) ? false : true
         bottomDeleteButton.isHidden = bottomView.isHidden
         bottomDeleteButton.setTitle((indexPaths.count > 0) ? R.String.Activity.delete_count(indexPaths.count) : "", for: .normal)
     }
-
-    // 삭제 팝업
-//    func showAlert(indexPaths: [IndexPath]) {
-//        RxAlert<Content_Text>().show(
-//            AlertModel(content: Content_Text(message: R.String.Activity.alert_delete_count(indexPaths.count)).then {
-//                $0.message.numberOfLines = 0
-//            }, buttonText: [.cancel, .done], buttonCompletion: { actionResultModel in
-//                if actionResultModel.result == .done {
-//                    // 삭제 실행
-//                    self.deleteItemsTrigger.accept(indexPaths)
-//                } else {
-//                    // 취소 dismiss
-//                }
-//            }
-//        ))
-//    }
-
-    // 삭제 결과 Code 동작
-    func updateResultCode(code: String) {
-        let resultCode = ServerApiProvider.ResultCode(rawValue: code.lowercased()) ?? .ar_00000000
-        if resultCode == .ar_20000000 {
-            buttonActionTrigger.accept(.cancel)
-            refreshControl.rx.refreshTrigger.onNext(())
-            //Toast.show(R.String.Activity.toast_delete_success)
-        }
+    
+    /// 삭제 팝업
+    func showAlert(indexPaths: [IndexPath]) {
+        RxAlert<Content_Text>().show(
+            AlertModel(content: Content_Text(message: R.String.Activity.alert_delete_count(indexPaths.count)).then {
+                $0.message.numberOfLines = 0
+            }, buttonText: [.cancel, .done], buttonCompletion: { actionResultModel in
+                if actionResultModel.result == .done {
+                    // 삭제 실행
+                    self.inputAction.accept(.deleteItems(indexPaths))
+                } else {
+                    // 취소 dismiss
+                }
+            }
+        ))
     }
-
-    // View 상태 업데이트
-    func updateRecentlyView(status: ARTableViewHeaderActionType) {
-        let tableHeaderView = topView
-//        let tableHeaderView = tableView.tableHeaderView as! ARTableViewHeaderView
-        switch status {
-        case .delete:               // 삭제 모드
-            tableView.reloadData()
-            tableHeaderView.type = .checkAndButton
-            tableHeaderView.checkButton.setTitle(R.String.selectAll, for: .normal)
-            tableHeaderView.checkButton.setTitle(R.String.selectAll, for: .selected)
-            tableView.allowsMultipleSelection = true
-            tableView.refreshControl = nil
-        case .check:                // 전체선택/해제 모드
-            tableHeaderView.checkButton.isSelected.toggle()
-            tableHeaderView.checkButton.isSelected ? tableView.selectRowAll(animated: false, scrollPosition: .none) : tableView.deSelectRowAll(animated: false)
-            tableHeaderView.checkButton.isSelected ? showDeleteButton(select: tableView.indexPathsForSelectedRows!.sorted()) : showDeleteButton(select: [])
-        case .cancel:               // 삭제 모드 취소
-            tableView.reloadData()
-            tableHeaderView.type = .rightOneButton
-            tableHeaderView.checkButton.isSelected = false
-            tableView.allowsMultipleSelection = false
-            tableView.refreshControl = refreshControl
-            showDeleteButton(select: [])
-        default:
-            break
-        }
-    }
+    
 }
 
 extension RecentlyView: UITableViewDelegate {
@@ -352,7 +312,6 @@ extension RecentlyView: UITableViewDelegate {
         headerView.backgroundColor = #colorLiteral(red: 0.1137254902, green: 0.1098039216, blue: 0.1294117647, alpha: 1)
         return headerView
     }
-
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         refreshControl.scrollViewDidScroll(scrollView)
     }

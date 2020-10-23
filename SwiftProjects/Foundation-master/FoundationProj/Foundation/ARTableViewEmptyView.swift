@@ -57,10 +57,11 @@ class ARTableViewEmptyView: UIView {
 
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-
-        self.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-            $0.center.equalToSuperview()
+        if let _ = superview {
+            self.snp.makeConstraints {
+                $0.edges.equalToSuperview()
+                $0.center.equalToSuperview()
+            }
         }
     }
 

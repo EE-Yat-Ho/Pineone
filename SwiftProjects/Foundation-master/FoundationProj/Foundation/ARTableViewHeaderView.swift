@@ -130,7 +130,6 @@ class ARTableViewHeaderView: UICollectionReusableView, Reusable {
         $0.setImage(#imageLiteral(resourceName: "icDeletePre"), for: .highlighted)
         $0.isHidden = true
         $0.rx.tap.map { ARTableViewHeaderActionType.delete }.bind(to: self.headerViewAction).disposed(by: rx.disposeBag)
-//        $0.rx.tap.on(next: { [weak self] in self?.headerViewAction.accept(.delete) }).disposed(by: rx.disposeBag)
     }
 
     lazy var shareButton = UIButton().then {
@@ -140,7 +139,6 @@ class ARTableViewHeaderView: UICollectionReusableView, Reusable {
         $0.isHidden = true
 
         $0.rx.tap.map { ARTableViewHeaderActionType.share }.bind(to: self.headerViewAction).disposed(by: rx.disposeBag)
-//        $0.rx.tap.on(next: { [weak self] in self?.headerViewAction.accept(.share) }).disposed(by: rx.disposeBag)
     }
 
     lazy var checkButton = UIButton().then {
@@ -153,7 +151,6 @@ class ARTableViewHeaderView: UICollectionReusableView, Reusable {
 
         $0.isHidden = true
         $0.rx.tap.map { ARTableViewHeaderActionType.check }.bind(to: self.headerViewAction).disposed(by: rx.disposeBag)
-//        $0.rx.tap.on(next: { [weak self] in self?.headerViewAction.accept(.check) }).disposed(by: rx.disposeBag)
     }
 
     lazy var cancelButton = UIButton().then {
@@ -162,7 +159,6 @@ class ARTableViewHeaderView: UICollectionReusableView, Reusable {
         $0.setImage(#imageLiteral(resourceName: "icClosePre"), for: .highlighted)
         $0.isHidden = true
         $0.rx.tap.map { ARTableViewHeaderActionType.cancel }.bind(to: self.headerViewAction).disposed(by: rx.disposeBag)
-//        $0.rx.tap.on(next: { [weak self] in self?.headerViewAction.accept(.cancel) }).disposed(by: rx.disposeBag)
     }
 
     lazy var dropdownButton = UIButton().then {
@@ -175,7 +171,6 @@ class ARTableViewHeaderView: UICollectionReusableView, Reusable {
         $0.titleLabel?.contentMode = .left
         $0.isHidden = true
         $0.rx.tap.map { ARTableViewHeaderActionType.dropdown }.bind(to: self.headerViewAction).disposed(by: rx.disposeBag)
-//        $0.rx.tap.on(next: { [weak self] in self?.headerViewAction.accept(.dropdown) }).disposed(by: rx.disposeBag)
     }
 
     override init(frame: CGRect) {
