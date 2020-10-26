@@ -12,9 +12,9 @@ import SnapKit
 import Then
 import UIKit
 
-class RecentlyView: UIBasePreviewTypeForRecentrly {
+class RecentlyView: UIBasePreviewTypeForSampling {
     // MARK: - Model type implemente
-    typealias Model = RecentlyCellInfo
+    typealias Model = RecentlyLikeList
 
     // MARK: - Properties
     /// 비즈니스 로직이 필요한 모든 입력을 ViewModel에 전달해주기 위한 릴레이
@@ -26,6 +26,7 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
     // MARK: - init
     override init(naviType: ARNavigationShowType = .none) {
         super.init(naviType: naviType)
+        print("RecentlyView")
         setupLayout()
         bindData()
     }
@@ -110,7 +111,7 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
         /// 셀 선택시, cellDetail이벤트 전달. 성인이나 기간만료에 의한 판단은 ViewModel 에서!
         tableView
             .rx
-            .modelSelected(RecentlyCellInfo.self)
+            .modelSelected(RecentlyLikeList.self)
             .map {.cellDetail($0)}
             .bind(to: inputAction)
             .disposed(by: rx.disposeBag)
@@ -191,7 +192,7 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
     }
     
     /// VM에서 온 테이블용 셀정보들 옵저버블 관찰하기
-    func setupDI(tableOv: Observable<[RecentlyCellInfo]>) -> Self {
+    func setupDI(tableOv: Observable<[RecentlyLikeList]>) -> Self {
         /// VM에서 온 셀정보들로 tableView 그리기
         tableOv
             .bind(to: tableView.rx.items(cellIdentifier: RecentlyTableViewCell.reuseIdentifier(), cellType: RecentlyTableViewCell.self))
@@ -239,14 +240,14 @@ class RecentlyView: UIBasePreviewTypeForRecentrly {
         return self
     }
     
-    func setupDI(deleteModeSelectOv: Observable<Int>){
-        /// 삭제 모드에서 셀 선택시 셀 수정
-        deleteModeSelectOv
-            .on(next: { [weak self] in
-                let cell = self?.tableView.cellForRow(at: IndexPath(row: $0, section: 0))
-                cell?.isSelected
-            }).disposed(by: rx.disposeBag)
-    }
+//    func setupDI(deleteModeSelectOv: Observable<Int>){
+//        /// 삭제 모드에서 셀 선택시 셀 수정
+//        deleteModeSelectOv
+//            .on(next: { [weak self] in
+//                let cell = self?.tableView.cellForRow(at: IndexPath(row: $0, section: 0))
+//                cell?.isSelected
+//            }).disposed(by: rx.disposeBag)
+//    }
     
     
     // MARK: - Methods for Events

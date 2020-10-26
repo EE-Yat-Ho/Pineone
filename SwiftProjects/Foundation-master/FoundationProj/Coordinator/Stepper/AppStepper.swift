@@ -20,5 +20,6 @@ class AppStepper: Stepper {
     }
     
     func readyToEmitSteps() {
+        print("AppStepper readyToEmitSteps")
     }
 }

@@ -16,6 +16,7 @@ class InitFlow: Flow {
     static let `shared`: InitFlow = InitFlow()
 
     var root: Presentable{
+        print("InitFlow root")
         return self.rootViewController
     }
     
@@ -24,42 +25,57 @@ class InitFlow: Flow {
       }
     
     func navigate(to step: Step) -> FlowContributors {
+        print("InitFlow navigate")
         guard let step = step as? AppStep else {
             return .none
         }
         
         switch step {
         case .initialize:
+            print("InitFlow step.initialize")
             return navigateToMain()
         case .multiSelectTable:
+            print("InitFlow step.multiSelectTable")
             return navigateToMultiTable()
         case .multiSelectCollection:
+            print("InitFlow step.multiSelectCollection")
             return navigateToMultiCollection()
         case .webSchemeTest:
+            print("InitFlow step.webSchemeTest")
             return navigateToWebTest()
         case .linkCollection:
+            print("InitFlow step.linkCollection")
             return navigateToLinkImageCollection()
         case .linkImageZoom(let urls, let index):
+            print("InitFlow step.linkImageZoom")
             return modalShowImageSlider(withItems: urls, initialIndex: index)
         case .close:
+            print("InitFlow step.close")
             return popView()
         case .assetImageZoom(let aseets, let index):
+            print("InitFlow step.assetImageZoom")
             return modalShowImageSlider(withItems: aseets, initialIndex: index)
         case .horizontalStackScroll:
+            print("InitFlow step.horizontalStackScroll")
             return navigateToHSS()
         case .rotate:
+            print("InitFlow step.rotate")
             return FlowSugar(RotateViewModel(), RotateViewController.self)
                 .oneStepPushBy(self.rootViewController)
         case .playerSlider:
+            print("InitFlow step.playerSlider")
             return FlowSugar(PlayerViewModel(), PlayerViewController.self)
                 .oneStepPushBy(self.rootViewController)
         case .filterSlider:
+            print("InitFlow step.filterSlider")
             return FlowSugar(FilterSliderViewModel(), FilterSliderViewController.self)
                 .oneStepPushBy(self.rootViewController)
         case .rotateStackScroll:
+            print("InitFlow step.rotateStackScroll")
             return FlowSugar(RotateSSViewModel(), RotateSSViewController.self)
             .oneStepPushBy(self.rootViewController)
         case .toastWithView:
+            print("InitFlow step.toastWithView")
             return FlowSugar(ToastShowViewModel(), ToastShowViewController.self)
                 .oneStepPushBy(self.rootViewController)
         default:
@@ -70,21 +86,24 @@ class InitFlow: Flow {
 
 extension InitFlow{
     private func navigateToWebTest() -> FlowContributors{
-        FlowSugar(WebTestViewModel(), WebTestViewController.self)
+        print("InitFlow navigateToWebTest")
+        return FlowSugar(WebTestViewModel(), WebTestViewController.self)
             .navigationItem(with: {
                 $0.title = "web scheme test"
             }).oneStepPushBy(self.rootViewController)
     }
     
     private func navigateToHSS() -> FlowContributors{
-        FlowSugar(HorizontalStackScrollViewModel(), HorizontalStackScrollViewController.self)
+        print("InitFlow navigateToHSS")
+        return FlowSugar(HorizontalStackScrollViewModel(), HorizontalStackScrollViewController.self)
             .navigationItem(with: {
                 $0.title = "HorizontalStackScroll"
             }).oneStepPushBy(self.rootViewController)
     }
     
     private func navigateToMultiTable() -> FlowContributors{
-        FlowSugar(RecentlyViewModel(),
+        print("InitFlow navigateToMultiTable")
+        return FlowSugar(RecentlyViewModel(),
                   RecentlyViewController.self)
             .navigationItem(with:{
                 $0.title = "multiSelectTable"
@@ -92,14 +111,16 @@ extension InitFlow{
     }
     
     private func navigateToMultiCollection() -> FlowContributors{
-         FlowSugar(CollectionMultiSelectionViewModel(), CollectionMultiSelectionViewController.self)
+        print("InitFlow navigateToMultiCollection")
+        return FlowSugar(CollectionMultiSelectionViewModel(), CollectionMultiSelectionViewController.self)
              .navigationItem(with:{
                  $0.title = "multiSelectCollection"
              }).oneStepPushBy(self.rootViewController)
      }
     
     private func navigateToLinkImageCollection() -> FlowContributors{
-        FlowSugar(LinkImageGridViewModel(), LinkImageGridViewController.self)
+        print("InitFlow navigateToLinkImageCollection")
+        return FlowSugar(LinkImageGridViewModel(), LinkImageGridViewController.self)
             .navigationItem(with:{
                 $0.title = "LinkImageGrid"
             })
@@ -107,8 +128,9 @@ extension InitFlow{
     }
     
     private func modalShowImageSlider<T>(withItems items: [T], initialIndex: Int) -> FlowContributors{
+        print("InitFlow modalShowImageSlider")
         
-        FlowSugar(ZoomingViewModel(items, initialIndex), ZoomingViewController<T>.self)
+        return FlowSugar(ZoomingViewModel(items, initialIndex), ZoomingViewController<T>.self)
             .setVCProperty(viewControllerBlock:{
                 
                 self.rootViewController.delegate = $0.transitionController
@@ -129,15 +151,31 @@ extension InitFlow{
     }
     
     private func popView() -> FlowContributors{
+        print("InitFlow popView")
         rootViewController.popViewController(animated: true)
         return .none
     }
      
     private func navigateToMain() -> FlowContributors{
-        FlowSugar(MainViewModel(), MainViewController.self)
+        print("InitFlow navigateToMain")
+        return FlowSugar(MainViewModel(), MainViewController.self)
             .navigationItem(with: {
                 $0.title = "Fondation"
             })
             .oneStepPushBy(self.rootViewController)
+    }
+}
+
+//AR
+extension UITabBarItem {
+    static func setupBarItem() {
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.notoSans(.regular, size: 10),
+                                                          NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.6)], for: .normal)
+
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.notoSans(.bold, size: 10),
+                                                          NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)], for: .focused)
+
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.notoSans(.bold, size: 10),
+                                                          NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)], for: .selected)
     }
 }

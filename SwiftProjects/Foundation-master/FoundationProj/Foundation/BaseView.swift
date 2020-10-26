@@ -17,7 +17,7 @@ class BaseView: UIView{
     
 }
 
-class BaseViewForRecently: UIView {
+class BaseViewForSampling: UIView {
     var naviType: ARNavigationShowType = .none
     lazy var naviBar = ARNavigationBar(type: self.naviType)
     lazy var topMoveButton = Button().then {

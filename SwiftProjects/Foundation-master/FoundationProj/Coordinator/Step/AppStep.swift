@@ -28,7 +28,9 @@ enum AppStep: Step {
     case close
     case assetImageZoom([PHAsset], Int)
     
-    
-    
     case linkImageZoom([URL], Int)
+    
+    // AR
+//    case activity(detail: ActivityDetail?)
+//    case navigationActivity(index: Int)
 }

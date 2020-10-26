@@ -12,7 +12,7 @@ import UIKit
 
 class RecentlyTableViewCell: ActivityBaseTableViewCell {
     // item이 세팅되면, ActivityBaseTableViewCell에서 정의한 뷰들에 데이터 넣어주기
-    var item: RecentlyCellInfo? {
+    var item: RecentlyLikeList? {
         didSet {
             self.bindingData()
         }
@@ -66,7 +66,7 @@ extension RecentlyTableViewCell {
     }
     
     /// 셀 정보와 삭제모드 여부를 매핑
-    func mappingData(item: RecentlyCellInfo, isDeleteMode: Bool){
+    func mappingData(item: RecentlyLikeList, isDeleteMode: Bool){
         self.item = item
         self.isDeleteMode = isDeleteMode
     }

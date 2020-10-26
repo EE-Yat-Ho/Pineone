@@ -15,8 +15,8 @@ import UIKit
 /// VM이 받는 입력들
 enum InputAction {
     case deleteItems([IndexPath]) /// 셀 삭제해주세요
-    case cellDetail(RecentlyCellInfo) /// 셀 선택했어요
-    case cellPlay(RecentlyCellInfo) /// 셀 콘텐츠 재생해주세요
+    case cellDetail(RecentlyLikeList) /// 셀 선택했어요
+    case cellPlay(RecentlyLikeList) /// 셀 콘텐츠 재생해주세요
     case refreshData /// 테이블 새로고침 해주세요
     case error /// RecentlyCellInfo 가 nil일 경우 보내는 에러 ( 언래핑의 편의성 )
 }
@@ -33,7 +33,7 @@ class RecentlyViewModel: ViewModelType, Stepper {
     let disposeBag = DisposeBag()
     
     /// 테이블에 이벤트와 데이터를 전달하기 위한 릴레이
-    private let tableRelay = PublishRelay<[RecentlyCellInfo]>()
+    private let tableRelay = PublishRelay<[RecentlyLikeList]>()
     /// 삭제 했을 경우, 삭제모드 리셋을 위한 이벤트를 전달하기 위한 릴레이
     private let deleteComplete = PublishRelay<Void>()
 //    /// topView 모드
@@ -50,7 +50,7 @@ class RecentlyViewModel: ViewModelType, Stepper {
 
     /// View나 VC에 이벤트와 데이터를 전달하기 위한 릴레이들
     struct Output {
-        let tableRelay: PublishRelay<[RecentlyCellInfo]>
+        let tableRelay: PublishRelay<[RecentlyLikeList]>
         let deleteComplete: PublishRelay<Void>
 //        let deleteModeSelect: PublishRelay<Int>
 //        let normalModeSelect: PublishRelay<Int>
@@ -110,7 +110,7 @@ class RecentlyViewModel: ViewModelType, Stepper {
     }
     
     /// 셀 상세보기 이벤트를 처리하는 함수. VC로 이벤트를 전달해서 상세보기 화면을 띄우지 않을까
-    private func cellDetail(_ cellInfo: RecentlyCellInfo) {
+    private func cellDetail(_ cellInfo: RecentlyLikeList) {
 //        switch topViewMode.value {
 //        case .rightOneButton: // 일반 모드
 //            normalModeSelect.accept(indexRow)
@@ -122,15 +122,15 @@ class RecentlyViewModel: ViewModelType, Stepper {
     }
     
     /// 셀 재생 이벤트를 처리하는 함수. VC로 이벤트를 전달해서 콘텐츠 화면을 띄우지 않을까
-    private func cellPlay(_ cellInfo: RecentlyCellInfo) {
+    private func cellPlay(_ cellInfo: RecentlyLikeList) {
         print("cellPlay")
     }
     
     
     // MARK: - Actions for Server Communication
     /// 서버에서 새 데이터를 받아와서 방출하는 액션
-    private lazy var loadRecentlyDataAction = Action<(Void), [RecentlyCellInfo]>(workFactory: {
-        return Observable<[RecentlyCellInfo]>.just(Server.shared.getUserRecentlyContents())
+    private lazy var loadRecentlyDataAction = Action<(Void), [RecentlyLikeList]>(workFactory: {
+        return Observable<[RecentlyLikeList]>.just(Server.shared.getUserRecentlyContents())
     })
     
     /// 서버에서 데이터를 삭제시키고, 삭제완료(Void)를 방출하는 액션
