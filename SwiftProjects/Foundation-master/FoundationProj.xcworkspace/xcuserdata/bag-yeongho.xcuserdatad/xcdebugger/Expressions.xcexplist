@@ -123,5 +123,16 @@
       <ContextState
          contextName = "CustomRefreshControl.didMoveToSuperview():CustomRefreshControl.swift">
       </ContextState>
+      <ContextState
+         contextName = "ActivityFlow.navigateToActivityScreen(_:):ActivityFlow.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tabControllers">
+            </PersistentString>
+            <PersistentString
+               value = "navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

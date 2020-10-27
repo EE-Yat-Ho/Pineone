@@ -24,3 +24,8 @@ enum FirebaseLinkType: String, Codable {
     case web = "WEB"
     case deep = "DEEP"
 }
+
+enum BlockingModeType: String, Codable {
+    case off = "0"
+    case on = "1"
+}

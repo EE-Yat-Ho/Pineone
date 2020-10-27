@@ -129,6 +129,16 @@
 		2A091E50254695DB00855EAC /* ARNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E4F254695DB00855EAC /* ARNavigationController.swift */; };
 		2A091E552546997700855EAC /* ARTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E542546997700855EAC /* ARTabBarController.swift */; };
 		2A091E5D25469AB000855EAC /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E5C25469AB000855EAC /* UIWindow+.swift */; };
+		2A091E872547D12F00855EAC /* ActivityFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E862547D12F00855EAC /* ActivityFlow.swift */; };
+		2A091E8C2547D27F00855EAC /* BaseFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E8B2547D27F00855EAC /* BaseFlow.swift */; };
+		2A091E912547DB6B00855EAC /* LoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E902547DB6B00855EAC /* LoadingService.swift */; };
+		2A091E962547DEA600855EAC /* URLScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E952547DEA600855EAC /* URLScheme.swift */; };
+		2A091E9B2547E34300855EAC /* ARTabbarFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E9A2547E34300855EAC /* ARTabbarFlow.swift */; };
+		2A091EA02547E3F200855EAC /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E9F2547E3F200855EAC /* AppInfo.swift */; };
+		2A091EA82547E59C00855EAC /* NotificationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091EA72547E59C00855EAC /* NotificationFlow.swift */; };
+		2A091EAD2547E5B600855EAC /* NotificationSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091EAC2547E5B600855EAC /* NotificationSteps.swift */; };
+		2A091EB22547E5E300855EAC /* ActivityStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091EB12547E5E300855EAC /* ActivityStepper.swift */; };
+		2A091EBF2547ED0100855EAC /* ARTabbarStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091EBE2547ED0100855EAC /* ARTabbarStepper.swift */; };
 		2A34676C253D5B95003E4BC7 /* ActivityBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A34676B253D5B95003E4BC7 /* ActivityBaseTableViewCell.swift */; };
 		2A346771253D5BC3003E4BC7 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A346770253D5BC3003E4BC7 /* UIFont+.swift */; };
 		2A346788253D5D14003E4BC7 /* RecentlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A346787253D5D14003E4BC7 /* RecentlyTableViewCell.swift */; };
@@ -323,6 +333,16 @@
 		2A091E4F254695DB00855EAC /* ARNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARNavigationController.swift; sourceTree = "<group>"; };
 		2A091E542546997700855EAC /* ARTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTabBarController.swift; sourceTree = "<group>"; };
 		2A091E5C25469AB000855EAC /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
+		2A091E862547D12F00855EAC /* ActivityFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFlow.swift; sourceTree = "<group>"; };
+		2A091E8B2547D27F00855EAC /* BaseFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFlow.swift; sourceTree = "<group>"; };
+		2A091E902547DB6B00855EAC /* LoadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingService.swift; sourceTree = "<group>"; };
+		2A091E952547DEA600855EAC /* URLScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLScheme.swift; sourceTree = "<group>"; };
+		2A091E9A2547E34300855EAC /* ARTabbarFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTabbarFlow.swift; sourceTree = "<group>"; };
+		2A091E9F2547E3F200855EAC /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		2A091EA72547E59C00855EAC /* NotificationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFlow.swift; sourceTree = "<group>"; };
+		2A091EAC2547E5B600855EAC /* NotificationSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSteps.swift; sourceTree = "<group>"; };
+		2A091EB12547E5E300855EAC /* ActivityStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStepper.swift; sourceTree = "<group>"; };
+		2A091EBE2547ED0100855EAC /* ARTabbarStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTabbarStepper.swift; sourceTree = "<group>"; };
 		2A34676B253D5B95003E4BC7 /* ActivityBaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityBaseTableViewCell.swift; sourceTree = "<group>"; };
 		2A346770253D5BC3003E4BC7 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		2A346787253D5D14003E4BC7 /* RecentlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyTableViewCell.swift; sourceTree = "<group>"; };
@@ -703,6 +723,7 @@
 			isa = PBXGroup;
 			children = (
 				11E3409624878BA30063D04F /* AppStep.swift */,
+				2A091EAC2547E5B600855EAC /* NotificationSteps.swift */,
 			);
 			path = Step;
 			sourceTree = "<group>";
@@ -711,6 +732,8 @@
 			isa = PBXGroup;
 			children = (
 				11E3409824878BA30063D04F /* AppStepper.swift */,
+				2A091EB12547E5E300855EAC /* ActivityStepper.swift */,
+				2A091EBE2547ED0100855EAC /* ARTabbarStepper.swift */,
 			);
 			path = Stepper;
 			sourceTree = "<group>";
@@ -719,6 +742,10 @@
 			isa = PBXGroup;
 			children = (
 				11E3409A24878BA30063D04F /* InitFlow.swift */,
+				2A091E9A2547E34300855EAC /* ARTabbarFlow.swift */,
+				2A091E862547D12F00855EAC /* ActivityFlow.swift */,
+				2A091E8B2547D27F00855EAC /* BaseFlow.swift */,
+				2A091EA72547E59C00855EAC /* NotificationFlow.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -849,6 +876,7 @@
 			isa = PBXGroup;
 			children = (
 				2A3467CA253D623C003E4BC7 /* Resource.swift */,
+				2A091E902547DB6B00855EAC /* LoadingService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -859,6 +887,8 @@
 				2A346790253D5DB5003E4BC7 /* ContentsRecentlyLike.swift */,
 				2A34679D253D5E7C003E4BC7 /* Enum.swift */,
 				2A3468F1253FBD23003E4BC7 /* FDPopup.swift */,
+				2A091E952547DEA600855EAC /* URLScheme.swift */,
+				2A091E9F2547E3F200855EAC /* AppInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1217,14 +1247,17 @@
 				11E340AC24878BA30063D04F /* ZoomingViewModel.swift in Sources */,
 				11E340B724878BA30063D04F /* RecentlyViewModel.swift in Sources */,
 				2A091E0D2546551200855EAC /* ReplyViewModel.swift in Sources */,
+				2A091EA82547E59C00855EAC /* NotificationFlow.swift in Sources */,
 				11E340C624878BFC0063D04F /* MainViewModel.swift in Sources */,
 				2A346791253D5DB5003E4BC7 /* ContentsRecentlyLike.swift in Sources */,
 				11E340C524878BFC0063D04F /* MainViewController.swift in Sources */,
 				1155A07124AEEFDF0082074C /* WebTestViewController.swift in Sources */,
 				11B5A17224ED446B000E4B25 /* FilterSlider.swift in Sources */,
+				2A091EAD2547E5B600855EAC /* NotificationSteps.swift in Sources */,
 				11E340BD24878BA30063D04F /* AppStep.swift in Sources */,
 				2A091E3425465CE600855EAC /* TabPagerHeaderCellModel.swift in Sources */,
 				2A091E252546566500855EAC /* ActivityViewController.swift in Sources */,
+				2A091EB22547E5E300855EAC /* ActivityStepper.swift in Sources */,
 				11FE860B24BB3E93007F9641 /* RotateViewController.swift in Sources */,
 				11FF373C249882FF008B31A6 /* HorizontalStackScrollViewModel.swift in Sources */,
 				11E3409F24878BA30063D04F /* ViewModel.swift in Sources */,
@@ -1271,7 +1304,9 @@
 				2A091E00254654F700855EAC /* ReplyViewController.swift in Sources */,
 				2A3467DC253D6840003E4BC7 /* ARNavigationBar.swift in Sources */,
 				11FF373B249882FF008B31A6 /* HorizontalStackScrollView.swift in Sources */,
+				2A091E9B2547E34300855EAC /* ARTabbarFlow.swift in Sources */,
 				11E340B124878BA30063D04F /* ImageSlider.swift in Sources */,
+				2A091E962547DEA600855EAC /* URLScheme.swift in Sources */,
 				11E340AF24878BA30063D04F /* ZoomDismissalInteractionController.swift in Sources */,
 				11E340A624878BA30063D04F /* UIApplication+.swift in Sources */,
 				2A3468DC253FBADD003E4BC7 /* RxAlertView.swift in Sources */,
@@ -1286,9 +1321,11 @@
 				11E340AD24878BA30063D04F /* ZoomingViewController.swift in Sources */,
 				11E340BE24878BA30063D04F /* AppStepper.swift in Sources */,
 				2A3467CB253D623C003E4BC7 /* Resource.swift in Sources */,
+				2A091E8C2547D27F00855EAC /* BaseFlow.swift in Sources */,
 				11E340A324878BA30063D04F /* FlowSugar.swift in Sources */,
 				2A3467E1253D68DC003E4BC7 /* ARTableViewEmptyView.swift in Sources */,
 				1108EAEC24AC27C2001514A3 /* MotionManager+Rx.swift in Sources */,
+				2A091EBF2547ED0100855EAC /* ARTabbarStepper.swift in Sources */,
 				2A346812253D7DD6003E4BC7 /* UITableView+Rx.swift in Sources */,
 				11B6476E24D8FF7B007DDC2E /* AppUtility.swift in Sources */,
 				2A346788253D5D14003E4BC7 /* RecentlyTableViewCell.swift in Sources */,
@@ -1301,6 +1338,7 @@
 				2A346919253FC9B7003E4BC7 /* AlertService.swift in Sources */,
 				1155A07224AEEFDF0082074C /* WebTestView.swift in Sources */,
 				2A3467A8253D5F28003E4BC7 /* Double+.swift in Sources */,
+				2A091E872547D12F00855EAC /* ActivityFlow.swift in Sources */,
 				1108EAEA24AC263E001514A3 /* DeviceOrientationHelper.swift in Sources */,
 				2A346902253FC097003E4BC7 /* UILabel+Extension+UserPopup.swift in Sources */,
 				2A091E232546565900855EAC /* ActivityView.swift in Sources */,
@@ -1325,12 +1363,14 @@
 				11E340BA24878BA30063D04F /* ImageTableCell.swift in Sources */,
 				11FE860F24BB4078007F9641 /* AutoRotateButton.swift in Sources */,
 				2A091E3225465CD300855EAC /* TabPagerHeaderCell.swift in Sources */,
+				2A091EA02547E3F200855EAC /* AppInfo.swift in Sources */,
 				11E340AE24878BA30063D04F /* ZoomTransitionController.swift in Sources */,
 				2A091E552546997700855EAC /* ARTabBarController.swift in Sources */,
 				11FE37792488F105004D452B /* LinkImageGridViewController.swift in Sources */,
 				11E340C824878BFC0063D04F /* MainCell.swift in Sources */,
 				2A346907253FC0BC003E4BC7 /* UIView+Extension+UsePopup.swift in Sources */,
 				2A091E112546554F00855EAC /* LikeViewController.swift in Sources */,
+				2A091E912547DB6B00855EAC /* LoadingService.swift in Sources */,
 				2A346805253D7788003E4BC7 /* UIKitPreview.swift in Sources */,
 				2A091E41254662C300855EAC /* UIViewController+.swift in Sources */,
 				110EB0542490675C00D3C6A2 /* CustomRefreshControl.swift in Sources */,
