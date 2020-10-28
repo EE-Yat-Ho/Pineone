@@ -134,3 +134,29 @@ extension UIView {
         }
     }
 }
+
+extension UIView {
+    func getSubviewsOf<T: UIView>(view: UIView) -> [T] {
+        var subviews = [T]()
+        for subview in view.subviews {
+            subviews += getSubviewsOf(view: subview) as [T]
+            if let subview = subview as? T {
+                subviews.append(subview)
+            }
+        }
+        return subviews
+    }
+
+    func searchVisualEffectsSubview() -> UIVisualEffectView? {
+        if let visualEffectView = self as? UIVisualEffectView {
+            return visualEffectView
+        } else {
+            for subview in subviews {
+                if let found = subview.searchVisualEffectsSubview() {
+                    return found
+                }
+            }
+        }
+        return nil
+    }
+}

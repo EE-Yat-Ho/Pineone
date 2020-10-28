@@ -18,17 +18,17 @@ class ReplyViewModel: ViewModelType, Stepper {
 
     // MARK: - ViewModelType Protocol
     typealias ViewModel = ReplyViewModel
-//    let disposeBag = DisposeBag()
-//
-//    var newReplyTotalCount = 0
-//    var newReplyCurrentCount = 0
-//    var newReplyNextCursor: String = .empty
-//
-//    var replyList = BehaviorRelay(value: [ReplyList]())
-//    var deleteItem = BehaviorRelay(value: String())
-//    var buttonActionRelay = PublishRelay<ARTableViewHeaderActionType>()
-//    var deselectRowRelay = PublishRelay<Void>()
-//
+    let disposeBag = DisposeBag()
+
+    var newReplyTotalCount = 0
+    var newReplyCurrentCount = 0
+    var newReplyNextCursor: String = .empty
+
+    var replyList = BehaviorRelay(value: [ReplyList]())
+    var deleteItem = BehaviorRelay(value: String())
+    var buttonActionRelay = PublishRelay<ARTableViewHeaderActionType>()
+    var deselectRowRelay = PublishRelay<Void>()
+
 //    private lazy var loadReplyDataAction = Action<(Void), ContentsReply>(workFactory: {[weak self] _ in
 //        self?.newReplyNextCursor = .empty
 //        self?.newReplyTotalCount = 0
@@ -47,52 +47,52 @@ class ReplyViewModel: ViewModelType, Stepper {
 //    private lazy var deleteReplyDataAction = Action<(String), String>(workFactory: { keys in
 //        return NetworkService.deleteContentsReply(replyKey: keys)
 //    })
-//
-//    // 버튼 동작 Action
-//    lazy var buttonAction = Action<ARTableViewHeaderActionType, Void> { [weak self] in
-//        guard let `self` = self else { return .empty() }
-//        switch $0 {
-//        case .delete:
-//            self.buttonActionRelay.accept(.delete)
-//        case .check:
-//            self.buttonActionRelay.accept(.check)
-//        case .cancel:
-//            self.buttonActionRelay.accept(.cancel)
-//        case .dropdown:
-//            self.buttonActionRelay.accept(.dropdown)
-//        default:
-//            break
-//        }
-//        return .empty()
-//    }
-//
-//    // 삭제 동작 Action
-//    private lazy var deleteItemsAction = Action<[IndexPath], Void>(workFactory: { [weak self] indexPaths in
-//        guard let `self` = self else { return .empty() }
-//        var selectKeys: [String] = []
-//        for indexPath in indexPaths {
-//            if let key = self.replyList.value[indexPath.row].key {
-//                selectKeys.append(String(key))
-//            }
-//        }
-//        let result = selectKeys.joined(separator: ",")
-//        self.deleteReplyDataAction.execute(result)
-//        return .empty()
-//    })
+
+    // 버튼 동작 Action
+    lazy var buttonAction = Action<ARTableViewHeaderActionType, Void> { [weak self] in
+        guard let `self` = self else { return .empty() }
+        switch $0 {
+        case .delete:
+            self.buttonActionRelay.accept(.delete)
+        case .check:
+            self.buttonActionRelay.accept(.check)
+        case .cancel:
+            self.buttonActionRelay.accept(.cancel)
+        case .dropdown:
+            self.buttonActionRelay.accept(.dropdown)
+        default:
+            break
+        }
+        return .empty()
+    }
+
+    // 삭제 동작 Action
+    private lazy var deleteItemsAction = Action<[IndexPath], Void>(workFactory: { [weak self] indexPaths in
+        guard let `self` = self else { return .empty() }
+        var selectKeys: [String] = []
+        for indexPath in indexPaths {
+            if let key = self.replyList.value[indexPath.row].key {
+                selectKeys.append(String(key))
+            }
+        }
+        let result = selectKeys.joined(separator: ",")
+        //self.deleteReplyDataAction.execute(result)
+        return .empty()
+    })
 
     struct Input {
-//        let refreshTrigger: Observable<Void>
-//        let loadMoreTrigger: Observable<Void>
-//        let showDetailTrigger: Observable<ReplyList>
-//        let buttonActionTrigger: Observable<ARTableViewHeaderActionType>
-//        let deleteItemsTrigger: Observable<[IndexPath]>
+        let refreshTrigger: Observable<Void>
+        let loadMoreTrigger: Observable<Void>
+        let showDetailTrigger: Observable<ReplyList>
+        let buttonActionTrigger: Observable<ARTableViewHeaderActionType>
+        let deleteItemsTrigger: Observable<[IndexPath]>
     }
 
     struct Output {
-//        let replyList: BehaviorRelay<[ReplyList]>
-//        let buttonActionRelay: PublishRelay<ARTableViewHeaderActionType>
-//        let deleteItem: BehaviorRelay<String>
-//        let deselectRow: PublishRelay<Void>
+        let replyList: BehaviorRelay<[ReplyList]>
+        let buttonActionRelay: PublishRelay<ARTableViewHeaderActionType>
+        let deleteItem: BehaviorRelay<String>
+        let deselectRow: PublishRelay<Void>
     }
 
     func transform(req: ViewModel.Input) -> ViewModel.Output {
@@ -121,8 +121,8 @@ class ReplyViewModel: ViewModelType, Stepper {
 //            }
 //            .bind(to: replyList)
 //            .disposed(by: disposeBag)
-//
-//        // Load More Event
+
+        // Load More Event
 //        req.loadMoreTrigger
 //            .map { [unowned self] _ -> Bool in
 //                return !self.newReplyNextCursor.isEmpty && self.newReplyCurrentCount < self.newReplyTotalCount
@@ -165,18 +165,18 @@ class ReplyViewModel: ViewModelType, Stepper {
 //        loadContentDeatailDataAction.elements
 //            .on(next: checkContentAdultType)
 //            .disposed(by: disposeBag)
-//
-//        // 버튼 Action
-//        req.buttonActionTrigger
-//            .bind(to: buttonAction.inputs)
-//            .disposed(by: disposeBag)
-//
-//        // 삭제 Event
-//        req.deleteItemsTrigger
-//            .bind(to: deleteItemsAction.inputs)
-//            .disposed(by: disposeBag)
-//
-//        // 삭제 Data Binding
+
+        // 버튼 Action
+        req.buttonActionTrigger
+            .bind(to: buttonAction.inputs)
+            .disposed(by: disposeBag)
+
+        // 삭제 Event
+        req.deleteItemsTrigger
+            .bind(to: deleteItemsAction.inputs)
+            .disposed(by: disposeBag)
+
+        // 삭제 Data Binding
 //        deleteReplyDataAction
 //            .elements
 //            .bind(to: deleteItem)
@@ -187,16 +187,16 @@ class ReplyViewModel: ViewModelType, Stepper {
 //            .map { _ in }
 //            .bind(to: loadReplyDataAction.inputs)
 //            .disposed(by: disposeBag)
-//
-//        return Output(replyList: replyList,
-//                      buttonActionRelay: buttonActionRelay,
-//                      deleteItem: deleteItem,
-//                      deselectRow: deselectRowRelay)
-        return Output()
+
+        return Output(replyList: replyList,
+                      buttonActionRelay: buttonActionRelay,
+                      deleteItem: deleteItem,
+                      deselectRow: deselectRowRelay)
+        //return Output()
     }
 }
-//
-//extension ReplyViewModel {
+
+extension ReplyViewModel {
 //    func checkContentAdultType(_ item: ContentDetail) {
 //        guard let key = item.contents_info.key else { return }
 //        if item.contents_info.adult_yn == .Y {
@@ -210,4 +210,4 @@ class ReplyViewModel: ViewModelType, Stepper {
 //        }
 //        deselectRowRelay.accept(())
 //    }
-//}
+}

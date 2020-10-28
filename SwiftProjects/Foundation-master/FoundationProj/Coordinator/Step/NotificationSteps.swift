@@ -1,18 +1,18 @@
+////
+////  NotificationSteps.swift
+////  UPlusAR
+////
+////  Created by baedy on 2020/06/24.
+////  Copyright © 2020 최성욱. All rights reserved.
+////
 //
-//  NotificationSteps.swift
-//  UPlusAR
+//import RxFlow
+//import UIKit
 //
-//  Created by baedy on 2020/06/24.
-//  Copyright © 2020 최성욱. All rights reserved.
+//enum NotificationSteps: Step {
+//    case none
+//    case initialize
 //
-
-import RxFlow
-import UIKit
-
-enum NotificationSteps: Step {
-    case none
-    case initialize
-
-    //case navigate(action: ActionProtocol, data: RemoteNotification)
-    case moveTap(index: ARTabPage)
-}
+//    //case navigate(action: ActionProtocol, data: RemoteNotification)
+//    case moveTap(index: ARTabPage)
+//}

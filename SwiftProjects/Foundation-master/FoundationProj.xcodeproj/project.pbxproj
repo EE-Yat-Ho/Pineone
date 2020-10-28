@@ -121,7 +121,7 @@
 		2A091E232546565900855EAC /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E222546565900855EAC /* ActivityView.swift */; };
 		2A091E252546566500855EAC /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E242546566500855EAC /* ActivityViewController.swift */; };
 		2A091E2B25465C8800855EAC /* TabPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E2A25465C8800855EAC /* TabPagerView.swift */; };
-		2A091E3025465CB400855EAC /* TablePagerContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E2F25465CB400855EAC /* TablePagerContents.swift */; };
+		2A091E3025465CB400855EAC /* TabPagerContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E2F25465CB400855EAC /* TabPagerContents.swift */; };
 		2A091E3225465CD300855EAC /* TabPagerHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E3125465CD300855EAC /* TabPagerHeaderCell.swift */; };
 		2A091E3425465CE600855EAC /* TabPagerHeaderCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E3325465CE600855EAC /* TabPagerHeaderCellModel.swift */; };
 		2A091E3925465D0300855EAC /* PageViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E3825465D0300855EAC /* PageViewController+.swift */; };
@@ -133,12 +133,24 @@
 		2A091E8C2547D27F00855EAC /* BaseFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E8B2547D27F00855EAC /* BaseFlow.swift */; };
 		2A091E912547DB6B00855EAC /* LoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E902547DB6B00855EAC /* LoadingService.swift */; };
 		2A091E962547DEA600855EAC /* URLScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E952547DEA600855EAC /* URLScheme.swift */; };
-		2A091E9B2547E34300855EAC /* ARTabbarFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E9A2547E34300855EAC /* ARTabbarFlow.swift */; };
 		2A091EA02547E3F200855EAC /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E9F2547E3F200855EAC /* AppInfo.swift */; };
 		2A091EA82547E59C00855EAC /* NotificationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091EA72547E59C00855EAC /* NotificationFlow.swift */; };
 		2A091EAD2547E5B600855EAC /* NotificationSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091EAC2547E5B600855EAC /* NotificationSteps.swift */; };
 		2A091EB22547E5E300855EAC /* ActivityStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091EB12547E5E300855EAC /* ActivityStepper.swift */; };
-		2A091EBF2547ED0100855EAC /* ARTabbarStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091EBE2547ED0100855EAC /* ARTabbarStepper.swift */; };
+		2A091ECE254903E500855EAC /* RealmMyDownladFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091ECD254903E500855EAC /* RealmMyDownladFile.swift */; };
+		2A091ED32549043C00855EAC /* RealmContentFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091ED22549043C00855EAC /* RealmContentFile.swift */; };
+		2A091EDC2549065200855EAC /* DownloadTaskInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091EDB2549065200855EAC /* DownloadTaskInfo.swift */; };
+		2A091EE525490E8700855EAC /* ARActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091EE425490E8700855EAC /* ARActionSheet.swift */; };
+		2A091EED25490EAF00855EAC /* MenuSortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091EEC25490EAF00855EAC /* MenuSortView.swift */; };
+		2A091EF225490FCA00855EAC /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091EF125490FCA00855EAC /* DownloadManager.swift */; };
+		2A091EF72549211300855EAC /* Float+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091EF62549211300855EAC /* Float+.swift */; };
+		2A091EFC254921BF00855EAC /* Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091EFB254921BF00855EAC /* Contents.swift */; };
+		2A091F042549237F00855EAC /* ContentsReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091F032549237F00855EAC /* ContentsReply.swift */; };
+		2A091F0925494DD700855EAC /* CompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091F0825494DD600855EAC /* CompactView.swift */; };
+		2A091F1225494E0900855EAC /* CompactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091F1125494E0900855EAC /* CompactViewController.swift */; };
+		2A091F1A25494E1900855EAC /* CompactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091F1925494E1900855EAC /* CompactViewModel.swift */; };
+		2A091F1F25494E4E00855EAC /* ReplyCompactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091F1E25494E4E00855EAC /* ReplyCompactTableViewCell.swift */; };
+		2A091F2425494E5D00855EAC /* TripleCompactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091F2325494E5D00855EAC /* TripleCompactTableViewCell.swift */; };
 		2A34676C253D5B95003E4BC7 /* ActivityBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A34676B253D5B95003E4BC7 /* ActivityBaseTableViewCell.swift */; };
 		2A346771253D5BC3003E4BC7 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A346770253D5BC3003E4BC7 /* UIFont+.swift */; };
 		2A346788253D5D14003E4BC7 /* RecentlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A346787253D5D14003E4BC7 /* RecentlyTableViewCell.swift */; };
@@ -325,7 +337,7 @@
 		2A091E222546565900855EAC /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		2A091E242546566500855EAC /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		2A091E2A25465C8800855EAC /* TabPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPagerView.swift; sourceTree = "<group>"; };
-		2A091E2F25465CB400855EAC /* TablePagerContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePagerContents.swift; sourceTree = "<group>"; };
+		2A091E2F25465CB400855EAC /* TabPagerContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPagerContents.swift; sourceTree = "<group>"; };
 		2A091E3125465CD300855EAC /* TabPagerHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPagerHeaderCell.swift; sourceTree = "<group>"; };
 		2A091E3325465CE600855EAC /* TabPagerHeaderCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPagerHeaderCellModel.swift; sourceTree = "<group>"; };
 		2A091E3825465D0300855EAC /* PageViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PageViewController+.swift"; sourceTree = "<group>"; };
@@ -337,12 +349,24 @@
 		2A091E8B2547D27F00855EAC /* BaseFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFlow.swift; sourceTree = "<group>"; };
 		2A091E902547DB6B00855EAC /* LoadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingService.swift; sourceTree = "<group>"; };
 		2A091E952547DEA600855EAC /* URLScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLScheme.swift; sourceTree = "<group>"; };
-		2A091E9A2547E34300855EAC /* ARTabbarFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTabbarFlow.swift; sourceTree = "<group>"; };
 		2A091E9F2547E3F200855EAC /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		2A091EA72547E59C00855EAC /* NotificationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFlow.swift; sourceTree = "<group>"; };
 		2A091EAC2547E5B600855EAC /* NotificationSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSteps.swift; sourceTree = "<group>"; };
 		2A091EB12547E5E300855EAC /* ActivityStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStepper.swift; sourceTree = "<group>"; };
-		2A091EBE2547ED0100855EAC /* ARTabbarStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTabbarStepper.swift; sourceTree = "<group>"; };
+		2A091ECD254903E500855EAC /* RealmMyDownladFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMyDownladFile.swift; sourceTree = "<group>"; };
+		2A091ED22549043C00855EAC /* RealmContentFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmContentFile.swift; sourceTree = "<group>"; };
+		2A091EDB2549065200855EAC /* DownloadTaskInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTaskInfo.swift; sourceTree = "<group>"; };
+		2A091EE425490E8700855EAC /* ARActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARActionSheet.swift; sourceTree = "<group>"; };
+		2A091EEC25490EAF00855EAC /* MenuSortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSortView.swift; sourceTree = "<group>"; };
+		2A091EF125490FCA00855EAC /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		2A091EF62549211300855EAC /* Float+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+.swift"; sourceTree = "<group>"; };
+		2A091EFB254921BF00855EAC /* Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contents.swift; sourceTree = "<group>"; };
+		2A091F032549237F00855EAC /* ContentsReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsReply.swift; sourceTree = "<group>"; };
+		2A091F0825494DD600855EAC /* CompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactView.swift; sourceTree = "<group>"; };
+		2A091F1125494E0900855EAC /* CompactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactViewController.swift; sourceTree = "<group>"; };
+		2A091F1925494E1900855EAC /* CompactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactViewModel.swift; sourceTree = "<group>"; };
+		2A091F1E25494E4E00855EAC /* ReplyCompactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyCompactTableViewCell.swift; sourceTree = "<group>"; };
+		2A091F2325494E5D00855EAC /* TripleCompactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleCompactTableViewCell.swift; sourceTree = "<group>"; };
 		2A34676B253D5B95003E4BC7 /* ActivityBaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityBaseTableViewCell.swift; sourceTree = "<group>"; };
 		2A346770253D5BC3003E4BC7 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		2A346787253D5D14003E4BC7 /* RecentlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyTableViewCell.swift; sourceTree = "<group>"; };
@@ -473,6 +497,7 @@
 		1111E81B2463A7C6000BFDFE /* FoundationProj */ = {
 			isa = PBXGroup;
 			children = (
+				2A091EDA2549063800855EAC /* Downloader */,
 				11E340CB24878C590063D04F /* AppDelegate.swift */,
 				2A3468DA253FBAB7003E4BC7 /* popup */,
 				2A3467D2253D64A5003E4BC7 /* Network */,
@@ -608,6 +633,7 @@
 				2A34680C253D79BE003E4BC7 /* UIScrollView+.swift */,
 				2A091E40254662C300855EAC /* UIViewController+.swift */,
 				2A091E5C25469AB000855EAC /* UIWindow+.swift */,
+				2A091EF62549211300855EAC /* Float+.swift */,
 			);
 			name = Extensions;
 			path = "../New Group/Extensions";
@@ -629,7 +655,6 @@
 				11E3407724878BA30063D04F /* MultiCollection */,
 				11BBB20724F5FCFC004D09DE /* ToastWithView */,
 				11E3408B24878BA30063D04F /* MultiTable */,
-				11E3408A24878BA30063D04F /* Screen.swift */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -680,14 +705,16 @@
 			isa = PBXGroup;
 			children = (
 				2A091DF92546549900855EAC /* Common */,
-				2A091DFD254654B100855EAC /* Reply */,
-				2A091DFC254654AE00855EAC /* Like */,
-				2A091DFB254654AC00855EAC /* Download */,
 				2A091DFA254654AA00855EAC /* Recently */,
-				2A346849253D8DEE003E4BC7 /* Server.swift */,
-				2A091E202546564C00855EAC /* ActivityViewModel.swift */,
+				2A091DFB254654AC00855EAC /* Download */,
+				2A091DFC254654AE00855EAC /* Like */,
+				2A091DFD254654B100855EAC /* Reply */,
+				2A091F0D25494DE600855EAC /* Compact */,
 				2A091E222546565900855EAC /* ActivityView.swift */,
 				2A091E242546566500855EAC /* ActivityViewController.swift */,
+				2A091E202546564C00855EAC /* ActivityViewModel.swift */,
+				2A346849253D8DEE003E4BC7 /* Server.swift */,
+				11E3408A24878BA30063D04F /* Screen.swift */,
 			);
 			path = MultiTable;
 			sourceTree = "<group>";
@@ -733,7 +760,6 @@
 			children = (
 				11E3409824878BA30063D04F /* AppStepper.swift */,
 				2A091EB12547E5E300855EAC /* ActivityStepper.swift */,
-				2A091EBE2547ED0100855EAC /* ARTabbarStepper.swift */,
 			);
 			path = Stepper;
 			sourceTree = "<group>";
@@ -742,7 +768,6 @@
 			isa = PBXGroup;
 			children = (
 				11E3409A24878BA30063D04F /* InitFlow.swift */,
-				2A091E9A2547E34300855EAC /* ARTabbarFlow.swift */,
 				2A091E862547D12F00855EAC /* ActivityFlow.swift */,
 				2A091E8B2547D27F00855EAC /* BaseFlow.swift */,
 				2A091EA72547E59C00855EAC /* NotificationFlow.swift */,
@@ -830,10 +855,10 @@
 		2A091DFB254654AC00855EAC /* Download */ = {
 			isa = PBXGroup;
 			children = (
-				2A091E1A2546560700855EAC /* DownloadViewController.swift */,
-				2A091E1C2546561B00855EAC /* DownloadView.swift */,
-				2A091E1E2546562B00855EAC /* DownloadViewModel.swift */,
 				2A091E18254655F300855EAC /* DownloadTableViewCell.swift */,
+				2A091E1C2546561B00855EAC /* DownloadView.swift */,
+				2A091E1A2546560700855EAC /* DownloadViewController.swift */,
+				2A091E1E2546562B00855EAC /* DownloadViewModel.swift */,
 			);
 			path = Download;
 			sourceTree = "<group>";
@@ -841,10 +866,10 @@
 		2A091DFC254654AE00855EAC /* Like */ = {
 			isa = PBXGroup;
 			children = (
-				2A091E102546554F00855EAC /* LikeViewController.swift */,
-				2A091E12254655B600855EAC /* LikeView.swift */,
-				2A091E14254655C600855EAC /* LikeViewModel.swift */,
 				2A091E16254655DC00855EAC /* LikeTableViewCell.swift */,
+				2A091E12254655B600855EAC /* LikeView.swift */,
+				2A091E102546554F00855EAC /* LikeViewController.swift */,
+				2A091E14254655C600855EAC /* LikeViewModel.swift */,
 			);
 			path = Like;
 			sourceTree = "<group>";
@@ -852,10 +877,10 @@
 		2A091DFD254654B100855EAC /* Reply */ = {
 			isa = PBXGroup;
 			children = (
-				2A091DFF254654F700855EAC /* ReplyViewController.swift */,
-				2A091E072546550600855EAC /* ReplyView.swift */,
-				2A091E0C2546551200855EAC /* ReplyViewModel.swift */,
 				2A091E0E2546552600855EAC /* ReplyTableViewCell.swift */,
+				2A091E072546550600855EAC /* ReplyView.swift */,
+				2A091DFF254654F700855EAC /* ReplyViewController.swift */,
+				2A091E0C2546551200855EAC /* ReplyViewModel.swift */,
 			);
 			path = Reply;
 			sourceTree = "<group>";
@@ -864,12 +889,51 @@
 			isa = PBXGroup;
 			children = (
 				2A091E2A25465C8800855EAC /* TabPagerView.swift */,
-				2A091E2F25465CB400855EAC /* TablePagerContents.swift */,
+				2A091E2F25465CB400855EAC /* TabPagerContents.swift */,
 				2A091E3125465CD300855EAC /* TabPagerHeaderCell.swift */,
 				2A091E3325465CE600855EAC /* TabPagerHeaderCellModel.swift */,
 				2A091E3825465D0300855EAC /* PageViewController+.swift */,
 			);
 			path = TabPager;
+			sourceTree = "<group>";
+		};
+		2A091ECC254903CB00855EAC /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				2A091ECD254903E500855EAC /* RealmMyDownladFile.swift */,
+				2A091ED22549043C00855EAC /* RealmContentFile.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		2A091EDA2549063800855EAC /* Downloader */ = {
+			isa = PBXGroup;
+			children = (
+				2A091EDB2549065200855EAC /* DownloadTaskInfo.swift */,
+				2A091EF125490FCA00855EAC /* DownloadManager.swift */,
+			);
+			path = Downloader;
+			sourceTree = "<group>";
+		};
+		2A091EE325490E7600855EAC /* ActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				2A091EE425490E8700855EAC /* ARActionSheet.swift */,
+				2A091EEC25490EAF00855EAC /* MenuSortView.swift */,
+			);
+			path = ActionSheet;
+			sourceTree = "<group>";
+		};
+		2A091F0D25494DE600855EAC /* Compact */ = {
+			isa = PBXGroup;
+			children = (
+				2A091F2325494E5D00855EAC /* TripleCompactTableViewCell.swift */,
+				2A091F1E25494E4E00855EAC /* ReplyCompactTableViewCell.swift */,
+				2A091F0825494DD600855EAC /* CompactView.swift */,
+				2A091F1125494E0900855EAC /* CompactViewController.swift */,
+				2A091F1925494E1900855EAC /* CompactViewModel.swift */,
+			);
+			path = Compact;
 			sourceTree = "<group>";
 		};
 		2A34677B253D5C5D003E4BC7 /* Service */ = {
@@ -884,11 +948,14 @@
 		2A34678C253D5DA5003E4BC7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2A091ECC254903CB00855EAC /* Database */,
 				2A346790253D5DB5003E4BC7 /* ContentsRecentlyLike.swift */,
 				2A34679D253D5E7C003E4BC7 /* Enum.swift */,
 				2A3468F1253FBD23003E4BC7 /* FDPopup.swift */,
 				2A091E952547DEA600855EAC /* URLScheme.swift */,
 				2A091E9F2547E3F200855EAC /* AppInfo.swift */,
+				2A091EFB254921BF00855EAC /* Contents.swift */,
+				2A091F032549237F00855EAC /* ContentsReply.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -896,6 +963,7 @@
 		2A3467B5253D604D003E4BC7 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				2A091EE325490E7600855EAC /* ActionSheet */,
 				2A091E2925465C7700855EAC /* TabPager */,
 				2A3467BE253D60E5003E4BC7 /* RxExtensions */,
 				11E3406924878BA30063D04F /* Extensions */,
@@ -1234,10 +1302,12 @@
 				11E340CA24878C380063D04F /* MainRepository.swift in Sources */,
 				2A34680D253D79BE003E4BC7 /* UIScrollView+.swift in Sources */,
 				2A091E5D25469AB000855EAC /* UIWindow+.swift in Sources */,
+				2A091F2425494E5D00855EAC /* TripleCompactTableViewCell.swift in Sources */,
 				2A34676C253D5B95003E4BC7 /* ActivityBaseTableViewCell.swift in Sources */,
 				117C1BE424BFE493002CC5A3 /* UIStackView+.swift in Sources */,
 				2A091E50254695DB00855EAC /* ARNavigationController.swift in Sources */,
 				11E340A524878BA30063D04F /* ViewModelType.swift in Sources */,
+				2A091EED25490EAF00855EAC /* MenuSortView.swift in Sources */,
 				2A3467A3253D5F04003E4BC7 /* Int+.swift in Sources */,
 				11FF373A249882FF008B31A6 /* HorizontalStackScrollViewController.swift in Sources */,
 				11E340A024878BA30063D04F /* UIView+.swift in Sources */,
@@ -1247,10 +1317,12 @@
 				11E340AC24878BA30063D04F /* ZoomingViewModel.swift in Sources */,
 				11E340B724878BA30063D04F /* RecentlyViewModel.swift in Sources */,
 				2A091E0D2546551200855EAC /* ReplyViewModel.swift in Sources */,
+				2A091EF225490FCA00855EAC /* DownloadManager.swift in Sources */,
 				2A091EA82547E59C00855EAC /* NotificationFlow.swift in Sources */,
 				11E340C624878BFC0063D04F /* MainViewModel.swift in Sources */,
 				2A346791253D5DB5003E4BC7 /* ContentsRecentlyLike.swift in Sources */,
 				11E340C524878BFC0063D04F /* MainViewController.swift in Sources */,
+				2A091F0925494DD700855EAC /* CompactView.swift in Sources */,
 				1155A07124AEEFDF0082074C /* WebTestViewController.swift in Sources */,
 				11B5A17224ED446B000E4B25 /* FilterSlider.swift in Sources */,
 				2A091EAD2547E5B600855EAC /* NotificationSteps.swift in Sources */,
@@ -1272,10 +1344,12 @@
 				11BBB20C24F5FD20004D09DE /* ToastShowView.swift in Sources */,
 				11E340BF24878BA30063D04F /* InitFlow.swift in Sources */,
 				11E340B624878BA30063D04F /* Screen.swift in Sources */,
+				2A091F1F25494E4E00855EAC /* ReplyCompactTableViewCell.swift in Sources */,
 				11E340A224878BA30063D04F /* ViewBased.swift in Sources */,
 				11E340B824878BA30063D04F /* RecentlyView.swift in Sources */,
 				117B539B24D80250000B8712 /* RotateSSViewController.swift in Sources */,
 				11E340A824878BA30063D04F /* CollectionMultiSelectionViewController.swift in Sources */,
+				2A091ED32549043C00855EAC /* RealmContentFile.swift in Sources */,
 				2A34690C253FC4A9003E4BC7 /* CustomAlertButton.swift in Sources */,
 				2A091E0F2546552600855EAC /* ReplyTableViewCell.swift in Sources */,
 				11FE377B2488F105004D452B /* LinkImageGridViewModel.swift in Sources */,
@@ -1283,7 +1357,7 @@
 				11F5753F24BEB293003ACB4B /* PlayerView.swift in Sources */,
 				2A3467E6253D69E4003E4BC7 /* Utilities.swift in Sources */,
 				11F5753E24BEB293003ACB4B /* PlayerViewController.swift in Sources */,
-				2A091E3025465CB400855EAC /* TablePagerContents.swift in Sources */,
+				2A091E3025465CB400855EAC /* TabPagerContents.swift in Sources */,
 				11E3409E24878BA30063D04F /* TableView+.swift in Sources */,
 				11EDF17C248DF9E000E6E849 /* NavigationController.swift in Sources */,
 				11FE861124BB4B16007F9641 /* UIButton+.swift in Sources */,
@@ -1298,14 +1372,16 @@
 				2A346799253D5E0E003E4BC7 /* Date+.swift in Sources */,
 				117B539D24D80250000B8712 /* RotateSSViewModel.swift in Sources */,
 				11E3409D24878BA30063D04F /* Array+.swift in Sources */,
+				2A091EFC254921BF00855EAC /* Contents.swift in Sources */,
 				2A346836253D8273003E4BC7 /* UILabel+.swift in Sources */,
 				11BBB20F24F60090004D09DE /* ViewToaster.swift in Sources */,
 				11F85F9F24C7F33600975456 /* Observable+Weak.swift in Sources */,
 				2A091E00254654F700855EAC /* ReplyViewController.swift in Sources */,
 				2A3467DC253D6840003E4BC7 /* ARNavigationBar.swift in Sources */,
 				11FF373B249882FF008B31A6 /* HorizontalStackScrollView.swift in Sources */,
-				2A091E9B2547E34300855EAC /* ARTabbarFlow.swift in Sources */,
+				2A091F1225494E0900855EAC /* CompactViewController.swift in Sources */,
 				11E340B124878BA30063D04F /* ImageSlider.swift in Sources */,
+				2A091F1A25494E1900855EAC /* CompactViewModel.swift in Sources */,
 				2A091E962547DEA600855EAC /* URLScheme.swift in Sources */,
 				11E340AF24878BA30063D04F /* ZoomDismissalInteractionController.swift in Sources */,
 				11E340A624878BA30063D04F /* UIApplication+.swift in Sources */,
@@ -1323,9 +1399,9 @@
 				2A3467CB253D623C003E4BC7 /* Resource.swift in Sources */,
 				2A091E8C2547D27F00855EAC /* BaseFlow.swift in Sources */,
 				11E340A324878BA30063D04F /* FlowSugar.swift in Sources */,
+				2A091F042549237F00855EAC /* ContentsReply.swift in Sources */,
 				2A3467E1253D68DC003E4BC7 /* ARTableViewEmptyView.swift in Sources */,
 				1108EAEC24AC27C2001514A3 /* MotionManager+Rx.swift in Sources */,
-				2A091EBF2547ED0100855EAC /* ARTabbarStepper.swift in Sources */,
 				2A346812253D7DD6003E4BC7 /* UITableView+Rx.swift in Sources */,
 				11B6476E24D8FF7B007DDC2E /* AppUtility.swift in Sources */,
 				2A346788253D5D14003E4BC7 /* RecentlyTableViewCell.swift in Sources */,
@@ -1342,8 +1418,10 @@
 				1108EAEA24AC263E001514A3 /* DeviceOrientationHelper.swift in Sources */,
 				2A346902253FC097003E4BC7 /* UILabel+Extension+UserPopup.swift in Sources */,
 				2A091E232546565900855EAC /* ActivityView.swift in Sources */,
+				2A091EF72549211300855EAC /* Float+.swift in Sources */,
 				11E340CC24878C590063D04F /* AppDelegate.swift in Sources */,
 				117B539F24D8025F000B8712 /* RotatePickerView.swift in Sources */,
+				2A091EDC2549065200855EAC /* DownloadTaskInfo.swift in Sources */,
 				11E340B924878BA30063D04F /* RecentlyViewController.swift in Sources */,
 				2A346800253D6F69003E4BC7 /* UIImage+.swift in Sources */,
 				2A3468E5253FBBA7003E4BC7 /* Content_Text.swift in Sources */,
@@ -1362,6 +1440,7 @@
 				11E340C724878BFC0063D04F /* MainView.swift in Sources */,
 				11E340BA24878BA30063D04F /* ImageTableCell.swift in Sources */,
 				11FE860F24BB4078007F9641 /* AutoRotateButton.swift in Sources */,
+				2A091ECE254903E500855EAC /* RealmMyDownladFile.swift in Sources */,
 				2A091E3225465CD300855EAC /* TabPagerHeaderCell.swift in Sources */,
 				2A091EA02547E3F200855EAC /* AppInfo.swift in Sources */,
 				11E340AE24878BA30063D04F /* ZoomTransitionController.swift in Sources */,
@@ -1380,6 +1459,7 @@
 				2A3467B7253D6096003E4BC7 /* ARTableViewHeaderView.swift in Sources */,
 				2A091E19254655F300855EAC /* DownloadTableViewCell.swift in Sources */,
 				11B7993924B434C10076C541 /* ProfileViewController.swift in Sources */,
+				2A091EE525490E8700855EAC /* ARActionSheet.swift in Sources */,
 				117B539C24D80250000B8712 /* RotateSSView.swift in Sources */,
 				2A091E212546564C00855EAC /* ActivityViewModel.swift in Sources */,
 				11E340AB24878BA30063D04F /* ZoomImageCell.swift in Sources */,
@@ -1561,7 +1641,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9K3N8VTE6U;
+				DEVELOPMENT_TEAM = KXKQCH6X89;
 				INFOPLIST_FILE = FoundationProj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1584,7 +1664,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9K3N8VTE6U;
+				DEVELOPMENT_TEAM = KXKQCH6X89;
 				INFOPLIST_FILE = FoundationProj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

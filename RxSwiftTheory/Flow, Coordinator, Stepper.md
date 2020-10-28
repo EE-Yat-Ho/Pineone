@@ -52,3 +52,10 @@ flow는 coordinate하고싶은 navigation이고, stepper는 Flow의 global navig
 
 [앱 전체를 아우르는 코디네이터, 플로우, 스탭퍼가 만들어지고, 코디네이터에.. 붙혀진다?]
 [아 이게 Coordinator를 생성하고, 첫번째로 보여줄 Flow를 생성하고, Coordinator가 Flow와 Step을 합치고, 첫번째 Flow가 준비되면 루트를 Window의 rootVC로 설정하는 작업]
+
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+결론
+야 일단 샘플링 했고, 플로우 바꾸는 식으로 하는건 공부가 더 필요해보임.
+근데 어느정도 감 잡았자너? U+ AR 요구사항부터 허자

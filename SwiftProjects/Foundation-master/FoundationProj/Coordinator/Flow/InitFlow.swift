@@ -15,33 +15,15 @@ import RxCocoa
 class InitFlow: Flow {
     static let `shared`: InitFlow = InitFlow()
 
-    //AR
-    //let aRTabbarFlow = ARTabbarFlow()
-    let activityFlow = ActivityFlow()
-    var tabBarTitle: [String] {
-        return [R.String.home, R.String.search, R.String.album, R.String.activity, R.String.moreSee]
-    }
-    var tabBarImageN: [UIImage] {
-        return [#imageLiteral(resourceName: "gnbHomeNor"), #imageLiteral(resourceName: "gnbGenreNor"), #imageLiteral(resourceName: "gnbAlbumNor"), #imageLiteral(resourceName: "gnbMyNor"), #imageLiteral(resourceName: "gnbMoreNor") ]
-    }
-
-    var tabBarImageP: [UIImage] {
-        return [#imageLiteral(resourceName: "gnbHomePre"), #imageLiteral(resourceName: "gnbGenrePre"), #imageLiteral(resourceName: "gnbAlbumPre"), #imageLiteral(resourceName: "gnbMyPre"), #imageLiteral(resourceName: "gnbMorePre") ]
-    }
-
-    var tabBarImageS: [UIImage] {
-        return [#imageLiteral(resourceName: "gnbHomeSel"), #imageLiteral(resourceName: "gnbGenreSel"), #imageLiteral(resourceName: "gnbAlbumSel"), #imageLiteral(resourceName: "gnbMySel"), #imageLiteral(resourceName: "gnbMoreSel") ]
-    }
     /// Tab ViewController Array
     private lazy var tabControllers: [UIViewController] = makeInitialize()
     /// Tab Header Cell Array
     private lazy var tabHeaderCells: [TabPagerHeaderCellModel] = makeTabModels()
     /// Index Header
-    private var inputTabIndex: ActivityDetail!
+    //private var inputTabIndex: ActivityDetail!
     private var tabPagerView: TabPagerView?
     private let disposeBag = DisposeBag()
     var loadContent = PublishRelay<Void>()
-    
     
     var root: Presentable{
         print("InitFlow root")
@@ -53,57 +35,42 @@ class InitFlow: Flow {
       }
     
     func navigate(to step: Step) -> FlowContributors {
-        print("InitFlow navigate")
         guard let step = step as? AppStep else {
             return .none
         }
         
         switch step {
         case .initialize:
-            print("InitFlow step.initialize")
             return navigateToMain()
         case .multiSelectTable:
-            print("InitFlow step.multiSelectTable")
             return navigateToMultiTable()
         case .multiSelectCollection:
-            print("InitFlow step.multiSelectCollection")
             return navigateToMultiCollection()
         case .webSchemeTest:
-            print("InitFlow step.webSchemeTest")
             return navigateToWebTest()
         case .linkCollection:
-            print("InitFlow step.linkCollection")
             return navigateToLinkImageCollection()
         case .linkImageZoom(let urls, let index):
-            print("InitFlow step.linkImageZoom")
             return modalShowImageSlider(withItems: urls, initialIndex: index)
         case .close:
-            print("InitFlow step.close")
             return popView()
         case .assetImageZoom(let aseets, let index):
-            print("InitFlow step.assetImageZoom")
             return modalShowImageSlider(withItems: aseets, initialIndex: index)
         case .horizontalStackScroll:
-            print("InitFlow step.horizontalStackScroll")
             return navigateToHSS()
         case .rotate:
-            print("InitFlow step.rotate")
             return FlowSugar(RotateViewModel(), RotateViewController.self)
                 .oneStepPushBy(self.rootViewController)
         case .playerSlider:
-            print("InitFlow step.playerSlider")
             return FlowSugar(PlayerViewModel(), PlayerViewController.self)
                 .oneStepPushBy(self.rootViewController)
         case .filterSlider:
-            print("InitFlow step.filterSlider")
             return FlowSugar(FilterSliderViewModel(), FilterSliderViewController.self)
                 .oneStepPushBy(self.rootViewController)
         case .rotateStackScroll:
-            print("InitFlow step.rotateStackScroll")
             return FlowSugar(RotateSSViewModel(), RotateSSViewController.self)
             .oneStepPushBy(self.rootViewController)
         case .toastWithView:
-            print("InitFlow step.toastWithView")
             return FlowSugar(ToastShowViewModel(), ToastShowViewController.self)
                 .oneStepPushBy(self.rootViewController)
         default:
@@ -114,7 +81,6 @@ class InitFlow: Flow {
 
 extension InitFlow{
     private func navigateToWebTest() -> FlowContributors{
-        print("InitFlow navigateToWebTest")
         return FlowSugar(WebTestViewModel(), WebTestViewController.self)
             .navigationItem(with: {
                 $0.title = "web scheme test"
@@ -132,66 +98,7 @@ extension InitFlow{
     private func navigateToMultiTable() -> FlowContributors{
         print("InitFlow navigateToMultiTable")
         
-//        return FlowSugar(ActivityViewModel(),
-//                         ActivityViewController.self)
-//            .navigationItem(with:{
-//                $0.title = "multiSelectTable"
-//            }).oneStepPushBy(self.rootViewController)
-//        let flows: [Flow] = [activityFlow]
-//        Flows.use(flows, when: .created) {[unowned self] (roots: [ARNavigationController]) in
-//            for(index, root) in roots.enumerated() {
-//                root.tabBarItem = UITabBarItem(title: self.tabBarTitle[index],
-//                                               image: self.tabBarImageN[index].withRenderingMode(.alwaysOriginal),
-//                                               selectedImage: self.tabBarImageS[index].withRenderingMode(.alwaysOriginal))
-//                if index == 0 {
-//                    root.tabBarItem.imageInsets = UIEdgeInsets(top: -3.33, left: 0, bottom: 3.33, right: 0)
-//                } else {
-//                    root.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//                }
-//                root.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -6)
-//            }
-//
-//            UITabBarItem.setupBarItem()
-////            self.unityInit {
-////                self.rootViewController.tabBar.isHidden = false
-////                self.rootViewController.setViewControllers(roots, animated: true)
-////            }
-//
-//            //rootViewController.pushViewController(flows, animated: true)
-//        }
-//        /// notificationFlow 가 준비 된 후에 딥링크 ㄱㄱ
-////        Flows.use(notificationFlow, when: .ready) { _ in
-////            AppDelegate.shared.readyNotificationFlow = true
-////            if let scheme = urlScheme {
-////                let nofiticationData = NotificationService.shared.parseLinkObject(directUrlScheme: scheme)
-////                NotificationService.shared.mapper(model: nofiticationData)
-////            } else if let deepLink = AppDelegate.shared.readyDeepLink {
-////                ARLinkService.shared.link(linkType: .deep, link: deepLink)
-////                AppDelegate.shared.readyDeepLink = nil
-////            }
-////        }
-//
-//
-//        //ActivityStepper.shared.steps.accept(AppStep.moveToHome())
-//
-//        return .multiple(flowContributors: [
-//            .contribute(withNextPresentable: activityFlow, withNextStepper: CompositeStepper(steppers: [OneStepper(withSingleStep: AppStep.activity(detail: .recently)), ActivityStepper.shared]))
-//        ])
-        
-        //self.inputTabIndex = detail
-
-//        Observable.from(AuthManager.dasLoginedNotifications)
-//            .observeOn(MainScheduler.instance)
-//            .merge().map { _ in Void() }
-//            .bind(to: loadContent).disposed(by: disposeBag)
-
-//        ReachabilityManager.current.rx.netState
-//            .filter { $0 == .connect }.map { _ in Void() }
-//            .bind(to: loadContent).disposed(by: disposeBag)
-
-        loadContent.subscribe(onNext: { //_ in
-            //Log.d("updateStatus")
-            //_ = NetworkService.getHome().subscribe(onSuccess:
+        loadContent.subscribe(onNext: {
             [weak self] _ in
                 guard let `self` = self else { return }
                 self.tabControllers = self.makeInitialize()
@@ -221,35 +128,33 @@ extension InitFlow{
     /////
     /// 내 활동 화면 초기화
     func makeInitialize() -> [UIViewController] {
-        /// lg 통신사가 아닌경우 다운로드
-//        if !AuthManager.current.isUplusMember {
-//            let downloadVC = DownloadViewController()
-//            let downloadVM = DownloadViewModel()
-//            downloadVC.viewModel = downloadVM
-//            return [downloadVC]
-//        }
-
-        /// 최근 본
-        let recentlyVC = RecentlyViewController()
-        let recentlyVM = RecentlyViewModel()
-        recentlyVC.viewModel = recentlyVM
-
-        /// 다운로드
-        let downloadVC = DownloadViewController()
-        let downloadVM = DownloadViewModel()
-        downloadVC.viewModel = downloadVM
-
-        /// 좋아요
-        let likeVC = LikeViewController()
-        let likeVM = LikeViewModel()
-        likeVC.viewModel = likeVM
-
-        /// 내가 쓴 댓글
-        let replyVC = ReplyViewController()
-        let replyVM = ReplyViewModel()
-        replyVC.viewModel = replyVM
-
-        return [recentlyVC, downloadVC, likeVC, replyVC]
+        // 최근 본
+        let compactVC = CompactViewController()
+        let compactVM = CompactViewModel()
+        compactVC.viewModel = compactVM
+        
+        return [compactVC]
+//        /// 최근 본
+//        let recentlyVC = RecentlyViewController()
+//        let recentlyVM = RecentlyViewModel()
+//        recentlyVC.viewModel = recentlyVM
+//
+//        /// 다운로드
+//        let downloadVC = DownloadViewController()
+//        let downloadVM = DownloadViewModel()
+//        downloadVC.viewModel = downloadVM
+//
+//        /// 좋아요
+//        let likeVC = LikeViewController()
+//        let likeVM = LikeViewModel()
+//        likeVC.viewModel = likeVM
+//
+//        /// 내가 쓴 댓글
+//        let replyVC = ReplyViewController()
+//        let replyVM = ReplyViewModel()
+//        replyVC.viewModel = replyVM
+//
+//        return [recentlyVC, downloadVC, likeVC, replyVC]
     }
 
     /// 내 활동 탭 모델링
@@ -257,11 +162,11 @@ extension InitFlow{
 //        if !AuthManager.current.isUplusMember {
 //            return [TabPagerHeaderCellModel(title: ActivityDetail(rawValue: 1)!.title, displayNewIcon: false)]
 //        } else {
-            return (0 ..< self.tabControllers.count).map {
-                ActivityDetail(rawValue: $0)
-            }.map {
-                TabPagerHeaderCellModel(title: $0!.title, displayNewIcon: false)
-            }
+        return (0 ..< 4).map {//self.tabControllers.count).map {
+            ActivityDetail(rawValue: $0)
+        }.map {
+            TabPagerHeaderCellModel(title: $0!.title, displayNewIcon: false)
+        }
 //        }
     }
     /////
@@ -327,7 +232,8 @@ extension InitFlow{
 // MARK: - TabPagerViewDataSource
 extension InitFlow: TabPagerViewDataSource {
     func numberOfItems() -> Int? {
-        return self.tabControllers.count
+        return 4
+        //return self.tabControllers.count
     }
 
     func controller(at index: Int) -> UIViewController? {

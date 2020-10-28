@@ -31,7 +31,7 @@ enum AppStep: Step {
     case linkImageZoom([URL], Int)
     
     // AR
-    case activity(detail: ActivityDetail?)
+    //case activity(detail: ActivityDetail?)
     case navigationActivity(index: Int)
     case dismissModal
     case moveToHome(urlScheme: URLScheme? = nil)

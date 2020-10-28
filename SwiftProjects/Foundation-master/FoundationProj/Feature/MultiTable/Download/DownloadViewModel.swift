@@ -15,45 +15,23 @@ import Unrealm
 
 class DownloadViewModel: ViewModelType, Stepper {
     
-    func transform(req: ViewModel.Input) -> ViewModel.Output {
-        return ViewModel.Output()
-    }
-    
-    struct Input {
-   //        let refreshTrigger: Observable<Void>
-   //        let loadMoreTrigger: Observable<Void>
-   //        let showDetailTrigger: Observable<RealmMyDownloadFile>
-   //        let playContentTrigger: Observable<RealmMyDownloadFile>
-   //        let buttonActionTrigger: Observable<ARTableViewHeaderActionType>
-   //        let deleteItemsTrigger: Observable<[IndexPath]>
-   //        let sortItemsTrigger: Observable<DownloadSortingType>
-       }
-   //
-       struct Output {
-   //        let downloadList: BehaviorRelay<[RealmMyDownloadFile]>
-   //        let buttonActionRelay: PublishRelay<ARTableViewHeaderActionType>
-   //        let downloadNotications: PublishRelay<Notification>
-   //        let deleteItem: Observable<Void>
-   //        let sortType: PublishRelay<DownloadSortingType>
-       }
-    
     // MARK: - Stepper
     var steps = PublishRelay<Step>()
 
     // MARK: - ViewModelType Protocol
     typealias ViewModel = DownloadViewModel
 
-//    static let DOWNLOAD_LIST_COUNT_MAX = 30
-//
-//    let disposeBag = DisposeBag()
-//    var downloadList = BehaviorRelay(value: [RealmMyDownloadFile]())
-//    let downloadNotications = PublishRelay<Notification>()
-//    var buttonActionRelay = PublishRelay<ARTableViewHeaderActionType>()
-//    var currentSortType: DownloadSortingType = .download
-//    let sortTypeRelay = PublishRelay<DownloadSortingType>()
-//
-//    var RetryCount = 1
-//    var getAllDownloads = false
+    static let DOWNLOAD_LIST_COUNT_MAX = 30
+
+    let disposeBag = DisposeBag()
+    var downloadList = BehaviorRelay(value: [RealmMyDownloadFile]())
+    let downloadNotications = PublishRelay<Notification>()
+    var buttonActionRelay = PublishRelay<ARTableViewHeaderActionType>()
+    var currentSortType: DownloadSortingType = .download
+    let sortTypeRelay = PublishRelay<DownloadSortingType>()
+
+    var RetryCount = 1
+    var getAllDownloads = false
 
 //    private lazy var loadDownloadDataAction = Action<(Void), [RealmMyDownloadFile]>(workFactory: { [weak self] _ in
 //        guard let `self` = self else { return Observable.never() }
@@ -81,27 +59,27 @@ class DownloadViewModel: ViewModelType, Stepper {
 //        }
 //        return Observable.never()
 //    })
-//
-//    // 버튼 동작 Action
-//    lazy var buttonAction = Action<ARTableViewHeaderActionType, Void> { [weak self] in
-//        guard let `self` = self else { return .empty() }
-//        switch $0 {
-//        case .delete:
-//            self.sortedListAction.execute(.download)
-//            self.sortTypeRelay.accept(.download)
-//            self.buttonActionRelay.accept(.delete)
-//        case .check:
-//            self.buttonActionRelay.accept(.check)
-//        case .cancel:
-//            self.buttonActionRelay.accept(.cancel)
-//        case .dropdown:
-//            self.buttonActionRelay.accept(.dropdown)
-//        default:
-//            break
-//        }
-//        return .empty()
-//    }
-//
+
+    // 버튼 동작 Action
+    lazy var buttonAction = Action<ARTableViewHeaderActionType, Void> { [weak self] in
+        guard let `self` = self else { return .empty() }
+        switch $0 {
+        case .delete:
+            //self.sortedListAction.execute(.download)
+            self.sortTypeRelay.accept(.download)
+            self.buttonActionRelay.accept(.delete)
+        case .check:
+            self.buttonActionRelay.accept(.check)
+        case .cancel:
+            self.buttonActionRelay.accept(.cancel)
+        case .dropdown:
+            self.buttonActionRelay.accept(.dropdown)
+        default:
+            break
+        }
+        return .empty()
+    }
+
 //    private lazy var deleteItemsAction = Action<[IndexPath], Void>(workFactory: { [weak self] indexPaths in
 //        guard let `self` = self else { return .empty() }
 //        var selectKeys: [String] = []
@@ -131,26 +109,26 @@ class DownloadViewModel: ViewModelType, Stepper {
 //        }
 //        return Observable.never()
 //    })
-//
-//    struct Input {
-//        let refreshTrigger: Observable<Void>
-//        let loadMoreTrigger: Observable<Void>
-//        let showDetailTrigger: Observable<RealmMyDownloadFile>
-//        let playContentTrigger: Observable<RealmMyDownloadFile>
-//        let buttonActionTrigger: Observable<ARTableViewHeaderActionType>
-//        let deleteItemsTrigger: Observable<[IndexPath]>
-//        let sortItemsTrigger: Observable<DownloadSortingType>
-//    }
-//
-//    struct Output {
-//        let downloadList: BehaviorRelay<[RealmMyDownloadFile]>
-//        let buttonActionRelay: PublishRelay<ARTableViewHeaderActionType>
-//        let downloadNotications: PublishRelay<Notification>
-//        let deleteItem: Observable<Void>
-//        let sortType: PublishRelay<DownloadSortingType>
-//    }
-//
-//    func transform(req: ViewModel.Input) -> ViewModel.Output {
+
+    struct Input {
+        let refreshTrigger: Observable<Void>
+        let loadMoreTrigger: Observable<Void>
+        let showDetailTrigger: Observable<RealmMyDownloadFile>
+        let playContentTrigger: Observable<RealmMyDownloadFile>
+        let buttonActionTrigger: Observable<ARTableViewHeaderActionType>
+        let deleteItemsTrigger: Observable<[IndexPath]>
+        let sortItemsTrigger: Observable<DownloadSortingType>
+    }
+
+    struct Output {
+        let downloadList: BehaviorRelay<[RealmMyDownloadFile]>
+        let buttonActionRelay: PublishRelay<ARTableViewHeaderActionType>
+        let downloadNotications: PublishRelay<Notification>
+        //let deleteItem: Observable<Void>
+        let sortType: PublishRelay<DownloadSortingType>
+    }
+
+    func transform(req: ViewModel.Input) -> ViewModel.Output {
 //        req.refreshTrigger
 //            .bind(to: loadDownloadDataAction.inputs)
 //            .disposed(by: disposeBag)
@@ -168,7 +146,7 @@ class DownloadViewModel: ViewModelType, Stepper {
 //            }
 //            .bind(to: loadDownloadDataAction.inputs)
 //            .disposed(by: disposeBag)
-//
+
 //        loadDownloadDataAction
 //            .elements
 //            .flatMap { data -> Observable<[RealmMyDownloadFile]> in
@@ -181,11 +159,11 @@ class DownloadViewModel: ViewModelType, Stepper {
 //                return Observable.just(dummy)
 //            }
 //            .bind(to: downloadList).disposed(by: disposeBag)
-//
+
 //        req.sortItemsTrigger
 //            .bind(to: sortedListAction.inputs)
 //            .disposed(by: disposeBag)
-//
+
 //        sortedListAction
 //            .elements
 //            .flatMap { data -> Observable<[RealmMyDownloadFile]> in
@@ -198,8 +176,8 @@ class DownloadViewModel: ViewModelType, Stepper {
 //                return Observable.just(dummy)
 //            }
 //            .bind(to: downloadList).disposed(by: disposeBag)
-//
-//        // 컨텐츠 상세화면 Event
+
+        // 컨텐츠 상세화면 Event
 //        req.showDetailTrigger
 //            .filter {
 //                if let dt = $0.end_dt?.getJavaTimestampDate() {
@@ -230,41 +208,41 @@ class DownloadViewModel: ViewModelType, Stepper {
 //                self?.loadDeatailDataAction(isDetail: false, item, key)
 //            })
 //            .disposed(by: disposeBag)
-//
-//        // 버튼 Action
-//        req.buttonActionTrigger
-//            .bind(to: buttonAction.inputs)
-//            .disposed(by: disposeBag)
-//
+
+        // 버튼 Action
+        req.buttonActionTrigger
+            .bind(to: buttonAction.inputs)
+            .disposed(by: disposeBag)
+
 //        Observable
 //            .from(DownloadManager.downloadNotifications)
 //            .merge()
 //            .bind(to: downloadNotications)
 //            .disposed(by: disposeBag)
-//
+
 //        req.deleteItemsTrigger
 //            .bind(to: deleteItemsAction.inputs)
 //            .disposed(by: disposeBag)
-//
-//        return Output(downloadList: downloadList,
-//                      buttonActionRelay: buttonActionRelay,
-//                      downloadNotications: downloadNotications,
-//                      deleteItem: deleteItemsAction.elements,
-//                      sortType: sortTypeRelay)
-//    }
-//
+
+        return Output(downloadList: downloadList,
+                      buttonActionRelay: buttonActionRelay,
+                      downloadNotications: downloadNotications,
+                      //deleteItem: deleteItemsAction.elements,
+                      sortType: sortTypeRelay)
+    }
+
 //    func loadDeatailDataAction(isDetail: Bool, _ item: RealmMyDownloadFile, _ key: Int) {
-//        if ReachabilityManager.isConnected {
-//            _ = NetworkService.getContentDetail(contentsKey: String(key)).asObservable().on(next: { [unowned self] _ in
-//                if item.adult_yn == .Y, ContentLockManager.current.currentLockState == .locked {
-//                    ContentLockManager.current.isLockSettingCheck { result in
-//                        if result {
-//                            ActivityStepper.shared.steps.accept(MainSteps.navigationARPlayer(isDetail: isDetail, contentKey: key, playList: []))
-//                        }
-//                    }
-//                } else {
-//                    ActivityStepper.shared.steps.accept(MainSteps.navigationARPlayer(isDetail: isDetail, contentKey: key, playList: []))
-//                }
+//        if true {//ReachabilityManager.isConnected {
+//            //_ = NetworkService.getContentDetail(contentsKey: String(key)).asObservable().on(next: { [unowned self] _ in
+//            if item.adult_yn == .Y {//, ContentLockManager.current.currentLockState == .locked {
+//                //ContentLockManager.current.isLockSettingCheck { result in
+//                   // if result {
+//                        ActivityStepper.shared.steps.accept(AppStep.navigationARPlayer(isDetail: isDetail, contentKey: key, playList: []))
+//                 //   }
+//                //}
+//            } else {
+//                ActivityStepper.shared.steps.accept(AppStep.navigationARPlayer(isDetail: isDetail, contentKey: key, playList: []))
+//            }
 //            }, error: { [unowned self] _, _, _ in
 //                LoadingService.shared.hide()
 //                var lists = self.downloadList.value
@@ -281,8 +259,8 @@ class DownloadViewModel: ViewModelType, Stepper {
 //                MyDownloadDatabaseService.current.overWriteDownloadContents(item: newItem)
 //            })
 //        } else {
-//            // 네트워크 미연결시
-//            if item.adult_yn == .Y, ContentLockManager.current.currentLockState == .locked {
+            // 네트워크 미연결시
+//            if item.adult_yn == .Y {//}, ContentLockManager.current.currentLockState == .locked {
 //                ContentLockManager.current.isLockSettingCheck { result in
 //                    if result {
 //                        ActivityStepper.shared.steps.accept(MainSteps.navigationARPlayer(isDetail: isDetail, contentKey: key, playList: []))
@@ -291,6 +269,6 @@ class DownloadViewModel: ViewModelType, Stepper {
 //            } else {
 //                ActivityStepper.shared.steps.accept(MainSteps.navigationARPlayer(isDetail: isDetail, contentKey: key, playList: []))
 //            }
-//        }
-//    }
+        //}
+    //}
 }

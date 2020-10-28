@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReplyTableViewCell: UITableViewCell {
+class ReplyCompactTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupLayout()
@@ -149,7 +149,7 @@ class ReplyTableViewCell: UITableViewCell {
     }
 }
 
-extension ReplyTableViewCell {
+extension ReplyCompactTableViewCell {
     private func configure() {
         self.bindingData()
     }
