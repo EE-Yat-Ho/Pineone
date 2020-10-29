@@ -90,58 +90,56 @@ extension TabPagerContents: UIPageViewControllerDelegate, UIPageViewControllerDa
 }
 
 extension TabPagerContents {
-//    func pageScroll(to index: Int, completeHandler: (() -> Void)? = nil) {
-//
-//        self.delegate?.didSelectButton?(at: index) // 프린트용
-//    }
-           
-//            let animated: Bool = true
-//            pageViewController?.isScrollEnabled = false
-//
-//            let handler: () -> Void = {[weak self] in
-//                self?.pageViewController?.isScrollEnabled = true
-//                completeHandler?()
-//            }
-//        if let controller = self.dataSource?.controller(at: index) { // index에 해당하는 VC를 넣음 (목표 VC)
-//            controller.view.subviews.forEach {
-//                $0.isUserInteractionEnabled = false
-//            }
-//            controller.index = index
-//            if let currentIndex = self.pageViewController?.viewControllers?.get(0)?.index {// 현재 VC의 index
-//                if self.delegate?.willSelectButton?(from: currentIndex, to: index) ?? true {
-//                    if index == currentIndex {
-//                        handler()
-//                        controller.view.subviews.forEach {
-//                            $0.isUserInteractionEnabled = true
-//                        }
-//                        return
-//                    } else if index > currentIndex {
-//                        self.pageViewController?.setViewControllers([controller], direction: .forward, animated: animated, completion: { _ in
-//                            handler()
-//                            controller.view.subviews.forEach {
-//                                $0.isUserInteractionEnabled = true
-//                            }
-//                        })
-//                    } else {
-//                        self.pageViewController?.setViewControllers([controller], direction: .reverse, animated: animated, completion: { _ in
-//                            handler()
-//                            controller.view.subviews.forEach {
-//                                $0.isUserInteractionEnabled = true
-//                            }
-//                        })
-//                    }
-//                    self.delegate?.didSelectButton?(at: index) // 프린트용
-//                }
-//            } else {
-//                self.pageViewController?.setViewControllers([controller], direction: .forward, animated: animated, completion: { _ in
-//                    handler()
-//                    controller.view.subviews.forEach {
-//                        $0.isUserInteractionEnabled = true
-//                    }
-//                })
-//            }
-//        }
-//    }
+    func pageScroll(to index: Int, completeHandler: (() -> Void)? = nil) {
+        self.delegate?.didSelectButton?(at: index) // 프린트용
+    
+        let animated: Bool = true
+        pageViewController?.isScrollEnabled = false
+
+        let handler: () -> Void = {[weak self] in
+            self?.pageViewController?.isScrollEnabled = true
+            completeHandler?()
+        }
+        if let controller = self.dataSource?.controller(at: index) { // index에 해당하는 VC를 넣음 (목표 VC)
+            controller.view.subviews.forEach {
+                $0.isUserInteractionEnabled = false
+            }
+            controller.index = index
+            if let currentIndex = self.pageViewController?.viewControllers?.get(0)?.index {// 현재 VC의 index
+                if self.delegate?.willSelectButton?(from: currentIndex, to: index) ?? true {
+                    if index == currentIndex {
+                        handler()
+                        controller.view.subviews.forEach {
+                            $0.isUserInteractionEnabled = true
+                        }
+                        return
+                    } else if index > currentIndex {
+                        self.pageViewController?.setViewControllers([controller], direction: .forward, animated: animated, completion: { _ in
+                            handler()
+                            controller.view.subviews.forEach {
+                                $0.isUserInteractionEnabled = true
+                            }
+                        })
+                    } else {
+                        self.pageViewController?.setViewControllers([controller], direction: .reverse, animated: animated, completion: { _ in
+                            handler()
+                            controller.view.subviews.forEach {
+                                $0.isUserInteractionEnabled = true
+                            }
+                        })
+                    }
+                    self.delegate?.didSelectButton?(at: index) // 프린트용
+                }
+            } else {
+                self.pageViewController?.setViewControllers([controller], direction: .forward, animated: animated, completion: { _ in
+                    handler()
+                    controller.view.subviews.forEach {
+                        $0.isUserInteractionEnabled = true
+                    }
+                })
+            }
+        }
+    }
 
     //현재 뷰 띄우는 역할?
     public func reload(_ index: Int) {

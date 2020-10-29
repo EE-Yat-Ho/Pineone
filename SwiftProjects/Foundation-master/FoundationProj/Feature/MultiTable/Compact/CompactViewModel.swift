@@ -11,15 +11,16 @@ import RxCocoa
 import RxFlow
 import RxSwift
 import UIKit
-//
-///// VM이 받는 입력들
-//enum InputAction {
-//    case deleteItems([IndexPath]) /// 셀 삭제해주세요
-//    case cellDetail(RecentlyLikeList) /// 셀 선택했어요
-//    case cellPlay(RecentlyLikeList) /// 셀 콘텐츠 재생해주세요
-//    case refreshData /// 테이블 새로고침 해주세요
-//    case error /// RecentlyCellInfo 가 nil일 경우 보내는 에러 ( 언래핑의 편의성 )
-//}
+
+/// VM이 받는 입력들
+enum InputAction {
+    case deleteItems([IndexPath]) /// 셀 삭제해주세요
+    case cellDetail(String) /// 셀 선택했어요
+    case cellPlay(String) /// 셀 콘텐츠 재생해주세요
+    case refreshData /// 테이블 새로고침 해주세요
+    case error /// RecentlyCellInfo 가 nil일 경우 보내는 에러 ( 언래핑의 편의성 )
+}
+
 
 
 class CompactViewModel: ViewModelType, Stepper {
@@ -33,28 +34,21 @@ class CompactViewModel: ViewModelType, Stepper {
     let disposeBag = DisposeBag()
     
     /// 테이블에 이벤트와 데이터를 전달하기 위한 릴레이
-    private let tableRelay = PublishRelay<[RecentlyLikeList]>()
+    private let tableRelay = BehaviorRelay<[CompactCellItem]>(value: [])
     /// 삭제 했을 경우, 삭제모드 리셋을 위한 이벤트를 전달하기 위한 릴레이
     private let deleteComplete = PublishRelay<Void>()
-//    /// topView 모드
-//    private let topViewMode = BehaviorRelay<ARTableViewHeaderShowType>(value: .rightOneButton)
-//    /// 삭제모드에서 선택했을 경우 View에 이벤트 전달
-//    private let deleteModeSelect = PublishRelay<Int>()
-//    /// 일반모드에서 셀 선택했을 경우 VC에 이벤트 전달
-//    private let normalModeSelect = PublishRelay<Int>()
-    var nowIndex = 0
+    
+    var activityDetail: ActivityDetail = .recently
+    
     
     /// 비지니스 로직이 필요한 여러 입력들
     struct Input {
         let inputAction: Observable<InputAction>
     }
-
     /// View나 VC에 이벤트와 데이터를 전달하기 위한 릴레이들
     struct Output {
-        let tableRelay: PublishRelay<[RecentlyLikeList]>
+        let tableRelay: BehaviorRelay<[CompactCellItem]>
         let deleteComplete: PublishRelay<Void>
-//        let deleteModeSelect: PublishRelay<Int>
-//        let normalModeSelect: PublishRelay<Int>
     }
 
     /// 입력받은 릴레이들을 알맞게 액션이나 클로저 등을 매핑 및 바인딩 후, View나 VC에게 이벤트를 전달해주기 위한 릴레이들을 반환
@@ -70,6 +64,25 @@ class CompactViewModel: ViewModelType, Stepper {
         /// 데이터를 로드해오면 테이블 리프래쉬
         loadRecentlyDataAction
             .elements
+            .map{ $0.map{CompactCellItem(recentlyLike: $0)}}
+            .bind(to: tableRelay)
+            .disposed(by: disposeBag)
+
+        loadDownloadDataAction
+            .elements
+            .map{ $0.map{CompactCellItem(download: $0)}}
+            .bind(to: tableRelay)
+            .disposed(by: disposeBag)
+        
+        loadLikeDataAction
+            .elements
+            .map{ $0.map{CompactCellItem(recentlyLike: $0)}}
+            .bind(to: tableRelay)
+            .disposed(by: disposeBag)
+        
+        loadReplyDataAction
+            .elements
+            .map{ $0.map{CompactCellItem(reply: $0)}}
             .bind(to: tableRelay)
             .disposed(by: disposeBag)
         
@@ -79,8 +92,24 @@ class CompactViewModel: ViewModelType, Stepper {
             .do(onNext: { [weak self] in self?.deleteComplete.accept(())})
             .bind(to: loadRecentlyDataAction.inputs)
             .disposed(by: disposeBag)
+        deleteDownloadDataAction
+            .elements
+            .do(onNext: { [weak self] in self?.deleteComplete.accept(())})
+            .bind(to: loadDownloadDataAction.inputs)
+            .disposed(by: disposeBag)
+        deleteLikeDataAction
+            .elements
+            .do(onNext: { [weak self] in self?.deleteComplete.accept(())})
+            .bind(to: loadLikeDataAction.inputs)
+            .disposed(by: disposeBag)
+        deleteReplyDataAction
+            .elements
+            .do(onNext: { [weak self] in self?.deleteComplete.accept(())})
+            .bind(to: loadReplyDataAction.inputs)
+            .disposed(by: disposeBag)
         
-        return Output(tableRelay: tableRelay, deleteComplete: deleteComplete)//, deleteModeSelect: deleteModeSelect, normalModeSelect: normalModeSelect)
+        
+        return Output(tableRelay: tableRelay, deleteComplete: deleteComplete)
     }
     
     // MARK: - Processor Declaration
@@ -88,16 +117,28 @@ class CompactViewModel: ViewModelType, Stepper {
     private func inputActionProcessor(inputAction: InputAction) {
         switch inputAction {
         case .refreshData:
-            print("refreshData")
-            loadRecentlyDataAction.inputs.onNext(())
+            refreshData()
         case .deleteItems(let indexPaths):
             deleteItems(indexPaths) // 서버에는 배열이 아닌 스트링값 1개만 넘겨주기위한 전초작업
-        case .cellDetail(let cellInfo):
-            cellDetail(cellInfo)
-        case .cellPlay(let cellInfo):
-            cellPlay(cellInfo)
+        case .cellDetail(let key):
+            cellDetail(key)
+        case .cellPlay(let key):
+            cellPlay(key)
         case .error:
-            print("RecentlyCellInfo is nil!!")
+            print("Action error!!")
+        }
+    }
+    
+    private func refreshData() {
+        switch activityDetail {
+        case .recently:
+            loadRecentlyDataAction.inputs.onNext(())
+        case .download:
+            loadDownloadDataAction.inputs.onNext(())
+        case .like:
+            loadLikeDataAction.inputs.onNext(())
+        case .reply:
+            loadReplyDataAction.inputs.onNext(())
         }
     }
 
@@ -108,24 +149,26 @@ class CompactViewModel: ViewModelType, Stepper {
             selectIP.append(String(indexPath.row))
         }
         let result = selectIP.joined(separator: ",")
-        deleteRecentlyDataAction.inputs.onNext(result)/// 서버에 삭제명령 넘기기
+        switch activityDetail {
+        case .recently:
+            deleteRecentlyDataAction.inputs.onNext(result)
+        case .download:
+            deleteDownloadDataAction.inputs.onNext(result)
+        case .like:
+            deleteLikeDataAction.inputs.onNext(result)
+        case .reply:
+            deleteReplyDataAction.inputs.onNext(result)
+        }
     }
     
     /// 셀 상세보기 이벤트를 처리하는 함수. VC로 이벤트를 전달해서 상세보기 화면을 띄우지 않을까
-    private func cellDetail(_ cellInfo: RecentlyLikeList) {
-//        switch topViewMode.value {
-//        case .rightOneButton: // 일반 모드
-//            normalModeSelect.accept(indexRow)
-//        case .checkAndButton: // 삭제 모드
-//            deleteModeSelect.accept(indexRow)
-//        default:
-            print("cellDetail")
-        //}
+    private func cellDetail(_ key: String) {
+        print("cellDetail key = \(key)")
     }
     
     /// 셀 재생 이벤트를 처리하는 함수. VC로 이벤트를 전달해서 콘텐츠 화면을 띄우지 않을까
-    private func cellPlay(_ cellInfo: RecentlyLikeList) {
-        print("cellPlay")
+    private func cellPlay(_ key: String) {
+        print("cellPlay key = \(key)")
     }
     
     
@@ -134,10 +177,28 @@ class CompactViewModel: ViewModelType, Stepper {
     private lazy var loadRecentlyDataAction = Action<(Void), [RecentlyLikeList]>(workFactory: {
         return Observable<[RecentlyLikeList]>.just(Server.shared.getUserRecentlyContents())
     })
+    private lazy var loadDownloadDataAction = Action<(Void), [RealmMyDownloadFile]>(workFactory: {
+        return Observable<[RealmMyDownloadFile]>.just(RealmLocalDB.shared.getUserDownloadContents())
+    })
+    private lazy var loadLikeDataAction = Action<(Void), [RecentlyLikeList]>(workFactory: {
+        return Observable<[RecentlyLikeList]>.just(Server.shared.getUserLikeContents())
+    })
+    private lazy var loadReplyDataAction = Action<(Void), [ReplyList]>(workFactory: {
+        return Observable<[ReplyList]>.just(Server.shared.getUserReplyContents())
+    })
     
     /// 서버에서 데이터를 삭제시키고, 삭제완료(Void)를 방출하는 액션
     private lazy var deleteRecentlyDataAction = Action<(String), Void>(workFactory: { indexPathString in
-        return Observable<Void>.just(Server.shared.deleteUserContents(indexPathString: indexPathString))
+        return Observable<Void>.just(Server.shared.deleteUserRecentlyContents(indexPathString: indexPathString))
+    })
+    private lazy var deleteDownloadDataAction = Action<(String), Void>(workFactory: { indexPathString in
+        return Observable<Void>.just(RealmLocalDB.shared.deleteDownloadContents(indexPathString: indexPathString))
+    })
+    private lazy var deleteLikeDataAction = Action<(String), Void>(workFactory: { indexPathString in
+        return Observable<Void>.just(Server.shared.deleteUserLikeContents(indexPathString: indexPathString))
+    })
+    private lazy var deleteReplyDataAction = Action<(String), Void>(workFactory: { indexPathString in
+        return Observable<Void>.just(Server.shared.deleteUserReplyContents(indexPathString: indexPathString))
     })
 }
     

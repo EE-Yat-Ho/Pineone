@@ -128,33 +128,39 @@ extension InitFlow{
     /////
     /// 내 활동 화면 초기화
     func makeInitialize() -> [UIViewController] {
-        // 최근 본
-        let compactVC = CompactViewController()
-        let compactVM = CompactViewModel()
-        compactVC.viewModel = compactVM
+        /// 최근 본
+        let recentlyVC = CompactViewController()
+        let recentlyVM = CompactViewModel()
+        recentlyVC.viewModel = recentlyVM
+        recentlyVC.activityDetail = .recently
+        recentlyVC.compactView.activityDetail = .recently
+        recentlyVM.activityDetail = .recently
+
+        /// 다운로드
+        let downloadVC = CompactViewController()
+        let downloadVM = CompactViewModel()
+        downloadVC.viewModel = downloadVM
+        downloadVC.activityDetail = .download
+        downloadVC.compactView.activityDetail = .download
+        downloadVM.activityDetail = .download
         
-        return [compactVC]
-//        /// 최근 본
-//        let recentlyVC = RecentlyViewController()
-//        let recentlyVM = RecentlyViewModel()
-//        recentlyVC.viewModel = recentlyVM
-//
-//        /// 다운로드
-//        let downloadVC = DownloadViewController()
-//        let downloadVM = DownloadViewModel()
-//        downloadVC.viewModel = downloadVM
-//
-//        /// 좋아요
-//        let likeVC = LikeViewController()
-//        let likeVM = LikeViewModel()
-//        likeVC.viewModel = likeVM
-//
-//        /// 내가 쓴 댓글
-//        let replyVC = ReplyViewController()
-//        let replyVM = ReplyViewModel()
-//        replyVC.viewModel = replyVM
-//
-//        return [recentlyVC, downloadVC, likeVC, replyVC]
+        /// 좋아요
+        let likeVC = CompactViewController()
+        let likeVM = CompactViewModel()
+        likeVC.viewModel = likeVM
+        likeVC.activityDetail = .like
+        likeVC.compactView.activityDetail = .like
+        likeVM.activityDetail = .like
+
+        /// 내가 쓴 댓글
+        let replyVC = CompactViewController()
+        let replyVM = CompactViewModel()
+        replyVC.viewModel = replyVM
+        replyVC.activityDetail = .reply
+        replyVC.compactView.activityDetail = .reply
+        replyVM.activityDetail = .reply
+
+        return [recentlyVC, downloadVC, likeVC, replyVC]
     }
 
     /// 내 활동 탭 모델링
@@ -162,7 +168,7 @@ extension InitFlow{
 //        if !AuthManager.current.isUplusMember {
 //            return [TabPagerHeaderCellModel(title: ActivityDetail(rawValue: 1)!.title, displayNewIcon: false)]
 //        } else {
-        return (0 ..< 4).map {//self.tabControllers.count).map {
+        return (0 ..< self.tabControllers.count).map {
             ActivityDetail(rawValue: $0)
         }.map {
             TabPagerHeaderCellModel(title: $0!.title, displayNewIcon: false)

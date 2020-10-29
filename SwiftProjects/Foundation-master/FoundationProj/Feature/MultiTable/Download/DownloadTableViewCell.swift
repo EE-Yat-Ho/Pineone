@@ -46,8 +46,7 @@ class DownloadTableViewCell: ActivityBaseTableViewCell {
 extension DownloadTableViewCell {
     func bindingData() {
         guard let item = item else { return }
-        Log.d("bindingData \(item.name)")
-
+        
         if let imageURL = item.image_url {
             thumbnailImageView.image = nil
             thumbnailImageView.sd_setImage(with: URL(string: imageURL))
@@ -84,6 +83,8 @@ extension DownloadTableViewCell {
         } else {
             expireContentsView.alpha = 0.0
         }
+        
+        
     }
 
     func setDownloadControl(_ value: Bool) {

@@ -109,21 +109,21 @@ class RecentlyView: UIBasePreviewTypeForSampling {
     func bindData() {
         // Inputs. Required Business Logic
         /// 셀 선택시, cellDetail이벤트 전달. 성인이나 기간만료에 의한 판단은 ViewModel 에서!
-        tableView
-            .rx
-            .modelSelected(RecentlyLikeList.self)
-            .map {.cellDetail($0)}
-            .bind(to: inputAction)
-            .disposed(by: rx.disposeBag)
+//        tableView
+//            .rx
+//            .modelSelected(RecentlyLikeList.self)
+//            .map {.cellDetail($0)}
+//            .bind(to: inputAction)
+//            .disposed(by: rx.disposeBag)
         
         /// refreshController에서 refreshTrigger 발생시 VM에 .refreshData emit하기
-        refreshControl
-            .rx
-            .refreshTrigger
-            .map{ .refreshData}
-            .bind(to: inputAction)
-            .disposed(by: rx.disposeBag)
-        
+//        refreshControl
+//            .rx
+//            .refreshTrigger
+//            .map{ .refreshData}
+//            .bind(to: inputAction)
+//            .disposed(by: rx.disposeBag)
+//        
         
         // Inputs. Not Required Business Logic
         /// topView의 입력을 topViewEventProcessor로 emit

@@ -30,7 +30,7 @@ class RecentlyViewController: UIBaseViewController, ViewModelProtocol {
         bindingViewModel()
         
         /// Init Data Load
-        inputAction.accept(.refreshData)
+//        inputAction.accept(.refreshData)
     }
 
     // MARK: - Input Observables & Get Relay to VM. SetupDI to View use VM's Output.

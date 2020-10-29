@@ -64,7 +64,7 @@ struct RecentlyLikeList: Decodable {
     /// 컨텐츠 게시 종료 일자
     let end_dt: Double?
     /// Y=성인인증필요 컨텐츠, N=성인비인증 컨텐츠
-    let adult_yn: String?
+    let adult_yn: AdultType?
     /// Y=3d콘텐츠가 있음, N=없음
     let downloadable: Contain3DContentType?
 }

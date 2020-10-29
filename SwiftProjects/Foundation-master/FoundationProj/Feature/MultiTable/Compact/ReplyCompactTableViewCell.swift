@@ -32,10 +32,15 @@ class ReplyCompactTableViewCell: UITableViewCell {
     }
 
     // 셀 item
-    var item: ReplyList? {
+    var item: CompactCellItem? {
         didSet {
             self.configure()
         }
+    }
+    
+    func mappingData(item: CompactCellItem, isDeleteMode: Bool){
+        self.item = item
+        self.isDeleteMode = isDeleteMode
     }
 
     lazy var contentsView = UIView().then {

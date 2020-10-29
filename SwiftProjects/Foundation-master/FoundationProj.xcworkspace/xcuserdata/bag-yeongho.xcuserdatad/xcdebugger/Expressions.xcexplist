@@ -3,10 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "InitFlow.setCell(at:):InitFlow.swift">
+         contextName = "MainViewController.init(nibName:bundle:):MainViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "tabHeaderCells">
+               value = "viewModel">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -15,6 +15,14 @@
          <PersistentStrings>
             <PersistentString
                value = "inputs">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CompactView.setupLayout():CompactView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "activityDetail">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -103,10 +111,10 @@
          contextName = "TabPagerContents.pageScroll(to:completeHandler:):TablePagerContents.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.pageViewController?.viewControllers?.get(0)?.index">
+               value = "self.delegate">
             </PersistentString>
             <PersistentString
-               value = "self.delegate">
+               value = "self.pageViewController?.viewControllers?.get(0)?.index">
             </PersistentString>
             <PersistentString
                value = "index">
@@ -179,18 +187,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "RecentlyView.updateRecentlyView(status:):RecentlyView.swift">
+         contextName = "InitFlow.setCell(at:):InitFlow.swift">
          <PersistentStrings>
             <PersistentString
-               value = "tableView.refreshControl">
+               value = "tabHeaderCells">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MainViewController.init(nibName:bundle:):MainViewController.swift">
+         contextName = "RecentlyView.updateRecentlyView(status:):RecentlyView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "viewModel">
+               value = "tableView.refreshControl">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

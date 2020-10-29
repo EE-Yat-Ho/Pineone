@@ -53,12 +53,12 @@ extension LikeTableViewCell {
         } else {
             expireContentsView.alpha = 0.0
         }
-        if let adult = item.adult_yn, adult == "Y" {//, ContentLockManager.current.currentLockState != .unlocked {
+        if let adult = item.adult_yn, adult == .Y {//, ContentLockManager.current.currentLockState != .unlocked {
             adultView.isHidden = false
         } else {
             adultView.isHidden = true
         }
-        if let adult = item.adult_yn, adult == "Y" {
+        if let adult = item.adult_yn, adult == .Y {
             adultBadgeImageView.isHidden = false
         } else {
             adultBadgeImageView.isHidden = true

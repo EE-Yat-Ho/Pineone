@@ -97,6 +97,7 @@ class ARTableViewHeaderView: UICollectionReusableView, Reusable {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(20)
             $0.top.bottom.equalToSuperview()
+            $0.width.equalTo(44)
         }
     }
 

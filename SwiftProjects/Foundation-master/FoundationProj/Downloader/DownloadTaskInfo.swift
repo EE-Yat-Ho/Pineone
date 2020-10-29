@@ -9,7 +9,7 @@
 import Foundation
 import Unrealm
 
-enum DownloadItemStatus: String, RealmableEnumString {
+enum DownloadItemStatus: String, RealmableEnumString, Decodable {
     case ready = "status_ready"
     case downloading = "status_downloading"
     case paused = "status_paused"

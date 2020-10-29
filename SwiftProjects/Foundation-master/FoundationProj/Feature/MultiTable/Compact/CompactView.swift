@@ -19,14 +19,21 @@ class CompactView: UIBasePreviewTypeForSampling {
     // MARK: - Properties
     /// 비즈니스 로직이 필요한 모든 입력을 ViewModel에 전달해주기 위한 릴레이
     private let inputAction = PublishRelay<InputAction>()
+    var activityDetail: ActivityDetail = .recently {
+        didSet {
+            if activityDetail == .download{
+                topView.type = .dropdownAndButton
+            }
+        }
+    }
     
     /// 상단 새로고침 컨트롤
     let refreshControl = CustomRefreshControl()
     
     // MARK: - init
-    override init(naviType: ARNavigationShowType = .none) {
+    init(naviType: ARNavigationShowType = .none, activityDetail: ActivityDetail = .download) {
         super.init(naviType: naviType)
-        print("RecentlyView")
+        self.activityDetail = activityDetail
         setupLayout()
         bindData()
     }
@@ -51,7 +58,7 @@ class CompactView: UIBasePreviewTypeForSampling {
         $0.rowHeight = 92
         $0.backgroundView = ARTableViewEmptyView(type: .recently)
         $0.register(TripleCompactTableViewCell.self, forCellReuseIdentifier: TripleCompactTableViewCell.reuseIdentifier())
-        $0.register(TripleCompactTableViewCell.self, forCellReuseIdentifier: TripleCompactTableViewCell.reuseIdentifier())
+        $0.register(ReplyCompactTableViewCell.self, forCellReuseIdentifier: ReplyCompactTableViewCell.reuseIdentifier())
         $0.refreshControl = refreshControl
     }
 
@@ -112,8 +119,8 @@ class CompactView: UIBasePreviewTypeForSampling {
         /// 셀 선택시, cellDetail이벤트 전달. 성인이나 기간만료에 의한 판단은 ViewModel 에서!
         tableView
             .rx
-            .modelSelected(RecentlyLikeList.self)
-            .map {.cellDetail($0)}
+            .modelSelected(CompactCellItem.self)
+            .map {.cellDetail($0.key ?? "")}
             .bind(to: inputAction)
             .disposed(by: rx.disposeBag)
         
@@ -193,15 +200,24 @@ class CompactView: UIBasePreviewTypeForSampling {
     }
     
     /// VM에서 온 테이블용 셀정보들 옵저버블 관찰하기
-    func setupDI(tableOv: Observable<[RecentlyLikeList]>) -> Self {
+    func setupDI(tableOv: Observable<[CompactCellItem]>) -> Self {
         /// VM에서 온 셀정보들로 tableView 그리기
         tableOv
-            .bind(to: tableView.rx.items(cellIdentifier: TripleCompactTableViewCell.reuseIdentifier(), cellType: TripleCompactTableViewCell.self))
-                { [weak self] _, element, cell in
-                    guard let `self` = self else { return }
-                    cell.mappingData(item: element, isDeleteMode: ((self.topView).type == .checkAndButton) ? true : false)
+            .bind(to: tableView.rx.items) { [weak self] tableView, row, item -> UITableViewCell in
+                guard let `self` = self else { return UITableViewCell()}
+                switch self.activityDetail {
+                case .reply:
+                    let cell = tableView.dequeueReusableCell(withIdentifier: ReplyCompactTableViewCell.reuseIdentifier()) as! ReplyCompactTableViewCell
+                    cell.mappingData(item: item, isDeleteMode: ((self.topView).type == .checkAndButton) ? true : false)
+                    return cell
+                default:
+                    /// Recently, Download, Like
+                    let cell = tableView.dequeueReusableCell(withIdentifier: TripleCompactTableViewCell.reuseIdentifier()) as! TripleCompactTableViewCell
+                    cell.mappingData(item: item, isDeleteMode: ((self.topView).type == .checkAndButton) ? true : false)
                     cell.setupDI(observable: self.inputAction)
-                }.disposed(by: rx.disposeBag)
+                    return cell
+                }
+            }.disposed(by: rx.disposeBag)
         
         /// VM에서 온 셀 정보의 갯수로 topView 숨김여부
         tableOv
@@ -241,15 +257,6 @@ class CompactView: UIBasePreviewTypeForSampling {
         return self
     }
     
-//    func setupDI(deleteModeSelectOv: Observable<Int>){
-//        /// 삭제 모드에서 셀 선택시 셀 수정
-//        deleteModeSelectOv
-//            .on(next: { [weak self] in
-//                let cell = self?.tableView.cellForRow(at: IndexPath(row: $0, section: 0))
-//                cell?.isSelected
-//            }).disposed(by: rx.disposeBag)
-//    }
-    
     
     // MARK: - Methods for Events
     /// topView 이벤트들 처리
@@ -273,9 +280,38 @@ class CompactView: UIBasePreviewTypeForSampling {
             tableView.allowsMultipleSelection = false
             tableView.refreshControl = refreshControl
             showDeleteButton(select: [])
+        case .dropdown:
+            showCustomAlertViewController()
         default:
             print("TopView Another Event Accept!")
         }
+    }
+    
+    // ActionSheet 표시
+    func showCustomAlertViewController() {
+        let tableHeaderView = topView
+//        let tableHeaderView = tableView.tableHeaderView as! ARTableViewHeaderView
+        let view = MenuSortView([R.String.Activity.sort_download_title, R.String.Activity.sort_allSize_title])
+        ARActionSheet()
+            .addView(view: view)
+            .show { [weak self] in
+                guard let `self` = self else { return }
+                switch $0 {
+                case .text(let text):
+                    if text == R.String.Activity.sort_download_title {
+//                        self.sortItemsTrigger.accept(.download)
+//                        tableHeaderView.dropdownButton.isSelected = false
+                        self.tableView.reloadData()
+                    } else {
+//                        self.sortItemsTrigger.accept(.size)
+//                        tableHeaderView.dropdownButton.isSelected = true
+                        self.tableView.reloadData()
+                    }
+                    break
+                default:
+                    break
+                }
+            }
     }
     
     /// 하단 삭제 버튼 표시 유무

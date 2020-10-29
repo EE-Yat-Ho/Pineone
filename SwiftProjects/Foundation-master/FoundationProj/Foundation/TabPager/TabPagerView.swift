@@ -144,12 +144,11 @@ class TabPagerView: UIView {
         // current : 탭페이저 헤더 선택시 목적지의 인덱스를 방출하는 옵저버블
         current.compactMap { $0 }
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] targetIndex in
-                let vc = self?.contentView.pageViewController?.viewControllers?.get(0) as! CompactViewController
-                vc.inputAction.accept(.refreshData)
-//                self?.pagerHeader.isUserInteractionEnabled = false
-//                self?.contentView.pageScroll(to: currentIndex) { [weak self] in
-//                    self?.pagerHeader.isUserInteractionEnabled = true
+            .subscribe(onNext: { [weak self] currentIndex in
+                self?.pagerHeader.isUserInteractionEnabled = false
+                self?.contentView.pageScroll(to: currentIndex) { [weak self] in
+                    self?.pagerHeader.isUserInteractionEnabled = true
+                }
             })
             .disposed(by: rx.disposeBag)
 

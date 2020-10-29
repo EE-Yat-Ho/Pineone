@@ -13,10 +13,10 @@
 //
 /// 내 활동 화면 탭 타이틀 정의
 enum ActivityDetail: Int {
-    case recently
-    case download
-    case like
-    case reply
+    case recently = 0
+    case download = 1
+    case like = 2
+    case reply = 3
 
     var title: String {
         get {

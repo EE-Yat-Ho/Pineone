@@ -21,7 +21,8 @@ class CompactViewController: UIBaseViewController, ViewModelProtocol {
     // MARK: - Properties
     /// 비즈니스 로직이 필요한 모든 입력을 ViewModel에 전달해주기 위한 릴레이
     let inputAction = PublishRelay<InputAction>()
-        
+    var activityDetail: ActivityDetail = .recently
+
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,13 +47,6 @@ class CompactViewController: UIBaseViewController, ViewModelProtocol {
         /// 비즈니스 로직 결과를 View가 관찰하기 위한 DI
         compactView.setupDI(tableOv: response.tableRelay.asObservable())
                     .setupDI(deleteCompleteOv: response.deleteComplete.asObservable())
-                    //.setupDI(deleteModeSelectOv: response.deleteModeSelect.asObservable())
-        /// normalModeSelect 인 경우, Cell Detial로 넘어가게 VC에서 바인드
-//        response
-//            .normalModeSelect
-//            .on(next: { print("indexRow = \($0). cellDetail")})
-//            .disposed(by: rx.disposeBag)
-        
     }
 
     // MARK: - View

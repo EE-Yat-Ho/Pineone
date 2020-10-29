@@ -53,19 +53,14 @@ struct RealmMyDownloadFile: Realmable {
     var simage_url: String?
 
     var downloadable: Contain3DContentType = .N
+    
+    var visible_yn: String?
 
     static func primaryKey() -> String? {
         return "key"
     }
 
-    func getDownLoadList() -> [Int: [RealmDownloadFile]] {
-        
-        
-        let downloadList: [Int: [RealmDownloadFile]] = [
-            0 : [RealmDownloadFile(url: "test", filesize: "test", resumeData: Data(), status: .ready, realPath: "test")]
-        ]
-        
-        return downloadList
+    //func getDownLoadList() -> [Int: [RealmDownloadFile]] {
         //guard let files = self.files, files.count > 0 else { return downloadList }
 //        if type == .performance {
 //            var list: [RealmDownloadFile] = []
@@ -105,7 +100,7 @@ struct RealmMyDownloadFile: Realmable {
 //            }
 //        }
 //        return downloadList
-    }
+    //}
 }
 //
 //extension RealmMyDownloadFile {

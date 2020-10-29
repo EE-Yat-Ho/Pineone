@@ -190,6 +190,8 @@
 		2A34690C253FC4A9003E4BC7 /* CustomAlertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A34690B253FC4A9003E4BC7 /* CustomAlertButton.swift */; };
 		2A346914253FC816003E4BC7 /* AlertPresentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A346913253FC816003E4BC7 /* AlertPresentManager.swift */; };
 		2A346919253FC9B7003E4BC7 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A346918253FC9B7003E4BC7 /* AlertService.swift */; };
+		2AAFDEFC254A4A5C0046AB92 /* RealmLocalDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAFDEFB254A4A5C0046AB92 /* RealmLocalDB.swift */; };
+		2AAFDF01254A58890046AB92 /* CompactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAFDF00254A58890046AB92 /* CompactItem.swift */; };
 		3721899AFC42180B0556079E /* libPods-FoundationProjTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0741FBCCE752AE22252AB268 /* libPods-FoundationProjTests.a */; };
 		58483EECD5DCA3E880BCF4D8 /* libPods-FoundationProjUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 715B2D612CCB885BD1329FB5 /* libPods-FoundationProjUITests.a */; };
 		AFEEA1B07FE9B7A86105219C /* Pods_FoundationProj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E123FAA7DA87CE8462A205 /* Pods_FoundationProj.framework */; };
@@ -406,6 +408,8 @@
 		2A34690B253FC4A9003E4BC7 /* CustomAlertButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertButton.swift; sourceTree = "<group>"; };
 		2A346913253FC816003E4BC7 /* AlertPresentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentManager.swift; sourceTree = "<group>"; };
 		2A346918253FC9B7003E4BC7 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		2AAFDEFB254A4A5C0046AB92 /* RealmLocalDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLocalDB.swift; sourceTree = "<group>"; };
+		2AAFDF00254A58890046AB92 /* CompactItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactItem.swift; sourceTree = "<group>"; };
 		54E123FAA7DA87CE8462A205 /* Pods_FoundationProj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoundationProj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		715B2D612CCB885BD1329FB5 /* libPods-FoundationProjUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FoundationProjUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CAB8BC88E95D14405A7A5F5 /* Pods-FoundationProj-FoundationProjUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoundationProj-FoundationProjUITests.release.xcconfig"; path = "Target Support Files/Pods-FoundationProj-FoundationProjUITests/Pods-FoundationProj-FoundationProjUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -714,6 +718,7 @@
 				2A091E242546566500855EAC /* ActivityViewController.swift */,
 				2A091E202546564C00855EAC /* ActivityViewModel.swift */,
 				2A346849253D8DEE003E4BC7 /* Server.swift */,
+				2AAFDEFB254A4A5C0046AB92 /* RealmLocalDB.swift */,
 				11E3408A24878BA30063D04F /* Screen.swift */,
 			);
 			path = MultiTable;
@@ -927,6 +932,7 @@
 		2A091F0D25494DE600855EAC /* Compact */ = {
 			isa = PBXGroup;
 			children = (
+				2AAFDF00254A58890046AB92 /* CompactItem.swift */,
 				2A091F2325494E5D00855EAC /* TripleCompactTableViewCell.swift */,
 				2A091F1E25494E4E00855EAC /* ReplyCompactTableViewCell.swift */,
 				2A091F0825494DD600855EAC /* CompactView.swift */,
@@ -1320,6 +1326,7 @@
 				2A091EF225490FCA00855EAC /* DownloadManager.swift in Sources */,
 				2A091EA82547E59C00855EAC /* NotificationFlow.swift in Sources */,
 				11E340C624878BFC0063D04F /* MainViewModel.swift in Sources */,
+				2AAFDEFC254A4A5C0046AB92 /* RealmLocalDB.swift in Sources */,
 				2A346791253D5DB5003E4BC7 /* ContentsRecentlyLike.swift in Sources */,
 				11E340C524878BFC0063D04F /* MainViewController.swift in Sources */,
 				2A091F0925494DD700855EAC /* CompactView.swift in Sources */,
@@ -1459,6 +1466,7 @@
 				2A3467B7253D6096003E4BC7 /* ARTableViewHeaderView.swift in Sources */,
 				2A091E19254655F300855EAC /* DownloadTableViewCell.swift in Sources */,
 				11B7993924B434C10076C541 /* ProfileViewController.swift in Sources */,
+				2AAFDF01254A58890046AB92 /* CompactItem.swift in Sources */,
 				2A091EE525490E8700855EAC /* ARActionSheet.swift in Sources */,
 				117B539C24D80250000B8712 /* RotateSSView.swift in Sources */,
 				2A091E212546564C00855EAC /* ActivityViewModel.swift in Sources */,

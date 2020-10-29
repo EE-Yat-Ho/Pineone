@@ -913,8 +913,8 @@
             filePath = "FoundationProj/Foundation/TabPager/TabPagerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "didLoadsetupLayout()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1281,74 +1281,10 @@
             filePath = "FoundationProj/Coordinator/Flow/InitFlow.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "makeInitialize()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3DF79306-3306-492E-8291-0BCE51F9465C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoundationProj/Foundation/TabPager/TabPagerView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "binding()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C9F3E0A1-2DC1-4E2E-92A3-1F191E5832A9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoundationProj/Foundation/TabPager/TabPagerView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "binding()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C9F3E0A1-2DC1-4E2E-92A3-1F191E5832A9 - 3c5f634d70070680"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Int) -&gt; () in FoundationProj.TabPagerView.binding() -&gt; ()"
-                  moduleName = "FoundationProj"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/Foundation-master/FoundationProj/Foundation/TabPager/TabPagerView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "148"
-                  endingLineNumber = "148"
-                  offsetFromSymbolStart = "365">
-               </Location>
-               <Location
-                  uuid = "C9F3E0A1-2DC1-4E2E-92A3-1F191E5832A9 - e6f7f37a04576fd6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #2 (Swift.Int) -&gt; () in FoundationProj.TabPagerView.binding() -&gt; ()"
-                  moduleName = "FoundationProj"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/Foundation-master/FoundationProj/Foundation/TabPager/TabPagerView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "148"
-                  endingLineNumber = "148"
-                  offsetFromSymbolStart = "45">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
