@@ -86,6 +86,7 @@ struct CompactCellItem: Decodable {
         allDownloadFilesByte = download.allDownloadFilesByte
     }
     
+    // reply는 필요한 데이터만 체크하고, 셀 타입은 다르게 
     init(reply: ReplyList){
         key = String(reply.key ?? -1)
         name = nil
