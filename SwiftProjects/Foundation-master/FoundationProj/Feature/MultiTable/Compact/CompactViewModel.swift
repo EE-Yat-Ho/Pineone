@@ -18,6 +18,7 @@ enum InputAction {
     case cellDetail(String) /// 셀 선택했어요
     case cellPlay(String) /// 셀 콘텐츠 재생해주세요
     case refreshData /// 테이블 새로고침 해주세요
+    case sort(DownloadSortingType) /// 정렬 방식 바꿨어요
     case error /// RecentlyCellInfo 가 nil일 경우 보내는 에러 ( 언래핑의 편의성 )
 }
 
@@ -39,7 +40,7 @@ class CompactViewModel: ViewModelType, Stepper {
     private let deleteComplete = PublishRelay<Void>()
     
     var activityDetail: ActivityDetail = .recently
-    
+    var sortType: DownloadSortingType = .download
     
     /// 비지니스 로직이 필요한 여러 입력들
     struct Input {
@@ -67,19 +68,24 @@ class CompactViewModel: ViewModelType, Stepper {
             .map{ $0.map{CompactCellItem(recentlyLike: $0)}}
             .bind(to: tableRelay)
             .disposed(by: disposeBag)
-
         loadDownloadDataAction
             .elements
-            .map{ $0.map{CompactCellItem(download: $0)}}
+            .map{ [weak self] data in
+                var result: [RealmMyDownloadFile] = []
+                if self?.sortType == .download {
+                    result = data.sorted(by: { $0.createDate!.compare($1.createDate!) == .orderedDescending })
+                } else {
+                    result = data.sorted(by: { $0.allDownloadFilesByte > $1.allDownloadFilesByte })
+                }
+                return result.map{CompactCellItem(download: $0)}
+            }
             .bind(to: tableRelay)
             .disposed(by: disposeBag)
-        
         loadLikeDataAction
             .elements
             .map{ $0.map{CompactCellItem(recentlyLike: $0)}}
             .bind(to: tableRelay)
             .disposed(by: disposeBag)
-        
         loadReplyDataAction
             .elements
             .map{ $0.map{CompactCellItem(reply: $0)}}
@@ -124,6 +130,8 @@ class CompactViewModel: ViewModelType, Stepper {
             cellDetail(key)
         case .cellPlay(let key):
             cellPlay(key)
+        case .sort(let sortType):
+            sortData(sortType)
         case .error:
             print("Action error!!")
         }
@@ -169,6 +177,11 @@ class CompactViewModel: ViewModelType, Stepper {
     /// 셀 재생 이벤트를 처리하는 함수. VC로 이벤트를 전달해서 콘텐츠 화면을 띄우지 않을까
     private func cellPlay(_ key: String) {
         print("cellPlay key = \(key)")
+    }
+    
+    private func sortData(_ sortType: DownloadSortingType) {
+        self.sortType = sortType
+        loadDownloadDataAction.inputs.onNext(())
     }
     
     

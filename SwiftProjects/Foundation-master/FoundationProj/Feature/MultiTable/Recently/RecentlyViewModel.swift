@@ -77,18 +77,18 @@ class RecentlyViewModel: ViewModelType, Stepper {
     // MARK: - Processor Declaration
     /// 들어온 입력 처리하는 함수
     private func inputActionProcessor(inputAction: InputAction) {
-        switch inputAction {
-        case .refreshData:
-            loadRecentlyDataAction.inputs.onNext(())
-        case .deleteItems(let indexPaths):
-            deleteItems(indexPaths) // 서버에는 배열이 아닌 스트링값 1개만 넘겨주기위한 전초작업
-        case .cellDetail(let cellInfo):
-            cellDetail(cellInfo)
-        case .cellPlay(let cellInfo):
-            cellPlay(cellInfo)
-        case .error:
-            print("RecentlyCellInfo is nil!!")
-        }
+//        switch inputAction {
+//        case .refreshData:
+//            loadRecentlyDataAction.inputs.onNext(())
+//        case .deleteItems(let indexPaths):
+//            deleteItems(indexPaths) // 서버에는 배열이 아닌 스트링값 1개만 넘겨주기위한 전초작업
+//        case .cellDetail(let cellInfo):
+//            cellDetail(cellInfo)
+//        case .cellPlay(let cellInfo):
+//            cellPlay(cellInfo)
+//        case .error:
+//            print("RecentlyCellInfo is nil!!")
+//        }
     }
 
     /// 서버에는 배열이 아닌 스트링값 1개만 넘겨주기위한 전초작업

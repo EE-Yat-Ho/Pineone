@@ -23,6 +23,16 @@ class CompactViewController: UIBaseViewController, ViewModelProtocol {
     let inputAction = PublishRelay<InputAction>()
     var activityDetail: ActivityDetail = .recently
 
+    init(activityDetail: ActivityDetail) {
+        super.init(nibName:nil, bundle:nil)
+        self.activityDetail = activityDetail
+    }
+
+    // This is also necessary when extending the superclass.
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented") // or see Roman Sausarnes's answer
+    }
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +60,7 @@ class CompactViewController: UIBaseViewController, ViewModelProtocol {
     }
 
     // MARK: - View
-    let compactView = CompactView()
+    lazy var compactView = CompactView(activityDetail: activityDetail)
 
     func setupLayout() {
         self.view.addSubview(compactView)

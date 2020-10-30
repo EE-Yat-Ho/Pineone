@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/// 테이블에 띄우기 위해 필요한 정보들
 struct CompactCellItem: Decodable {
     /// 컨텐츠 유니크 키
     let key: String?
@@ -18,9 +18,9 @@ struct CompactCellItem: Decodable {
     /// 메인화면용 이미지 url
     let image_url: String?
     /// 컨텐츠 재생 길이(시간)
-    //let playtime: String?
+    let playtime: String?
     /// 컨텐츠 시청 시간
-    //let req_date: Double?
+    let req_date: Double?
     /// 컨텐츠 노출 여부 (N:미노출, Y:노출)
     let visible_yn: String?
     /// score board 정보
@@ -42,12 +42,15 @@ struct CompactCellItem: Decodable {
     let reply_text: String?
     let mod_date: Double?
     let contents_info: ReplyContentsInfo?
+    let allDownloadFilesByte: Int64?
     
     init(recentlyLike: RecentlyLikeList) {
         key = String(recentlyLike.key ?? -1)
         name = recentlyLike.name
         type = recentlyLike.type
         image_url = recentlyLike.image_url
+        playtime = recentlyLike.playtime
+        req_date = recentlyLike.req_date
         visible_yn = recentlyLike.visible_yn
         type_badge_url = recentlyLike.type_badge_url
         event_badge_url = recentlyLike.event_badge_url
@@ -59,6 +62,7 @@ struct CompactCellItem: Decodable {
         reply_text = nil
         mod_date = nil
         contents_info = nil
+        allDownloadFilesByte = nil
     }
     
     init(download: RealmMyDownloadFile){
@@ -66,6 +70,8 @@ struct CompactCellItem: Decodable {
         name = download.name
         type = download.type
         image_url = download.image_url
+        playtime = nil
+        req_date = nil
         visible_yn = download.visible_yn
         type_badge_url = download.type_badge_url
         event_badge_url = download.event_badge_url
@@ -77,6 +83,7 @@ struct CompactCellItem: Decodable {
         reply_text = nil
         mod_date = nil
         contents_info = nil
+        allDownloadFilesByte = download.allDownloadFilesByte
     }
     
     init(reply: ReplyList){
@@ -84,6 +91,8 @@ struct CompactCellItem: Decodable {
         name = nil
         type = nil
         image_url = nil
+        playtime = nil
+        req_date = nil
         visible_yn = nil
         type_badge_url = nil
         event_badge_url = nil
@@ -95,5 +104,6 @@ struct CompactCellItem: Decodable {
         reply_text = reply.reply_text
         mod_date = reply.mod_date
         contents_info = reply.contents_info
+        allDownloadFilesByte = nil
     }
 }

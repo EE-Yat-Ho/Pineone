@@ -11,8 +11,9 @@ import RxSwift
 import UIKit
 import Lottie
 
+/// 최근, 다운, 찜 셀
 class TripleCompactTableViewCell: UITableViewCell {
-    // MARK: - 트리거 시작
+    // MARK: - 트리거들
     /// 셀 선택시 삭제모드 여부에 따라 체크, 검은색 UI 바꾸기
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -40,8 +41,8 @@ class TripleCompactTableViewCell: UITableViewCell {
     }
     /// 외부에서 호출. 셀 정보와 삭제모드 여부를 매핑.
     func mappingData(item: CompactCellItem, isDeleteMode: Bool){
-        self.item = item
         self.isDeleteMode = isDeleteMode
+        self.item = item
     }
     var item: CompactCellItem? {
         didSet {
@@ -74,7 +75,14 @@ class TripleCompactTableViewCell: UITableViewCell {
         } else {
             expireContentsView.alpha = 0.0
         }
-//
+
+        if let date = item.req_date {
+            let tempDate = Date(timeIntervalSince1970: date / 1000.0)
+            contentDate.text = Date().offset(from: tempDate)
+        }
+        if let data = item.allDownloadFilesByte {
+            contentDate.text = CGFloat(data / 1024).getByteString()
+        }
 //        if let date = item.req_date {
 //            let tempDate = Date(timeIntervalSince1970: date / 1000.0)
 //            contentDate.text = Date().offset(from: tempDate)

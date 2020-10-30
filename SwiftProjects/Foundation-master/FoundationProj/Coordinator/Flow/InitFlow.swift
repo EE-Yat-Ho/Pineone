@@ -129,35 +129,27 @@ extension InitFlow{
     /// 내 활동 화면 초기화
     func makeInitialize() -> [UIViewController] {
         /// 최근 본
-        let recentlyVC = CompactViewController()
+        let recentlyVC = CompactViewController(activityDetail: .recently)
         let recentlyVM = CompactViewModel()
         recentlyVC.viewModel = recentlyVM
-        recentlyVC.activityDetail = .recently
-        recentlyVC.compactView.activityDetail = .recently
         recentlyVM.activityDetail = .recently
 
         /// 다운로드
-        let downloadVC = CompactViewController()
+        let downloadVC = CompactViewController(activityDetail: .download)
         let downloadVM = CompactViewModel()
         downloadVC.viewModel = downloadVM
-        downloadVC.activityDetail = .download
-        downloadVC.compactView.activityDetail = .download
         downloadVM.activityDetail = .download
         
         /// 좋아요
-        let likeVC = CompactViewController()
+        let likeVC = CompactViewController(activityDetail: .like)
         let likeVM = CompactViewModel()
         likeVC.viewModel = likeVM
-        likeVC.activityDetail = .like
-        likeVC.compactView.activityDetail = .like
         likeVM.activityDetail = .like
 
         /// 내가 쓴 댓글
-        let replyVC = CompactViewController()
+        let replyVC = CompactViewController(activityDetail: .reply)
         let replyVM = CompactViewModel()
         replyVC.viewModel = replyVM
-        replyVC.activityDetail = .reply
-        replyVC.compactView.activityDetail = .reply
         replyVM.activityDetail = .reply
 
         return [recentlyVC, downloadVC, likeVC, replyVC]

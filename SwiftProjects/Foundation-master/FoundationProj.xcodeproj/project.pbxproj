@@ -647,6 +647,7 @@
 			isa = PBXGroup;
 			children = (
 				11E340C924878C380063D04F /* MainRepository.swift */,
+				11E3408A24878BA30063D04F /* Screen.swift */,
 				11B5A16A24ED36E5000E4B25 /* FilterSlider */,
 				11F5753A24BEB276003ACB4B /* PlayerSlider */,
 				11FE860724BB3E81007F9641 /* RotateButton */,
@@ -719,7 +720,6 @@
 				2A091E202546564C00855EAC /* ActivityViewModel.swift */,
 				2A346849253D8DEE003E4BC7 /* Server.swift */,
 				2AAFDEFB254A4A5C0046AB92 /* RealmLocalDB.swift */,
-				11E3408A24878BA30063D04F /* Screen.swift */,
 			);
 			path = MultiTable;
 			sourceTree = "<group>";

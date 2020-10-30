@@ -31,9 +31,10 @@ class CompactView: UIBasePreviewTypeForSampling {
     let refreshControl = CustomRefreshControl()
     
     // MARK: - init
-    init(naviType: ARNavigationShowType = .none, activityDetail: ActivityDetail = .download) {
+    init(naviType: ARNavigationShowType = .none, activityDetail: ActivityDetail = .recently) {
         super.init(naviType: naviType)
         self.activityDetail = activityDetail
+        
         setupLayout()
         bindData()
     }
@@ -44,8 +45,14 @@ class CompactView: UIBasePreviewTypeForSampling {
 
     // MARK: - View
     /// 상단 topView ( 쓰레기통, 체크박스, X버튼 )
-    lazy var topView = ARTableViewHeaderView(type: .rightOneButton).then {
+    lazy var topView = ARTableViewHeaderView().then {
         $0.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 56)//56 trash
+        switch activityDetail{
+        case .download:
+            $0.type = .dropdownAndButton
+        default:
+            $0.type = .rightOneButton
+        }
     }
 
     /// 테이블뷰
@@ -248,13 +255,12 @@ class CompactView: UIBasePreviewTypeForSampling {
     }
     
     /// VM에서보낸 삭제 완료 신호를 받기 위한 DI
-    func setupDI(deleteCompleteOv: Observable<Void>) -> Self{
+    func setupDI(deleteCompleteOv: Observable<Void>){
         /// 삭제 완료시 삭제화면 cancel
         deleteCompleteOv
             .on(next: { [weak self] in
                 self?.topViewEventProcessor(actionType: .cancel)
             }).disposed(by: rx.disposeBag)
-        return self
     }
     
     
@@ -275,7 +281,12 @@ class CompactView: UIBasePreviewTypeForSampling {
             topView.checkButton.isSelected ? showDeleteButton(select: tableView.indexPathsForSelectedRows!.sorted()) : showDeleteButton(select: [])
         case .cancel:
             tableView.reloadData()
-            topView.type = .rightOneButton
+            switch activityDetail {
+            case .download:
+                topView.type = .dropdownAndButton
+            default:
+                topView.type = .rightOneButton
+            }
             topView.checkButton.isSelected = false
             tableView.allowsMultipleSelection = false
             tableView.refreshControl = refreshControl
@@ -299,12 +310,12 @@ class CompactView: UIBasePreviewTypeForSampling {
                 switch $0 {
                 case .text(let text):
                     if text == R.String.Activity.sort_download_title {
-//                        self.sortItemsTrigger.accept(.download)
-//                        tableHeaderView.dropdownButton.isSelected = false
+                        self.inputAction.accept(.sort(.download))
+                        tableHeaderView.dropdownButton.isSelected = false
                         self.tableView.reloadData()
                     } else {
-//                        self.sortItemsTrigger.accept(.size)
-//                        tableHeaderView.dropdownButton.isSelected = true
+                        self.inputAction.accept(.sort(.size))
+                        tableHeaderView.dropdownButton.isSelected = true
                         self.tableView.reloadData()
                     }
                     break

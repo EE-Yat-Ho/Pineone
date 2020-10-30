@@ -3,10 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "MainViewController.init(nibName:bundle:):MainViewController.swift">
+         contextName = "RecentlyView.updateRecentlyView(status:):RecentlyView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "viewModel">
+               value = "tableView.refreshControl">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -66,6 +66,14 @@
          <PersistentStrings>
             <PersistentString
                value = "self.superview">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in CompactView.showCustomAlertViewController():CompactView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tableHeaderView.dropdownButton.title">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -195,10 +203,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "RecentlyView.updateRecentlyView(status:):RecentlyView.swift">
+         contextName = "MainViewController.init(nibName:bundle:):MainViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "tableView.refreshControl">
+               value = "viewModel">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
