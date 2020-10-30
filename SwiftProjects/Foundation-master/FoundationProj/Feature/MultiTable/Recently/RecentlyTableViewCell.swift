@@ -12,7 +12,7 @@ import UIKit
 
 class RecentlyTableViewCell: ActivityBaseTableViewCell {
     // item이 세팅되면, ActivityBaseTableViewCell에서 정의한 뷰들에 데이터 넣어주기
-    var item: RecentlyCellInfo? {
+    var item: RecentlyLikeList? {
         didSet {
             self.bindingData()
         }
@@ -53,12 +53,12 @@ extension RecentlyTableViewCell {
         } else {
             expireContentsView.alpha = 0.0
         }
-        if let adult = item.adult_yn, adult == "Y" {//, //ContentLockManager.current.currentLockState != .unlocked{
+        if let adult = item.adult_yn, adult == .Y {//, //ContentLockManager.current.currentLockState != .unlocked{
             adultView.isHidden = false
         } else {
             adultView.isHidden = true
         }
-        if let adult = item.adult_yn, adult == "Y" {
+        if let adult = item.adult_yn, adult == .Y {
             adultBadgeImageView.isHidden = false
         } else {
             adultBadgeImageView.isHidden = true
@@ -66,7 +66,7 @@ extension RecentlyTableViewCell {
     }
     
     /// 셀 정보와 삭제모드 여부를 매핑
-    func mappingData(item: RecentlyCellInfo, isDeleteMode: Bool){
+    func mappingData(item: RecentlyLikeList, isDeleteMode: Bool){
         self.item = item
         self.isDeleteMode = isDeleteMode
     }
@@ -74,13 +74,13 @@ extension RecentlyTableViewCell {
     /// 플레이 버튼 누를 시, VM으로 이벤트를 전달하기 위한 DI
     func setupDI(observable: PublishRelay<InputAction>) {
         // 셀의 플레이 버튼 누를시, 셀의 아이템을 전달
-        playButton.rx
-            .tap
-            .map{ [weak self] in
-                guard let item = self?.item else { return .error }
-                return .cellPlay(item)
-            }
-            .bind(to: observable)
-            .disposed(by:disposeBag)
+//        playButton.rx
+//            .tap
+//            .map{ [weak self] in
+//                guard let item = self?.item else { return .error }
+//                return .cellPlay(item)
+//            }
+//            .bind(to: observable)
+//            .disposed(by:disposeBag)
     }
 }

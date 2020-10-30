@@ -97,6 +97,7 @@ class ARTableViewHeaderView: UICollectionReusableView, Reusable {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(20)
             $0.top.bottom.equalToSuperview()
+            //$0.width.equalTo(44)
         }
     }
 
@@ -242,6 +243,10 @@ class ARTableViewHeaderView: UICollectionReusableView, Reusable {
                 $0.width.height.equalTo(44)
                 $0.trailing.equalToSuperview().offset(-20)
             }
+            dropdownButton.setTitle(R.String.Activity.sort_download_title, for: .normal)
+            dropdownButton.setTitle(R.String.Activity.sort_download_title, for: [.normal, .highlighted])
+            dropdownButton.setTitle(R.String.Activity.sort_allSize_title, for: .selected)
+            dropdownButton.setTitle(R.String.Activity.sort_allSize_title, for: [.selected, .highlighted])
         }
     }
 

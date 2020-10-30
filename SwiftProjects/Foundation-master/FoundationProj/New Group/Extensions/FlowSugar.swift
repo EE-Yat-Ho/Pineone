@@ -11,6 +11,7 @@ import RxFlow
 typealias ViewModelStepper = ViewModelType & Stepper
 typealias ViewModelController = ViewModelProtocol & UIViewController
 
+// Sugar 달
 class FlowSugar<VM, VC>: NSObject where VM: ViewModelStepper, VC: ViewModelController {
     var vm: VM!
     var vc: VC?

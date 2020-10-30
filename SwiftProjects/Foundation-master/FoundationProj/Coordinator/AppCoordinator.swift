@@ -22,7 +22,7 @@ class AppCoordinator: NSObject {
     }()
     
     func start(inWindow window: UIWindow, flow: Flow? = nil) {
-        
+        print("AppCoordinator Start")
         
 //        let vc = ProfileViewController()
 //
@@ -37,13 +37,13 @@ class AppCoordinator: NSObject {
         
         coordinator.coordinate(flow: mainFlow, with: AppStepper.shared)
         
-        coordinator.rx.didNavigate.subscribe(onNext: { flow, step in
-            print("did navigate to flow=\(flow) and step=\(step)")
-        }).disposed(by: self.disposeBag)
-        
-        coordinator.rx.willNavigate.subscribe(onNext: { flow, step in
-            Log.d("@@@ did willNavigate to flow=\(flow) and step=\(step)")
-        }).disposed(by: self.disposeBag)
+//        coordinator.rx.didNavigate.subscribe(onNext: { flow, step in
+//            print("did navigate to flow=\(flow) and step=\(step)")
+//        }).disposed(by: self.disposeBag)
+//
+//        coordinator.rx.willNavigate.subscribe(onNext: { flow, step in
+//            Log.d("@@@ did willNavigate to flow=\(flow) and step=\(step)")
+//        }).disposed(by: self.disposeBag)
         
     }
 }

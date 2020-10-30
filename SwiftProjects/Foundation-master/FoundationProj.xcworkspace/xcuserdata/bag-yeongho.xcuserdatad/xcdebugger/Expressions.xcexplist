@@ -3,74 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "static UIFont.notoSans(_:size:):UIFont+.swift">
+         contextName = "RecentlyView.updateRecentlyView(status:):RecentlyView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "style.rawValue">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "AppDelegate.init():AppDelegate.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "window">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MainViewController.bindingViewModel():MainViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "viewModel">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in variable initialization expression of MainViewModel.loadAction:MainViewModel.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "MainRepository.mainList()">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MainViewController.init(nibName:bundle:):MainViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "viewModel">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "mach_msg_trap:(null)">
-         <PersistentStrings>
-            <PersistentString
-               value = "">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in CustomRefreshControl.didMoveToSuperview():CustomRefreshControl.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.superview">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "AppDelegate.window.setter:AppDelegate.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "window">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MainViewController.viewDidLoad():MainViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "viewModel">
+               value = "tableView.refreshControl">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -83,18 +19,72 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "InitFlow.navigateToMain():InitFlow.swift">
+         contextName = "CompactView.setupLayout():CompactView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "MainViewController.viewModel">
+               value = "activityDetail">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "RecentlyView.updateRecentlyView(status:):RecentlyView.swift">
+         contextName = "mach_msg_trap:(null)">
          <PersistentStrings>
             <PersistentString
-               value = "tableView.refreshControl">
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #4 in ReplyView.setupDI(observable:):ReplyView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.topView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ActivityFlow.navigateToActivityScreen(_:):ActivityFlow.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tabControllers">
+            </PersistentString>
+            <PersistentString
+               value = "navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainViewController.bindingViewModel():MainViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in CustomRefreshControl.didMoveToSuperview():CustomRefreshControl.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.superview">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in CompactView.showCustomAlertViewController():CompactView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tableHeaderView.dropdownButton.title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #4 in ReplyView.setupDI(observable:):ReplyView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "$0">
+            </PersistentString>
+            <PersistentString
+               value = "self.topView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -110,6 +100,90 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "AppDelegate.window.setter:AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "window">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static UIFont.notoSans(_:size:):UIFont+.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "style.rawValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TabPagerContents.pageScroll(to:completeHandler:):TablePagerContents.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.delegate">
+            </PersistentString>
+            <PersistentString
+               value = "self.pageViewController?.viewControllers?.get(0)?.index">
+            </PersistentString>
+            <PersistentString
+               value = "index">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CustomRefreshControl.didMoveToSuperview():CustomRefreshControl.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.init():AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "window">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "InitFlow.navigateToMain():InitFlow.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MainViewController.viewModel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #4 in LikeView.setupDI(observable:):LikeView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "topView">
+            </PersistentString>
+            <PersistentString
+               value = "self.topView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in variable initialization expression of MainViewModel.loadAction:MainViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MainRepository.mainList()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainViewController.viewDidLoad():MainViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TabPagerContents.reload(_:):TablePagerContents.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "hostController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "implicit closure #2 in implicit closure #1 in MainViewModel.transform(req:):MainViewModel.swift">
          <PersistentStrings>
             <PersistentString
@@ -121,7 +195,20 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "CustomRefreshControl.didMoveToSuperview():CustomRefreshControl.swift">
+         contextName = "InitFlow.setCell(at:):InitFlow.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tabHeaderCells">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainViewController.init(nibName:bundle:):MainViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

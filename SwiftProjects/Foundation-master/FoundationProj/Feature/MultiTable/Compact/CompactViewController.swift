@@ -13,15 +13,26 @@ import SnapKit
 import Then
 import UIKit
 
-class RecentlyViewController: UIBaseViewController, ViewModelProtocol {
+class CompactViewController: UIBaseViewController, ViewModelProtocol {
     // MARK: - ViewModelProtocol
-    typealias ViewModel = RecentlyViewModel
+    typealias ViewModel = CompactViewModel
     var viewModel: ViewModel!
 
     // MARK: - Properties
     /// 비즈니스 로직이 필요한 모든 입력을 ViewModel에 전달해주기 위한 릴레이
-    private let inputAction = PublishRelay<InputAction>()
-        
+    let inputAction = PublishRelay<InputAction>()
+    var activityDetail: ActivityDetail = .recently
+
+    init(activityDetail: ActivityDetail) {
+        super.init(nibName:nil, bundle:nil)
+        self.activityDetail = activityDetail
+    }
+
+    // This is also necessary when extending the superclass.
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented") // or see Roman Sausarnes's answer
+    }
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,31 +47,24 @@ class RecentlyViewController: UIBaseViewController, ViewModelProtocol {
     // MARK: - Input Observables & Get Relay to VM. SetupDI to View use VM's Output.
     func bindingViewModel() {
         /// 바인드를 위한 VM과의 릴레이 교환
-        let response = viewModel.transform(req: RecentlyViewModel.Input(inputAction: inputAction.asObservable()))
+        let response = viewModel.transform(req: CompactViewModel.Input(inputAction: inputAction.asObservable()))
         
         /// [View -(emit)-> VC]
         /// VC가 View를 관찰하여 inputAction을 받기 위한 DI
-        recentlyView.setupDI(inputAction: inputAction)
+        compactView.setupDI(inputAction: inputAction)
             
         /// [View <-(emit)- VC]
         /// 비즈니스 로직 결과를 View가 관찰하기 위한 DI
-        recentlyView.setupDI(tableOv: response.tableRelay.asObservable())
+        compactView.setupDI(tableOv: response.tableRelay.asObservable())
                     .setupDI(deleteCompleteOv: response.deleteComplete.asObservable())
-                    //.setupDI(deleteModeSelectOv: response.deleteModeSelect.asObservable())
-        /// normalModeSelect 인 경우, Cell Detial로 넘어가게 VC에서 바인드
-//        response
-//            .normalModeSelect
-//            .on(next: { print("indexRow = \($0). cellDetail")})
-//            .disposed(by: rx.disposeBag)
-        
     }
 
     // MARK: - View
-    let recentlyView = RecentlyView()
+    lazy var compactView = CompactView(activityDetail: activityDetail)
 
     func setupLayout() {
-        self.view.addSubview(recentlyView)
-        recentlyView.snp.makeConstraints {
+        self.view.addSubview(compactView)
+        compactView.snp.makeConstraints {
             $0.trailing.leading.bottom.equalToSuperview()
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
         }

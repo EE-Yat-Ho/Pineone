@@ -86,6 +86,6 @@ extension UIBasePreview {
 }
 
 typealias UIBasePreviewType = BaseView & UIBasePreview
-typealias UIBasePreviewTypeForRecentrly = BaseViewForRecently & UIBasePreview
+typealias UIBasePreviewTypeForSampling = BaseViewForSampling & UIBasePreview
 
 struct EmptyModel: Decodable {}
