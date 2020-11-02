@@ -30,6 +30,10 @@ class MainViewController: UIBaseViewController, ViewModelProtocol {
         bindingViewModel()
         stateBind()
         addNotification()
+        
+        /// 서버랑 디비에 데이터 넣기 !!..
+        Server.shared.setServerData(dataAmount:50)
+        RealmLocalDB.shared.setDBData(dataAmount:50)
     }
     
     override func viewDidAppear(_ animated: Bool) {

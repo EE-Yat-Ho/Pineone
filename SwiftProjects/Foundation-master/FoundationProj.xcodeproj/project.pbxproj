@@ -190,6 +190,10 @@
 		2A34690C253FC4A9003E4BC7 /* CustomAlertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A34690B253FC4A9003E4BC7 /* CustomAlertButton.swift */; };
 		2A346914253FC816003E4BC7 /* AlertPresentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A346913253FC816003E4BC7 /* AlertPresentManager.swift */; };
 		2A346919253FC9B7003E4BC7 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A346918253FC9B7003E4BC7 /* AlertService.swift */; };
+		2A6F84F3255004910000345F /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6F84F2255004910000345F /* Toast.swift */; };
+		2A6F84F92550058A0000345F /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6F84F82550058A0000345F /* ToastView.swift */; };
+		2A6F8501255005990000345F /* ToastCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6F8500255005990000345F /* ToastCenter.swift */; };
+		2A6F8507255006440000345F /* Toaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6F8506255006440000345F /* Toaster.swift */; };
 		2AAFDEFC254A4A5C0046AB92 /* RealmLocalDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAFDEFB254A4A5C0046AB92 /* RealmLocalDB.swift */; };
 		2AAFDF01254A58890046AB92 /* CompactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAFDF00254A58890046AB92 /* CompactItem.swift */; };
 		3721899AFC42180B0556079E /* libPods-FoundationProjTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0741FBCCE752AE22252AB268 /* libPods-FoundationProjTests.a */; };
@@ -408,6 +412,10 @@
 		2A34690B253FC4A9003E4BC7 /* CustomAlertButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertButton.swift; sourceTree = "<group>"; };
 		2A346913253FC816003E4BC7 /* AlertPresentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentManager.swift; sourceTree = "<group>"; };
 		2A346918253FC9B7003E4BC7 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		2A6F84F2255004910000345F /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		2A6F84F82550058A0000345F /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		2A6F8500255005990000345F /* ToastCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastCenter.swift; sourceTree = "<group>"; };
+		2A6F8506255006440000345F /* Toaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toaster.swift; sourceTree = "<group>"; };
 		2AAFDEFB254A4A5C0046AB92 /* RealmLocalDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLocalDB.swift; sourceTree = "<group>"; };
 		2AAFDF00254A58890046AB92 /* CompactItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactItem.swift; sourceTree = "<group>"; };
 		54E123FAA7DA87CE8462A205 /* Pods_FoundationProj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoundationProj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -945,6 +953,7 @@
 		2A34677B253D5C5D003E4BC7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				2A6F84F2255004910000345F /* Toast.swift */,
 				2A3467CA253D623C003E4BC7 /* Resource.swift */,
 				2A091E902547DB6B00855EAC /* LoadingService.swift */,
 			);
@@ -969,6 +978,7 @@
 		2A3467B5253D604D003E4BC7 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				2A6F85052550062A0000345F /* Toast */,
 				2A091EE325490E7600855EAC /* ActionSheet */,
 				2A091E2925465C7700855EAC /* TabPager */,
 				2A3467BE253D60E5003E4BC7 /* RxExtensions */,
@@ -1045,6 +1055,16 @@
 				2A346906253FC0BC003E4BC7 /* UIView+Extension+UsePopup.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		2A6F85052550062A0000345F /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				2A6F84F82550058A0000345F /* ToastView.swift */,
+				2A6F8500255005990000345F /* ToastCenter.swift */,
+				2A6F8506255006440000345F /* Toaster.swift */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 		2A8C5D7D1B2B03DB8B9B8FB2 /* Pods */ = {
@@ -1330,6 +1350,8 @@
 				2A346791253D5DB5003E4BC7 /* ContentsRecentlyLike.swift in Sources */,
 				11E340C524878BFC0063D04F /* MainViewController.swift in Sources */,
 				2A091F0925494DD700855EAC /* CompactView.swift in Sources */,
+				2A6F84F92550058A0000345F /* ToastView.swift in Sources */,
+				2A6F8507255006440000345F /* Toaster.swift in Sources */,
 				1155A07124AEEFDF0082074C /* WebTestViewController.swift in Sources */,
 				11B5A17224ED446B000E4B25 /* FilterSlider.swift in Sources */,
 				2A091EAD2547E5B600855EAC /* NotificationSteps.swift in Sources */,
@@ -1428,6 +1450,7 @@
 				2A091EF72549211300855EAC /* Float+.swift in Sources */,
 				11E340CC24878C590063D04F /* AppDelegate.swift in Sources */,
 				117B539F24D8025F000B8712 /* RotatePickerView.swift in Sources */,
+				2A6F84F3255004910000345F /* Toast.swift in Sources */,
 				2A091EDC2549065200855EAC /* DownloadTaskInfo.swift in Sources */,
 				11E340B924878BA30063D04F /* RecentlyViewController.swift in Sources */,
 				2A346800253D6F69003E4BC7 /* UIImage+.swift in Sources */,
@@ -1443,6 +1466,7 @@
 				2A091E15254655C600855EAC /* LikeViewModel.swift in Sources */,
 				2A091E1D2546561B00855EAC /* DownloadView.swift in Sources */,
 				117C1BE924C024EC002CC5A3 /* Color+.swift in Sources */,
+				2A6F8501255005990000345F /* ToastCenter.swift in Sources */,
 				2A34684A253D8DEE003E4BC7 /* Server.swift in Sources */,
 				11E340C724878BFC0063D04F /* MainView.swift in Sources */,
 				11E340BA24878BA30063D04F /* ImageTableCell.swift in Sources */,
@@ -1648,6 +1672,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KXKQCH6X89;
 				INFOPLIST_FILE = FoundationProj/Info.plist;
@@ -1658,6 +1683,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.biziOS.FoundationProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1671,6 +1697,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KXKQCH6X89;
 				INFOPLIST_FILE = FoundationProj/Info.plist;
@@ -1681,6 +1708,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.biziOS.FoundationProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

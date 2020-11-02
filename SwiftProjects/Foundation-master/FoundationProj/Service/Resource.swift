@@ -290,6 +290,10 @@ extension R.String.Activity {
     static let sort_download_title = "다운로드순"
     /// 용량순
     static let sort_allSize_title = "용량순"
+    
+    /// 20201102 키값 띄우는 토스트
+    static let show_content_key: (String) -> String = { "콘텐츠 재생. (key값 = \($0))"}
+    static let show_detail_key: (String) -> String = { "상세보기. (key값 = \($0))"}
 }
 
 extension R.String.MoreSee {

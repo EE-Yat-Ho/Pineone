@@ -68,6 +68,7 @@ class CompactViewModel: ViewModelType, Stepper {
             .map{ $0.map{CompactCellItem(recentlyLike: $0)}}
             .bind(to: tableRelay)
             .disposed(by: disposeBag)
+        
         loadDownloadDataAction
             .elements
             .map{ [weak self] data in
@@ -81,11 +82,13 @@ class CompactViewModel: ViewModelType, Stepper {
             }
             .bind(to: tableRelay)
             .disposed(by: disposeBag)
+        
         loadLikeDataAction
             .elements
             .map{ $0.map{CompactCellItem(recentlyLike: $0)}}
             .bind(to: tableRelay)
             .disposed(by: disposeBag)
+        
         loadReplyDataAction
             .elements
             .map{ $0.map{CompactCellItem(reply: $0)}}
@@ -172,11 +175,13 @@ class CompactViewModel: ViewModelType, Stepper {
     /// 셀 상세보기 이벤트를 처리하는 함수. VC로 이벤트를 전달해서 상세보기 화면을 띄우지 않을까
     private func cellDetail(_ key: String) {
         print("cellDetail key = \(key)")
+        Toast.show(R.String.Activity.show_detail_key(key))
     }
     
     /// 셀 재생 이벤트를 처리하는 함수. VC로 이벤트를 전달해서 콘텐츠 화면을 띄우지 않을까
     private func cellPlay(_ key: String) {
         print("cellPlay key = \(key)")
+        Toast.show(R.String.Activity.show_content_key(key))
     }
     
     private func sortData(_ sortType: DownloadSortingType) {

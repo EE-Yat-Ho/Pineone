@@ -260,6 +260,7 @@ class CompactView: UIBasePreviewTypeForSampling {
         deleteCompleteOv
             .on(next: { [weak self] in
                 self?.topViewEventProcessor(actionType: .cancel)
+                Toast.show(R.String.Activity.toast_delete_success)
             }).disposed(by: rx.disposeBag)
     }
     
