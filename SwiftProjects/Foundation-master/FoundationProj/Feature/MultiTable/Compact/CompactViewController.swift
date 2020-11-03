@@ -20,7 +20,7 @@ class CompactViewController: UIBaseViewController, ViewModelProtocol {
 
     // MARK: - Properties
     /// 비즈니스 로직이 필요한 모든 입력을 ViewModel에 전달해주기 위한 릴레이
-    let inputAction = PublishRelay<InputAction>()
+    private let inputAction = PublishRelay<InputAction>()
     var activityDetail: ActivityDetail = .recently
 
     init(activityDetail: ActivityDetail) {

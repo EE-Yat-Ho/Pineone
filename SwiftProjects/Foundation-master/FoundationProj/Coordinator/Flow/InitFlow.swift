@@ -88,7 +88,6 @@ extension InitFlow{
     }
     
     private func navigateToHSS() -> FlowContributors{
-        print("InitFlow navigateToHSS")
         return FlowSugar(HorizontalStackScrollViewModel(), HorizontalStackScrollViewController.self)
             .navigationItem(with: {
                 $0.title = "HorizontalStackScroll"
@@ -96,7 +95,6 @@ extension InitFlow{
     }
     
     private func navigateToMultiTable() -> FlowContributors{
-        print("InitFlow navigateToMultiTable")
         
         loadContent.subscribe(onNext: {
             [weak self] _ in
@@ -170,7 +168,6 @@ extension InitFlow{
     /////
     
     private func navigateToMultiCollection() -> FlowContributors{
-        print("InitFlow navigateToMultiCollection")
         return FlowSugar(CollectionMultiSelectionViewModel(), CollectionMultiSelectionViewController.self)
              .navigationItem(with:{
                  $0.title = "multiSelectCollection"
@@ -178,7 +175,6 @@ extension InitFlow{
      }
     
     private func navigateToLinkImageCollection() -> FlowContributors{
-        print("InitFlow navigateToLinkImageCollection")
         return FlowSugar(LinkImageGridViewModel(), LinkImageGridViewController.self)
             .navigationItem(with:{
                 $0.title = "LinkImageGrid"
@@ -187,7 +183,6 @@ extension InitFlow{
     }
     
     private func modalShowImageSlider<T>(withItems items: [T], initialIndex: Int) -> FlowContributors{
-        print("InitFlow modalShowImageSlider")
         
         return FlowSugar(ZoomingViewModel(items, initialIndex), ZoomingViewController<T>.self)
             .setVCProperty(viewControllerBlock:{
@@ -210,13 +205,11 @@ extension InitFlow{
     }
     
     private func popView() -> FlowContributors{
-        print("InitFlow popView")
         rootViewController.popViewController(animated: true)
         return .none
     }
      
     private func navigateToMain() -> FlowContributors{
-        print("InitFlow navigateToMain")
         return FlowSugar(MainViewModel(), MainViewController.self)
             .navigationItem(with: {
                 $0.title = "Fondation"

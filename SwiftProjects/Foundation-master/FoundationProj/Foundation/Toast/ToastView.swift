@@ -235,9 +235,9 @@ class ToastView: UIView {
 
     func angleForOrientation(_ orientation: UIInterfaceOrientation) -> Double {
         if orientation == .landscapeRight {
-            Log.d("orientation = landscapeRight")
+            //Log.d("orientation = landscapeRight")
         } else if orientation == .portrait {
-            Log.d("orientation = portrait")
+            //Log.d("orientation = portrait")
         }
 
         switch orientation {

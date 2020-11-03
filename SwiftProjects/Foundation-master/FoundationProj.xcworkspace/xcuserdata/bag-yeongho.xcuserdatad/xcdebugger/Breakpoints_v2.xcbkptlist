@@ -1281,8 +1281,8 @@
             filePath = "FoundationProj/Coordinator/Flow/InitFlow.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "makeInitialize()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1300,6 +1300,22 @@
             startingLineNumber = "35"
             endingLineNumber = "35"
             landmarkName = "init(naviType:activityDetail:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "629A163C-8AAD-41E9-AF2A-39DFE47460F6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoundationProj/Feature/MultiTable/Compact/CompactViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "inputActionProcessor(inputAction:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

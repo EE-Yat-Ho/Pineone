@@ -14,14 +14,15 @@ import UIKit
 
 /// VM이 받는 입력들
 enum InputAction {
+    case topViewAction(ARTableViewHeaderActionType)
     case deleteItems([IndexPath]) /// 셀 삭제해주세요
     case cellDetail(String) /// 셀 선택했어요
     case cellPlay(String) /// 셀 콘텐츠 재생해주세요
     case refreshData /// 테이블 새로고침 해주세요
     case sort(DownloadSortingType) /// 정렬 방식 바꿨어요
+    case loadMore
     case error /// RecentlyCellInfo 가 nil일 경우 보내는 에러 ( 언래핑의 편의성 )
 }
-
 
 
 class CompactViewModel: ViewModelType, Stepper {
@@ -41,6 +42,8 @@ class CompactViewModel: ViewModelType, Stepper {
     
     var activityDetail: ActivityDetail = .recently
     var sortType: DownloadSortingType = .download
+    var deleteMode = false
+    
     
     /// 비지니스 로직이 필요한 여러 입력들
     struct Input {
@@ -125,6 +128,10 @@ class CompactViewModel: ViewModelType, Stepper {
     /// 들어온 입력 처리하는 함수
     private func inputActionProcessor(inputAction: InputAction) {
         switch inputAction {
+        case .topViewAction(let actionType):
+            topViewActionProcessor(actionType: actionType)
+        case .loadMore:
+            loadMore()
         case .refreshData:
             refreshData()
         case .deleteItems(let indexPaths):
@@ -139,6 +146,20 @@ class CompactViewModel: ViewModelType, Stepper {
             print("Action error!!")
         }
     }
+    
+    private func topViewActionProcessor(actionType: ARTableViewHeaderActionType) {
+        switch actionType {
+        case .delete:
+            deleteMode = true
+        case .cancel:
+            deleteMode = false
+        default:
+            return
+        }
+    }
+        
+    private func loadMore() {}
+        
     
     private func refreshData() {
         switch activityDetail {
@@ -174,13 +195,16 @@ class CompactViewModel: ViewModelType, Stepper {
     
     /// 셀 상세보기 이벤트를 처리하는 함수. VC로 이벤트를 전달해서 상세보기 화면을 띄우지 않을까
     private func cellDetail(_ key: String) {
+        if deleteMode { return }
         print("cellDetail key = \(key)")
         Toast.show(R.String.Activity.show_detail_key(key))
     }
     
     /// 셀 재생 이벤트를 처리하는 함수. VC로 이벤트를 전달해서 콘텐츠 화면을 띄우지 않을까
     private func cellPlay(_ key: String) {
+        if deleteMode { return }
         print("cellPlay key = \(key)")
+        /// 재생 여부는 키값으로 서버에서 들고온 후 판단 ( 이용기간은 아에 안눌러지긴하는데 성인인 경우 ㅇㅇ )
         Toast.show(R.String.Activity.show_content_key(key))
     }
     
