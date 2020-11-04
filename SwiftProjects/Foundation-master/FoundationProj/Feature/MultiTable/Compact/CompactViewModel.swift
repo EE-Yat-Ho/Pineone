@@ -58,7 +58,7 @@ class CompactViewModel: ViewModelType, Stepper {
     /// 입력받은 릴레이들을 알맞게 액션이나 클로저 등을 매핑 및 바인딩 후, View나 VC에게 이벤트를 전달해주기 위한 릴레이들을 반환
     func transform(req: ViewModel.Input) -> ViewModel.Output {
         // MARK: - Observe Input from Closure
-        /// 들어온 입력들 프로세서 클로저로
+        /// 들어온 입력들 프로세서 함수로
         req.inputAction
             .on(next: { [weak self] in
                 self?.inputActionProcessor(inputAction: $0) })
