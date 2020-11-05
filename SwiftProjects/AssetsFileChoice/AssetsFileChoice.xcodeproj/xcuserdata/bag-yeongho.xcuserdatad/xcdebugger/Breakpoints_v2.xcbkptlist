@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "79E1C599-30F7-4761-80A6-8F099A594945"
+   uuid = "E73268B3-2C9A-49FA-80FE-162FF20E7C87"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BF057294-37AB-4060-8F56-8FC67184F0AB"
+            uuid = "C7FE14EC-B715-4DF5-91E0-885E8F0FA40E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XmlPasing/Resource.swift"
+            filePath = "AssetsFileChoice/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "setResourceDictionary()"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "setImageView(imageName:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

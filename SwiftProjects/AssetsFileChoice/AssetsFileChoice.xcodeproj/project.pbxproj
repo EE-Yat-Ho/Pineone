@@ -13,6 +13,10 @@
 		2A4E935C2553C820005AAA64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A4E935A2553C820005AAA64 /* Main.storyboard */; };
 		2A4E935E2553C824005AAA64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A4E935D2553C824005AAA64 /* Assets.xcassets */; };
 		2A4E93612553C824005AAA64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A4E935F2553C824005AAA64 /* LaunchScreen.storyboard */; };
+		2A4E937A2553DE16005AAA64 /* korea.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2A4E93782553DE16005AAA64 /* korea.bundle */; };
+		2A4E937B2553DE16005AAA64 /* thailand.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2A4E93792553DE16005AAA64 /* thailand.bundle */; };
+		2ADE2A7D2553E26A00C288C1 /* korea.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ADE2A7C2553E26A00C288C1 /* korea.xcassets */; };
+		2ADE2A802553E27100C288C1 /* thailand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ADE2A7F2553E27000C288C1 /* thailand.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		2A4E935D2553C824005AAA64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A4E93602553C824005AAA64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A4E93622553C824005AAA64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A4E93782553DE16005AAA64 /* korea.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = korea.bundle; sourceTree = "<group>"; };
+		2A4E93792553DE16005AAA64 /* thailand.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = thailand.bundle; sourceTree = "<group>"; };
+		2ADE2A7C2553E26A00C288C1 /* korea.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = korea.xcassets; sourceTree = "<group>"; };
+		2ADE2A7F2553E27000C288C1 /* thailand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = thailand.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +70,11 @@
 				2A4E935A2553C820005AAA64 /* Main.storyboard */,
 				2A4E935D2553C824005AAA64 /* Assets.xcassets */,
 				2A4E935F2553C824005AAA64 /* LaunchScreen.storyboard */,
+				2A4E93782553DE16005AAA64 /* korea.bundle */,
+				2A4E93792553DE16005AAA64 /* thailand.bundle */,
 				2A4E93622553C824005AAA64 /* Info.plist */,
+				2ADE2A7C2553E26A00C288C1 /* korea.xcassets */,
+				2ADE2A7F2553E27000C288C1 /* thailand.xcassets */,
 			);
 			path = AssetsFileChoice;
 			sourceTree = "<group>";
@@ -126,7 +138,11 @@
 			files = (
 				2A4E93612553C824005AAA64 /* LaunchScreen.storyboard in Resources */,
 				2A4E935E2553C824005AAA64 /* Assets.xcassets in Resources */,
+				2ADE2A7D2553E26A00C288C1 /* korea.xcassets in Resources */,
+				2ADE2A802553E27100C288C1 /* thailand.xcassets in Resources */,
 				2A4E935C2553C820005AAA64 /* Main.storyboard in Resources */,
+				2A4E937A2553DE16005AAA64 /* korea.bundle in Resources */,
+				2A4E937B2553DE16005AAA64 /* thailand.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

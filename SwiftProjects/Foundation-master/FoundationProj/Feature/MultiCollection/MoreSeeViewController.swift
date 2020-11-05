@@ -1,21 +1,48 @@
 //
 //  MoreSeeViewController.swift
-//  FoundationProj
+//  UPlusAR
 //
-//  Created by 박영호 on 2020/11/05.
-//  Copyright © 2020 baedy. All rights reserved.
+//  Created by baedy on 2020/03/08.
+//  Copyright © 2020 최성욱. All rights reserved.
 //
 
+import Reusable
+import RxCocoa
+import RxSwift
+import SnapKit
+import Then
 import UIKit
 
-class MoreSeeViewController: UILabel {
+class MoreSeeViewController: UIViewController, StoryboardBased, ViewModelProtocol {
+    typealias ViewModel = MoreSeeViewModel
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    // MARK: ViewModelProtocol
+    var viewModel: ViewModel!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        setupLayout()
+        bindingViewModel()
     }
-    */
 
+    override var showLoginTooltip: Bool {
+        return true
+    }
+
+    // MARK: Binding
+    func bindingViewModel() {
+        _ = viewModel.transform(req: ViewModel.Input())
+    }
+
+    // MARK: SetView
+    let subView = MoreSeeView()
+
+    func setupLayout() {
+        self.view.addSubview(subView)
+        subView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+    }
 }

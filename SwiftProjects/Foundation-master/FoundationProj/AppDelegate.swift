@@ -24,9 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         appCoordinator.start(inWindow: window)
 
-        PHRepository.requestPhotoAuth {
-
-        }
+//        PHRepository.requestPhotoAuth {
+//
+//        }
         
         DeviceOrientationHelper.shared.startDeviceOrientationNotifier()
         

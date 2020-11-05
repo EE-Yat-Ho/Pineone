@@ -68,11 +68,11 @@
 				2A4E933B25524A54005AAA64 /* xml */,
 				2A4E93232552379E005AAA64 /* AppDelegate.swift */,
 				2A4E93252552379E005AAA64 /* SceneDelegate.swift */,
-				2A4E93272552379E005AAA64 /* ViewController.swift */,
 				2A4E93292552379E005AAA64 /* Main.storyboard */,
 				2A4E932C2552379F005AAA64 /* Assets.xcassets */,
 				2A4E932E2552379F005AAA64 /* LaunchScreen.storyboard */,
 				2A4E93312552379F005AAA64 /* Info.plist */,
+				2A4E93272552379E005AAA64 /* ViewController.swift */,
 				2A4E933825523B60005AAA64 /* Resource.swift */,
 			);
 			path = XmlPasing;

@@ -15,10 +15,12 @@ import UIKit
 //xml파일이랑 리소스 파일만 있으면 함수 호출해서 쫙 할수있도록 ㅇㅋㅇㅋ
 //enum은 뭐지 왜지 왜있지
 
-enum Languege {
-    case korea
-    case thailand
-}
+//Resource에 파서 딜리게이트 넣고
+//값 받는 함수는 하나로. UserDefault로 구분.
+//앱 껏다 켰을때 알아서 뿌려지게 ㅇㅋ
+
+//<font> 무시가 아니라 그냥 없애고
+//Resource파일에 summary 달기
 
 class ViewController: UIViewController {
     
@@ -32,66 +34,43 @@ class ViewController: UIViewController {
     let koreaButton = UIButton()
     let thailandButton = UIButton()
 
-    // MARK:- Prometers
-    var dictionaryKey = Keys.trash
-    var nowParserLanguege: Languege = Languege.korea
-    
+    // MARK:- Method
+    /// 언어, XML읽어온 딕셔너리, 라벨값까지 모두 세팅
     @objc func clickKoreaButton() {
-        /// \n처리 확인
-        label1.text = Resource.shared.getKoreaValue(key: .content_basic_info)
-        
-        /// 제일 앞쪽 공백 처리 확인, \n 처리 확인
-        label2.text = Resource.shared.getKoreaValue(key: .buffering_info)
-
-        /// <![CDATA[나 <font color... 처리 확인
-        label3.text = Resource.shared.getKoreaValue(key: .qlone_tutorial_need_mat)
-
-        /// %d 처리 확인
-        label4.text = Resource.shared.getKoreaValue(key: .search_result, arguments: 777)
-
-//        /// %1$s, \'  처리 확인
-        label5.text = Resource.shared.getKoreaValue(key: .search_result_null, arguments: "가aป")
-
-//        /// %s 두개 처리 확인
-        label6.text = Resource.shared.getKoreaValue(key: .setting_update_agreement, arguments: "가aป",  "나bว")
+        UserDefaults.standard.setValue(Languege.korea.rawValue, forKey: "Languege")
+        Resource.shared.setResourceDictionary()
+        setLabelText()
     }
-
     @objc func clickThailandButton() {
-        label1.text = Resource.shared.getThailandValue(key: .content_basic_info)
-        label2.text = Resource.shared.getThailandValue(key: .buffering_info)
-        label3.text = Resource.shared.getThailandValue(key: .qlone_tutorial_need_mat)
-        label4.text = Resource.shared.getThailandValue(key: .search_result, arguments: 777)
-        label5.text = Resource.shared.getThailandValue(key: .search_result_null, arguments: "가aป")
-        label6.text = Resource.shared.getThailandValue(key: .setting_update_agreement, arguments: "가aป",  "나bว")
+        UserDefaults.standard.setValue(Languege.thailand.rawValue, forKey: "Languege")
+        Resource.shared.setResourceDictionary()
+        setLabelText()
     }
-    
     
     // MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configure()
-        setDictionary()
         setupLayout()
+        
+        /// 처음 켰을때도 UserDefault로 딕셔너리 세팅
+        Resource.shared.setResourceDictionary()
+        setLabelText()
     }
     
-    func setDictionary(){
-        /// 한국어 xml 파싱
-        nowParserLanguege = .korea
-        if let path = Bundle.main.url(forResource: "strings_kr", withExtension: "xml") {
-            if let parser = XMLParser(contentsOf: path) {
-                parser.delegate = self
-                parser.parse()
-            }
-        }
-        /// 태국어  xml 파싱
-        nowParserLanguege = .thailand
-        if let path = Bundle.main.url(forResource: "strings_th", withExtension: "xml") {
-            if let parser = XMLParser(contentsOf: path) {
-                parser.delegate = self
-                parser.parse()
-            }
-        }
+    func setLabelText() {
+        /// \n처리 확인
+        label1.text = Resource.shared.getTextFromKey(key: .dialog_play_next_setting_change)
+        /// 제일 앞쪽 공백 처리 확인, \n 처리 확인
+        label2.text = Resource.shared.getTextFromKey(key: .buffering_info)
+        /// <![CDATA[]>, <font>, <br> 처리 확인
+        label3.text = Resource.shared.getTextFromKey(key: .qlone_tutorial_need_mat)
+        /// %d 처리 확인
+        label4.text = Resource.shared.getTextFromKey(key: .search_result, arguments: 777)
+        /// %1$s, \'  처리 확인
+        label5.text = Resource.shared.getTextFromKey(key: .search_result_null, arguments: "가aป")
+        /// %s 두개 처리 확인
+        label6.text = Resource.shared.getTextFromKey(key: .setting_update_agreement, arguments: "나bง",  "다cข้")
     }
     
     func configure() {
@@ -158,57 +137,6 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: XMLParserDelegate {
-    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
-        /// 딕셔너리 키가 쓰레기인 경우는 무시할 것임.
-        dictionaryKey = Keys(rawValue: attributeDict["name"] ?? "trash") ?? .trash
-    }
-    
-    func parser(_ parser: XMLParser, foundCharacters string: String) {
-        /// 딕셔너리 키가 쓰레기인 경우는 무시
-        if dictionaryKey == .trash { return }
-        
-        /// 이미 xml파일에 \처리가 되어있는데 parser에서 또 추가하기때문에 제거해주기 ( 역슬래시 2개를 1개로 바꾸는 시도를 했지만.. 실패.. )
-        var string = string.replacingOccurrences(of: "\\n", with: "\n")
-        string = string.replacingOccurrences(of: "\\'", with: "\'")
-        
-        /// C스트링 처리포맷을 Swift스트링 포맷으로 바꾸는 작업 ( C스트링 포맷은 한글이 자꾸 깨짐.. )
-        string = string.replacingOccurrences(of: "%s", with: "%@")
-        string = string.replacingOccurrences(of: "%1$s", with: "%1$@")
-        
-        /// CDATA 내부 태그 처리
-        string = string.replacingOccurrences(of: "<br>", with: "\n")
-        
-        /// 현재 언어가 한국어, 태국어인지 따라 딕셔너리 분류
-        switch nowParserLanguege {
-        case .korea:
-            /// 문자열을 읽는데 한번에 읽지않고 끊어 읽는 경우가 있기 때문에, 이어붙히는 작업을 해줘야함.
-            if let targetValue = Resource.shared.koreaDictionary[dictionaryKey] { /// 이미 있는 경우 : 이어붙히기
-                Resource.shared.koreaDictionary[dictionaryKey] = targetValue + string
-            } else { /// 처음 넣는 경우 : 그냥 넣기
-                Resource.shared.koreaDictionary[dictionaryKey] = string
-            }
-        case .thailand:
-            if let targetValue = Resource.shared.thailandDictionary[dictionaryKey] { /// 이미 있는 경우 : 이어붙히기
-                Resource.shared.thailandDictionary[dictionaryKey] = targetValue + string
-            } else { /// 처음 넣는 경우 : 그냥 넣기
-                Resource.shared.thailandDictionary[dictionaryKey] = string
-            }
-        }
-    }
-    
-    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        /// 태그가 닫힌 후, 완성된 문자열의 시작과 끝부분의 공백, 탭, 줄바꿈 없애기
-        switch nowParserLanguege {
-        case .korea:
-            Resource.shared.koreaDictionary[dictionaryKey] = Resource.shared.koreaDictionary[dictionaryKey]?.trimmingCharacters(in: .whitespacesAndNewlines)
-        case .thailand:
-            Resource.shared.thailandDictionary[dictionaryKey] = Resource.shared.thailandDictionary[dictionaryKey]?.trimmingCharacters(in: .whitespacesAndNewlines)
-        }
-        
-        /// 태그가 닫힌 후, 읽히는 문자열은 무시하기 위한 처리
-        dictionaryKey = .trash
-    }
-}
+
 
 

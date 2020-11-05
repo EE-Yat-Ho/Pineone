@@ -15,6 +15,11 @@ import RxCocoa
 class InitFlow: Flow {
     static let `shared`: InitFlow = InitFlow()
 
+    //MARK:- MoreSee Properties
+    private var inputDetailIndex: MoreSeeDetail!
+    private lazy var subControllers: [UIViewController] = makeInit()
+    
+    
     /// Tab ViewController Array
     private lazy var tabControllers: [UIViewController] = makeInitialize()
     /// Tab Header Cell Array
@@ -167,12 +172,76 @@ extension InitFlow{
     }
     /////
     
-    private func navigateToMultiCollection() -> FlowContributors{
-        return FlowSugar(CollectionMultiSelectionViewModel(), CollectionMultiSelectionViewController.self)
-             .navigationItem(with:{
-                 $0.title = "multiSelectCollection"
-             }).oneStepPushBy(self.rootViewController)
+    private func navigateToMultiCollection(_ detail: MoreSeeDetail? = nil) -> FlowContributors{
+//        return FlowSugar(CollectionMultiSelectionViewModel(), CollectionMultiSelectionViewController.self)
+//             .navigationItem(with:{
+//                 $0.title = "multiSelectCollection"
+//             }).oneStepPushBy(self.rootViewController)
+        self.inputDetailIndex = detail
+
+//        Observable.from(AuthManager.dasLoginedNotifications)
+//            .observeOn(MainScheduler.instance)
+//            .merge()
+        loadContent.on(next: {[weak self] _ in
+            guard let `self` = self else { return }
+            self.tabPagerView?.reload()
+            self.tabPagerView?.didLoadsetupLayout()
+            self.tabPagerView?.changeIndex(0)
+        }).disposed(by: disposeBag)
+
+        return FlowSugar(viewModel: MoreSeeViewModel())
+        .presentable(MoreSeeViewController.self)
+        .navigationItem(with: {
+            $0.title = R.String.moreSee
+        })
+        .setVCProperty(viewControllerBlock: {[weak self] in
+            $0.subView.pagerView.dataSource = self
+            $0.subView.pagerView.delegate = self
+            $0.subView.pagerView.layoutDelegate = self
+            $0.subView.pagerView.hostController = $0
+            $0.subView.pagerView.reload()
+
+            $0.subView.pagerView.didLoadsetupLayout()
+            self?.tabPagerView = $0.subView.pagerView
+        })
+        //.oneStepPushBy(navigationController)
+        .oneStepPushBy(rootViewController)
      }
+
+    func makeInit() -> [UIViewController] {
+        // 이벤트
+//        let eventVC = EventViewController()
+//        let eventVM = EventViewModel(repository: fdRepository, type: .event)
+//        eventVC.viewModel = eventVM
+//
+//        // 공지사항
+//        let noticeVC = NoticeViewController()
+//        let noticeVM = NoticeViewModel(type: .notice, repository: webViewService)
+//        noticeVC.viewModel = noticeVM
+//
+//        // FAQ
+//        let faqVC = FAQViewController()
+//        let faqVM = FAQViewModel(type: .faq, repository: webViewService)
+//        faqVC.viewModel = faqVM
+//
+//        // 1:1 문의
+//        let questionVC = DirectQuestionViewController()
+//        let questionVM = MoreSeeDetailViewModel(type: .question, repository: fdRepository)
+//        questionVC.viewModel = questionVM
+//        questionVC.extendedLayoutIncludesOpaqueBars = true
+//        subNavigationController.pushViewController(questionVC, animated: false)
+//
+//        // 기타 설정
+//        let etcVC = ETCViewController()
+//        let etcVM = MoreSeeDetailViewModel(type: .etc, repository: fdRepository)
+//        etcVC.viewModel = etcVM
+//        etcVC.extendedLayoutIncludesOpaqueBars = true
+//        etcSubNavigationController.pushViewController(etcVC, animated: false)
+//
+//        return [eventVC, noticeVC, faqVC, subNavigationController, etcSubNavigationController]
+        return []
+    }
+    
     
     private func navigateToLinkImageCollection() -> FlowContributors{
         return FlowSugar(LinkImageGridViewModel(), LinkImageGridViewController.self)
@@ -184,22 +253,27 @@ extension InitFlow{
     
     private func modalShowImageSlider<T>(withItems items: [T], initialIndex: Int) -> FlowContributors{
         
-        return FlowSugar(ZoomingViewModel(items, initialIndex), ZoomingViewController<T>.self)
-            .setVCProperty(viewControllerBlock:{
-                
-                self.rootViewController.delegate = $0.transitionController
-                $0.transitionController.animator.currentIndex = initialIndex
-                                
-                if let parentVC = UIApplication.shared.topViewController as? CollectionMultiSelectionViewController {
-                    parentVC.zoomIndexDelegate = $0
-                    $0.transitionController.fromDelegate = parentVC
-                }
-                if let parentVC = UIApplication.shared.topViewController as? LinkImageGridViewController {
-                    parentVC.zoomIndexDelegate = $0
-                    $0.transitionController.fromDelegate = parentVC
-                }
-                
-                $0.transitionController.toDelegate = $0
+//        return FlowSugar(ZoomingViewModel(items, initialIndex), ZoomingViewController<T>.self)
+//            .setVCProperty(viewControllerBlock:{
+//
+//                self.rootViewController.delegate = $0.transitionController
+//                $0.transitionController.animator.currentIndex = initialIndex
+//
+//                if let parentVC = UIApplication.shared.topViewController as? CollectionMultiSelectionViewController {
+//                    parentVC.zoomIndexDelegate = $0
+//                    $0.transitionController.fromDelegate = parentVC
+//                }
+//                if let parentVC = UIApplication.shared.topViewController as? LinkImageGridViewController {
+//                    parentVC.zoomIndexDelegate = $0
+//                    $0.transitionController.fromDelegate = parentVC
+//                }
+//
+//                $0.transitionController.toDelegate = $0
+//            })
+//            .oneStepPushBy(self.rootViewController)
+        return FlowSugar(LinkImageGridViewModel(), LinkImageGridViewController.self)
+            .navigationItem(with:{
+                $0.title = "LinkImageGrid"
             })
             .oneStepPushBy(self.rootViewController)
     }
