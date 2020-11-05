@@ -33,6 +33,31 @@ enum ActivityDetail: Int {
         }
     }
 }
+
+enum MoreSeeDetail: Int {
+    case event
+    case notice
+    case faq
+    case question
+    case etc
+
+    var title: String {
+        get {
+            switch self {
+            case .event:
+                return R.String.MoreSee.eventTabTitle
+            case .notice:
+                return R.String.MoreSee.noticeTabTitle
+            case .faq:
+                return R.String.MoreSee.FAQTabTitle
+            case .question:
+                return R.String.MoreSee.questionTabTitle
+            case .etc:
+                return R.String.MoreSee.etcTabTitle
+            }
+        }
+    }
+}
 //}
 //
 //class ActivityFlow: BaseFlow {
