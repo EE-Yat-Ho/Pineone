@@ -15,10 +15,15 @@ import RxCocoa
 class InitFlow: Flow {
     static let `shared`: InitFlow = InitFlow()
 
+    //MARK:- MoreSee Properties
+    private var inputDetailIndex: MoreSeeDetail!
+    //let fdRepository = FDRepository()
+    
+    //MARK:- 공통 소유
     /// Tab ViewController Array
-    private lazy var tabControllers: [UIViewController] = makeInitialize()
+    private lazy var tabControllers: [UIViewController] = makeActivityControllers()
     /// Tab Header Cell Array
-    private lazy var tabHeaderCells: [TabPagerHeaderCellModel] = makeTabModels()
+    private lazy var tabHeaderCells: [TabPagerHeaderCellModel] = makeActivityModels()
     /// Index Header
     //private var inputTabIndex: ActivityDetail!
     private var tabPagerView: TabPagerView?
@@ -80,29 +85,16 @@ class InitFlow: Flow {
 }
 
 extension InitFlow{
-    private func navigateToWebTest() -> FlowContributors{
-        return FlowSugar(WebTestViewModel(), WebTestViewController.self)
-            .navigationItem(with: {
-                $0.title = "web scheme test"
-            }).oneStepPushBy(self.rootViewController)
-    }
-    
-    private func navigateToHSS() -> FlowContributors{
-        print("InitFlow navigateToHSS")
-        return FlowSugar(HorizontalStackScrollViewModel(), HorizontalStackScrollViewController.self)
-            .navigationItem(with: {
-                $0.title = "HorizontalStackScroll"
-            }).oneStepPushBy(self.rootViewController)
-    }
-    
+    // MARK:- Activity
     private func navigateToMultiTable() -> FlowContributors{
-        print("InitFlow navigateToMultiTable")
+        tabControllers = makeActivityControllers()
+        tabHeaderCells = makeActivityModels()
         
         loadContent.subscribe(onNext: {
             [weak self] _ in
                 guard let `self` = self else { return }
-                self.tabControllers = self.makeInitialize()
-                self.tabHeaderCells = self.makeTabModels()
+                self.tabControllers = self.makeActivityControllers()
+                self.tabHeaderCells = self.makeActivityModels()
                 self.tabPagerView?.reload()
                 self.tabPagerView?.didLoadsetupLayout()
                 self.tabPagerView?.changeIndex(0)
@@ -125,9 +117,8 @@ extension InitFlow{
             .oneStepPushBy(rootViewController)
 //        //return .none
     }
-    /////
     /// 내 활동 화면 초기화
-    func makeInitialize() -> [UIViewController] {
+    func makeActivityControllers() -> [UIViewController] {
         /// 최근 본
         let recentlyVC = CompactViewController(activityDetail: .recently)
         let recentlyVM = CompactViewModel()
@@ -156,7 +147,7 @@ extension InitFlow{
     }
 
     /// 내 활동 탭 모델링
-    func makeTabModels() -> [TabPagerHeaderCellModel] {
+    func makeActivityModels() -> [TabPagerHeaderCellModel] {
 //        if !AuthManager.current.isUplusMember {
 //            return [TabPagerHeaderCellModel(title: ActivityDetail(rawValue: 1)!.title, displayNewIcon: false)]
 //        } else {
@@ -167,14 +158,98 @@ extension InitFlow{
         }
 //        }
     }
-    /////
     
+<<<<<<< HEAD
     private func navigateToMultiCollection() -> FlowContributors{
         return FlowSugar(CollectionMultiSelectionViewModel(), CollectionMultiSelectionViewController.self)
              .navigationItem(with:{
                  $0.title = "multiSelectCollection"
              }).oneStepPushBy(self.rootViewController)
+=======
+    // MARK:- MoreSee
+    private func navigateToMultiCollection(_ detail: MoreSeeDetail? = nil) -> FlowContributors{
+        tabControllers = makeMoreSeeControllers()
+        tabHeaderCells = makeMoreSeeModels()
+//        return FlowSugar(CollectionMultiSelectionViewModel(), CollectionMultiSelectionViewController.self)
+//             .navigationItem(with:{
+//                 $0.title = "multiSelectCollection"
+//             }).oneStepPushBy(self.rootViewController)
+        self.inputDetailIndex = detail
+
+//        Observable.from(AuthManager.dasLoginedNotifications)
+//            .observeOn(MainScheduler.instance)
+//            .merge()
+        loadContent.on(next: {[weak self] _ in
+            guard let `self` = self else { return }
+            self.tabControllers = self.makeMoreSeeControllers()
+            self.tabHeaderCells = self.makeMoreSeeModels()
+            self.tabPagerView?.reload()
+            self.tabPagerView?.didLoadsetupLayout()
+            self.tabPagerView?.changeIndex(0)
+        }).disposed(by: disposeBag)
+
+        return FlowSugar(viewModel: MoreSeeViewModel())
+        .presentable(MoreSeeViewController.self)
+        .navigationItem(with: {
+            $0.title = R.String.moreSee
+        })
+        .setVCProperty(viewControllerBlock: {[weak self] in
+            $0.subView.pagerView.dataSource = self
+            $0.subView.pagerView.delegate = self
+            $0.subView.pagerView.layoutDelegate = self
+            $0.subView.pagerView.hostController = $0
+            $0.subView.pagerView.reload()
+
+            $0.subView.pagerView.didLoadsetupLayout()
+            self?.tabPagerView = $0.subView.pagerView
+        })
+        //.oneStepPushBy(navigationController)
+        .oneStepPushBy(rootViewController)
+>>>>>>> project
      }
+
+    func makeMoreSeeControllers() -> [UIViewController] {
+        // 이벤트
+        let eventVC = EventViewController()
+        let eventVM = EventViewModel(repository: fdRepository, type: .event)
+        eventVC.viewModel = eventVM
+
+        // 공지사항
+//        let noticeVC = NoticeViewController()
+//        let noticeVM = NoticeViewModel(type: .notice, repository: webViewService)
+//        noticeVC.viewModel = noticeVM
+//
+//        // FAQ
+//        let faqVC = FAQViewController()
+//        let faqVM = FAQViewModel(type: .faq, repository: webViewService)
+//        faqVC.viewModel = faqVM
+//
+//        // 1:1 문의
+//        let questionVC = DirectQuestionViewController()
+//        let questionVM = MoreSeeDetailViewModel(type: .question, repository: fdRepository)
+//        questionVC.viewModel = questionVM
+//        questionVC.extendedLayoutIncludesOpaqueBars = true
+//        subNavigationController.pushViewController(questionVC, animated: false)
+//
+//        // 기타 설정
+//        let etcVC = ETCViewController()
+//        let etcVM = MoreSeeDetailViewModel(type: .etc, repository: fdRepository)
+//        etcVC.viewModel = etcVM
+//        etcVC.extendedLayoutIncludesOpaqueBars = true
+//        etcSubNavigationController.pushViewController(etcVC, animated: false)
+//
+//        return [eventVC, noticeVC, faqVC, subNavigationController, etcSubNavigationController]
+        return [eventVC]
+    }
+    
+    func makeMoreSeeModels() -> [TabPagerHeaderCellModel] {
+        return (0 ..< self.tabControllers.count).map {
+            MoreSeeDetail(rawValue: $0)
+        }.map {
+            TabPagerHeaderCellModel(title: $0!.title)
+        }
+    }
+    
     
     private func navigateToLinkImageCollection() -> FlowContributors{
         return FlowSugar(LinkImageGridViewModel(), LinkImageGridViewController.self)
@@ -188,10 +263,17 @@ extension InitFlow{
         
 //        return FlowSugar(ZoomingViewModel(items, initialIndex), ZoomingViewController<T>.self)
 //            .setVCProperty(viewControllerBlock:{
+<<<<<<< HEAD
 //                
 //                self.rootViewController.delegate = $0.transitionController
 //                $0.transitionController.animator.currentIndex = initialIndex
 //                                
+=======
+//
+//                self.rootViewController.delegate = $0.transitionController
+//                $0.transitionController.animator.currentIndex = initialIndex
+//
+>>>>>>> project
 //                if let parentVC = UIApplication.shared.topViewController as? CollectionMultiSelectionViewController {
 //                    parentVC.zoomIndexDelegate = $0
 //                    $0.transitionController.fromDelegate = parentVC
@@ -200,7 +282,11 @@ extension InitFlow{
 //                    parentVC.zoomIndexDelegate = $0
 //                    $0.transitionController.fromDelegate = parentVC
 //                }
+<<<<<<< HEAD
 //                
+=======
+//
+>>>>>>> project
 //                $0.transitionController.toDelegate = $0
 //            })
 //            .oneStepPushBy(self.rootViewController)
@@ -211,14 +297,26 @@ extension InitFlow{
             .oneStepPushBy(self.rootViewController)
     }
     
+    private func navigateToWebTest() -> FlowContributors{
+        return FlowSugar(WebTestViewModel(), WebTestViewController.self)
+            .navigationItem(with: {
+                $0.title = "web scheme test"
+            }).oneStepPushBy(self.rootViewController)
+    }
+    
+    private func navigateToHSS() -> FlowContributors{
+        return FlowSugar(HorizontalStackScrollViewModel(), HorizontalStackScrollViewController.self)
+            .navigationItem(with: {
+                $0.title = "HorizontalStackScroll"
+            }).oneStepPushBy(self.rootViewController)
+    }
+    
     private func popView() -> FlowContributors{
-        print("InitFlow popView")
         rootViewController.popViewController(animated: true)
         return .none
     }
      
     private func navigateToMain() -> FlowContributors{
-        print("InitFlow navigateToMain")
         return FlowSugar(MainViewModel(), MainViewController.self)
             .navigationItem(with: {
                 $0.title = "Fondation"
@@ -232,8 +330,7 @@ extension InitFlow{
 // MARK: - TabPagerViewDataSource
 extension InitFlow: TabPagerViewDataSource {
     func numberOfItems() -> Int? {
-        return 4
-        //return self.tabControllers.count
+        return self.tabControllers.count
     }
 
     func controller(at index: Int) -> UIViewController? {

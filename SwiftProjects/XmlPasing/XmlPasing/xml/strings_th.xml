@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<resources>
+	<string name="app_name">AIS AR</string>
+	<string name="bottom_nav_title_home">
+		หน้าหลัก
+	</string>
+	<string name="bottom_nav_title_search">
+		ค้นหา
+	</string>
+	<string name="bottom_nav_title_my">
+		ของฉัน
+	</string>
+	<string name="bottom_nav_title_setting">
+		เพิ่มเติม
+	</string>
+	<string name="play_time">
+		เวลาเล่น
+	</string>
+	<string name="max_size">
+		ขนาด
+	</string>
+	<string name="artist">
+		ศิลปิน
+	</string>
+	<string name="expire_date">
+		วันหมดอายุ
+	</string>
+	<string name="content_basic_info">
+		- ฟังก์ชั่นสโลว์โมชั่นและฟังก์ชั่นการทำซ้ำสามารถใช้งานได้เมื่อคอนเทนท์ถูกดาวน์โหลด\n- วันที่หมดอายุของคอนเทนท์อาจเปลี่ยนแปลงได้ตามคำขอจาก บริษัท ผู้ผลิตคอนเทนท์หรือเอเจนซี่
+	</string>
+	<string name="buffering_info">
+		การเชื่อมต่อเครือข่ายไม่เสถียร คุณต้องการดาวน์โหลดหรือไม่?
+	</string>
+	<string name="buffering_info_other">
+		การเชื่อมต่อเครือข่ายไม่เสถียร เปลี่ยนเป็นใช้งาน AIS 5G เพื่อดาวน์โหลดคอนเทนท์และรับชมต่อเนื่อง
+	</string>
+	<string name="buffering_button1">
+		รับชมต่อเนื่อง
+	</string>
+	<string name="buffering_button2">
+		ดาวน์โหลด และรับชมต่อเนื่อง
+	</string>
+	<string name="buffering_button3">
+		หยุดการรับชม
+	</string>
+	<string name="reply_hint">
+		กรุณาแสดงความคิดเห็น
+	</string>
+	<string name="reply">
+		ความคิดเห็น
+	</string>
+	<string name="register">
+		ลงทะเบียน
+	</string>
+	<string name="reply_not_permit">
+		เฉพาะลูกค้า AIS ที่สามารถแสดงความคิดเห็นได้
+	</string>
+	<string name="report_limit">
+		ความยาวของรายงานต้องไม่เกิน 200 ตัวอักษร
+	</string>
+	<string name="download">
+		ดาวน์โหลด
+	</string>
+	<string name="downloading">
+		กำลังดาวน์โหลด
+	</string>
+	<string name="no">
+		ไม่
+	</string>
+	<string name="yes">
+		ใช่
+	</string>
+	<string name="cancel">
+		ยกเลิก
+	</string>
+	<string name="save">
+		บันทึก
+	</string>
+	<string name="pause">
+		หยุดชั่วคราว
+	</string>
+	<string name="restart">
+		เริ่มต้นใหม่
+	</string>
+	<string name="retry">
+		ลองอีกครั้ง
+	</string>
+	<string name="play">
+		เล่น
+	</string>
+	<string name="play_now">
+		เล่นตอนนี้
+	</string>
+	<string name="see_more">
+		ดูเพิ่มเติม
+	</string>
+	<string name="see_more_close">
+		ปิด
+	</string>
+	<string name="check_network">
+		ตรวจสอบเครือข่าย
+	</string>
+	<string name="go_to_mydownload">
+		ไปที่ดาวน์โหลด
+	</string>
+	<string name="leave">
+		ออก
+	</string>
+	<string name="download_paused">
+		หยุดการดาวน์โหลดชั่วคราว
+	</string>
+	<string name="view_detail">
+		ดูเพิ่มเติม
+	</string>
+	<string name="permission_title">
+		ข้อตกลงการอนุญาตการเข้าถึง
+	</string>
+	<string name="permission_app_name">
+		ประกาศเกี่ยวกับข้อกำหนดการอนุญาตการเข้าใช้งาน AIS AR
+	</string>
+	<string name="permission_app_desc">
+		คุณต้องยอมรับเงื่อนไขด้านล่างทั้งหมดเพื่อใช้บริการ AIS AR
+	</string>
+	<string name="permission_phone">
+		โทรศัพท์มือถือ
+	</string>
+	<string name="permission_phone_desc">
+		AIS AR จะใช้หมายเลขโทรศัพท์เพื่อเข้าสู่ระบบโดยอัตโนมัติโดยไม่ต้องใส่ ID นอกจากนี้คุณยังสามารถใช้งานโทรศัพท์ได้ตามปกติขณะใช้งานแอปพลิเคชัน
+	</string>
+	<string name="permission_storage">
+		ที่เก็บข้อมูล
+	</string>
+	<string name="permission_storage_desc">
+		AIS AR ดาวน์โหลดคอนเทนท์หรือบันทึกวิดีโอ
+	</string>
+	<string name="permission_camera">
+		กล้อง
+	</string>
+	<string name="permission_camera_desc">
+		AIS AR สามารถถ่ายวิดิโอโดยใช้คอนเทนท์ของ AIS AR
+	</string>
+	<string name="permission_mic">
+		ไมโครโฟน
+	</string>
+	<string name="permission_mic_desc">
+		AIS AR สามารถทำอัดและบันทึกเสียงในขณะที่ถ่ายภาพยนตร์ได้
+	</string>
+	<string name="permission_location">
+		ตำแหน่ง / จีพีเอส
+	</string>
+	<string name="permission_location_desc">
+		AIS AR ตรวจสอบสภาพเครือข่ายของคุณ
+	</string>
+	<string name="popup_turn_off_today">
+		ไม่แสดงอีกในวันนี้
+	</string>
+	<string name="popup_turn_off">
+		ไม่แสดงอีก 
+	</string>
+	<string name="agreement_title">
+		ข้อตกลง
+	</string>
+	<string name="agreement_desc">
+		โปรดยอมรับข้อกำหนดและประกาศความเป็นส่วนตัวด้านล่างเพื่อใช้งาน AIS AR
+	</string>
+	<string name="agreement_usage">
+		ข้อตกลงในเงื่อนไข (จำเป็น)
+	</string>
+	<string name="agreement_private_info">
+		ข้อตกลงในข้อมูลส่วนตัวและการใช้งาน (จำเป็น)
+	</string>
+	<string name="agreement_info_process">
+		ข้อตกลงในการเข้าถึงข้อมูลส่วนตัว (จำเป็น)
+	</string>
+	<string name="agreement_marketing">
+		ข้อตกลงการรับข้อมูลการตลาด (เป็นทางเลือก)
+	</string>
+	<string name="agreement_extra_desc">
+		คุณต้องยอมรับข้อกำหนดที่จำเป็นทั้งหมดเพื่อใช้บริการ
+	</string>
+	<string name="agreement_warn">
+		คุณต้องยอมรับข้อกำหนดที่จำเป็นทั้งหมดเพื่อดำเนินการในขั้นตอนต่อไป
+	</string>
+	<string name="agreement_all">
+		ยอมรับทั้งหมด
+	</string>
+	<string name="agreement_marketing_info">
+		คุณจะสามารถรับข้อมูลกิจกรรมและโฆษณาได้
+	</string>
+	<string name="agree_cancel_notice">
+		คุณต้องยอมรับข้อกำหนดในการใช้งาน AIS AR
+	</string>
+	<string name="see_underline">
+		รับชม
+	</string>
+	<string name="next">
+		ต่อไป
+	</string>
+	<string name="close">
+		ปิด
+	</string>
+	<string name="ok">
+		ตกลง
+	</string>
+	<string name="exit">
+		ออก
+	</string>
+	<string name="keep">
+		ดำเนินการต่อ
+	</string>
+	<string name="prev_version">
+		ดูเวอร์ชั่นล่าสุด
+	</string>
+	<string name="next_version">
+		ดูเวอร์ชั่นต่อไป
+	</string>
+	<string name="agreement_and_go">
+		ยอมรับ
+	</string>
+	<string name="close_app_confirm">
+		กดปุ่มก่อนหน้าอีกครั้งเพื่อออกจากแอพพลิเคชัน
+	</string>
+	<string name="theme_view_all">
+		ดูธีมทั้งหมด
+	</string>
+	<string name="like">
+		ชอบ
+	</string>
+	<string name="share">
+		แชร์
+	</string>
+	<string name="share_jpg">
+		ภาพ (JPG)
+	</string>
+	<string name="share_gif">
+		GIF
+	</string>
+	<string name="share_mp4">
+		วิดีโอ (MP4)
+	</string>
+	<string name="my_recently_viewed">
+		ดูล่าสุด
+	</string>
+	<string name="my_download">
+		ดาวน์โหลด
+	</string>
+	<string name="my_like">
+		ถูกใจ
+	</string>
+	<string name="my_replies">
+		คอมเมนท์
+	</string>
+	<string name="my_contents">
+		วิดีโอ/GIF/รูปภาพ
+	</string>
+	<string name="my_album">
+		อัลบั้มของฉัน
+	</string>
+	<string name="delete">
+		ลบ
+	</string>
+	<string name="font_error">
+		ตรวจพบการเปลี่ยนแปลงตัวอักษร เพลย์เยอร์กำลังปิด
+	</string>
+	<string name="share_content">
+		แชร์
+	</string>
+	<string name="my_contents_selection_delete">
+		ลบ
+	</string>
+	<string name="my_contents_selection_delete_confirm">
+		คอนเทนท์ที่ถูกลบจะไม่สามารถกู้คืนได้ คุณยังต้องการลบใช่หรือไม่?
+	</string>
+	<string name="my_contents_camera">
+		วิดีโอ/GIF/รูปภาพ
+	</string>
+	<string name="my_contents_3d">
+		คอนเทนท์ 3 มิติ
+	</string>
+	<string name="my_contents_">
+		คอนเทนท์ของฉัน
+	</string>
+	<string name="setting_event">
+		กิจกรรม
+	</string>
+	<string name="setting_notice">
+		ประกาศ
+	</string>
+	<string name="setting_faq">
+		FAQ
+	</string>
+    <!--<string name="setting_question">
+		การสอบถามแบบ 1:1
+	</string>-->
+	<string name="setting_question">
+		ถาม 1:1
+	</string>
+	<string name="setting_other">
+		ตั้งค่า
+	</string>
+	<string name="select_all">
+		เลือกทั้งหมด
+	</string>
+	<string name="setting_nickname">
+		เปลี่ยนชื่อเล่น
+	</string>
+	<string name="setting_push">
+		กิจกรรม / การแจ้งเตือนส่วนลด
+	</string>
+	<string name="setting_push_desc">
+		คุณสามารถยอมรับ / ไม่ยอมรับเพื่อรับข้อมูลเกี่ยวกับกิจกรรมและส่วนลด
+	</string>
+	<string name="setting_continuous_play">
+		ตั้งค่าการเล่นอัตโนมัติ
+	</string>
+	<string name="setting_continuous_play_desc">
+		วิดีโอในรายการถัดไปยกเว้นสติ๊กเกอร์จะเล่นโดยอัตโนมัติ
+	</string>
+	<string name="setting_bright_theme">
+		ธีมพื้นหลังสีขาว
+	</string>
+	<string name="setting_contents_save">
+		สถานที่จัดเก็บคอนเทนท์
+	</string>
+	<string name="setting_app_version">
+		เวอร์ชันของแอปพลิเคชัน (เวอร์ชั่นล่าสุด)
+	</string>
+	<string name="setting_current_version">
+		เวอร์ชั่นปัจจุบัน
+	</string>
+	<string name="setting_opensource_licence">
+		Open Source License
+	</string>
+	<string name="setting_terms_of_service">
+		ข้อกำหนดของบริการ
+	</string>
+	<string name="setting_private_policy">
+		นโยบายความเป็นส่วนตัว
+	</string>
+	<string name="setting_private_policy_collection">
+		การรวบรวมข้อมูลส่วนตัวและความรับผิดชอบ
+	</string>
+	<string name="setting_private_policy_terms">
+		ข้อกำหนดนโยบายความเป็นส่วนตัว
+	</string>
+	<string name="setting_update_agreement">
+		คุณสามารถอัพเกรดเป็นเวอร์ชั่นล่าสุดได้ เวอร์ชั่นปัจจุบัน:%s เวอร์ชั่นล่าสุด:%s
+	</string>
+	<string name="setting_nick_current_nick">
+		ชื่อเล่นปัจุบัน
+	</string>
+	<string name="setting_nick_change_nick_hint">
+		ใส่ชื่อเล่นใหม่ (สูงสุด 15 ตัวอักษร)
+	</string>
+	<string name="setting_nick_change_nick_success">
+		เปลี่ยนชื่อเล่นใหม่เรียบร้อย
+	</string>
+	<string name="setting_nick_change_nick_duplicate">
+		มีชื่อเล่นนี้อยู่แล้ว
+	</string>
+	<string name="setting_version_update">
+		ปรับปรุง
+	</string>
+	<string name="setting_select_storage">
+		โปรดเลือกตำแหน่งที่คุณต้องการบันทึก \'คอนเทนท์ของฉัน\'
+	</string>
+	<string name="setting_update_disagree_last_version">
+		แอพพลิเคชันทำการปรับปรุงเป็นเวอร์ชั่นล่าสุดแล้ว
+	</string>
+	<string name="setting_question_title2">
+		ฝากข้อความหรือคำถามเกี่ยวกับ AIS AR ผู้ดูแลระบบจะตรวจสอบและตอบกลับโดยเร็วที่สุด
+	</string>
+	<string name="setting_question_title3">
+		การตอบคำถาม AIS AR จะถูกส่งไปที่อีเมลของคุณ ข้อมูลส่วนตัวที่รวบรวมเพื่อการตอบกลับจะถูกกำจัดยกเว้นกรณีที่จะต้องเก็บรักษาไว้เนื่องจากนโยบายของ บริษัท หรือกฎหมายที่เกี่ยวข้อง หากต้องการทราบข้อมูลเพิ่มเติมโปรดรับชมหน้านโยบายความเป็นส่วนตัว AIS AR บนเว็บไซต์ AIS
+	</string>
+	<string name="setting_question_hint_email">
+		กรุณากรอกอีเมลของคุณที่คุณต้องการได้รับการตอบกลับ
+	</string>
+	<string name="setting_question_hint">
+		กรุณาแสดงความคิดเห็น
+	</string>
+	<string name="setting_question_agreement">
+		ฉันเห็นด้วยกับข้อความข้างต้น
+	</string>
+	<string name="setting_question_send">
+		ลงทะเบียน
+	</string>
+	<string name="setting_question_dialog">
+		สอบถามรายละเอียดสำหรับการลงทะเบียน?
+	</string>
+	<string name="setting_question_toast">
+		การลงทะเบียนเสร็จสมบูรณ์ ผู้ดูแลระบบจะตอบกลับโดยเร็วที่สุด
+	</string>
+	<string name="setting_question_failure">
+		การลงทะเบียนไม่สำเร็จ
+	</string>
+	<string name="setting_question_title">
+		บริการสอบถาม
+	</string>
+	<string name="setting_question_type_select2">
+		โปรดเลือกหมวดหมู่ในการสอบถามแบบ 1: 1
+	</string>
+	<string name="setting_question_type_select">
+		กรุณาเลือกหมวดหมู่ในการสอบถาม
+	</string>
+	<string name="setting_question_type_app_usage">
+		ข้อมูลการใช้งานแอพพลิเคชัน
+	</string>
+	<string name="setting_question_type_price_data">
+		ราคา / ข้อมูล
+	</string>
+	<string name="setting_question_type_contents_quality">
+		คอนเทนท์ / คุณภาพคอนเทนท์
+	</string>
+	<string name="setting_question_type_event">
+		กิจกรรม
+	</string>
+	<string name="setting_question_type_others">
+		อื่นๆ
+	</string>
+	<string name="setting_question_type_feedback">
+		ข้อเสนอแนะ / ปรับปรุง
+	</string>
+	<string name="setting_event_apply">
+		ใช้
+	</string>
+	<string name="setting_internal_storage">
+		หน่วยความจำภายใน
+	</string>
+	<string name="setting_sd_card">
+		การ์ด SD
+	</string>
+	<string name="setting_available_space">
+		(พื้นที่ว่าง%s)
+	</string>
+	<string name="setting_change_space">
+		เปลี่ยนตำแหน่งการดาวน์โหลดคอนเทนท์แล้ว
+	</string>
+	<string name="contents">
+		คอนเทนท์
+	</string>
+	<string name="writer">
+		นักเขียน
+	</string>
+	<string name="report">
+		รายงาน
+	</string>
+	<string name="report_select_reason">
+		เหตุผล
+	</string>
+	<string name="report_reason_1">
+		โฆษณา
+	</string>
+	<string name="report_reason_2">
+		ไม่เหมาะสม / หยาบคาย
+	</string>
+	<string name="report_reason_3">
+		ความเป็นส่วนตัว/การละเมิดลิขสิทธิ์
+	</string>
+	<string name="report_complete">
+		รายงานเสร็จสมบูรณ์
+	</string>
+	<string name="etc">
+		อื่นๆ
+	</string>
+	<string name="report_hint_detail">
+		กรุณาเขียนรายละเอียดเพิ่มเติม
+	</string>
+	<string name="player_reply">
+		ความคิดเห็น
+	</string>
+	<string name="player_reply_please_enter">
+		โปรดแสดงความคิดเห็น
+	</string>
+	<string name="player_no_reply">
+		เฉพาะลูกค้า AIS ถึงสามารถแสดงความคิดเห็นได้
+	</string>
+	<string name="player_searching_surface_toast">
+		กรุณาเลื่อนโทรศัพท์ของคุณไปทางซ้ายและขวาเพื่อค้นหาพื้นผิวที่สามารถวางคอนเทนท์ให้อยู่กับที่
+	</string>
+	<string name="player_unsupported_device">
+		คอนเทนท์ AR ไม่สามารถเล่นได้ด้วยอุปกรณ์นี้ โปรดตรวจสอบรายการอุปกรณ์ที่รองรับในหน้าแรกของ AIS หรือคำถามที่พบบ่อย
+	</string>
+	<string name="player_save_preview">
+		บันทึกเรียบร้อย
+	</string>
+	<string name="player_video_recording_end">
+		สิ้นสุดการบันทึกวิดีโอ
+	</string>
+	<string name="player_play_done">
+		คุณได้รับชมคอนเทนท์ทั้งหมดในรายการแล้ว
+	</string>
+	<string name="today">
+		วันนี้
+	</string>
+	<string name="yesterday">
+		เมื่อวาน
+	</string>
+	<string name="two_days_ago">
+		สองวันที่ผ่านมา
+	</string>
+	<string name="three_days_ago">
+		สามวันที่ผ่านมา
+	</string>
+	<string name="four_days_ago">
+		สี่วันที่ผ่านมา
+	</string>
+	<string name="five_days_ago">
+		ห้าวันที่ผ่านมา
+	</string>
+	<string name="six_days_ago">
+		หกวันที่ผ่านมา
+	</string>
+	<string name="seven_days_ago">
+		เจ็ดวันที่ผ่านมา
+	</string>
+	<string name="order_date">
+		ดาวน์โหลดล่าสุด
+	</string>
+	<string name="order_size">
+		ขนาด
+	</string>
+	<string name="update_popup_major">
+		มีการอัปเดตใหม่ ทำการอัปเดตทันทีเพื่อใช้งานแอปพลิเคชัน
+	</string>
+	<string name="update_popup_miner">
+		มีการอัปเดตใหม่
+	</string>
+	<string name="later">
+		อัปเดตภายหลัง
+	</string>
+	<string name="update">
+		อัปเดตเดี๋ยวนี้
+	</string>
+	<string name="save_file_out_of_storage">
+		การดาวน์โหลดล้มเหลวเนื่องจากพื้นที่จัดเก็บไม่เพียงพอ โปรดลบคอนเทนท์ที่บันทึกไว้หรือเปลี่ยนตำแหน่งการดาวน์โหลด (จำเป็นต้องใช้พื้นที่เก็บข้อมูลขั้นต่ำ 100MB)
+	</string>
+	<string name="move_to_setting">
+		ไปที่การตั้งค่า
+	</string>
+	<string name="preview_exit_without_save">
+		กลับไปที่เพลย์เยอร์โดยไม่บันทึก
+	</string>
+	<string name="could_not_open_page">
+		ไม่สามารถเปิดหน้าต่างนี้ได้
+	</string>
+	<string name="error_occurred">
+		เกิดข้อผิดพลาด
+	</string>
+	<string name="network_error">
+		โปรดตรวจสอบการเชื่อมต่อเครือข่ายหรือลองอีกครั้งในภายหลัง
+	</string>
+	<string name="network_error_too_many">
+		การเชื่อมต่อเครือข่ายไม่เสถียร กรุณาลองใหม่อีกครั้งในภายหลัง
+	</string>
+	<string name="network_error_wifi">
+		การเชื่อมต่อเครือข่ายไม่เสถียร โปรดตรวจสอบการเชื่อมต่อ 5G
+	</string>
+	<string name="network_error_cell">
+		การเชื่อมต่อเครือข่ายไม่เสถียร กรุณาลองใหม่อีกครั้งในภายหลัง
+	</string>
+	<string name="server_error">
+		เครือข่ายถูกตัดการเชื่อมต่อ กรุณาลองใหม่อีกครั้งในภายหลัง
+	</string>
+	<string name="my_recently_viewed_empty">
+		แสดงคอนเทนท์ที่รับชมล่าสุด
+	</string>
+	<string name="my_download_empty">
+		แสดงคอนเทนท์ที่ดาวน์โหลด
+	</string>
+	<string name="my_like_empty">
+		แสดงคอนเทนท์ที่ชื่นชอบ
+	</string>
+	<string name="my_reply_empty">
+		แสดงความคิดเห็นของฉัน
+	</string>
+	<string name="my_contents_empty">
+		ยังไม่มีคอนเทนท์ที่ทำการถ่ายทำ\nรับชมวิดีโอที่ผู้อื่นถ่ายไว้
+	</string>
+	<string name="my_contents_see_other">
+		รับชมวิดีโออื่น ๆ
+	</string>
+	<string name="network_error_splash">
+		เครือข่ายถูกตัดการเชื่อมต่อ สามารถเล่นได้เฉพาะคอนเทนท์ที่ถูกบันทึกในอุปกรณ์ ไปที่ดาวน์โหลด?
+	</string>
+	<string name="roaming_status_dialog">
+		สามารถเล่นได้เฉพาะคอนเทนท์ที่ถูกบันทึกในอุปกรณ์ขณะโรมมิ่ง ไปที่คอนเทนท์ของฉัน?
+	</string>
+	<string name="roaming_status">
+		สามารถเข้าถึงได้เฉพาะคอนเทนท์ที่ถูกบันทึกไว้เท่านั้นเมื่อโรมมิ่ง
+	</string>
+	<string name="usim_not_inserted">
+		ไม่สามารถเริ่มบริการได้เนื่องจากไม่ได้ใส่การ์ด USIM
+	</string>
+	<string name="insufficient_storage">
+		แอปพลิเคชันไม่สามารถใช้งานได้เนื่องจากที่เก็บข้อมูลไม่เพียงพอ โปรดตรวจสอบหน่วยความจำอุปกรณ์ของคุณ
+	</string>
+	<string name="contents_expiration">
+		คอนเทนท์หมดอายุ
+	</string>
+	<string name="reply_reported">
+		ความคิดเห็นถูกลบเนื่องจากถูกรายงาน
+	</string>
+	<string name="deleted_contents">
+		คอนเทนท์ถูกลบแล้ว
+	</string>
+	<string name="reply_not_entered">
+		ไม่มีความคิดเห็น
+	</string>
+	<string name="reply_overflow">
+		ความคิดเห็นสามารถเขียนได้สูงสุด 200 ตัวอักษร
+	</string>
+	<string name="reply_add_completed">
+		การลงทะเบียนความคิดเห็น
+	</string>
+	<string name="reply_add_failed">
+		การลงทะเบียนความคิดเห็นผิดพลาด
+	</string>
+	<string name="reply_include_slang">
+		ความคิดเห็นที่มีภาษาหยาบคายไม่สามารถลงทะเบียนได้
+	</string>
+	<string name="reply_delete_completed">
+		ลบความคิดเห็นแล้ว
+	</string>
+	<string name="reply_delete_failed">
+		การลบความคิดเห็นล้มเหลว
+	</string>
+	<string name="download_completed">
+		ดาวน์โหลดสำเร็จ
+	</string>
+	<string name="cancel_download">
+		หยุดการดาวน์โหลดและลบไฟล์ ?
+	</string>
+	<string name="cannot_contents_3d_streaming">
+		คอนเทนท์สามารถดาวน์โหลดได้เท่านั้น คุณต้องการดาวน์โหลดหรือไม่
+	</string>
+	<string name="cannot_contents_lte_streaming">
+		การสตรีมสามารถใช้งานได้บน 5G เท่านั้น คุณต้องการดาวน์โหลดหรือไม่?
+	</string>
+	<string name="cannot_lte_warning">
+		AIS AR เป็นบริการสำหรับ 5G เท่านั้น มีข้อจำกัดสำหรับลูกค้า LTE กรุณาอ่านข้อมูลเพิ่มเติมบนเว็บไซต์ของเรา
+	</string>
+	<string name="download_failed">
+		การดาวน์โหลดล้มเหลวเนื่องจากเครือข่ายไม่เสถียร
+	</string>
+	<string name="download_retry">
+		ลองอีกครั้ง
+	</string>
+	<string name="download_resumed">
+		ทำการดาวน์โหลดคอนเทนท์ต่อ
+	</string>
+	<string name="recently_viewed_contents_max_limited">
+		คุณสามารถรับชมคอนเทนท์ที่รับชมล่าสุดได้สูงสุด 30 รายการ
+	</string>
+	<string name="reply_delete_warn">
+		ลบความคิดเห็นจำนวน %d?
+	</string>
+	<string name="reply_delete">
+		คุณต้องการลบความคิดเห็นหรือไม่?
+	</string>
+	<string name="delete_contents_warn">
+		ลบคอนเทนท์จำนวน %d?
+	</string>
+	<string name="delete_contents_completed">
+		การลบเสร็จสมบูรณ์
+	</string>
+	<string name="delete_contents_failed">
+		การลบคอนเทนท์ล้มเหลว
+	</string>
+	<string name="reply_report_failed">
+		รายงานความคิดเห็นล้มเหลว
+	</string>
+	<string name="play_failed">
+		การเล่นล้มเหลว
+	</string>
+	<string name="dialog_play_next_wating">
+		กำลังเล่นคอนเทนท์ต่อไป
+	</string>
+	<string name="dialog_play_next_wating_remaining">
+		%d วินาทีก่อนเล่นคอนเทนท์ถัดไป
+	</string>
+	<string name="dialog_play_next_setting_change">
+		เปลี่ยนการตั้งค่าการเล่นอัตโนมัติ
+	</string>
+	<string name="dialog_cell_warning">
+		กำลังใช้เครือข่ายข้อมูลมือถือ อาจมีการเรียกเก็บค่าบริการการใช้ข้อมูลตามแพ็คเกจปัจจุบันของคุณ
+	</string>
+	<string name="dialog_streaming_warning">
+		คอนเทนท์ที่ไม่ได้ถูกดาวน์โหลดจะเล่นผ่านการสตรีม
+	</string>
+	<string name="dialog_ar_caution1">
+		โปรดระวังวัตถุใกล้ตัวอาจหล่นเสียหายระหว่างการใช้งาน
+	</string>
+	<string name="dialog_ar_caution2">
+		เด็กจะต้องได้รับคำแนะนำจากผู้ปกครองเพื่อความปลอดภัยในการใช้งาน
+	</string>
+	<string name="register_user_completed">
+		ลงทะเบียนเสร็จสมบูรณ์
+	</string>
+	<string name="permission_rational_desc">
+		โปรดอนุญาตอุปก%sรณ์ของคุณในการตั้งค่าใช้งานแอพพลิเคชัน AIS AR
+	</string>
+	<string name="setting_now">
+		ไปที่ตั้งค่า
+	</string>
+	<string name="setting_later">
+		ภายหลัง
+	</string>
+	<string name="third_party_user_notice">
+		ลูกค้าที่ไม่ได้เป็นสมาชิกสามารถพรีวิว AIS AR ได้ %d วินาที
+	</string>
+	<string name="third_party_user_preview_notice_mvno">
+		ข้อจำกัดต่างๆจะถูกใช้กับแพ็คเกจที่คุณใช้อยู่ในปัจจุบัน สำหรับรายละเอียดโปรดตรวจสอบที่เว็บไซต์ AIS
+	</string>
+	<string name="third_party_user_preview_notice">
+		ข้อจำกัดต่างๆจะถูกใช้กับผู้ที่ไม่ใช่ลูกค้าของ AIS
+	</string>
+
+<!--	<string name="no_join_customer_notice">-->
+<!--		Unsubscribed customers are limited in using the service..-->
+<!--	</string>-->
+
+	<string name="internal_storage_required_size_exceed">
+		พื้นที่ในการเก็บข้อมูลไม่เพียงพอ โปรดตรวจสอบและลบคอนเทนท์ที่ไม่ได้ใช้งาน
+	</string>
+	<string name="contents_turn_off">
+		คอนเทนท์ไม่พร้อมใช้งาน โปรดตรวจสอบ \'เพิ่มเติม\' เมนู \'ประกาศ\' หรือ \'คำถามที่พบบ่อย\' เพื่อดูรายละเอียด
+	</string>
+	<string name="preview_end_alert">
+		การพรีวิวครั้งที่สองสิ้นสุดลงแล้ว
+	</string>
+	<string name="streaming_alert_lte_toast">
+		ฟังก์ชั่นนี้ไม่สามารถใช้ได้ในเครือข่าย LTE โปรดใช้บนเครือข่าย 5G
+	</string>
+	<string name="streaming_alert_wifi_toast">
+		สามารถใช้กับเครือข่ายบน 5G เท่านั้น
+	</string>
+	<string name="contents_lte_download_toast">
+		โปรดดาวน์โหลดคอนเทนท์เพื่อใช้บนเครือข่าย LTE
+	</string>
+	<string name="contents_3d_download_toast">
+		ต้องทำการดาวน์โหลดคอนเทนท์นี้เพื่อใช้งาน
+	</string>
+	<string name="streaming_alert_5g">
+		เพื่อการรับชมอย่างต่อเนื่อง แนะนำให้ท่านทำการดาวน์โหลดคอนเทนท์ก่อนใช้งาน ดำเนินการดาวน์โหลดต่อหรือไม่?
+	</string>
+	<string name="streaming_alert_lte">
+		ไม่สามารถเล่นได้เนื่องจากไฟล์ถูกลบไปแล้ว ทำการดาวน์โหลดอีกครั้งหรือไม่?
+	</string>
+	<string name="download_info_5g">
+		การใช้งานบนเครือข่าย 5G สามารถดาวน์โหลดได้รวดเร็วกว่าบนเครือข่าย LTE 10 เท่า
+	</string>
+	<string name="data_saving_mode_warn">
+		คุณไม่สามารถรับชมคอนเทนท์ได้อย่างเหมาะสมในเซฟโหมดได้ กรุณาปิดการใช้งานเซฟโหมดเพื่อการใช้งานที่ราบรื่น
+	</string>
+	<string name="please_recognize_image">
+		จัดแนวขอบภาพให้ตรงกับพื้นที่สีชมพูที่ด้านหน้า
+	</string>
+	<string name="please_recognize_fail">
+		การจดจำรูปภาพล้มเหลว โปรดลองอีกครั้งโดยจัดภาพให้อยู่กึ่งกลางของพื้นที่สี่เหลี่ยม
+	</string>
+	<string name="recognize_google_lens">
+		ใช้งานด้วย Google Lens (เปิดใช้งานอัตโนมัติใน 5 วินาที)
+	</string>
+	<string name="move_google_lens">
+		กำลังเชื่อมต่อกับ Google Lens ชิ้นส่วนนี้สามารถดูได้ด้วย Google Lens
+	</string>
+	<string name="recognize_image_retry">
+		ลองอีกครั้ง
+	</string>
+	<string name="start_event_page_after_3s">
+		เปลี่ยนไปที่หน้าคำอธิบายใน 3 วินาที
+	</string>
+	<string name="see_stillcut">
+		รับชม thumbnail
+	</string>
+	<string name="contents_stillcut">
+		คอนเทนท์ thumbnail
+	</string>
+	<!--<string name="contents_preview">
+		พรีวิวคอนเทนท์
+	</string>-->
+	<string name="contents_preview">
+		รายการคอนเทนท์
+	</string>
+	<string name="until_format">
+		จนกระทั่ง %1$s
+	</string>
+	<string name="tutorial_onboarding_0_title">
+		ถ่ายรูปหรือวิดีโอกับตัวละคร หรือ ดาราที่คุณชื่นชอบ
+	</string>
+	<string name="tutorial_onboarding_1_title">
+		ถ่ายภาพหรือวิดีโอร่วมกันราวกับว่าพวกเขาอยู่ตรงหน้าคุณ
+	</string>
+	<string name="tutorial_onboarding_2_title">
+		สนุกกับเพื่อนหรือครอบครัวด้วยการแชร์รูปภาพหรือวิดีโอของคุณบนโซเชียลเน็ตเวิร์ก
+	</string>
+	<string name="player_tutorial_title_0">
+		แนะนำ
+	</string>
+	<string name="player_tutorial_title_1">
+		การปรับมุม
+	</string>
+	<string name="player_tutorial_title_2">
+		ย้ายตำแหน่ง 
+	</string>
+	<string name="player_tutorial_title_3">
+		การปรับขนาด
+	</string>
+	<string name="player_tutorial_desc_1">
+		เคลื่อนย้ายคอนเทนท์ไปรอบๆ ตามทิศทางที่ต้องการด้วยนิ้วเดียว
+	</string>
+	<string name="player_tutorial_desc_2">
+		ลองขยับคอนเทนท์ไปรอบๆ ด้วยการใช้ 2 นิ้ว
+	</string>
+	<string name="player_tutorial_desc_3">
+		ลองใช้ 2 นิ้วกางหรือชิดบนคอนเทนท์
+	</string>
+	<string name="player_floor_tutorial_title_0">
+		จดจำพื้นผิว
+	</string>
+	<string name="player_floor_tutorial_title_1">
+		เลือกตำแหน่ง
+	</string>
+	<string name="player_floor_tutorial_desc_0">
+		เลื่อนโทรศัพท์ของคุณไปทางซ้ายและ\nขวาเพื่อค้นหาพื้นผิวที่สามารถวางคอน\nเทนท์อยู่กับที่ได้
+	</string>
+	<string name="player_floor_tutorial_desc_1">
+		แตะตำแหน่งที่คุณต้องการบนหน้าจอ
+	</string>
+	<string name="intro_start">
+		เริ่มต้น
+	</string>
+	<string name="intro_skip">
+		ข้าม
+	</string>
+	<string name="tutorial_txt_1">
+		คุณภาพวิดีโอจะได้รับการปรับให้เหมาะสมตามการเชื่อมต่อเครือข่ายของคุณโดยอัตโนมัติ เพื่อช่วยให้คุณรับชมวิดีโอได้อย่างเสถียรโดยไม่สะดุด
+	</string>
+	<string name="tutorial_txt_2">
+		คุณภาพวิดีโอจะถูกนำเสนอใน Ultra High Definition เมื่อทำการดาวน์โหลด
+	</string>
+	<string name="thousand">
+		k
+	</string>
+	<string name="ten_thousand">
+		10k
+	</string>
+	<string name="billion">
+		b
+	</string>
+	<string name="lge_special">
+		LG V50 โรงภาพยนต์ส่วนตัว
+	</string>
+	<string name="search_hint1">
+		ค้นหาคอนเทนท์ที่คุณต้องการรับชม
+	</string>
+	<string name="search_theme_contents">
+		ธีมคอนเทนท์
+	</string>
+	<string name="view_all">
+		ดูทั้งหมด
+	</string>
+	<string name="delete_all">
+		ลบทั้งหมด
+	</string>
+	<string name="trends">
+		ได้รับความนิยม
+	</string>
+	<string name="search_recent">
+		ค้นหาล่าสุด
+	</string>
+	<string name="search_related">
+		ที่เกี่ยวข้อง
+	</string>
+	<string name="search_result_null">
+		ไม่พบผลการค้นหาใน \'%s\' ลองใช้คำอื่นค้นหา
+	</string>
+	<string name="search_result">
+		ทั้งหมด %d ผลการค้นหา
+	</string>
+	<string name="take_shot">
+		ถ่ายรูปภาพ / วิดิโอ
+	</string>
+	<string name="switch_camera">
+		สลับกล้อง
+	</string>
+	<string name="my_contents_link"/>
+	<string name="warning_temperature">
+		อุณหภูมิของอุปกรณ์สูง โปรดระวัง
+	</string>
+	<string name="qlone_same_name">
+		ชื่อนี้มีอยุ่แล้ว
+	</string>
+	<string name="qlone_name_have_blink">
+		โปรดระบุชื่อ
+	</string>
+	<string name="qlone_name_have_special">
+		ชื่อไม่สามารถใช้อักขระพิเศษได้
+	</string>
+	<string name="qlone_limit_name">
+		บันทึกได้ไม่เกิน 6 ตัวอักษร
+	</string>
+	<string name="downloadable_content">
+		คอนเทนท์ที่สามารถดาวน์โหลดได้
+	</string>
+	<string name="streaming_cotent_mid_quality">
+		คุณภาพคอนเทนท์สตรีมมิ่งระดับปานกลาง
+	</string>
+	<string name="streaming_content_high_quality">
+		คุณภาพคอนเทนท์สตรีมมิ่งระดับสูง
+	</string>
+	<string name="streaming_content_ultra_quality">
+		คุณภาพคอนเทนท์สตรีมมิ่งระดับสูงมาก
+	</string>
+	<string name="performance">
+		การแสดง 
+	</string>
+	<string name="sticker">
+		สติ๊กเกอร์
+	</string>
+	<string name="threed_character">
+		ตัวละครแบบ 3 มิติ
+	</string>
+	<string name="home_thumb">
+		หน้าหลัก
+	</string>
+	<string name="hot_thumb">
+		ยอดนิยม
+	</string>
+	<string name="new_thumb">
+		ใหม่ล่าสุด
+	</string>
+	<string name="my_thumb">
+		ของฉัน
+	</string>
+	<string name="content_path_string">
+		สถานที่จัดเก็บ / ดาวน์โหลด / AIS AR /
+	</string>
+	<string name="copying">
+		คัดลอก
+	</string>
+	<string name="event_detail_desc1">
+		รายละเอียดกิจกรรม
+	</string>
+	<string name="event_detal_desc2">
+		รายละเอียดกิจกรรม
+	</string>
+	<string name="excute_recog_image">
+		เปิดใช้งานการจดจำรูปภาพ
+	</string>
+	<string name="force_set_5G">
+		บังคับการตั้งค่าเป็น 5G
+	</string>
+	<string name="all_network_set">
+		ใช้งานกับเครือข่าย WiFi / Cellular ทั้งหมด
+	</string>
+	<string name="test_play_btn">
+		ปุ่มทดสอบเพลย์เยอร์
+	</string>
+	<string name="apply_after_app_start">
+		เริ่มใช้หลังจากเปิดแอพพลิเคชัน
+	</string>
+	<string name="change_server">
+		เปลี่ยนเซิร์ฟเวอร์
+	</string>
+	<string name="pls_restart_app_after_change_server">
+		โปรดเริ่มต้นแอปพลิเคชันใหม่หลังจากเปลี่ยนเซิร์ฟเวอร์
+	</string>
+	<string name="speed_test">
+		ทดสอบความเร็ว
+	</string>
+	<string name="test_for_change_ctn">
+		ทดสอบการเปลี่ยนแปลง CTN
+	</string>
+	<string name="pls_restart_app_after_change">
+		โปรดเริ่มต้นแอปพลิเคชันใหม่หลังจากเปลี่ยนแปลง
+	</string>
+	<string name="test_mode_search">
+		การตั้งค่าทดสอบโหมดค้นหา
+	</string>
+	<string name="term_agree_screen">
+		หน้าจอข้อตกลง
+	</string>
+	<string name="init_turorial">
+		เริ่มต้นคำแนะนำ
+	</string>
+	<string name="inspection">
+		การตรวจสอบ
+	</string>
+	<string name="inspect_content_list">
+		รายการคอนเทนท์ที่ตรวจสอบ
+	</string>
+	<string name="program_test_list">
+		รายการองค์กรที่ตรวจสอบ
+	</string>
+	<string name="inspect_local_content_list">
+		รายการคอนเทนท์ภายประเทศในที่ตรวจสอบ
+	</string>
+	<string name="term_agree">
+		เห็นด้วยกับข้อตกลง
+	</string>
+	<string name="video">
+		วิดิโอ
+	</string>
+	<string name="animated">
+		GIF
+	</string>
+	<string name="photo">
+		รูปภาพ
+	</string>
+	<string name="thumbnail">
+		รูปขนาดย่อ
+	</string>
+	<string name="program">
+		โปรแกรม
+	</string>
+	<string name="playback">
+		เล่น
+	</string>
+	<string name="text">
+		ข้อความ 
+	</string>
+	<string name="gif">
+		GIF
+	</string>
+	<string name="title_notice">
+		หัวข้อประกาศ
+	</string>
+	<string name="title_notice_title_notice">
+		หัวข้อประกาศ
+	</string>
+	<string name="replay_content_replay_content">
+		แสดงความคิดเห็นคอนเทนท์
+	</string>
+	<string name="fcm_id_confirm">
+		ยืนยัน FCM ID
+	</string>
+	<string name="all_confirm_agree">
+		ยืนยันและยอมรับทั้งหมด
+	</string>
+	<string name="copied_to_clipboard">
+		คัดลอกและวาง
+	</string>
+	<string name="invalid_uri">
+		ไม่พบ URI
+	</string>
+	<string name="mandatory_folder_not_found">
+		ไม่พบโฟลเดอร์ที่จำเป็น
+	</string>
+	<string name="debug_set_ok">
+		ตั้งค่า debug mode สำเร็จ
+	</string>
+	<string name="to_inspect_mode_set">
+		โหมดตรวจสอบ
+	</string>
+	<string name="remain_count">
+		เวลาที่เหลือ
+	</string>
+	<string name="inspect_mode_setted">
+		ตั้งค่าโหมดทดสอบ
+	</string>
+	<string name="theme">
+		ธีม
+	</string>
+
+	<string name="network_error_before_login">หากคุณเรียกใช้แอปเป็นครั้งแรกในโหมดบล็อก N/W หรือบนเครื่องบินคุณจะไม่สามารถใช้บริการนี้ได้</string>
+
+	<string name="not_supported_your_device">อุปกรณ์ของคุณไม่รองรับบริการ AIS AR</string>
+
+
+	<!-- do not used only debug -->
+
+	<string name="qlone_no_contents">스캔한 콘텐츠가 없습니다.\n나만의 3D 콘텐츠를 만들어보세요.</string>
+	<string name="qlone_tutorial_need_mat"><![CDATA[3D 스캔을 위해 <font color=#e83c5a>전용매트</font>가 필요합니다.<br>전용매트를 준비해 주세요.]]></string>
+	<string name="qlone_tutorial_download_btn">전용매트 다운받기</string>
+	<string name="qlone_tutorial_do_landscape">가로화면에서 버튼을 눌러\n스캔을 진행해주세요.</string>
+	<string name="qlone_tutorial_360_scan">360도 스캔</string>
+	<string name="qlone_tutorial_360_scan_msg">스캔 대상을 올린 뒤 360도\n천천히 돌아가며 스캔을 해주세요.</string>
+	<string name="qlone_tutorial_keep_scan">스캔을 계속 진행해주세요.</string>
+	<string name="qlone_tutorial_other_scan">스캔 대상을 다른 포즈로 올려주세요.</string>
+	<string name="qlone_tutorial_after_scan">보정을 원하는 부분을 길게 누르면\n보정할 수 있어요.</string>
+	<string name="qlone_tutorial_after_scan_2">다른 포즈를 추가로 스캔하면\n더욱 완벽한 콘텐츠를 만들 수 있어요.</string>
+	<string name="qlone_make_name_desc">콘텐츠 이름을 입력해주세요.</string>
+	<string name="qlone_make_name_hint">3D 스캔 테스트</string>
+	<string name="qlone_exit_scanning_desc">지금 종료하시면\n스캔한 데이터는 저장되지 않습니다.\n종료하시겠습니까?</string>
+	<string name="qlone_exit_not_saved_desc">콘텐츠가 저장되지 않았습니다.\n정말 종료하시겠습니까?</string>
+	<string name="qlone_select_share_type_title">공유 형식을 선택해주세요.</string>
+	<string name="qlone_randering">3D 콘텐츠를\n제작하고 있습니다.</string>
+
+	<string name="download_contents_play">Downloadable content\n(play)</string>
+	<string name="streaming_content_mid_play">Streaming Content_mid\n(play)</string>
+	<string name="streaming_content_high_play">Streaming content_high\n(play)</string>
+	<string name="streaming_content_ultra_play">Streaming content_ultra\n(play)</string>
+
+	<string name="downloadble_content">Downloadble content</string>
+	<string name="streaming_content_mid">Streaming content_mid</string>
+	<string name="streaming_content_high">Streaming content_high</string>
+	<string name="streaming_content_ultra">Streaming content_ultra</string>
+
+	<string name="downloadable_content_downloading">Downloadable content\n(downloading)</string>
+	<string name="downloadable_content_stop">Downloadable content\n(stop)</string>
+	<string name="streaming_content_mid_downloading">Streaming content_mid\n(downloading)</string>
+	<string name="streaming_content_mid_stop">Streaming content_mid\n(stop)</string>
+	<string name="streaming_content_high_downloading">Streaming content_high\n(downloading)</string>
+	<string name="streaming_content_high_stop">Streaming content_high\n(stop)</string>
+	<string name="streaming_content_ultra_downloading">Streaming content_ultra\n(downloading)</string>
+	<string name="streaming_content_ultra_stop">Streaming content_ultra\n(stop)</string>
+
+	<string name="downloadable_content_download_fail">Downloadable content\n(download fail)</string>
+	<string name="streaming_content_mid_download_fail">Streaming content_mid\n(download fail)</string>
+	<string name="streaming_content_high_download_fail">Streaming content_high\n(download fail)</string>
+	<string name="streaming_content_ultra_download_fail">Streaming content_ultra\n(download fail)</string>
+
+	<string name="error_view_text">The content view in PtrFrameLayout is empty. Do you forget to specify its id in xml layout file?</string>
+
+
+
+</resources>

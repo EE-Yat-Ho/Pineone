@@ -3,10 +3,13 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "RecentlyView.updateRecentlyView(status:):RecentlyView.swift">
+         contextName = "InitFlow.setCell(at:):InitFlow.swift">
          <PersistentStrings>
             <PersistentString
-               value = "tableView.refreshControl">
+               value = "tabHeaderCells">
+            </PersistentString>
+            <PersistentString
+               value = "tabControllers.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -74,6 +77,14 @@
          <PersistentStrings>
             <PersistentString
                value = "tableHeaderView.dropdownButton.title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CompactViewModel.cellDetail(_:):CompactViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "deleteMode">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -195,10 +206,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "InitFlow.setCell(at:):InitFlow.swift">
+         contextName = "RecentlyView.updateRecentlyView(status:):RecentlyView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "tabHeaderCells">
+               value = "tableView.refreshControl">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

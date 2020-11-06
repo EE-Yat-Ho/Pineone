@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ViewController.parser(_:didStartElement:namespaceURI:qualifiedName:attributes:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Resource.shared.koreaDictionary">
+            </PersistentString>
+            <PersistentString
+               value = "parserKeyBuff">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.setDictionary():ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.clickKoreaButton():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Resource.shared.koreaDictionary[&quot;until_format&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "Resource.shared.koreaDictionary[&quot;setting_app_version&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "&quot;abc&quot;.cString(using: .utf8)">
+            </PersistentString>
+            <PersistentString
+               value = "label4.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Resource.getKoreaValue(key:arguments:):Resource.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Resource.shared.koreaDictionary[qlone_tutorial_need_mat]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.parser(_:foundCharacters:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "parserKeyBuff">
+            </PersistentString>
+            <PersistentString
+               value = "string">
+            </PersistentString>
+            <PersistentString
+               value = "Resource.shared.koreaDictionary">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.viewDidLoad():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Resource.shared.thailandDictionary[&quot;player_floor_tutorial_desc_0&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "Resource.shared.koreaDictionary[&quot;setting_app_version&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "Resource.shared.thailandDictionary[&quot;setting_app_version&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "Resource.shared.koreaDictionary[&quot;content_basic_info&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "Resource.shared.koreaDictionary[&quot;app_name&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "Resource.shared.koreaDictionary[&quot;buffering_info&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "Resource.shared.koreaDictionary">
+            </PersistentString>
+            <PersistentString
+               value = "Resource.shared.koreaDictionary[&quot;setting_current_version&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.parser(_:didEndElement:namespaceURI:qualifiedName:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Resource.shared.koreaDictionary[&quot;setting_app_version&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

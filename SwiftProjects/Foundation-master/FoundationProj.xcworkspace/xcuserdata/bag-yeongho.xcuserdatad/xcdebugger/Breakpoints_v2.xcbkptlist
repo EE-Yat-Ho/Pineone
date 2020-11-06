@@ -922,6 +922,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+<<<<<<< HEAD
             uuid = "652CB6ED-21E6-4D31-8394-59AA6C9B3351"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -954,6 +955,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+=======
+>>>>>>> project
             uuid = "273B14AF-FA6B-408B-A598-ADDD7A49B32A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1034,6 +1037,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+<<<<<<< HEAD
             uuid = "BEC1C615-7E02-4163-A945-119AC2F7D9FB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1050,6 +1054,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+=======
+>>>>>>> project
             uuid = "DF75964E-952D-43BF-BDA5-C3B55D212472"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1098,29 +1104,37 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C038F5DE-0F38-4C10-9002-249125953091"
+            uuid = "41A23477-93BE-4357-8B33-1B7DB13829E8"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FoundationProj/Coordinator/Flow/ActivityFlow.swift"
+            filePath = "FoundationProj/Feature/MultiTable/Like/LikeView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "145"
             endingLineNumber = "145"
             landmarkName = "unknown"
             landmarkType = "0">
+=======
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "setupDI(observable:)"
+            landmarkType = "7">
+>>>>>>> project
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "57BB1122-5DEA-4CC8-802A-5C71359CA295"
+            uuid = "0B53A542-D955-4E7A-B6F1-350BA3FC4A5A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FoundationProj/Coordinator/Flow/ActivityFlow.swift"
+            filePath = "FoundationProj/Feature/MultiTable/Reply/ReplyView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "126"
             endingLineNumber = "126"
             landmarkName = "unknown"
@@ -1157,54 +1171,12 @@
                   offsetFromSymbolStart = "97">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "78B73EC8-C901-42E1-8AB0-7F0B45ED4106"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoundationProj/Coordinator/Flow/ActivityFlow.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "41A23477-93BE-4357-8B33-1B7DB13829E8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoundationProj/Feature/MultiTable/Like/LikeView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "setupDI(observable:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0B53A542-D955-4E7A-B6F1-350BA3FC4A5A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoundationProj/Feature/MultiTable/Reply/ReplyView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
+=======
             startingLineNumber = "146"
             endingLineNumber = "146"
             landmarkName = "setupDI(observable:)"
             landmarkType = "7">
+>>>>>>> project
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1217,10 +1189,17 @@
             filePath = "../../../../Nemo-master/Pods/SnapKit/Source/ConstraintMakerRelatable.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "unknown"
+            landmarkType = "0">
+=======
             startingLineNumber = "84"
             endingLineNumber = "84"
             landmarkName = "equalToSuperview(_:_:)"
             landmarkType = "7">
+>>>>>>> project
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1258,38 +1237,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7E38B350-E3C0-4389-9D9B-35049C8C4EA8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoundationProj/Coordinator/Flow/ActivityFlow.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "87036043-F1E8-462C-8BB7-D19D74B841E2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoundationProj/Coordinator/Flow/InitFlow.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "InitFlow"
-            landmarkType = "21">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "021CB791-ACE5-4B6A-A3E9-F605DCFE329C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1300,6 +1247,196 @@
             startingLineNumber = "35"
             endingLineNumber = "35"
             landmarkName = "init(naviType:activityDetail:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "629A163C-8AAD-41E9-AF2A-39DFE47460F6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoundationProj/Feature/MultiTable/Compact/CompactViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "inputActionProcessor(inputAction:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6849647F-5C2A-42BE-9782-5AD151420E22"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoundationProj/Coordinator/Flow/InitFlow.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "makeActivityModels()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0A85D9D0-DB77-49BA-AAE1-29456A80C307"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoundationProj/Coordinator/Flow/InitFlow.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "unknown"
+            landmarkType = "0">
+=======
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "makeActivityControllers()"
+            landmarkType = "7">
+>>>>>>> project
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6EE1D629-EDAF-4E97-BC52-5F220106FCD9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoundationProj/Coordinator/Flow/InitFlow.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "InitFlow"
+            landmarkType = "21">
+=======
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "navigateToMultiCollection(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6EE1D629-EDAF-4E97-BC52-5F220106FCD9 - af0f7306bdee5ed2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 0 of FoundationProj.InitFlow.(navigateToMultiCollection in _CEF99ADDC73887E84844E8C7DBDF4E34)(Swift.Optional&lt;FoundationProj.MoreSeeDetail&gt;) -&gt; RxFlow.FlowContributors"
+                  moduleName = "FoundationProj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/Foundation-master/FoundationProj/Coordinator/Flow/InitFlow.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "6">
+               </Location>
+               <Location
+                  uuid = "6EE1D629-EDAF-4E97-BC52-5F220106FCD9 - 3c9b7011ae108398"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoundationProj.InitFlow.(navigateToMultiCollection in _CEF99ADDC73887E84844E8C7DBDF4E34)(Swift.Optional&lt;FoundationProj.MoreSeeDetail&gt;) -&gt; RxFlow.FlowContributors"
+                  moduleName = "FoundationProj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bag-yeongho/Desktop/pineone/Pineone/SwiftProjects/Foundation-master/FoundationProj/Coordinator/Flow/InitFlow.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "163"
+                  endingLineNumber = "163"
+                  offsetFromSymbolStart = "91">
+               </Location>
+            </Locations>
+>>>>>>> project
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2699F1AD-2883-4219-86B5-B80D69851EED"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoundationProj/Coordinator/Flow/InitFlow.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "navigateToMultiCollection(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6DF24FD4-3E8B-4FCF-97EC-3CE0934640B4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoundationProj/Coordinator/Flow/InitFlow.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "navigateToMultiTable()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "22A98B43-8107-4642-93CB-DADFA085B44D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoundationProj/Coordinator/Flow/InitFlow.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "navigateToMultiTable()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "495042BE-E0F9-47D6-8AB4-6F52ECC47358"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoundationProj/Coordinator/Flow/InitFlow.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
+            landmarkName = "makeMoreSeeControllers()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DF929850-F4D6-47F1-A04A-48567F8B12BA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoundationProj/Coordinator/Flow/InitFlow.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "makeMoreSeeModels()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -130,11 +130,9 @@
 		2A091E552546997700855EAC /* ARTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E542546997700855EAC /* ARTabBarController.swift */; };
 		2A091E5D25469AB000855EAC /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E5C25469AB000855EAC /* UIWindow+.swift */; };
 		2A091E872547D12F00855EAC /* ActivityFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E862547D12F00855EAC /* ActivityFlow.swift */; };
-		2A091E8C2547D27F00855EAC /* BaseFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E8B2547D27F00855EAC /* BaseFlow.swift */; };
 		2A091E912547DB6B00855EAC /* LoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E902547DB6B00855EAC /* LoadingService.swift */; };
 		2A091E962547DEA600855EAC /* URLScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E952547DEA600855EAC /* URLScheme.swift */; };
 		2A091EA02547E3F200855EAC /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091E9F2547E3F200855EAC /* AppInfo.swift */; };
-		2A091EA82547E59C00855EAC /* NotificationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091EA72547E59C00855EAC /* NotificationFlow.swift */; };
 		2A091EAD2547E5B600855EAC /* NotificationSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091EAC2547E5B600855EAC /* NotificationSteps.swift */; };
 		2A091EB22547E5E300855EAC /* ActivityStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091EB12547E5E300855EAC /* ActivityStepper.swift */; };
 		2A091ECE254903E500855EAC /* RealmMyDownladFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A091ECD254903E500855EAC /* RealmMyDownladFile.swift */; };
@@ -190,8 +188,25 @@
 		2A34690C253FC4A9003E4BC7 /* CustomAlertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A34690B253FC4A9003E4BC7 /* CustomAlertButton.swift */; };
 		2A346914253FC816003E4BC7 /* AlertPresentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A346913253FC816003E4BC7 /* AlertPresentManager.swift */; };
 		2A346919253FC9B7003E4BC7 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A346918253FC9B7003E4BC7 /* AlertService.swift */; };
+		2A6F84F3255004910000345F /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6F84F2255004910000345F /* Toast.swift */; };
+		2A6F84F92550058A0000345F /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6F84F82550058A0000345F /* ToastView.swift */; };
+		2A6F8501255005990000345F /* ToastCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6F8500255005990000345F /* ToastCenter.swift */; };
+		2A6F8507255006440000345F /* Toaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6F8506255006440000345F /* Toaster.swift */; };
 		2AAFDEFC254A4A5C0046AB92 /* RealmLocalDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAFDEFB254A4A5C0046AB92 /* RealmLocalDB.swift */; };
 		2AAFDF01254A58890046AB92 /* CompactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAFDF00254A58890046AB92 /* CompactItem.swift */; };
+		2ADE2A8A2553F5B700C288C1 /* MoreSeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2A892553F5B700C288C1 /* MoreSeeView.swift */; };
+		2ADE2A922553F5D100C288C1 /* MoreSeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2A912553F5D100C288C1 /* MoreSeeViewController.swift */; };
+		2ADE2A972553F61E00C288C1 /* MoreSeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2A962553F61E00C288C1 /* MoreSeeViewModel.swift */; };
+		2ADE2AB12554DD2700C288C1 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2AB02554DD2700C288C1 /* EventViewController.swift */; };
+		2ADE2ABD2554DD5A00C288C1 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2ABC2554DD5A00C288C1 /* EventView.swift */; };
+		2ADE2AC22554DD6700C288C1 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2AC12554DD6700C288C1 /* EventViewModel.swift */; };
+		2ADE2AC72554DD7300C288C1 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2AC62554DD7300C288C1 /* EventCell.swift */; };
+		2ADE2ACC2554DE6A00C288C1 /* FDRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2ACB2554DE6A00C288C1 /* FDRepository.swift */; };
+		2ADE2AD12554DEF200C288C1 /* FDEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2AD02554DEF200C288C1 /* FDEvent.swift */; };
+		2ADE2AD62554DF4800C288C1 /* MoreSeeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2AD52554DF4800C288C1 /* MoreSeeCellModel.swift */; };
+		2ADE2ADE2554E05700C288C1 /* FDTerms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2ADD2554E05700C288C1 /* FDTerms.swift */; };
+		2ADE2AE32554E09300C288C1 /* FDEventImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2AE22554E09300C288C1 /* FDEventImage.swift */; };
+		2ADE2AE82554E0C300C288C1 /* FDVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2AE72554E0C300C288C1 /* FDVersion.swift */; };
 		3721899AFC42180B0556079E /* libPods-FoundationProjTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0741FBCCE752AE22252AB268 /* libPods-FoundationProjTests.a */; };
 		58483EECD5DCA3E880BCF4D8 /* libPods-FoundationProjUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 715B2D612CCB885BD1329FB5 /* libPods-FoundationProjUITests.a */; };
 		AFEEA1B07FE9B7A86105219C /* Pods_FoundationProj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E123FAA7DA87CE8462A205 /* Pods_FoundationProj.framework */; };
@@ -348,11 +363,9 @@
 		2A091E542546997700855EAC /* ARTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTabBarController.swift; sourceTree = "<group>"; };
 		2A091E5C25469AB000855EAC /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
 		2A091E862547D12F00855EAC /* ActivityFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFlow.swift; sourceTree = "<group>"; };
-		2A091E8B2547D27F00855EAC /* BaseFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFlow.swift; sourceTree = "<group>"; };
 		2A091E902547DB6B00855EAC /* LoadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingService.swift; sourceTree = "<group>"; };
 		2A091E952547DEA600855EAC /* URLScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLScheme.swift; sourceTree = "<group>"; };
 		2A091E9F2547E3F200855EAC /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
-		2A091EA72547E59C00855EAC /* NotificationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFlow.swift; sourceTree = "<group>"; };
 		2A091EAC2547E5B600855EAC /* NotificationSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSteps.swift; sourceTree = "<group>"; };
 		2A091EB12547E5E300855EAC /* ActivityStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStepper.swift; sourceTree = "<group>"; };
 		2A091ECD254903E500855EAC /* RealmMyDownladFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMyDownladFile.swift; sourceTree = "<group>"; };
@@ -408,8 +421,25 @@
 		2A34690B253FC4A9003E4BC7 /* CustomAlertButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertButton.swift; sourceTree = "<group>"; };
 		2A346913253FC816003E4BC7 /* AlertPresentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentManager.swift; sourceTree = "<group>"; };
 		2A346918253FC9B7003E4BC7 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		2A6F84F2255004910000345F /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		2A6F84F82550058A0000345F /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		2A6F8500255005990000345F /* ToastCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastCenter.swift; sourceTree = "<group>"; };
+		2A6F8506255006440000345F /* Toaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toaster.swift; sourceTree = "<group>"; };
 		2AAFDEFB254A4A5C0046AB92 /* RealmLocalDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLocalDB.swift; sourceTree = "<group>"; };
 		2AAFDF00254A58890046AB92 /* CompactItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactItem.swift; sourceTree = "<group>"; };
+		2ADE2A892553F5B700C288C1 /* MoreSeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreSeeView.swift; sourceTree = "<group>"; };
+		2ADE2A912553F5D100C288C1 /* MoreSeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreSeeViewController.swift; sourceTree = "<group>"; };
+		2ADE2A962553F61E00C288C1 /* MoreSeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreSeeViewModel.swift; sourceTree = "<group>"; };
+		2ADE2AB02554DD2700C288C1 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		2ADE2ABC2554DD5A00C288C1 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		2ADE2AC12554DD6700C288C1 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		2ADE2AC62554DD7300C288C1 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		2ADE2ACB2554DE6A00C288C1 /* FDRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDRepository.swift; sourceTree = "<group>"; };
+		2ADE2AD02554DEF200C288C1 /* FDEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDEvent.swift; sourceTree = "<group>"; };
+		2ADE2AD52554DF4800C288C1 /* MoreSeeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreSeeCellModel.swift; sourceTree = "<group>"; };
+		2ADE2ADD2554E05700C288C1 /* FDTerms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDTerms.swift; sourceTree = "<group>"; };
+		2ADE2AE22554E09300C288C1 /* FDEventImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDEventImage.swift; sourceTree = "<group>"; };
+		2ADE2AE72554E0C300C288C1 /* FDVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDVersion.swift; sourceTree = "<group>"; };
 		54E123FAA7DA87CE8462A205 /* Pods_FoundationProj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoundationProj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		715B2D612CCB885BD1329FB5 /* libPods-FoundationProjUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FoundationProjUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CAB8BC88E95D14405A7A5F5 /* Pods-FoundationProj-FoundationProjUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoundationProj-FoundationProjUITests.release.xcconfig"; path = "Target Support Files/Pods-FoundationProj-FoundationProjUITests/Pods-FoundationProj-FoundationProjUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -657,8 +687,8 @@
 				117B539724D80229000B8712 /* RotateStackScoll */,
 				11FE37752488F0E0004D452B /* LinkImageCollection */,
 				11E340C024878BFC0063D04F /* Main */,
-				11E3407724878BA30063D04F /* MultiCollection */,
 				11BBB20724F5FCFC004D09DE /* ToastWithView */,
+				11E3407724878BA30063D04F /* MultiCollection */,
 				11E3408B24878BA30063D04F /* MultiTable */,
 			);
 			path = Feature;
@@ -667,11 +697,12 @@
 		11E3407724878BA30063D04F /* MultiCollection */ = {
 			isa = PBXGroup;
 			children = (
-				11E3407A24878BA30063D04F /* PhotoZoom */,
-				11E3407824878BA30063D04F /* CollectionMultiSelectionViewModel.swift */,
-				11E3407924878BA30063D04F /* CollectionMultiSelectionViewController.swift */,
-				11E3408824878BA30063D04F /* CollectionMultiSelectionView.swift */,
-				11E3408924878BA30063D04F /* MultiCollectionCell.swift */,
+				2ADE2AB52554DD4300C288C1 /* Event */,
+				2ADE2A892553F5B700C288C1 /* MoreSeeView.swift */,
+				2ADE2A912553F5D100C288C1 /* MoreSeeViewController.swift */,
+				2ADE2A962553F61E00C288C1 /* MoreSeeViewModel.swift */,
+				2ADE2AD52554DF4800C288C1 /* MoreSeeCellModel.swift */,
+				2ADE2A882553F5A100C288C1 /* Old */,
 			);
 			path = MultiCollection;
 			sourceTree = "<group>";
@@ -774,8 +805,6 @@
 			children = (
 				11E3409A24878BA30063D04F /* InitFlow.swift */,
 				2A091E862547D12F00855EAC /* ActivityFlow.swift */,
-				2A091E8B2547D27F00855EAC /* BaseFlow.swift */,
-				2A091EA72547E59C00855EAC /* NotificationFlow.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -945,8 +974,10 @@
 		2A34677B253D5C5D003E4BC7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				2A6F84F2255004910000345F /* Toast.swift */,
 				2A3467CA253D623C003E4BC7 /* Resource.swift */,
 				2A091E902547DB6B00855EAC /* LoadingService.swift */,
+				2ADE2ACB2554DE6A00C288C1 /* FDRepository.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -962,6 +993,10 @@
 				2A091E9F2547E3F200855EAC /* AppInfo.swift */,
 				2A091EFB254921BF00855EAC /* Contents.swift */,
 				2A091F032549237F00855EAC /* ContentsReply.swift */,
+				2ADE2AD02554DEF200C288C1 /* FDEvent.swift */,
+				2ADE2ADD2554E05700C288C1 /* FDTerms.swift */,
+				2ADE2AE22554E09300C288C1 /* FDEventImage.swift */,
+				2ADE2AE72554E0C300C288C1 /* FDVersion.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -969,6 +1004,7 @@
 		2A3467B5253D604D003E4BC7 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				2A6F85052550062A0000345F /* Toast */,
 				2A091EE325490E7600855EAC /* ActionSheet */,
 				2A091E2925465C7700855EAC /* TabPager */,
 				2A3467BE253D60E5003E4BC7 /* RxExtensions */,
@@ -1047,6 +1083,16 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		2A6F85052550062A0000345F /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				2A6F84F82550058A0000345F /* ToastView.swift */,
+				2A6F8500255005990000345F /* ToastCenter.swift */,
+				2A6F8506255006440000345F /* Toaster.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
 		2A8C5D7D1B2B03DB8B9B8FB2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1060,6 +1106,29 @@
 				28CBA22BBE5CD7BABFD2F698 /* Pods-FoundationProjUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		2ADE2A882553F5A100C288C1 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				11E3407A24878BA30063D04F /* PhotoZoom */,
+				11E3407824878BA30063D04F /* CollectionMultiSelectionViewModel.swift */,
+				11E3407924878BA30063D04F /* CollectionMultiSelectionViewController.swift */,
+				11E3408824878BA30063D04F /* CollectionMultiSelectionView.swift */,
+				11E3408924878BA30063D04F /* MultiCollectionCell.swift */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
+		2ADE2AB52554DD4300C288C1 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				2ADE2AB02554DD2700C288C1 /* EventViewController.swift */,
+				2ADE2ABC2554DD5A00C288C1 /* EventView.swift */,
+				2ADE2AC12554DD6700C288C1 /* EventViewModel.swift */,
+				2ADE2AC62554DD7300C288C1 /* EventCell.swift */,
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 		B6EAE8F8745189B49048D075 /* Frameworks */ = {
@@ -1308,15 +1377,19 @@
 				11E340CA24878C380063D04F /* MainRepository.swift in Sources */,
 				2A34680D253D79BE003E4BC7 /* UIScrollView+.swift in Sources */,
 				2A091E5D25469AB000855EAC /* UIWindow+.swift in Sources */,
+				2ADE2AE32554E09300C288C1 /* FDEventImage.swift in Sources */,
 				2A091F2425494E5D00855EAC /* TripleCompactTableViewCell.swift in Sources */,
 				2A34676C253D5B95003E4BC7 /* ActivityBaseTableViewCell.swift in Sources */,
 				117C1BE424BFE493002CC5A3 /* UIStackView+.swift in Sources */,
 				2A091E50254695DB00855EAC /* ARNavigationController.swift in Sources */,
 				11E340A524878BA30063D04F /* ViewModelType.swift in Sources */,
 				2A091EED25490EAF00855EAC /* MenuSortView.swift in Sources */,
+				2ADE2ABD2554DD5A00C288C1 /* EventView.swift in Sources */,
+				2ADE2AB12554DD2700C288C1 /* EventViewController.swift in Sources */,
 				2A3467A3253D5F04003E4BC7 /* Int+.swift in Sources */,
 				11FF373A249882FF008B31A6 /* HorizontalStackScrollViewController.swift in Sources */,
 				11E340A024878BA30063D04F /* UIView+.swift in Sources */,
+				2ADE2AC72554DD7300C288C1 /* EventCell.swift in Sources */,
 				11E340BC24878BA30063D04F /* AppCoordinator.swift in Sources */,
 				11BBB20B24F5FD20004D09DE /* ToastShowViewController.swift in Sources */,
 				2A3467C0253D60F8003E4BC7 /* Observable+Rx.swift in Sources */,
@@ -1324,19 +1397,22 @@
 				11E340B724878BA30063D04F /* RecentlyViewModel.swift in Sources */,
 				2A091E0D2546551200855EAC /* ReplyViewModel.swift in Sources */,
 				2A091EF225490FCA00855EAC /* DownloadManager.swift in Sources */,
-				2A091EA82547E59C00855EAC /* NotificationFlow.swift in Sources */,
 				11E340C624878BFC0063D04F /* MainViewModel.swift in Sources */,
 				2AAFDEFC254A4A5C0046AB92 /* RealmLocalDB.swift in Sources */,
 				2A346791253D5DB5003E4BC7 /* ContentsRecentlyLike.swift in Sources */,
 				11E340C524878BFC0063D04F /* MainViewController.swift in Sources */,
 				2A091F0925494DD700855EAC /* CompactView.swift in Sources */,
+				2A6F84F92550058A0000345F /* ToastView.swift in Sources */,
+				2A6F8507255006440000345F /* Toaster.swift in Sources */,
 				1155A07124AEEFDF0082074C /* WebTestViewController.swift in Sources */,
 				11B5A17224ED446B000E4B25 /* FilterSlider.swift in Sources */,
+				2ADE2A922553F5D100C288C1 /* MoreSeeViewController.swift in Sources */,
 				2A091EAD2547E5B600855EAC /* NotificationSteps.swift in Sources */,
 				11E340BD24878BA30063D04F /* AppStep.swift in Sources */,
 				2A091E3425465CE600855EAC /* TabPagerHeaderCellModel.swift in Sources */,
 				2A091E252546566500855EAC /* ActivityViewController.swift in Sources */,
 				2A091EB22547E5E300855EAC /* ActivityStepper.swift in Sources */,
+				2ADE2AE82554E0C300C288C1 /* FDVersion.swift in Sources */,
 				11FE860B24BB3E93007F9641 /* RotateViewController.swift in Sources */,
 				11FF373C249882FF008B31A6 /* HorizontalStackScrollViewModel.swift in Sources */,
 				11E3409F24878BA30063D04F /* ViewModel.swift in Sources */,
@@ -1366,6 +1442,7 @@
 				11F5753E24BEB293003ACB4B /* PlayerViewController.swift in Sources */,
 				2A091E3025465CB400855EAC /* TabPagerContents.swift in Sources */,
 				11E3409E24878BA30063D04F /* TableView+.swift in Sources */,
+				2ADE2AD12554DEF200C288C1 /* FDEvent.swift in Sources */,
 				11EDF17C248DF9E000E6E849 /* NavigationController.swift in Sources */,
 				11FE861124BB4B16007F9641 /* UIButton+.swift in Sources */,
 				11FE860C24BB3E93007F9641 /* RotateView.swift in Sources */,
@@ -1382,6 +1459,7 @@
 				2A091EFC254921BF00855EAC /* Contents.swift in Sources */,
 				2A346836253D8273003E4BC7 /* UILabel+.swift in Sources */,
 				11BBB20F24F60090004D09DE /* ViewToaster.swift in Sources */,
+				2ADE2ADE2554E05700C288C1 /* FDTerms.swift in Sources */,
 				11F85F9F24C7F33600975456 /* Observable+Weak.swift in Sources */,
 				2A091E00254654F700855EAC /* ReplyViewController.swift in Sources */,
 				2A3467DC253D6840003E4BC7 /* ARNavigationBar.swift in Sources */,
@@ -1401,10 +1479,10 @@
 				11F5754424BEB804003ACB4B /* RangeSlider.swift in Sources */,
 				2A091E3925465D0300855EAC /* PageViewController+.swift in Sources */,
 				2A091E13254655B600855EAC /* LikeView.swift in Sources */,
+				2ADE2AC22554DD6700C288C1 /* EventViewModel.swift in Sources */,
 				11E340AD24878BA30063D04F /* ZoomingViewController.swift in Sources */,
 				11E340BE24878BA30063D04F /* AppStepper.swift in Sources */,
 				2A3467CB253D623C003E4BC7 /* Resource.swift in Sources */,
-				2A091E8C2547D27F00855EAC /* BaseFlow.swift in Sources */,
 				11E340A324878BA30063D04F /* FlowSugar.swift in Sources */,
 				2A091F042549237F00855EAC /* ContentsReply.swift in Sources */,
 				2A3467E1253D68DC003E4BC7 /* ARTableViewEmptyView.swift in Sources */,
@@ -1420,6 +1498,7 @@
 				11E340B024878BA30063D04F /* ZoomAnimator.swift in Sources */,
 				2A346919253FC9B7003E4BC7 /* AlertService.swift in Sources */,
 				1155A07224AEEFDF0082074C /* WebTestView.swift in Sources */,
+				2ADE2A8A2553F5B700C288C1 /* MoreSeeView.swift in Sources */,
 				2A3467A8253D5F28003E4BC7 /* Double+.swift in Sources */,
 				2A091E872547D12F00855EAC /* ActivityFlow.swift in Sources */,
 				1108EAEA24AC263E001514A3 /* DeviceOrientationHelper.swift in Sources */,
@@ -1428,6 +1507,7 @@
 				2A091EF72549211300855EAC /* Float+.swift in Sources */,
 				11E340CC24878C590063D04F /* AppDelegate.swift in Sources */,
 				117B539F24D8025F000B8712 /* RotatePickerView.swift in Sources */,
+				2A6F84F3255004910000345F /* Toast.swift in Sources */,
 				2A091EDC2549065200855EAC /* DownloadTaskInfo.swift in Sources */,
 				11E340B924878BA30063D04F /* RecentlyViewController.swift in Sources */,
 				2A346800253D6F69003E4BC7 /* UIImage+.swift in Sources */,
@@ -1437,12 +1517,15 @@
 				2A346771253D5BC3003E4BC7 /* UIFont+.swift in Sources */,
 				2A3467EB253D6A29003E4BC7 /* BaseView.swift in Sources */,
 				11B5A16E24ED4319000E4B25 /* FilterSliderViewController.swift in Sources */,
+				2ADE2A972553F61E00C288C1 /* MoreSeeViewModel.swift in Sources */,
 				11E340A924878BA30063D04F /* ImageSliderCellPorotol.swift in Sources */,
+				2ADE2ACC2554DE6A00C288C1 /* FDRepository.swift in Sources */,
 				11E340B424878BA30063D04F /* CollectionMultiSelectionView.swift in Sources */,
 				2A3468ED253FBC7D003E4BC7 /* DefaultStyle.swift in Sources */,
 				2A091E15254655C600855EAC /* LikeViewModel.swift in Sources */,
 				2A091E1D2546561B00855EAC /* DownloadView.swift in Sources */,
 				117C1BE924C024EC002CC5A3 /* Color+.swift in Sources */,
+				2A6F8501255005990000345F /* ToastCenter.swift in Sources */,
 				2A34684A253D8DEE003E4BC7 /* Server.swift in Sources */,
 				11E340C724878BFC0063D04F /* MainView.swift in Sources */,
 				11E340BA24878BA30063D04F /* ImageTableCell.swift in Sources */,
@@ -1452,6 +1535,7 @@
 				2A091EA02547E3F200855EAC /* AppInfo.swift in Sources */,
 				11E340AE24878BA30063D04F /* ZoomTransitionController.swift in Sources */,
 				2A091E552546997700855EAC /* ARTabBarController.swift in Sources */,
+				2ADE2AD62554DF4800C288C1 /* MoreSeeCellModel.swift in Sources */,
 				11FE37792488F105004D452B /* LinkImageGridViewController.swift in Sources */,
 				11E340C824878BFC0063D04F /* MainCell.swift in Sources */,
 				2A346907253FC0BC003E4BC7 /* UIView+Extension+UsePopup.swift in Sources */,
@@ -1648,6 +1732,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KXKQCH6X89;
 				INFOPLIST_FILE = FoundationProj/Info.plist;
@@ -1656,8 +1741,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.biziOS.FoundationProj;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pineone.FoundationProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1671,6 +1757,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KXKQCH6X89;
 				INFOPLIST_FILE = FoundationProj/Info.plist;
@@ -1679,8 +1766,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.biziOS.FoundationProj;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pineone.FoundationProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -123,6 +123,13 @@ class CompactView: UIBasePreviewTypeForSampling {
     // MARK: - Observe UserInputs
     func bindData() {
         // Inputs. Required Business Logic
+        /// topView의 입력을 비지니스 로직용 topViewEventProcessor로 emit
+        topView
+            .headerViewAction
+            .map{ .topViewAction($0)}
+            .bind(to: inputAction)
+            .disposed(by: rx.disposeBag)
+        
         /// 셀 선택시, cellDetail이벤트 전달. 성인이나 기간만료에 의한 판단은 ViewModel 에서!
         tableView
             .rx
@@ -140,11 +147,12 @@ class CompactView: UIBasePreviewTypeForSampling {
             .disposed(by: rx.disposeBag)
         
         
+        
         // Inputs. Not Required Business Logic
-        /// topView의 입력을 topViewEventProcessor로 emit
+        /// topView의 입력을 UI작업용 topViewEventProcessor로 emit
         topView
             .headerViewAction
-            .subscribe(onNext: topViewEventProcessor)
+            .bind(onNext: topViewEventProcessor)
             .disposed(by: rx.disposeBag)
         
         /// tableView가 삭제모드일때, 셀 선택시 하단 버튼처리
@@ -152,7 +160,7 @@ class CompactView: UIBasePreviewTypeForSampling {
             .rx
             .selectedRows
             .filter { _ in self.tableView.allowsMultipleSelection == true } // 삭제모드
-            .subscribe(onNext: showDeleteButton)
+            .bind(onNext: showDeleteButton)
             .disposed(by: rx.disposeBag)
         
         /// tableView의 모든 셀 선택시 topView의 체크버튼 선택
@@ -167,7 +175,7 @@ class CompactView: UIBasePreviewTypeForSampling {
             .rx
             .tap
             .map { _ -> [IndexPath] in return self.tableView.indexPathsForSelectedRows!.sorted() }
-            .subscribe(onNext: showAlert)
+            .bind(onNext: showAlert)
             .disposed(by: rx.disposeBag)
         
         /// 테이블뷰이 리로드되면 refreshControl의 애니메이션이나 위치 조정. 삭제모드가 아니여야 하는 이유는 삭제모드에서 refreshControl이 없기때문
@@ -182,6 +190,13 @@ class CompactView: UIBasePreviewTypeForSampling {
         tableView
             .rx
             .contentOffset
+            .do(onNext: { [weak self] position in
+                if let flag = self?.tableView.isNearBottomEdge(edgeOffset: 0) {
+                    if flag {
+                        self?.inputAction.accept(.loadMore)
+                    }
+                }
+            })
             .map({[weak self]  position -> Bool in
                 guard let `self` = self else { return true }
                 if position.y > self.tableView.frame.height {
@@ -260,6 +275,7 @@ class CompactView: UIBasePreviewTypeForSampling {
         deleteCompleteOv
             .on(next: { [weak self] in
                 self?.topViewEventProcessor(actionType: .cancel)
+                Toast.show(R.String.Activity.toast_delete_success)
             }).disposed(by: rx.disposeBag)
     }
     
