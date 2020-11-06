@@ -170,7 +170,6 @@ extension InitFlow{
     /////
     
     private func navigateToMultiCollection() -> FlowContributors{
-        print("InitFlow navigateToMultiCollection")
         return FlowSugar(CollectionMultiSelectionViewModel(), CollectionMultiSelectionViewController.self)
              .navigationItem(with:{
                  $0.title = "multiSelectCollection"
@@ -178,7 +177,6 @@ extension InitFlow{
      }
     
     private func navigateToLinkImageCollection() -> FlowContributors{
-        print("InitFlow navigateToLinkImageCollection")
         return FlowSugar(LinkImageGridViewModel(), LinkImageGridViewController.self)
             .navigationItem(with:{
                 $0.title = "LinkImageGrid"
@@ -187,24 +185,28 @@ extension InitFlow{
     }
     
     private func modalShowImageSlider<T>(withItems items: [T], initialIndex: Int) -> FlowContributors{
-        print("InitFlow modalShowImageSlider")
         
-        return FlowSugar(ZoomingViewModel(items, initialIndex), ZoomingViewController<T>.self)
-            .setVCProperty(viewControllerBlock:{
-                
-                self.rootViewController.delegate = $0.transitionController
-                $0.transitionController.animator.currentIndex = initialIndex
-                                
-                if let parentVC = UIApplication.shared.topViewController as? CollectionMultiSelectionViewController {
-                    parentVC.zoomIndexDelegate = $0
-                    $0.transitionController.fromDelegate = parentVC
-                }
-                if let parentVC = UIApplication.shared.topViewController as? LinkImageGridViewController {
-                    parentVC.zoomIndexDelegate = $0
-                    $0.transitionController.fromDelegate = parentVC
-                }
-                
-                $0.transitionController.toDelegate = $0
+//        return FlowSugar(ZoomingViewModel(items, initialIndex), ZoomingViewController<T>.self)
+//            .setVCProperty(viewControllerBlock:{
+//                
+//                self.rootViewController.delegate = $0.transitionController
+//                $0.transitionController.animator.currentIndex = initialIndex
+//                                
+//                if let parentVC = UIApplication.shared.topViewController as? CollectionMultiSelectionViewController {
+//                    parentVC.zoomIndexDelegate = $0
+//                    $0.transitionController.fromDelegate = parentVC
+//                }
+//                if let parentVC = UIApplication.shared.topViewController as? LinkImageGridViewController {
+//                    parentVC.zoomIndexDelegate = $0
+//                    $0.transitionController.fromDelegate = parentVC
+//                }
+//                
+//                $0.transitionController.toDelegate = $0
+//            })
+//            .oneStepPushBy(self.rootViewController)
+        return FlowSugar(LinkImageGridViewModel(), LinkImageGridViewController.self)
+            .navigationItem(with:{
+                $0.title = "LinkImageGrid"
             })
             .oneStepPushBy(self.rootViewController)
     }
