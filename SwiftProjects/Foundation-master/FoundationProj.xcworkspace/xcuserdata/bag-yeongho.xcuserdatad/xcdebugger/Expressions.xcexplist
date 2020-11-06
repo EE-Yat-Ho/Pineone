@@ -3,10 +3,13 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "MainViewController.init(nibName:bundle:):MainViewController.swift">
+         contextName = "InitFlow.setCell(at:):InitFlow.swift">
          <PersistentStrings>
             <PersistentString
-               value = "viewModel">
+               value = "tabHeaderCells">
+            </PersistentString>
+            <PersistentString
+               value = "tabControllers.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -43,10 +46,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in CompactView.showCustomAlertViewController():CompactView.swift">
+         contextName = "ActivityFlow.navigateToActivityScreen(_:):ActivityFlow.swift">
          <PersistentStrings>
             <PersistentString
-               value = "tableHeaderView.dropdownButton.title">
+               value = "tabControllers">
+            </PersistentString>
+            <PersistentString
+               value = "navigationController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -67,13 +73,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ActivityFlow.navigateToActivityScreen(_:):ActivityFlow.swift">
+         contextName = "closure #1 in CompactView.showCustomAlertViewController():CompactView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "tabControllers">
-            </PersistentString>
-            <PersistentString
-               value = "navigationController">
+               value = "tableHeaderView.dropdownButton.title">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -211,10 +214,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "InitFlow.setCell(at:):InitFlow.swift">
+         contextName = "MainViewController.init(nibName:bundle:):MainViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "tabHeaderCells">
+               value = "viewModel">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

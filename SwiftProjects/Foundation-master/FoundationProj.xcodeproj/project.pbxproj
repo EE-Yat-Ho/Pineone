@@ -197,6 +197,16 @@
 		2ADE2A8A2553F5B700C288C1 /* MoreSeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2A892553F5B700C288C1 /* MoreSeeView.swift */; };
 		2ADE2A922553F5D100C288C1 /* MoreSeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2A912553F5D100C288C1 /* MoreSeeViewController.swift */; };
 		2ADE2A972553F61E00C288C1 /* MoreSeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2A962553F61E00C288C1 /* MoreSeeViewModel.swift */; };
+		2ADE2AB12554DD2700C288C1 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2AB02554DD2700C288C1 /* EventViewController.swift */; };
+		2ADE2ABD2554DD5A00C288C1 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2ABC2554DD5A00C288C1 /* EventView.swift */; };
+		2ADE2AC22554DD6700C288C1 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2AC12554DD6700C288C1 /* EventViewModel.swift */; };
+		2ADE2AC72554DD7300C288C1 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2AC62554DD7300C288C1 /* EventCell.swift */; };
+		2ADE2ACC2554DE6A00C288C1 /* FDRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2ACB2554DE6A00C288C1 /* FDRepository.swift */; };
+		2ADE2AD12554DEF200C288C1 /* FDEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2AD02554DEF200C288C1 /* FDEvent.swift */; };
+		2ADE2AD62554DF4800C288C1 /* MoreSeeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2AD52554DF4800C288C1 /* MoreSeeCellModel.swift */; };
+		2ADE2ADE2554E05700C288C1 /* FDTerms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2ADD2554E05700C288C1 /* FDTerms.swift */; };
+		2ADE2AE32554E09300C288C1 /* FDEventImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2AE22554E09300C288C1 /* FDEventImage.swift */; };
+		2ADE2AE82554E0C300C288C1 /* FDVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE2AE72554E0C300C288C1 /* FDVersion.swift */; };
 		3721899AFC42180B0556079E /* libPods-FoundationProjTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0741FBCCE752AE22252AB268 /* libPods-FoundationProjTests.a */; };
 		58483EECD5DCA3E880BCF4D8 /* libPods-FoundationProjUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 715B2D612CCB885BD1329FB5 /* libPods-FoundationProjUITests.a */; };
 		AFEEA1B07FE9B7A86105219C /* Pods_FoundationProj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E123FAA7DA87CE8462A205 /* Pods_FoundationProj.framework */; };
@@ -420,6 +430,16 @@
 		2ADE2A892553F5B700C288C1 /* MoreSeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreSeeView.swift; sourceTree = "<group>"; };
 		2ADE2A912553F5D100C288C1 /* MoreSeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreSeeViewController.swift; sourceTree = "<group>"; };
 		2ADE2A962553F61E00C288C1 /* MoreSeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreSeeViewModel.swift; sourceTree = "<group>"; };
+		2ADE2AB02554DD2700C288C1 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		2ADE2ABC2554DD5A00C288C1 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		2ADE2AC12554DD6700C288C1 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		2ADE2AC62554DD7300C288C1 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		2ADE2ACB2554DE6A00C288C1 /* FDRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDRepository.swift; sourceTree = "<group>"; };
+		2ADE2AD02554DEF200C288C1 /* FDEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDEvent.swift; sourceTree = "<group>"; };
+		2ADE2AD52554DF4800C288C1 /* MoreSeeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreSeeCellModel.swift; sourceTree = "<group>"; };
+		2ADE2ADD2554E05700C288C1 /* FDTerms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDTerms.swift; sourceTree = "<group>"; };
+		2ADE2AE22554E09300C288C1 /* FDEventImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDEventImage.swift; sourceTree = "<group>"; };
+		2ADE2AE72554E0C300C288C1 /* FDVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDVersion.swift; sourceTree = "<group>"; };
 		54E123FAA7DA87CE8462A205 /* Pods_FoundationProj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoundationProj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		715B2D612CCB885BD1329FB5 /* libPods-FoundationProjUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FoundationProjUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CAB8BC88E95D14405A7A5F5 /* Pods-FoundationProj-FoundationProjUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoundationProj-FoundationProjUITests.release.xcconfig"; path = "Target Support Files/Pods-FoundationProj-FoundationProjUITests/Pods-FoundationProj-FoundationProjUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -677,10 +697,12 @@
 		11E3407724878BA30063D04F /* MultiCollection */ = {
 			isa = PBXGroup;
 			children = (
-				2ADE2A882553F5A100C288C1 /* Old */,
+				2ADE2AB52554DD4300C288C1 /* Event */,
 				2ADE2A892553F5B700C288C1 /* MoreSeeView.swift */,
 				2ADE2A912553F5D100C288C1 /* MoreSeeViewController.swift */,
 				2ADE2A962553F61E00C288C1 /* MoreSeeViewModel.swift */,
+				2ADE2AD52554DF4800C288C1 /* MoreSeeCellModel.swift */,
+				2ADE2A882553F5A100C288C1 /* Old */,
 			);
 			path = MultiCollection;
 			sourceTree = "<group>";
@@ -955,6 +977,7 @@
 				2A6F84F2255004910000345F /* Toast.swift */,
 				2A3467CA253D623C003E4BC7 /* Resource.swift */,
 				2A091E902547DB6B00855EAC /* LoadingService.swift */,
+				2ADE2ACB2554DE6A00C288C1 /* FDRepository.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -970,6 +993,10 @@
 				2A091E9F2547E3F200855EAC /* AppInfo.swift */,
 				2A091EFB254921BF00855EAC /* Contents.swift */,
 				2A091F032549237F00855EAC /* ContentsReply.swift */,
+				2ADE2AD02554DEF200C288C1 /* FDEvent.swift */,
+				2ADE2ADD2554E05700C288C1 /* FDTerms.swift */,
+				2ADE2AE22554E09300C288C1 /* FDEventImage.swift */,
+				2ADE2AE72554E0C300C288C1 /* FDVersion.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1091,6 +1118,17 @@
 				11E3408924878BA30063D04F /* MultiCollectionCell.swift */,
 			);
 			path = Old;
+			sourceTree = "<group>";
+		};
+		2ADE2AB52554DD4300C288C1 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				2ADE2AB02554DD2700C288C1 /* EventViewController.swift */,
+				2ADE2ABC2554DD5A00C288C1 /* EventView.swift */,
+				2ADE2AC12554DD6700C288C1 /* EventViewModel.swift */,
+				2ADE2AC62554DD7300C288C1 /* EventCell.swift */,
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 		B6EAE8F8745189B49048D075 /* Frameworks */ = {
@@ -1339,15 +1377,19 @@
 				11E340CA24878C380063D04F /* MainRepository.swift in Sources */,
 				2A34680D253D79BE003E4BC7 /* UIScrollView+.swift in Sources */,
 				2A091E5D25469AB000855EAC /* UIWindow+.swift in Sources */,
+				2ADE2AE32554E09300C288C1 /* FDEventImage.swift in Sources */,
 				2A091F2425494E5D00855EAC /* TripleCompactTableViewCell.swift in Sources */,
 				2A34676C253D5B95003E4BC7 /* ActivityBaseTableViewCell.swift in Sources */,
 				117C1BE424BFE493002CC5A3 /* UIStackView+.swift in Sources */,
 				2A091E50254695DB00855EAC /* ARNavigationController.swift in Sources */,
 				11E340A524878BA30063D04F /* ViewModelType.swift in Sources */,
 				2A091EED25490EAF00855EAC /* MenuSortView.swift in Sources */,
+				2ADE2ABD2554DD5A00C288C1 /* EventView.swift in Sources */,
+				2ADE2AB12554DD2700C288C1 /* EventViewController.swift in Sources */,
 				2A3467A3253D5F04003E4BC7 /* Int+.swift in Sources */,
 				11FF373A249882FF008B31A6 /* HorizontalStackScrollViewController.swift in Sources */,
 				11E340A024878BA30063D04F /* UIView+.swift in Sources */,
+				2ADE2AC72554DD7300C288C1 /* EventCell.swift in Sources */,
 				11E340BC24878BA30063D04F /* AppCoordinator.swift in Sources */,
 				11BBB20B24F5FD20004D09DE /* ToastShowViewController.swift in Sources */,
 				2A3467C0253D60F8003E4BC7 /* Observable+Rx.swift in Sources */,
@@ -1370,6 +1412,7 @@
 				2A091E3425465CE600855EAC /* TabPagerHeaderCellModel.swift in Sources */,
 				2A091E252546566500855EAC /* ActivityViewController.swift in Sources */,
 				2A091EB22547E5E300855EAC /* ActivityStepper.swift in Sources */,
+				2ADE2AE82554E0C300C288C1 /* FDVersion.swift in Sources */,
 				11FE860B24BB3E93007F9641 /* RotateViewController.swift in Sources */,
 				11FF373C249882FF008B31A6 /* HorizontalStackScrollViewModel.swift in Sources */,
 				11E3409F24878BA30063D04F /* ViewModel.swift in Sources */,
@@ -1399,6 +1442,7 @@
 				11F5753E24BEB293003ACB4B /* PlayerViewController.swift in Sources */,
 				2A091E3025465CB400855EAC /* TabPagerContents.swift in Sources */,
 				11E3409E24878BA30063D04F /* TableView+.swift in Sources */,
+				2ADE2AD12554DEF200C288C1 /* FDEvent.swift in Sources */,
 				11EDF17C248DF9E000E6E849 /* NavigationController.swift in Sources */,
 				11FE861124BB4B16007F9641 /* UIButton+.swift in Sources */,
 				11FE860C24BB3E93007F9641 /* RotateView.swift in Sources */,
@@ -1415,6 +1459,7 @@
 				2A091EFC254921BF00855EAC /* Contents.swift in Sources */,
 				2A346836253D8273003E4BC7 /* UILabel+.swift in Sources */,
 				11BBB20F24F60090004D09DE /* ViewToaster.swift in Sources */,
+				2ADE2ADE2554E05700C288C1 /* FDTerms.swift in Sources */,
 				11F85F9F24C7F33600975456 /* Observable+Weak.swift in Sources */,
 				2A091E00254654F700855EAC /* ReplyViewController.swift in Sources */,
 				2A3467DC253D6840003E4BC7 /* ARNavigationBar.swift in Sources */,
@@ -1434,6 +1479,7 @@
 				11F5754424BEB804003ACB4B /* RangeSlider.swift in Sources */,
 				2A091E3925465D0300855EAC /* PageViewController+.swift in Sources */,
 				2A091E13254655B600855EAC /* LikeView.swift in Sources */,
+				2ADE2AC22554DD6700C288C1 /* EventViewModel.swift in Sources */,
 				11E340AD24878BA30063D04F /* ZoomingViewController.swift in Sources */,
 				11E340BE24878BA30063D04F /* AppStepper.swift in Sources */,
 				2A3467CB253D623C003E4BC7 /* Resource.swift in Sources */,
@@ -1473,6 +1519,7 @@
 				11B5A16E24ED4319000E4B25 /* FilterSliderViewController.swift in Sources */,
 				2ADE2A972553F61E00C288C1 /* MoreSeeViewModel.swift in Sources */,
 				11E340A924878BA30063D04F /* ImageSliderCellPorotol.swift in Sources */,
+				2ADE2ACC2554DE6A00C288C1 /* FDRepository.swift in Sources */,
 				11E340B424878BA30063D04F /* CollectionMultiSelectionView.swift in Sources */,
 				2A3468ED253FBC7D003E4BC7 /* DefaultStyle.swift in Sources */,
 				2A091E15254655C600855EAC /* LikeViewModel.swift in Sources */,
@@ -1488,6 +1535,7 @@
 				2A091EA02547E3F200855EAC /* AppInfo.swift in Sources */,
 				11E340AE24878BA30063D04F /* ZoomTransitionController.swift in Sources */,
 				2A091E552546997700855EAC /* ARTabBarController.swift in Sources */,
+				2ADE2AD62554DF4800C288C1 /* MoreSeeCellModel.swift in Sources */,
 				11FE37792488F105004D452B /* LinkImageGridViewController.swift in Sources */,
 				11E340C824878BFC0063D04F /* MainCell.swift in Sources */,
 				2A346907253FC0BC003E4BC7 /* UIView+Extension+UsePopup.swift in Sources */,
