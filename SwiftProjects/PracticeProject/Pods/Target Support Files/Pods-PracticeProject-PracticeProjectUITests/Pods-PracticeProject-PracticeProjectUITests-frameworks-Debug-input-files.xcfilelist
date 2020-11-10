@@ -1,6 +1,0 @@
-${PODS_ROOT}/Target Support Files/Pods-PracticeProject-PracticeProjectUITests/Pods-PracticeProject-PracticeProjectUITests-frameworks.sh
-${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework
-${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
-${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
-${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
-${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework
