@@ -3,28 +3,18 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "ViewController.viewDidLoad():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "thirdVC.superView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ViewController.write(_:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "secondVC.view.superview">
-            </PersistentString>
-            <PersistentString
-               value = "thirdVC.parent">
-            </PersistentString>
-            <PersistentString
-               value = "view.subviews">
-            </PersistentString>
-            <PersistentString
-               value = "children">
-            </PersistentString>
-            <PersistentString
                value = "thirdVC.view.superview">
-            </PersistentString>
-            <PersistentString
-               value = "secondVC.parent">
-            </PersistentString>
-            <PersistentString
-               value = "secondVC">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
