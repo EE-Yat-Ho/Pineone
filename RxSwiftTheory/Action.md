@@ -6,5 +6,8 @@
   2. B = Action에 넣어주는 Closure의 리턴Observable의 타입
   3. workFactory = 이벤트 수신시 실행할 Closure
   4. name.inputs = 이벤트를 수신하는 옵저버
-  5. name.execute(a:A) = Closure 단순 실행 방법
-  6. name..elements = 이벤트 수신 후, 클로저가 리턴하는 값들을 이렇게 관찰할 수 있음
+  
+  // 20201113 수정
+  5. name.execute(a:A) = Closure 단순 실행 방법 / ㄴㄴ 이것도 내부적으로 inputs.onNext를 함.
+  
+  6. name.elements = 이벤트 수신 후, 클로저가 리턴하는 값들을 이렇게 관찰할 수 있음
