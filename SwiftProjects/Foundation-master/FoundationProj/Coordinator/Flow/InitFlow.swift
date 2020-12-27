@@ -159,13 +159,6 @@ extension InitFlow{
 //        }
     }
     
-<<<<<<< HEAD
-    private func navigateToMultiCollection() -> FlowContributors{
-        return FlowSugar(CollectionMultiSelectionViewModel(), CollectionMultiSelectionViewController.self)
-             .navigationItem(with:{
-                 $0.title = "multiSelectCollection"
-             }).oneStepPushBy(self.rootViewController)
-=======
     // MARK:- MoreSee
     private func navigateToMultiCollection(_ detail: MoreSeeDetail? = nil) -> FlowContributors{
         tabControllers = makeMoreSeeControllers()
@@ -205,7 +198,6 @@ extension InitFlow{
         })
         //.oneStepPushBy(navigationController)
         .oneStepPushBy(rootViewController)
->>>>>>> project
      }
 
     func makeMoreSeeControllers() -> [UIViewController] {
@@ -263,17 +255,10 @@ extension InitFlow{
         
 //        return FlowSugar(ZoomingViewModel(items, initialIndex), ZoomingViewController<T>.self)
 //            .setVCProperty(viewControllerBlock:{
-<<<<<<< HEAD
-//                
-//                self.rootViewController.delegate = $0.transitionController
-//                $0.transitionController.animator.currentIndex = initialIndex
-//                                
-=======
 //
 //                self.rootViewController.delegate = $0.transitionController
 //                $0.transitionController.animator.currentIndex = initialIndex
 //
->>>>>>> project
 //                if let parentVC = UIApplication.shared.topViewController as? CollectionMultiSelectionViewController {
 //                    parentVC.zoomIndexDelegate = $0
 //                    $0.transitionController.fromDelegate = parentVC
@@ -282,11 +267,7 @@ extension InitFlow{
 //                    parentVC.zoomIndexDelegate = $0
 //                    $0.transitionController.fromDelegate = parentVC
 //                }
-<<<<<<< HEAD
-//                
-=======
 //
->>>>>>> project
 //                $0.transitionController.toDelegate = $0
 //            })
 //            .oneStepPushBy(self.rootViewController)
